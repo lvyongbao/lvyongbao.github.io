@@ -9,18 +9,21 @@
 
 <title>
   
-    等于
+    == 和 === 有什么区别
   
 </title>
 
+<meta name="description" content="== 和 === 有什么区别?=== 不需要进行类型转换，只有类型相同并且值相等时，才返回 true.== 如果两者类型不同，首先需要进行类型转换。具体流程如下:首先判断两者类型是否相同，如果相等，判断值是否相等；如果类型不同，进行类型转换；判断比较的是否是 null 或者是 undefined, 如果是, 返回 true；判断两者类型是否为 string 和 number, 如果是, 将字符串转">
 <meta property="og:type" content="article">
-<meta property="og:title" content="等于">
+<meta property="og:title" content="== 和 === 有什么区别">
 <meta property="og:url" content="http://yoursite.com/2019/06/12/Identical/index.html">
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:description" content="== 和 === 有什么区别?=== 不需要进行类型转换，只有类型相同并且值相等时，才返回 true.== 如果两者类型不同，首先需要进行类型转换。具体流程如下:首先判断两者类型是否相同，如果相等，判断值是否相等；如果类型不同，进行类型转换；判断比较的是否是 null 或者是 undefined, 如果是, 返回 true；判断两者类型是否为 string 和 number, 如果是, 将字符串转">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-12T13:11:01.043Z">
+<meta property="og:updated_time" content="2019-06-12T13:29:59.800Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="等于">
+<meta name="twitter:title" content="== 和 === 有什么区别">
+<meta name="twitter:description" content="== 和 === 有什么区别?=== 不需要进行类型转换，只有类型相同并且值相等时，才返回 true.== 如果两者类型不同，首先需要进行类型转换。具体流程如下:首先判断两者类型是否相同，如果相等，判断值是否相等；如果类型不同，进行类型转换；判断比较的是否是 null 或者是 undefined, 如果是, 返回 true；判断两者类型是否为 string 和 number, 如果是, 将字符串转">
 
 
   <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
@@ -110,7 +113,7 @@
           <article id="post-Identical" class="article article-type-post">
   
     <h1 class="article-header">
-      等于
+      == 和 === 有什么区别
     </h1>
   
   
@@ -126,7 +129,20 @@
 
   </div>
   <div class="article-entry">
-    
+    <h2 id="和-有什么区别"><a href="#和-有什么区别" class="headerlink" title="== 和 === 有什么区别?"></a>== 和 === 有什么区别?</h2><p>=== 不需要进行类型转换，只有类型相同并且值相等时，才返回 true.<br>== 如果两者类型不同，首先需要进行类型转换。具体流程如下:<br>首先判断两者类型是否相同，如果相等，判断值是否相等；<br>如果类型不同，进行类型转换；<br>判断比较的是否是 null 或者是 undefined, 如果是, 返回 true；<br>判断两者类型是否为 string 和 number, 如果是, 将字符串转换成 number；<br>判断其中一方是否为 boolean, 如果是, 将 boolean 转为 number 再进行判断；<br>判断其中一方是否为 object 且另一方为 string、number 或者 symbol , 如果是, 将 object 转为原始类型再进行判断。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dabao = &#123;</span><br><span class="line">    age: <span class="number">25</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> baojie = dabao;</span><br><span class="line">baojie.gae = <span class="number">20</span>;</span><br><span class="line"><span class="built_in">console</span>.log(dabao === baojie); <span class="comment">//true, 注意复杂数据类型，比较的是引用地址</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考: [] == ![]"></a>思考: [] == ![]</h2><p>我们来分析一下: [] == ![] 是 true 还是 false？</p>
+<ol>
+<li>首先，我们需要知道 ! 优先级是高于 == (<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence" target="_blank" rel="noopener">更多运算符优先级可查看: 运算符优先级</a>）：</li>
+</ol>
+<p>2.![] 引用类型转换成布尔值都是 true, 因此![]的是 false</p>
+<ol start="3">
+<li>根据上面的比较步骤中的第五条，其中一方是 boolean，将 boolean 转为 number 再进行判断，false 转换成 number，对应的值是 0.</li>
+<li>根据上面比较步骤中的第六条，有一方是 number，那么将 object 也转换成 Number, 空数组转换成数字，对应的值是 0.(空数组转换成数字，对应的值是 0，如果数组中只有一个数字，那么转成 number 就是这个数字，其它情况，均为 NaN)</li>
+<li>0 == 0; 为 true</li>
+</ol>
+
   </div>
   <footer class="article-footer">
     
