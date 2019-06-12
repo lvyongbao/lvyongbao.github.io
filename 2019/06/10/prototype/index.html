@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
 <meta property="og:description" content="今天说一下JS中原型和原型链，我理解的也不是很透彻，这边结合网上的一些文章，记录一下。 1. 原型 / 构造函数 / 实例每个函数都有 prototype 属性，除了 Function.prototype.bind()，该属性指向原型。每个对象都有proto属性，指向了创建该对象的构造函数的原型。其实这个属性指向了 [[prototype]]，但是 [[prototype]] 是内部属性，我们并不">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-11T12:47:47.748Z">
+<meta property="og:updated_time" content="2019-06-12T11:26:18.963Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原型">
 <meta name="twitter:description" content="今天说一下JS中原型和原型链，我理解的也不是很透彻，这边结合网上的一些文章，记录一下。 1. 原型 / 构造函数 / 实例每个函数都有 prototype 属性，除了 Function.prototype.bind()，该属性指向原型。每个对象都有proto属性，指向了创建该对象的构造函数的原型。其实这个属性指向了 [[prototype]]，但是 [[prototype]] 是内部属性，我们并不">
@@ -157,7 +157,7 @@
 <li>属性修改机制: 只会修改实例对象本身的属性，如果不存在，则进行添加该属性，如果需要修改原型的属性时，则可以用: b.prototype.x = 2；但是这样会造成所有继承于该对象的实例的属性发生改变。</li>
 </ul>
 </blockquote>
-<h2 id="3-prototype-和-proto区别是什么？"><a href="#3-prototype-和-proto区别是什么？" class="headerlink" title="3.prototype 和 proto区别是什么？"></a>3.prototype 和 <strong><strong>proto</strong></strong>区别是什么？</h2><p>prototype 是构造函数的属性。<br><strong><strong>proto</strong></strong>是每个实例都有的属性，可以访问 [[prototype]] 属性。<br>实例的<strong><strong>proto</strong></strong>与其构造函数的 prototype 指向的是同一个对象。</p>
+<h2 id="3-prototype-和-proto区别是什么？"><a href="#3-prototype-和-proto区别是什么？" class="headerlink" title="3.prototype 和 proto区别是什么？"></a>3.prototype 和 <strong><strong>proto</strong></strong>区别是什么？</h2><p>prototype 是构造函数的属性。<br><strong><strong>proto</strong></strong>是每个实例都有的属性，可以访问<a href="https://github.com/KieSun/Dream/issues/2" target="_blank" rel="noopener">prototype</a>属性。<br>实例的<strong><strong>proto</strong></strong>与其构造函数的 prototype 指向的是同一个对象。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line">Student.prototype.setAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.age=<span class="number">25</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> Dabao = <span class="keyword">new</span> Student(<span class="string">'dabao'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(Dabao.__proto__);</span><br><span class="line"><span class="comment">//console.log(Object.getPrototypeOf(Dabao));;</span></span><br><span class="line"><span class="built_in">console</span>.log(Student.prototype);</span><br><span class="line"><span class="built_in">console</span>.log(Dabao.__proto__ === Student.prototype);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
 
 
