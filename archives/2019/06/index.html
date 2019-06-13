@@ -369,7 +369,7 @@
 
 <p>可以看出在全局作用域中 this 指向当前的全局对象 Window。</p>
 <h3 id="二：函数中执行"><a href="#二：函数中执行" class="headerlink" title="二：函数中执行"></a>二：函数中执行</h3><p>1.非严格模式中</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">func();</span><br><span class="line"><span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">func();</span><br><span class="line"><span class="comment">// Window</span></span><br></pre></td></tr></table></figure>
           <p>
             <a href="/2019/06/08/This/">
               阅读全文
