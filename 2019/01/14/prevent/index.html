@@ -9,17 +9,18 @@
 
 <title>
   
-    归档
+    防抖节流
   
 </title>
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="一个爱听歌的搬砖工">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="防抖节流">
+<meta property="og:url" content="http://yoursite.com/2019/01/14/prevent/index.html">
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-14T14:37:07.702Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一个爱听歌的搬砖工">
+<meta name="twitter:title" content="防抖节流">
 
 
   <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
@@ -106,139 +107,54 @@
       
         <div style="max-width: 1000px">
       
-          
-
+          <article id="post-prevent" class="article article-type-post">
+  
+    <h1 class="article-header">
+      防抖节流
+    </h1>
   
   
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/archives/2017" class="archive-year">2017</a></h1>
-        </div>
-        <div class="post-list">
-    
-  
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/12/13/toFixed/">
-  toFixed方法详解
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/12/13/toFixed/"><span class="article-date">
-  2017-12-13
+  <div class="article-info">
+    <span class="article-date">
+  2019-01-14
 </span>
-</a>
-        
 
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>最近做的项目涉及到金额的计算，有一种方式就是进行四舍五入的规则进行小数点后面的尾数处理，以前一直以为toFixed方法就是四舍五入的，直到测试测出金额计算的bug我才如梦初醒，才深究了下toFixed这个方法。<br>toFixed方法在IE10及以上里面是正常的四舍五入，但是别的浏览器里面就不一样了，它不是正常的四舍五入，比如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1.335</span>;  </span><br><span class="line"><span class="built_in">console</span>.log(a.toFixed(<span class="number">2</span>))  </span><br><span class="line"><span class="comment">// IE         1.34  </span></span><br><span class="line"><span class="comment">//chorme   1.33</span></span><br></pre></td></tr></table></figure>
-          <p>
-            <a href="/2017/12/13/toFixed/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-
-  
-  
     
-  
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/12/13/Input/">
-  阻止浏览器记住密码功能干扰表单填充
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/12/13/Input/"><span class="article-date">
-  2017-12-13
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <h2 id="我知道有4种方法，具体可以详细的去试试看："><a href="#我知道有4种方法，具体可以详细的去试试看：" class="headerlink" title="我知道有4种方法，具体可以详细的去试试看："></a>我知道有4种方法，具体可以详细的去试试看：</h2>
-          <p>
-            <a href="/2017/12/13/Input/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-
-  
-  
     
-  
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/12/11/compatible/">
-  IE6浏览器常见的bug,缺陷的解决办法
-</a>
-
-      </h3>
+  </div>
+  <div class="article-entry">
+    
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
       
-
-      <div class="article-info">
-        <a href="/2017/12/11/compatible/"><span class="article-date">
-  2017-12-11
-</span>
-</a>
+          <img src="/images/cc/by.png">
         
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p><strong>IE6不支持min-height，解决办法使用css hack：</strong><br>    .target {<br>        min-height: 100px;<br>        height: auto !important;<br>        height: 100px;   // IE6下内容高度超过会自动扩展高度<br>    }<br><strong>ol内li的序号全为1，不递增。解决方法：为li设置样式display: list-item;</strong></p>
-          <p>
-            <a href="/2017/12/11/compatible/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-
-
-
-  <div class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/">上一页</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
   </div>
 
 
-</div></section>
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
 
           <div class="main-footer">
   
