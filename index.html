@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -107,6 +107,41 @@
         <div style="max-width: 1000px">
       
           
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/20/Cross/">
+  跨域
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/20/Cross/"><span class="article-date">
+  2019-06-20
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
 
   
   
@@ -444,57 +479,6 @@
 <h2 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h2><p>要理解闭包，首先必须理解Javascript特殊的变量作用域。<br>变量的作用域无非就是两种：全局变量和局部变量。<br>Javascript语言的特殊之处，就在于函数内部可以直接读取全局变量。</p>
           <p>
             <a href="/2019/06/11/Closure/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
-
-  
-  
-    <div class="post-list">
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/06/10/prototype/">
-  原型
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2019/06/10/prototype/"><span class="article-date">
-  2019-06-10
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p><strong>今天说一下JS中原型和原型链，我理解的也不是很透彻，这边结合网上的一些文章，记录一下。</strong></p>
-<h2 id="1-原型-构造函数-实例"><a href="#1-原型-构造函数-实例" class="headerlink" title="1. 原型 / 构造函数 / 实例"></a>1. 原型 / 构造函数 / 实例</h2><p>每个函数都有 prototype 属性，除了 Function.prototype.bind()，该属性指向原型。<br>每个对象都有<strong><strong>proto</strong></strong>属性，指向了创建该对象的构造函数的原型。其实这个属性指向了 [[prototype]]，但是 [[prototype]] 是内部属性，我们并不能访问到，所以使用<em><em>proto</em></em>来访问。<br>对象可以通过<strong><strong>proto</strong></strong>来寻找不属于该对象的属性，<strong><strong>proto</strong></strong>将对象连接起来组成了原型链。<br>如果你想更进一步的了解原型，可以仔细阅读<a href="https://github.com/KieSun/Dream/issues/2" target="_blank" rel="noopener">深度解析原型中的各个难点</a>。</p>
-<blockquote>
-<ul>
-<li>原型(prototype): 一个简单的对象，用于实现对象的 属性继承。可以简单的理解成对象的爹。在 Firefox 和 Chrome 中，每个JavaScript对象中都包含一个<strong><strong>proto</strong></strong> (非标准)的属性指向它爹(该对象的原型)，可obj__proto__进行访问。</li>
-<li>构造函数: 可以通过new来 新建一个对象 的函数。</li>
-<li>实例: 通过构造函数和new创建出来的对象，便是实例。</li>
-<li>实例通过<strong><strong>proto</strong></strong>指向原型，通过constructor指向构造函数。</li>
-</ul>
-</blockquote>
-<p>可能有点懵逼，这里来举个栗子，以Object为例，我们常用的Object便是一个构造函数，因此我们可以通过它构建实例。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实例</span></span><br><span class="line"><span class="keyword">const</span> instance = <span class="keyword">new</span> <span class="built_in">Object</span>()</span><br></pre></td></tr></table></figure>
-          <p>
-            <a href="/2019/06/10/prototype/">
               阅读全文
             </a>
           </p>
