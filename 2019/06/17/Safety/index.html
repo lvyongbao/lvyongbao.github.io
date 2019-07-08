@@ -13,14 +13,17 @@
   
 </title>
 
+<meta name="description" content="XSS 跨网站指令码（英语：Cross-site scripting，通常简称为：XSS）是一种网站应用程式的安全漏洞攻击，是代码注入的一种。它允许恶意使用者将程式码注入到网页上，其他使用者在观看网页时就会受到影响。这类攻击通常包含了 HTML 以及使用者端脚本语言。  XSS 分为三种：反射型，存储型和 DOM-based 如何攻击XSS 通过修改 HTML 节点或者执行 JS 代码来攻击网站。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安全">
 <meta property="og:url" content="http://yoursite.com/2019/06/17/Safety/index.html">
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:description" content="XSS 跨网站指令码（英语：Cross-site scripting，通常简称为：XSS）是一种网站应用程式的安全漏洞攻击，是代码注入的一种。它允许恶意使用者将程式码注入到网页上，其他使用者在观看网页时就会受到影响。这类攻击通常包含了 HTML 以及使用者端脚本语言。  XSS 分为三种：反射型，存储型和 DOM-based 如何攻击XSS 通过修改 HTML 节点或者执行 JS 代码来攻击网站。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-17T11:25:43.014Z">
+<meta property="og:updated_time" content="2019-07-08T13:31:04.501Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="安全">
+<meta name="twitter:description" content="XSS 跨网站指令码（英语：Cross-site scripting，通常简称为：XSS）是一种网站应用程式的安全漏洞攻击，是代码注入的一种。它允许恶意使用者将程式码注入到网页上，其他使用者在观看网页时就会受到影响。这类攻击通常包含了 HTML 以及使用者端脚本语言。  XSS 分为三种：反射型，存储型和 DOM-based 如何攻击XSS 通过修改 HTML 节点或者执行 JS 代码来攻击网站。">
 
 
   <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
@@ -92,7 +95,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -126,7 +129,63 @@
 
   </div>
   <div class="article-entry">
-    
+    <h2 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h2><blockquote>
+<p>跨网站指令码（英语：Cross-site scripting，通常简称为：XSS）是一种网站应用程式的安全漏洞攻击，是代码注入的一种。它允许恶意使用者将程式码注入到网页上，其他使用者在观看网页时就会受到影响。这类攻击通常包含了 HTML 以及使用者端脚本语言。</p>
+</blockquote>
+<p><strong>XSS 分为三种：反射型，存储型和 DOM-based</strong></p>
+<h3 id="如何攻击"><a href="#如何攻击" class="headerlink" title="如何攻击"></a>如何攻击</h3><p>XSS 通过修改 HTML 节点或者执行 JS 代码来攻击网站。</p>
+<p>例如通过 URL 获取某些参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- http:<span class="comment">//www.domain.com?name=&lt;script&gt;alert(1)&lt;/script&gt; --&gt;</span></span><br><span class="line">&lt;div&gt;&#123;&#123;name&#125;&#125;&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>上述 URL 输入可能会将 HTML 改为</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+<p>这样页面中就凭空多了一段可执行脚本。这种攻击类型是反射型攻击，也可以说是 DOM-based 攻击。<br>也有另一种场景，比如写了一篇包含攻击代码 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;alert(<span class="number">1</span>)&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>的文章，那么可能浏览文章的用户都会被攻击到。这种攻击类型是存储型攻击，也可以说是 DOM-based 攻击，并且这种攻击打击面更广。</p>
+<h3 id="如何防御"><a href="#如何防御" class="headerlink" title="如何防御"></a>如何防御</h3><p>最普遍的做法是转义输入输出的内容，对于引号，尖括号，斜杠进行转义</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">escape</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  str = str.replace(<span class="regexp">/&amp;/g</span>, <span class="string">'&amp;amp;'</span>)</span><br><span class="line">  str = str.replace(<span class="regexp">/&lt;/g</span>, <span class="string">'&amp;lt;'</span>)</span><br><span class="line">  str = str.replace(<span class="regexp">/&gt;/g</span>, <span class="string">'&amp;gt;'</span>)</span><br><span class="line">  str = str.replace(<span class="regexp">/"/g</span>, <span class="string">'&amp;quto;'</span>)</span><br><span class="line">  str = str.replace(<span class="regexp">/'/g</span>, <span class="string">'&amp;#39;'</span>)</span><br><span class="line">  str = str.replace(<span class="regexp">/`/g</span>, <span class="string">'&amp;#96;'</span>)</span><br><span class="line">  str = str.replace(<span class="regexp">/\//g</span>, <span class="string">'&amp;#x2F;'</span>)</span><br><span class="line">  <span class="keyword">return</span> str</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过转义可以将攻击代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;alert(<span class="number">1</span>)&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>变成</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// -&gt; &amp;lt;script&amp;gt;alert(1)&amp;lt;&amp;#x2F;script&amp;gt;</span></span><br><span class="line"><span class="built_in">escape</span>(<span class="string">'&lt;script&gt;alert(1)&lt;/script&gt;'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>对于显示富文本来说，不能通过上面的办法来转义所有字符，因为这样会把需要的格式也过滤掉。这种情况通常采用白名单过滤的办法，当然也可以通过黑名单过滤，但是考虑到需要过滤的标签和标签属性实在太多，更加推荐使用白名单的方式。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xss = <span class="built_in">require</span>(<span class="string">'xss'</span>)</span><br><span class="line"><span class="keyword">var</span> html = xss(<span class="string">'&lt;h1 id="title"&gt;XSS Demo&lt;/h1&gt;&lt;script&gt;alert("xss");&lt;/script&gt;'</span>)</span><br><span class="line"><span class="comment">// -&gt; &lt;h1&gt;XSS Demo&lt;/h1&gt;&amp;lt;script&amp;gt;alert("xss");&amp;lt;/script&amp;gt;</span></span><br><span class="line"><span class="built_in">console</span>.log(html)</span><br></pre></td></tr></table></figure>
+
+<p>以上示例使用了 js-xss 来实现。可以看到在输出中保留了 h1 标签且过滤了 script 标签</p>
+<h2 id="CSP"><a href="#CSP" class="headerlink" title="CSP"></a>CSP</h2><blockquote>
+<p>内容安全策略 (CSP) 是一个额外的安全层，用于检测并削弱某些特定类型的攻击，包括跨站脚本 (XSS) 和数据注入攻击等。无论是数据盗取、网站内容污染还是散发恶意软件，这些攻击都是主要的手段。</p>
+</blockquote>
+<p>我们可以通过 CSP 来尽量减少 XSS 攻击。CSP 本质上也是建立白名单，规定了浏览器只能够执行特定来源的代码。<br>通常可以通过 HTTP Header 中的 Content-Security-Policy 来开启 CSP<br>只允许加载本站资源</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content-Security-Policy: <span class="keyword">default</span>-src ‘self’</span><br></pre></td></tr></table></figure>
+
+<p>只允许加载 HTTPS 协议图片</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content-Security-Policy: img-src https:<span class="comment">//*</span></span><br></pre></td></tr></table></figure>
+
+<p>允许加载任何来源框架</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content-Security-Policy: child-src <span class="string">'none'</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h2><blockquote>
+<p>跨站请求伪造，也被称为 one-click attack 或者 session riding，通常缩写为 CSRF 或者 XSRF， 是一种挟制用户在当前已登录的 Web 应用程序上执行非本意的操作的攻击方法。</p>
+</blockquote>
+<p>简单点说，CSRF 就是利用用户的登录态发起恶意请求。</p>
+<h3 id="如何攻击-1"><a href="#如何攻击-1" class="headerlink" title="如何攻击"></a>如何攻击</h3><p>假设网站中有一个通过 Get 请求提交用户评论的接口，那么攻击者就可以在钓鱼网站中加入一个图片，图片的地址就是评论接口</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=<span class="string">"http://www.domain.com/xxx?comment='attack'"</span> /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如果接口是 Post 提交的，就相对麻烦点，需要用表单来提交接口</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">"http://www.domain.com/xxx"</span> id=<span class="string">"CSRF"</span> method=<span class="string">"post"</span>&gt;</span><br><span class="line">  &lt;input name=<span class="string">"comment"</span> value=<span class="string">"attack"</span> type=<span class="string">"hidden"</span> /&gt;</span><br><span class="line">&lt;<span class="regexp">/form&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="如何防御-1"><a href="#如何防御-1" class="headerlink" title="如何防御"></a>如何防御</h3><p>防范 CSRF 可以遵循以下几种规则：<br>1.Get 请求不对数据进行修改<br>2.不让第三方网站访问到用户 Cookie<br>3.阻止第三方网站请求接口<br>4.请求时附带验证信息，比如验证码或者 token</p>
+<h3 id="SameSite"><a href="#SameSite" class="headerlink" title="SameSite"></a>SameSite</h3><p>可以对 Cookie 设置 SameSite 属性。该属性设置 Cookie 不随着跨域请求发送，该属性可以很大程度减少 CSRF 的攻击，但是该属性目前并不是所有浏览器都兼容。</p>
+<h3 id="验证-Referer"><a href="#验证-Referer" class="headerlink" title="验证 Referer"></a>验证 Referer</h3><p>对于需要防范 CSRF 的请求，我们可以通过验证 Referer 来判断该请求是否为第三方网站发起的。</p>
+<h3 id="Token"><a href="#Token" class="headerlink" title="Token"></a>Token</h3><p>服务器下发一个随机 Token（算法不能复杂），每次发起请求时将 Token 携带上，服务器验证 Token 是否有效。</p>
+<h2 id="密码安全"><a href="#密码安全" class="headerlink" title="密码安全"></a>密码安全</h2><p>密码安全虽然大多是后端的事情，但是作为一名优秀的前端程序员也需要熟悉这方面的知识。</p>
+
   </div>
   <footer class="article-footer">
     

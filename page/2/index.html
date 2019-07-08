@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -115,16 +115,16 @@
 
     <div class="post-list-item article">
       <h3 class="article-header">
-        <a href="/2019/06/10/prototype/">
-  原型
+        <a href="/2019/06/22/repeat/">
+  数组去重
 </a>
 
       </h3>
       
 
       <div class="article-info">
-        <a href="/2019/06/10/prototype/"><span class="article-date">
-  2019-06-10
+        <a href="/2019/06/22/repeat/"><span class="article-date">
+  2019-06-22
 </span>
 </a>
         
@@ -134,20 +134,202 @@
       </div>
       <div class="article-entry">
         
-          <p><strong>今天说一下JS中原型和原型链，我理解的也不是很透彻，这边结合网上的一些文章，记录一下。</strong></p>
-<h2 id="1-原型-构造函数-实例"><a href="#1-原型-构造函数-实例" class="headerlink" title="1. 原型 / 构造函数 / 实例"></a>1. 原型 / 构造函数 / 实例</h2><p>每个函数都有 prototype 属性，除了 Function.prototype.bind()，该属性指向原型。<br>每个对象都有<strong><strong>proto</strong></strong>属性，指向了创建该对象的构造函数的原型。其实这个属性指向了 [[prototype]]，但是 [[prototype]] 是内部属性，我们并不能访问到，所以使用<em><em>proto</em></em>来访问。<br>对象可以通过<strong><strong>proto</strong></strong>来寻找不属于该对象的属性，<strong><strong>proto</strong></strong>将对象连接起来组成了原型链。<br>如果你想更进一步的了解原型，可以仔细阅读<a href="https://github.com/KieSun/Dream/issues/2" target="_blank" rel="noopener">深度解析原型中的各个难点</a>。</p>
-<blockquote>
-<ul>
-<li>原型(prototype): 一个简单的对象，用于实现对象的 属性继承。可以简单的理解成对象的爹。在 Firefox 和 Chrome 中，每个JavaScript对象中都包含一个<strong><strong>proto</strong></strong> (非标准)的属性指向它爹(该对象的原型)，可obj__proto__进行访问。</li>
-<li>构造函数: 可以通过new来 新建一个对象 的函数。</li>
-<li>实例: 通过构造函数和new创建出来的对象，便是实例。</li>
-<li>实例通过<strong><strong>proto</strong></strong>指向原型，通过constructor指向构造函数。</li>
-</ul>
+          <p><strong>今天总结一下数组去重的一些方法。记录一下。在真实的项目中碰到的数组去重，一般都是后台去处理，很少让前端处理这种问题。虽然日常项目用到的比较少，但我们还是需要了解一下，以防面试的时候可能回被问到。如果是被提问到，数组去重的方法有哪些？你能答出其中的几种？</strong></p>
+<h2 id="一、利用ES6-Set去重"><a href="#一、利用ES6-Set去重" class="headerlink" title="一、利用ES6 Set去重"></a>一、利用ES6 Set去重</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>])) <span class="comment">//[1,2,3,4]</span></span><br><span class="line">[...new <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>])] <span class="comment">//[1,2,3,4]</span></span><br></pre></td></tr></table></figure>
+
+<p>set是ES6新出来的一种一种定义不重复数组的数据类型<br>Array.from是将类数组转化为数组<br>…是扩展运算符,将set里面的值转化为字符串</p>
+          <p>
+            <a href="/2019/06/22/repeat/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/21/property/">
+  网页性能优化
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/21/property/"><span class="article-date">
+  2019-06-21
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/20/Cross/">
+  跨域
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/20/Cross/"><span class="article-date">
+  2019-06-20
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/19/storage/">
+  存储
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/19/storage/"><span class="article-date">
+  2019-06-19
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/18/course/">
+  从输入 url 到展示的过程
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/18/course/"><span class="article-date">
+  2019-06-18
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>DNS 解析<br>TCP 三次握手<br>发送请求，分析 url，设置请求报文(头，主体)<br>服务器返回请求的文件 (html)<br>浏览器渲染<br><strong>1.HTML parser –&gt; DOM Tree</strong><br>标记化算法，进行元素状态的标记<br>dom 树构建<br><strong>2.CSS parser –&gt; Style Tree</strong><br>解析 css 代码，生成样式树<br><strong>3.attachment –&gt; Render Tree</strong><br>结合 dom树 与 style树，生成渲染树<br><strong>4.layout: 布局</strong><br>GPU painting: 像素绘制页面</p>
+
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/17/Safety/">
+  安全
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/17/Safety/"><span class="article-date">
+  2019-06-17
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h2 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h2><blockquote>
+<p>跨网站指令码（英语：Cross-site scripting，通常简称为：XSS）是一种网站应用程式的安全漏洞攻击，是代码注入的一种。它允许恶意使用者将程式码注入到网页上，其他使用者在观看网页时就会受到影响。这类攻击通常包含了 HTML 以及使用者端脚本语言。</p>
 </blockquote>
-<p>可能有点懵逼，这里来举个栗子，以Object为例，我们常用的Object便是一个构造函数，因此我们可以通过它构建实例。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实例</span></span><br><span class="line"><span class="keyword">const</span> instance = <span class="keyword">new</span> <span class="built_in">Object</span>()</span><br></pre></td></tr></table></figure>
+<p><strong>XSS 分为三种：反射型，存储型和 DOM-based</strong></p>
+<h3 id="如何攻击"><a href="#如何攻击" class="headerlink" title="如何攻击"></a>如何攻击</h3><p>XSS 通过修改 HTML 节点或者执行 JS 代码来攻击网站。</p>
+<p>例如通过 URL 获取某些参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- http:<span class="comment">//www.domain.com?name=&lt;script&gt;alert(1)&lt;/script&gt; --&gt;</span></span><br><span class="line">&lt;div&gt;&#123;&#123;name&#125;&#125;&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>上述 URL 输入可能会将 HTML 改为</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
           <p>
-            <a href="/2019/06/10/prototype/">
+            <a href="/2019/06/17/Safety/">
               阅读全文
             </a>
           </p>
@@ -166,16 +348,16 @@
 
     <div class="post-list-item article">
       <h3 class="article-header">
-        <a href="/2019/06/09/Interview/">
-  Promise
+        <a href="/2019/06/16/Modular/">
+  模块化
 </a>
 
       </h3>
       
 
       <div class="article-info">
-        <a href="/2019/06/09/Interview/"><span class="article-date">
-  2019-06-09
+        <a href="/2019/06/16/Modular/"><span class="article-date">
+  2019-06-16
 </span>
 </a>
         
@@ -185,13 +367,11 @@
       </div>
       <div class="article-entry">
         
-          <p><strong>前段时间因为薪资和工作的原因，有了跳槽的想法，想着出去面试一波，然而天天加班到晚上11点左右，根本没啥时间面试，请假还不给我请，很尴尬！索性我就接接外包公司的电话面试，看看自己有几斤几两，自己也收集 了一些面试资料，丰富一下自己。中间遇到过一些面试题，且面试中出现机率较高的提问，有些答的不是很好，今天开始我会陆陆续续整理出来分享一下，希望对自己跟看到这篇文章的人有所帮助，都能轻松拿offer。</strong></p>
-<h2 id="什么是Promise"><a href="#什么是Promise" class="headerlink" title="什么是Promise?"></a>什么是Promise?</h2><blockquote>
-<p>Promise是JS异步编程中的重要概念，异步抽象处理对象，是目前比较流行Javascript异步编程解决方案之一</p>
-</blockquote>
-<h3 id="有用过promise吗？请写出下列代码的执行结果，并写出你的理解思路："><a href="#有用过promise吗？请写出下列代码的执行结果，并写出你的理解思路：" class="headerlink" title="有用过promise吗？请写出下列代码的执行结果，并写出你的理解思路："></a>有用过promise吗？请写出下列代码的执行结果，并写出你的理解思路：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="number">200</span>; i++)&#123;</span><br><span class="line">                i = <span class="number">198</span> &amp;&amp; resolve();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">4</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">5</span>);</span><br><span class="line"><span class="comment">// 结果：2、3、5、4、1;</span></span><br></pre></td></tr></table></figure>
+          <p><strong>模块化开发在现代开发中已是必不可少的一部分，它大大提高了项目的可维护、可拓展和可协作性。通常，我们 在浏览器中使用 ES6 的模块化支持，在 Node 中使用 commonjs 的模块化支持。</strong></p>
+<p>在有 Babel 的情况下，我们可以直接使用 ES6 的模块化</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// file a.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="comment">// file b.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123;a, b&#125; <span class="keyword">from</span> <span class="string">'./a.js'</span></span><br><span class="line"><span class="keyword">import</span> XXX <span class="keyword">from</span> <span class="string">'./b.js'</span></span><br></pre></td></tr></table></figure>
           <p>
-            <a href="/2019/06/09/Interview/">
+            <a href="/2019/06/16/Modular/">
               阅读全文
             </a>
           </p>
@@ -210,16 +390,16 @@
 
     <div class="post-list-item article">
       <h3 class="article-header">
-        <a href="/2019/06/08/This/">
-  秒懂this
+        <a href="/2019/06/15/inherit/">
+  继承
 </a>
 
       </h3>
       
 
       <div class="article-info">
-        <a href="/2019/06/08/This/"><span class="article-date">
-  2019-06-08
+        <a href="/2019/06/15/inherit/"><span class="article-date">
+  2019-06-15
 </span>
 </a>
         
@@ -229,14 +409,10 @@
       </div>
       <div class="article-entry">
         
-          <p><strong>项目开发中经常会遇到 this 指向的问题，可能会纠结很久，今天将this 做个汇总，以便在日后的开发中少走弯路,而且在面试中也可能会被问及。</strong></p>
-<h1 id="注意：本文讲述只针对浏览器环境。"><a href="#注意：本文讲述只针对浏览器环境。" class="headerlink" title="注意：本文讲述只针对浏览器环境。"></a>注意：本文讲述只针对浏览器环境。</h1><h3 id="一：全局执行"><a href="#一：全局执行" class="headerlink" title="一：全局执行"></a>一：全局执行</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line"><span class="comment">//window</span></span><br></pre></td></tr></table></figure>
-
-<p>可以看出在全局作用域中 this 指向当前的全局对象 Window。</p>
-<h3 id="二：函数中执行"><a href="#二：函数中执行" class="headerlink" title="二：函数中执行"></a>二：函数中执行</h3><p>1.非严格模式中</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">func();</span><br><span class="line"><span class="comment">// Window</span></span><br></pre></td></tr></table></figure>
+          <p><strong>今天我们来说一下继承，在ES5中，我们可以使用如下方式解决继承的问题</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Super</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">Super.prototype.getNumber = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Sub</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">let</span> s = <span class="keyword">new</span> Sub()</span><br><span class="line">Sub.prototype = <span class="built_in">Object</span>.create(Super.prototype, &#123;</span><br><span class="line">  <span class="keyword">constructor</span>: &#123;</span><br><span class="line">    value: Sub,</span><br><span class="line">    enumerable: <span class="literal">false</span>,</span><br><span class="line">    writable: <span class="literal">true</span>,</span><br><span class="line">    configurable: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
           <p>
-            <a href="/2019/06/08/This/">
+            <a href="/2019/06/15/inherit/">
               阅读全文
             </a>
           </p>
@@ -255,16 +431,16 @@
 
     <div class="post-list-item article">
       <h3 class="article-header">
-        <a href="/2018/01/12/download/">
-  jquery-table2excel插件
+        <a href="/2019/06/14/prevent/">
+  防抖节流
 </a>
 
       </h3>
       
 
       <div class="article-info">
-        <a href="/2018/01/12/download/"><span class="article-date">
-  2018-01-12
+        <a href="/2019/06/14/prevent/"><span class="article-date">
+  2019-06-14
 </span>
 </a>
         
@@ -274,10 +450,13 @@
       </div>
       <div class="article-entry">
         
-          <p>前些天接触到一个需求，项目的后台需要将HTML表格内容导出到Excel中，心里第一念头是后台提供接口前台去调用就好。谁想项目经理要前台自行做处理。于是上网百度了些插件，感觉不怎么样。问了同事给推荐了几款。其中一款感觉不错。在这分享一下！</p>
-<p><strong>插件介绍</strong><br>jquery-table2excel是一款可以将HTML表格的内容导出到微软Excel电子表格中的jQuery插件。该插件可以根据你的需要导出表格中的内容，不需要的行可以不导出。它文件体积小，使用非常方便。</p>
+          <p><strong>今天我们来说一下防抖和节流，防抖与节流函数是一种最常用的 高频触发优化方式，能对性能有较大的帮助。</strong></p>
+<h2 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h2><p>防抖 (debounce): 将多次高频操作优化为只在最后一次执行，通常使用的场景是：用户输入，只需再输入完成后做一次输入校验即可。<br>我们先来看一个袖珍版的防抖理解一下防抖的实现：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// func是用户传入需要防抖的函数</span></span><br><span class="line"><span class="comment">// wait是等待时间</span></span><br><span class="line"><span class="keyword">const</span> debounce = <span class="function">(<span class="params">func, wait = <span class="number">50</span></span>) =&gt;</span> &#123;</span><br><span class="line"><span class="comment">// 缓存一个定时器id</span></span><br><span class="line">    <span class="keyword">let</span> timer = <span class="number">0</span></span><br><span class="line">    <span class="comment">// 这里返回的函数是每次用户实际调用的防抖函数</span></span><br><span class="line">    <span class="comment">// 如果已经设定过定时器了就清空上一次的定时器</span></span><br><span class="line">    <span class="comment">// 开始一个新的定时器，延迟执行用户传入的方法</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (timer) clearTimeout(timer)</span><br><span class="line">        timer = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">            func.apply(<span class="keyword">this</span>, args)</span><br><span class="line">        &#125;, wait)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 不难看出如果用户调用该函数的间隔小于wait的情况下，上一次的时间还未到就被清除了，并不会执行函数</span></span><br></pre></td></tr></table></figure>
+
+<p>这是一个简单版的防抖，但是有缺陷，这个防抖只能在最后调用。一般的防抖会有immediate选项，表示是否立即调用。这两者的区别，举个栗子来说：</p>
           <p>
-            <a href="/2018/01/12/download/">
+            <a href="/2019/06/14/prevent/">
               阅读全文
             </a>
           </p>
@@ -296,16 +475,16 @@
 
     <div class="post-list-item article">
       <h3 class="article-header">
-        <a href="/2018/01/08/APlayer/">
-  Hexo音乐播放器
+        <a href="/2019/06/13/Darkcopy/">
+  对象的拷贝
 </a>
 
       </h3>
       
 
       <div class="article-info">
-        <a href="/2018/01/08/APlayer/"><span class="article-date">
-  2018-01-08
+        <a href="/2019/06/13/Darkcopy/"><span class="article-date">
+  2019-06-13
 </span>
 </a>
         
@@ -315,170 +494,13 @@
       </div>
       <div class="article-entry">
         
-          <h1 id="Hexo音乐播放完美支持https和多平台"><a href="#Hexo音乐播放完美支持https和多平台" class="headerlink" title="Hexo音乐播放完美支持https和多平台"></a>Hexo音乐播放完美支持https和多平台</h1><p>现在使用https的网站越来越多，像百度、淘宝等等都是如此<br>另外使用github搭建hexo的同学们，现在gh-pages已经强制要求全站https啦<br>这种网站格式一般为”<a href="https://xxx.github.io&quot;" target="_blank" rel="noopener">https://xxx.github.io&quot;</a><br>然后…发现网易云音乐已经不能正常使用了<br>由于网易云目前并不支持https，所以我们只能通过插件来实现音乐播放<br>这里需要使用到Aplayer</p>
+          <h2 id="深浅拷贝"><a href="#深浅拷贝" class="headerlink" title="深浅拷贝"></a>深浅拷贝</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">    age: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> b = a</span><br><span class="line">a.age = <span class="number">2</span></span><br><span class="line"><span class="built_in">console</span>.log(b.age) <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+<p>从上述例子中我们可以发现，如果给一个变量赋值一个对象，那么两者的值会是同一个引用，其中一方改变，另一方也会相应改变。<br>通常在开发中我们不希望出现这样的问题，我们可以使用浅拷贝来解决这个问题。</p>
+<p><strong>浅拷贝</strong><br>首先可以通过 Object.assign 来解决这个问题。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">    age: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">Object</span>.assign(&#123;&#125;, a)</span><br><span class="line">a.age = <span class="number">2</span></span><br><span class="line"><span class="built_in">console</span>.log(b.age) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
           <p>
-            <a href="/2018/01/08/APlayer/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
-
-  
-  
-    <div class="post-list">
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/12/20/Substr/">
-  IE8问题
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/12/20/Substr/"><span class="article-date">
-  2017-12-20
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p><strong>ie8下遍历字符串出现的bug</strong></p>
-          <p>
-            <a href="/2017/12/20/Substr/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
-
-  
-  
-    <div class="post-list">
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/12/13/toFixed/">
-  toFixed方法详解
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/12/13/toFixed/"><span class="article-date">
-  2017-12-13
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>最近做的项目涉及到金额的计算，有一种方式就是进行四舍五入的规则进行小数点后面的尾数处理，以前一直以为toFixed方法就是四舍五入的，直到测试测出金额计算的bug我才如梦初醒，才深究了下toFixed这个方法。<br>toFixed方法在IE10及以上里面是正常的四舍五入，但是别的浏览器里面就不一样了，它不是正常的四舍五入，比如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1.335</span>;  </span><br><span class="line"><span class="built_in">console</span>.log(a.toFixed(<span class="number">2</span>))  </span><br><span class="line"><span class="comment">// IE         1.34  </span></span><br><span class="line"><span class="comment">//chorme   1.33</span></span><br></pre></td></tr></table></figure>
-          <p>
-            <a href="/2017/12/13/toFixed/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
-
-  
-  
-    <div class="post-list">
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/12/13/Input/">
-  阻止浏览器记住密码功能干扰表单填充
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/12/13/Input/"><span class="article-date">
-  2017-12-13
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <h2 id="我知道有4种方法，具体可以详细的去试试看："><a href="#我知道有4种方法，具体可以详细的去试试看：" class="headerlink" title="我知道有4种方法，具体可以详细的去试试看："></a>我知道有4种方法，具体可以详细的去试试看：</h2>
-          <p>
-            <a href="/2017/12/13/Input/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
-
-  
-  
-    <div class="post-list">
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/12/11/compatible/">
-  IE6浏览器常见的bug,缺陷的解决办法
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/12/11/compatible/"><span class="article-date">
-  2017-12-11
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p><strong>IE6不支持min-height，解决办法使用css hack：</strong><br>    .target {<br>        min-height: 100px;<br>        height: auto !important;<br>        height: 100px;   // IE6下内容高度超过会自动扩展高度<br>    }<br><strong>ol内li的序号全为1，不递增。解决方法：为li设置样式display: list-item;</strong></p>
-          <p>
-            <a href="/2017/12/11/compatible/">
+            <a href="/2019/06/13/Darkcopy/">
               阅读全文
             </a>
           </p>
@@ -493,7 +515,7 @@
 
 
   <div class="pagination">
-    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
   </div>
 
 

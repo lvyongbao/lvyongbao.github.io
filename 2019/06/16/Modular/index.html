@@ -13,14 +13,17 @@
   
 </title>
 
+<meta name="description" content="模块化开发在现代开发中已是必不可少的一部分，它大大提高了项目的可维护、可拓展和可协作性。通常，我们 在浏览器中使用 ES6 的模块化支持，在 Node 中使用 commonjs 的模块化支持。 在有 Babel 的情况下，我们可以直接使用 ES6 的模块化 12345678// file a.jsexport function a() &amp;#123;&amp;#125;export function b()">
 <meta property="og:type" content="article">
 <meta property="og:title" content="模块化">
 <meta property="og:url" content="http://yoursite.com/2019/06/16/Modular/index.html">
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:description" content="模块化开发在现代开发中已是必不可少的一部分，它大大提高了项目的可维护、可拓展和可协作性。通常，我们 在浏览器中使用 ES6 的模块化支持，在 Node 中使用 commonjs 的模块化支持。 在有 Babel 的情况下，我们可以直接使用 ES6 的模块化 12345678// file a.jsexport function a() &amp;#123;&amp;#125;export function b()">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-16T11:38:45.834Z">
+<meta property="og:updated_time" content="2019-06-24T11:08:26.014Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模块化">
+<meta name="twitter:description" content="模块化开发在现代开发中已是必不可少的一部分，它大大提高了项目的可维护、可拓展和可协作性。通常，我们 在浏览器中使用 ES6 的模块化支持，在 Node 中使用 commonjs 的模块化支持。 在有 Babel 的情况下，我们可以直接使用 ES6 的模块化 12345678// file a.jsexport function a() &amp;#123;&amp;#125;export function b()">
 
 
   <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
@@ -92,7 +95,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -126,7 +129,20 @@
 
   </div>
   <div class="article-entry">
-    
+    <p><strong>模块化开发在现代开发中已是必不可少的一部分，它大大提高了项目的可维护、可拓展和可协作性。通常，我们 在浏览器中使用 ES6 的模块化支持，在 Node 中使用 commonjs 的模块化支持。</strong></p>
+<p>在有 Babel 的情况下，我们可以直接使用 ES6 的模块化</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// file a.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="comment">// file b.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123;a, b&#125; <span class="keyword">from</span> <span class="string">'./a.js'</span></span><br><span class="line"><span class="keyword">import</span> XXX <span class="keyword">from</span> <span class="string">'./b.js'</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+<p>CommonJs 是 Node 独有的规范，浏览器中使用就需要用到 Browserify 解析了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    a: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// or</span></span><br><span class="line">exports.a = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// b.js</span></span><br><span class="line"><span class="keyword">var</span> <span class="built_in">module</span> = <span class="built_in">require</span>(<span class="string">'./a.js'</span>)</span><br><span class="line"><span class="built_in">module</span>.a <span class="comment">// -&gt; log 1</span></span><br></pre></td></tr></table></figure>
+
+<p>在上述代码中，module.exports 和 exports 很容易混淆，让我们来看看大致内部实现</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="built_in">module</span> = <span class="built_in">require</span>(<span class="string">'./a.js'</span>)</span><br><span class="line"><span class="built_in">module</span>.a</span><br><span class="line"><span class="comment">// 这里其实就是包装了一层立即执行函数，这样就不会污染全局变量了，</span></span><br><span class="line"><span class="comment">// 重要的是 module 这里，module 是 Node 独有的一个变量</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    a: <span class="number">1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 基本实现</span></span><br><span class="line"><span class="keyword">var</span> <span class="built_in">module</span> = &#123;</span><br><span class="line">  exports: &#123;&#125; <span class="comment">// exports 就是个空对象</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 这个是为什么 exports 和 module.exports 用法相似的原因</span></span><br><span class="line"><span class="keyword">var</span> exports = <span class="built_in">module</span>.exports</span><br><span class="line"><span class="keyword">var</span> load = <span class="function"><span class="keyword">function</span> (<span class="params">module</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 导出的东西</span></span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line">    <span class="built_in">module</span>.exports = a</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">module</span>.exports</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>再来说说 module.exports 和 exports，用法其实是相似的，但是不能对 exports 直接赋值，不会有任何效果。</p>
+<h3 id="对于-CommonJS-和-ES6-中的模块化的两者区别是："><a href="#对于-CommonJS-和-ES6-中的模块化的两者区别是：" class="headerlink" title="对于 CommonJS 和 ES6 中的模块化的两者区别是："></a>对于 CommonJS 和 ES6 中的模块化的两者区别是：</h3><p>require支持 动态导入，import不支持，正在提案 (babel 下可支持)<br>require是 同步 导入，import属于 异步 导入<br>require是 值拷贝，导出值变化不会影响导入值；import指向 内存地址，导入值会随导出值而变化</p>
+
   </div>
   <footer class="article-footer">
     
