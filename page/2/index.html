@@ -327,7 +327,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- http:<span class="comment">//www.domain.com?name=&lt;script&gt;alert(1)&lt;/script&gt; --&gt;</span></span><br><span class="line">&lt;div&gt;&#123;&#123;name&#125;&#125;&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>上述 URL 输入可能会将 HTML 改为</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;<span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">alert(1)</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
           <p>
             <a href="/2019/06/17/Safety/">
               阅读全文
