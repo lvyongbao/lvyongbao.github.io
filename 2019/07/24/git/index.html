@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
 <meta property="og:description" content="记录一下git命令的一些用法 基础Git是一个命令行实用程序的集合，它会跟踪和记录文件中的更改（通常是源代码，但是可以跟踪任何你想要的文件）。有了它，你可以恢复项目的旧版本，比较，分析，合并更改等操作。这个过程被称为版本控制。有许多版本控制系统可以完成这项工作。你可能听说过其中的一些–SVN，Mercurial，Perforce，CVS，Bitkeeper等等。Git是分散的，这意味着它不依赖于中">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-24T11:53:29.184Z">
+<meta property="og:updated_time" content="2019-07-25T10:56:13.347Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 命令">
 <meta name="twitter:description" content="记录一下git命令的一些用法 基础Git是一个命令行实用程序的集合，它会跟踪和记录文件中的更改（通常是源代码，但是可以跟踪任何你想要的文件）。有了它，你可以恢复项目的旧版本，比较，分析，合并更改等操作。这个过程被称为版本控制。有许多版本控制系统可以完成这项工作。你可能听说过其中的一些–SVN，Mercurial，Perforce，CVS，Bitkeeper等等。Git是分散的，这意味着它不依赖于中">
@@ -95,7 +95,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">30</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">31</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -206,7 +206,8 @@
 </blockquote>
 <p>这将创建一个新的提交，其中包含来自暂存区域的所有更改（添加hello.txt）。<br>该-m “Initial commmit”部分是用户自定义的描述，总结了在该提交中所做的更改。<br>经常提交并总是编写有意义的提交消息，被认为一个开发者的好习惯。</p>
 <h1 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h1><p>现在我们的提交是本地的 - 它只存在于.git文件夹中。虽然本地存储库本身是有用的，但在大多数情况下，我们都希望共享我们的工作并将其部署到服务器或存储库托管服务。</p>
-<h2 id="1-连接到远程存储库-git-remote-add"><a href="#1-连接到远程存储库-git-remote-add" class="headerlink" title="1.连接到远程存储库 - git remote add"></a>1.连接到远程存储库 - git remote add</h2><p>为了上传东西到一个远程的响应，我们首先必须建立一个连接。<br>为了配合本文，我们的存储库的地址将是<a href="https://github.com/Tamic/novate。" target="_blank" rel="noopener">https://github.com/Tamic/novate。</a><br>我们建议放在在GitHub，BitBucket或任何其他服务中创建自己的空存储库。<br>注册和设置可能需要等待一段时间，但所有服务都提供了很好的分步指南文档来帮助你。</p>
+<h2 id="1-连接到远程存储库-git-remote-add"><a href="#1-连接到远程存储库-git-remote-add" class="headerlink" title="1.连接到远程存储库 - git remote add"></a>1.连接到远程存储库 - git remote add</h2><p>为了上传东西到一个远程的响应，我们首先必须建立一个连接。<br>为了配合本文，我们的存储库的地址将是<code>https://github.com/Tamic/novate</code>。
+我们建议放在在GitHub，BitBucket或任何其他服务中创建自己的空存储库。<br>注册和设置可能需要等待一段时间，但所有服务都提供了很好的分步指南文档来帮助你。</p>
 <p>要将我们的本地存储库与GitHub上的存储库连接起来，我们在终端中执行以下行：<br>文件：</p>
 <p>连接到远程服务器</p>
 <blockquote>
