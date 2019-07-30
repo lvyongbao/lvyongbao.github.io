@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">31</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -123,6 +123,46 @@
 
     <div class="post-list-item article">
       <h3 class="article-header">
+        <a href="/2019/07/04/Judge/">
+  判断数组
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/07/04/Judge/"><span class="article-date">
+  2019-07-04
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>之前有讲过数组去重的方法，今天说一下如何判断是否为空数组和数组的一些方法。话不多说直接上代码！</p>
+<p><strong>如何判断是否为空数组：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(arr) &amp;&amp; arr.length === <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'是空数组'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Array.isArray是ES5提供的，如果不支持。用下面的方案。</span></span><br><span class="line"><span class="keyword">if</span> (!<span class="built_in">Array</span>.isArray) &#123;</span><br><span class="line">    <span class="built_in">Array</span>.isArray = <span class="function"><span class="keyword">function</span>(<span class="params">arg</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(arg) === <span class="string">'[object Array]'</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/07/04/Judge/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
         <a href="/2019/07/03/ajax/">
   ajax
 </a>
@@ -142,7 +182,20 @@
       </div>
       <div class="article-entry">
         
-          
+          <h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><p>Ajax 全称是 asynchronous javascript and xml，并不是新的编程语言，可以说是已有技术的组合，主要用来实现客户端与服务器端的异步通信效果，实现页面的局部刷新，从而创建快速动态网页的技术。</p>
+<h2 id="Ajax过程"><a href="#Ajax过程" class="headerlink" title="Ajax过程"></a>Ajax过程</h2><ul>
+<li>创建XMLHttpRequest对象,也就是创建一个异步调用对象</li>
+<li>创建一个新的HTTP请求,并指定其请求的方法、URL及验证信息</li>
+<li>设置响应 HTTP 请求状态变化的函数</li>
+<li>发送 HTTP 请求</li>
+<li>获取异步调用返回的数据</li>
+<li>使用 JavaScript 和 DOM 实现局部刷新</li>
+</ul>
+          <p>
+            <a href="/2019/07/03/ajax/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -495,56 +548,6 @@
 
 <p><strong>设置 CORS: Access-Control-Allow-Origin：*</strong><br><strong>postMessage</strong></p>
 <p><strong>nginx反向代理</strong></p>
-
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/06/19/storage/">
-  存储
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2019/06/19/storage/"><span class="article-date">
-  2019-06-19
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>我们经常需要对业务中的一些数据进行存储，通常可以分为 短暂性存储 和 持久性储存。</p>
-<p>短暂性的时候，我们只需要将数据存在内存中，只在运行时可用</p>
-<p>持久性存储，可以分为 浏览器端 与 服务器端</p>
-<h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器:"></a>浏览器:</h2><blockquote>
-<ul>
-<li>cookie: 通常用于存储用户身份，登录状态等</li>
-<li>http 中自动携带， 体积上限为 4K， 可自行设置过期时间</li>
-<li>localStorage / sessionStorage: 长久储存/窗口关闭删除， 体积限制为 4~5M</li>
-<li>indexDB</li>
-</ul>
-</blockquote>
-<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器:"></a>服务器:</h2><blockquote>
-<ul>
-<li>分布式缓存 redis</li>
-<li>数据库</li>
-</ul>
-</blockquote>
 
         
       </div>

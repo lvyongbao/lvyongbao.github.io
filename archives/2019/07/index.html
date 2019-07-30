@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">31</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -118,6 +118,48 @@
           <h1><a href="/archives/2019" class="archive-year">2019</a></h1>
         </div>
         <div class="post-list">
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/07/27/iconfont/">
+  计算制作iconfont图标
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/07/27/iconfont/"><span class="article-date">
+  2019-07-27
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>网站页面上会用到各种小图标，前端以前制作页面的时候，会将这些图片一个个切下来，通过标签设置backgroud使用，这样做会导致请求过多，造成性能瓶颈。后来有人就发明了css sprite(雪碧图)，将这些图标合并到一个图片上，然后通过backgroud-position定位使用，好处是显而易见的，请求瞬间就降低了，图片集中起来也方便维护。</p>
+<p>随着项目的庞大，图标也越来越多，然后不停的往雪碧图里塞，很多图标长的都差不多，有些仅仅是颜色或者大小不同，这导致了雪碧图越来越庞大变得不好维护，如下图：</p>
+<p><img src="/images/cc/2019072801.png" alt="avatar"></p>
+<p>有时候如果前端不注意修改了雪碧图的尺寸或者不小心挪动了其它图标的位置，就会导致某些图标显示错位。</p>
+<p>随着时代的发展，后来就兴起了字体图标，不仅兼容低版本IE而且性能和易用性上也非常好。字体图标库有很多，国外的有icomoon、Font-Awesome，国内的有iconfont，我们公司就是使用的阿里的iconfont，不过一般情况下不用我们前端自己制作，这些由设计师帮我们完成，前端只需要下载使用即可，当然如果设计师忘记了，在急需使用的情况下可以自己制作，下面就介绍一下如何制作字体图标。<br>设计图中的图标有可能是矢量的也有可能是位图，制作字体图标只能是矢量图，因此需要将位图转换为矢量图再制作，需要用到Photoshop(PS)和Illustrator(AI)以及从iconfont官网提供的图标模版。</p>
+          <p>
+            <a href="/2019/07/27/iconfont/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
     
   
 
@@ -523,46 +565,6 @@
 </ul>
 </blockquote>
 
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/07/04/Judge/">
-  判断数组
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2019/07/04/Judge/"><span class="article-date">
-  2019-07-04
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>之前有讲过数组去重的方法，今天说一下如何判断是否为空数组和数组的一些方法。话不多说直接上代码！</p>
-<p><strong>如何判断是否为空数组：</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(arr) &amp;&amp; arr.length === <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'是空数组'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Array.isArray是ES5提供的，如果不支持。用下面的方案。</span></span><br><span class="line"><span class="keyword">if</span> (!<span class="built_in">Array</span>.isArray) &#123;</span><br><span class="line">    <span class="built_in">Array</span>.isArray = <span class="function"><span class="keyword">function</span>(<span class="params">arg</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(arg) === <span class="string">'[object Array]'</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          <p>
-            <a href="/2019/07/04/Judge/">
-              阅读全文
-            </a>
-          </p>
         
       </div>
     </div>
