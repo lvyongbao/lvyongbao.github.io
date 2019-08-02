@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">32</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">33</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -316,7 +316,7 @@
       <div class="article-entry">
         
           <p>在日常的项目开发中经常出现却容易被忽略的JavaScript小技巧，今天列举几个学习一下。</p>
-<p>##1、截取数组<br>如果您想从数组的末尾删除值，有比使用splice()更快的替代方法。</p>
+<h2 id="1、截取数组"><a href="#1、截取数组" class="headerlink" title="1、截取数组"></a>1、截取数组</h2><p>如果您想从数组的末尾删除值，有比使用splice()更快的替代方法。</p>
 <p>例如，如果你知道原始数组的长度，就可以通过重新定义它的length属性来实现截取。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</span><br><span class="line">array.length = <span class="number">4</span>;</span><br><span class="line"><span class="built_in">console</span>.log(array); <span class="comment">// Result: [0, 1, 2, 3]</span></span><br></pre></td></tr></table></figure>
 
