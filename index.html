@@ -332,15 +332,15 @@
 
     <div class="post-list-item article">
       <h3 class="article-header">
-        <a href="/2019/07/14/skill/">
-  javascript的一些小技巧
+        <a href="/2019/07/14/jsskill/">
+  JS中的一些骚操作
 </a>
 
       </h3>
       
 
       <div class="article-info">
-        <a href="/2019/07/14/skill/"><span class="article-date">
+        <a href="/2019/07/14/jsskill/"><span class="article-date">
   2019-07-14
 </span>
 </a>
@@ -351,15 +351,12 @@
       </div>
       <div class="article-entry">
         
-          <p>在日常的项目开发中经常出现却容易被忽略的JavaScript小技巧，今天列举几个学习一下。</p>
-<h2 id="1、截取数组"><a href="#1、截取数组" class="headerlink" title="1、截取数组"></a>1、截取数组</h2><p>如果您想从数组的末尾删除值，有比使用splice()更快的替代方法。</p>
-<p>例如，如果你知道原始数组的长度，就可以通过重新定义它的length属性来实现截取。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</span><br><span class="line">array.length = <span class="number">4</span>;</span><br><span class="line"><span class="built_in">console</span>.log(array); <span class="comment">// Result: [0, 1, 2, 3]</span></span><br></pre></td></tr></table></figure>
-
-<p>这是一个特别简洁的解决方案。但是，slice()方法的运行时更快。如果速度是你的主要目标，考虑使用下面的方式。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</span><br><span class="line">array = array.slice(<span class="number">0</span>, <span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(array); <span class="comment">// Result: [0, 1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+          <h2 id="1、类型强制转换"><a href="#1、类型强制转换" class="headerlink" title="1、类型强制转换"></a>1、类型强制转换</h2><p><strong>1.1 string强制转换为数字</strong></p>
+<p>之前我们有说过用+来转化字符串为数字，今天在分享一种，可以用 *1来转化为数字(实际上是调用 .valueOf方法)</p>
+<p>然后使用 Number.isNaN来判断是否为 NaN，或者使用 a!==a 来判断是否为 NaN，因为 NaN!==NaN</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'32'</span> * <span class="number">1</span>            <span class="comment">// 32</span></span><br><span class="line"><span class="string">'ds'</span> * <span class="number">1</span>            <span class="comment">// NaN</span></span><br><span class="line"><span class="literal">null</span> * <span class="number">1</span>            <span class="comment">// 0</span></span><br><span class="line"><span class="literal">undefined</span> * <span class="number">1</span>    <span class="comment">// NaN</span></span><br><span class="line"><span class="number">1</span>  * &#123; <span class="attr">valueOf</span>: <span class="function"><span class="params">()</span>=&gt;</span><span class="string">'3'</span> &#125;        <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
           <p>
-            <a href="/2019/07/14/skill/">
+            <a href="/2019/07/14/jsskill/">
               阅读全文
             </a>
           </p>
@@ -378,15 +375,15 @@
 
     <div class="post-list-item article">
       <h3 class="article-header">
-        <a href="/2019/07/13/calculate/">
-  计算
+        <a href="/2019/07/13/skill/">
+  javascript的一些小技巧
 </a>
 
       </h3>
       
 
       <div class="article-info">
-        <a href="/2019/07/13/calculate/"><span class="article-date">
+        <a href="/2019/07/13/skill/"><span class="article-date">
   2019-07-13
 </span>
 </a>
@@ -397,7 +394,18 @@
       </div>
       <div class="article-entry">
         
-          
+          <p>在日常的项目开发中经常出现却容易被忽略的JavaScript小技巧，今天列举几个学习一下。</p>
+<h2 id="1、截取数组"><a href="#1、截取数组" class="headerlink" title="1、截取数组"></a>1、截取数组</h2><p>如果您想从数组的末尾删除值，有比使用splice()更快的替代方法。</p>
+<p>例如，如果你知道原始数组的长度，就可以通过重新定义它的length属性来实现截取。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</span><br><span class="line">array.length = <span class="number">4</span>;</span><br><span class="line"><span class="built_in">console</span>.log(array); <span class="comment">// Result: [0, 1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+
+<p>这是一个特别简洁的解决方案。但是，slice()方法的运行时更快。如果速度是你的主要目标，考虑使用下面的方式。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</span><br><span class="line">array = array.slice(<span class="number">0</span>, <span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(array); <span class="comment">// Result: [0, 1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/07/13/skill/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
