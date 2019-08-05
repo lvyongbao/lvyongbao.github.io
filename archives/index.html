@@ -147,33 +147,11 @@
 
 <p>简写为：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> answer = x &gt; <span class="number">10</span> ? <span class="string">'greater than 10'</span> : <span class="string">'less than 10'</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2、循环语句"><a href="#2、循环语句" class="headerlink" title="2、循环语句"></a>2、循环语句</h2><p>当使用纯 JavaScript（不依赖外部库，如 jQuery 或 lodash）时，下面的简写会非常有用。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; allImgs.length; i++)</span><br></pre></td></tr></table></figure>
-
-<p>简写为：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> index <span class="keyword">of</span> allImgs)</span><br></pre></td></tr></table></figure>
-
-<p>下面是遍历数组 forEach 的简写示例：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">logArrayElements</span>(<span class="params">element, index, array</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"a["</span> + index + <span class="string">"] = "</span> + element);</span><br><span class="line">&#125;</span><br><span class="line">[<span class="number">2</span>, <span class="number">5</span>, <span class="number">9</span>].forEach(logArrayElements);</span><br><span class="line"><span class="comment">// logs:</span></span><br><span class="line"><span class="comment">// a[0] = 2</span></span><br><span class="line"><span class="comment">// a[1] = 5</span></span><br><span class="line"><span class="comment">// a[2] = 9</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="3、声明变量"><a href="#3、声明变量" class="headerlink" title="3、声明变量"></a>3、声明变量</h2><p>在函数开始之前，对变量进行赋值是一种很好的习惯。在申明多个变量时：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x;</span><br><span class="line"><span class="keyword">let</span> y;</span><br><span class="line"><span class="keyword">let</span> z = <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
-
-<p>可以简写为：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x, y, z=<span class="number">3</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="4、if-语句"><a href="#4、if-语句" class="headerlink" title="4、if 语句"></a>4、if 语句</h2><p>在使用 if 进行基本判断时，可以省略赋值运算符。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (likeJavaScript === <span class="literal">true</span>)</span><br></pre></td></tr></table></figure>
-
-<p>简写为：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (likeJavaScript)</span><br></pre></td></tr></table></figure>
-
-<h2 id="5、十进制数"><a href="#5、十进制数" class="headerlink" title="5、十进制数"></a>5、十进制数</h2><p>可以使用科学计数法来代替较大的数据，如可以将 10000000 简写为 1e7。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++) &#123; &#125;</span><br></pre></td></tr></table></figure>
-
-<p>简写为：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1e7</span>; i++) &#123; &#125;</span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/08/05/logogram/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -207,7 +185,16 @@
       <div class="article-entry">
         
           <p><strong>绝大部分人在学习编程的道路上都选择自学，但都苦于找不到适合自己的学习资源，今天为大家介绍写免费的自学编程的网站，为大家提供一些帮助。</strong></p>
-
+<h2 id="1、菜鸟教程"><a href="#1、菜鸟教程" class="headerlink" title="1、菜鸟教程"></a>1、菜鸟教程</h2><p>顾名思义，菜鸟教程就是专为菜鸟准备的编程学习网站，每门语言的教程都从最基础的教起，而且内容涉及面广从前端到后端，从服务端到移动端、数据库等知识都可以在这个网站找到。</p>
+<p>地址：<a href="https://www.runoob.com/" target="_blank" rel="noopener">https://www.runoob.com/</a></p>
+<h2 id="2、w3school"><a href="#2、w3school" class="headerlink" title="2、w3school"></a>2、w3school</h2><p>很多人自学编程，都会通过w3school，你可以通过它学习所有的网站建设基础教程，从基础的 HTML、CSS到高级的JavaScript、 XML、SQL、JS、PHP 和 ASP.NET等。</p>
+<p>以JavaScript教程为例，w3school上的JavaScript教程包含基础和高级部分，涵盖了JS基础概念、JS表单、JS对象、JS函数等知识，这样免费的课程作为基础入门足够了。</p>
+<p>地址：<a href="https://www.w3school.com.cn" target="_blank" rel="noopener">https://www.w3school.com.cn</a></p>
+          <p>
+            <a href="/2019/08/02/website/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -244,7 +231,6 @@
 <p>随着项目的庞大，图标也越来越多，然后不停的往雪碧图里塞，很多图标长的都差不多，有些仅仅是颜色或者大小不同，这导致了雪碧图越来越庞大变得不好维护，如下图：</p>
 <p><img src="/images/cc/2019072801.png" alt="avatar"></p>
 <p>有时候如果前端不注意修改了雪碧图的尺寸或者不小心挪动了其它图标的位置，就会导致某些图标显示错位。</p>
-<p>随着时代的发展，后来就兴起了字体图标，不仅兼容低版本IE而且性能和易用性上也非常好。字体图标库有很多，国外的有icomoon、Font-Awesome，国内的有iconfont，我们公司就是使用的阿里的iconfont，不过一般情况下不用我们前端自己制作，这些由设计师帮我们完成，前端只需要下载使用即可，当然如果设计师忘记了，在急需使用的情况下可以自己制作，下面就介绍一下如何制作字体图标。<br>设计图中的图标有可能是矢量的也有可能是位图，制作字体图标只能是矢量图，因此需要将位图转换为矢量图再制作，需要用到Photoshop(PS)和Illustrator(AI)以及从iconfont官网提供的图标模版。</p>
           <p>
             <a href="/2019/07/27/iconfont/">
               阅读全文
