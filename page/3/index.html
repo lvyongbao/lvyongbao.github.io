@@ -142,18 +142,6 @@
 <li>避免嵌套过深的数据结构，数据扁平化 有利于数据的读取和维护；</li>
 </ul>
 </blockquote>
-<p><strong>循环: 循环通常是编码性能的关键点；</strong><br>代码的性能问题会再循环中被指数倍放大；<br>最佳实践:</p>
-<blockquote>
-<ul>
-<li>尽可能 减少循环次数；</li>
-<li>减少遍历的数据量；</li>
-<li>完成目的后马上结束循环；</li>
-<li>避免在循环中执行大量的运算，避免重复计算，相同的执行结果应该使用缓存；</li>
-<li>js 中使用 倒序循环 会略微提升性能；</li>
-<li>尽量避免使用 for-in 循环，因为它会枚举原型对象，耗时大于普通循环；</li>
-</ul>
-</blockquote>
-<p><strong>条件流程性能: Map / Object &gt; switch &gt; if-else</strong></p>
           <p>
             <a href="/2019/06/21/property/">
               阅读全文
