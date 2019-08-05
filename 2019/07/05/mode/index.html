@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
 <meta property="og:description" content="1. typeof可以判断数据类型，它返回表示数据类型的字符串（返回结果只能包括number,boolean,string,function,object,undefined）；可以使用typeof判断变量是否存在（如if(typeof a!=”undefined”){…}）；Typeof 运算符的问题是无论引用的对象是什么类型    它都返回object 123typeof &amp;#123;&amp;#12">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-22T10:56:13.940Z">
+<meta property="og:updated_time" content="2019-08-05T11:58:58.582Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="判断数据类型的几种方式">
 <meta name="twitter:description" content="1. typeof可以判断数据类型，它返回表示数据类型的字符串（返回结果只能包括number,boolean,string,function,object,undefined）；可以使用typeof判断变量是否存在（如if(typeof a!=”undefined”){…}）；Typeof 运算符的问题是无论引用的对象是什么类型    它都返回object 123typeof &amp;#123;&amp;#12">
@@ -131,6 +131,8 @@
   <div class="article-entry">
     <h2 id="1-typeof"><a href="#1-typeof" class="headerlink" title="1. typeof"></a>1. typeof</h2><p>可以判断数据类型，它返回表示数据类型的字符串（返回结果只能包括number,boolean,string,function,object,undefined）；<br>可以使用typeof判断变量是否存在（如if(typeof a!=”undefined”){…}）；<br>Typeof 运算符的问题是无论引用的对象是什么类型    它都返回object</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> &#123;&#125; <span class="comment">// object</span></span><br><span class="line"><span class="keyword">typeof</span>  [<span class="number">1</span>,<span class="number">2</span>] <span class="comment">// object</span></span><br><span class="line"><span class="keyword">typeof</span> /\s/ <span class="comment">//object</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <h2 id="2-instanceof"><a href="#2-instanceof" class="headerlink" title="2.instanceof"></a>2.instanceof</h2><p>原理 因为A instanceof B 可以判断A是不是B的实例，返回一个布尔值，由构造类型判断出数据类型</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(arr <span class="keyword">instanceof</span> <span class="built_in">Array</span> ); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(date <span class="keyword">instanceof</span> <span class="built_in">Date</span> ); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(fn <span class="keyword">instanceof</span> <span class="built_in">Function</span> ); <span class="comment">// true</span></span><br><span class="line"><span class="comment">//注意： instanceof 后面一定要是对象类型，大小写不能写错，该方法试用一些条件选择或分支</span></span><br></pre></td></tr></table></figure>
