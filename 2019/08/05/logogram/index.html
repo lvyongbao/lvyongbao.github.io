@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
 <meta property="og:description" content="1、三目运算符下面是一个很好的例子，将一个完整的 if 语句，简写为一行代码。 1234567const x = 20;let answer;if (x &amp;gt; 10) &amp;#123;    answer = &apos;greater than 10&apos;;&amp;#125; else &amp;#123;    answer = &apos;less than 10&apos;;&amp;#125;  简写为： 1const answer = x">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-05T11:55:17.206Z">
+<meta property="og:updated_time" content="2019-08-12T12:12:18.897Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS简写技巧">
 <meta name="twitter:description" content="1、三目运算符下面是一个很好的例子，将一个完整的 if 语句，简写为一行代码。 1234567const x = 20;let answer;if (x &amp;gt; 10) &amp;#123;    answer = &apos;greater than 10&apos;;&amp;#125; else &amp;#123;    answer = &apos;less than 10&apos;;&amp;#125;  简写为： 1const answer = x">
@@ -163,6 +163,24 @@
 
 <p>简写为：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1e7</span>; i++) &#123; &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="6、变量赋值"><a href="#6、变量赋值" class="headerlink" title="6、变量赋值"></a>6、变量赋值</h2><p>当将一个变量的值赋给另一个变量时，首先需要确保原值不是 null、未定义的或空值。</p>
+<p>可以通过编写一个包含多个条件的判断语句来实现：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (variable1 !== <span class="literal">null</span> || variable1 !== <span class="literal">undefined</span> || variable1 !== <span class="string">''</span>) &#123;</span><br><span class="line">     <span class="keyword">let</span> variable2 = variable1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者简写为以下的形式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> variable2 = variable1  || <span class="string">'new'</span>;</span><br></pre></td></tr></table></figure>
+
+<p>可以将下面的代码粘贴到控制台中测试下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> variable1;</span><br><span class="line"><span class="keyword">let</span> variable2 = variable1  || <span class="string">''</span>;</span><br><span class="line"><span class="built_in">console</span>.log(variable2 === <span class="string">''</span>); <span class="comment">// prints true</span></span><br><span class="line">variable1 = <span class="string">'foo'</span>;</span><br><span class="line">variable2 = variable1  || <span class="string">''</span>;</span><br><span class="line"><span class="built_in">console</span>.log(variable2); <span class="comment">// prints foo</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="7、默认值赋值"><a href="#7、默认值赋值" class="headerlink" title="7、默认值赋值"></a>7、默认值赋值</h2><p>如果预期参数是 null 或未定义，则不需要写六行代码来分配默认值。我们可以只使用一个简短的逻辑运算符，只用一行代码就能完成相同的操作。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dbHost;</span><br><span class="line"><span class="keyword">if</span> (process.env.DB_HOST) &#123;</span><br><span class="line">  dbHost = process.env.DB_HOST;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  dbHost = <span class="string">'localhost'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>简写为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> dbHost = process.env.DB_HOST || <span class="string">'localhost'</span>;</span><br></pre></td></tr></table></figure>
+
+
   </div>
   <footer class="article-footer">
     
