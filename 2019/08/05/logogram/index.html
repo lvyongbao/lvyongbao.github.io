@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
 <meta property="og:description" content="1、三目运算符下面是一个很好的例子，将一个完整的 if 语句，简写为一行代码。 1234567const x = 20;let answer;if (x &amp;gt; 10) &amp;#123;    answer = &apos;greater than 10&apos;;&amp;#125; else &amp;#123;    answer = &apos;less than 10&apos;;&amp;#125;  简写为： 1const answer = x">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-12T12:12:18.897Z">
+<meta property="og:updated_time" content="2019-08-13T13:33:56.833Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS简写技巧">
 <meta name="twitter:description" content="1、三目运算符下面是一个很好的例子，将一个完整的 if 语句，简写为一行代码。 1234567const x = 20;let answer;if (x &amp;gt; 10) &amp;#123;    answer = &apos;greater than 10&apos;;&amp;#125; else &amp;#123;    answer = &apos;less than 10&apos;;&amp;#125;  简写为： 1const answer = x">
@@ -179,6 +179,18 @@
 
 <p>简写为：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> dbHost = process.env.DB_HOST || <span class="string">'localhost'</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="8、对象属性"><a href="#8、对象属性" class="headerlink" title="8、对象属性"></a>8、对象属性</h2><p>ES6 提供了一个很简单的办法，来分配属性的对象。如果属性名与 key 名相同，则可以使用简写。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">x</span>:x, <span class="attr">y</span>:y &#125;;</span><br></pre></td></tr></table></figure>
+
+<p>简写为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; x, y &#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="9、箭头函数"><a href="#9、箭头函数" class="headerlink" title="9、箭头函数"></a>9、箭头函数</h2><p>经典函数很容易读写，但是如果把它们嵌套在其它函数中进行调用时，整个函数就会变得有些冗长和混乱。这时候可以使用箭头函数来简写：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'dabao'</span>, name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'jiaru'</span>)</span><br><span class="line">&#125;, <span class="number">2000</span>);</span><br><span class="line"></span><br><span class="line">list.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(item);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>简写为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sayHello = <span class="function"><span class="params">name</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'dabao'</span>, name);</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'jiaru'</span>), <span class="number">2000</span>);</span><br><span class="line">list.forEach(<span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">console</span>.log(item));</span><br></pre></td></tr></table></figure>
 
 
   </div>
