@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
 <meta property="og:description" content="1、三目运算符下面是一个很好的例子，将一个完整的 if 语句，简写为一行代码。 1234567const x = 20;let answer;if (x &amp;gt; 10) &amp;#123;    answer = &apos;greater than 10&apos;;&amp;#125; else &amp;#123;    answer = &apos;less than 10&apos;;&amp;#125;  简写为： 1const answer = x">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-13T13:33:56.833Z">
+<meta property="og:updated_time" content="2019-08-14T11:42:39.319Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS简写技巧">
 <meta name="twitter:description" content="1、三目运算符下面是一个很好的例子，将一个完整的 if 语句，简写为一行代码。 1234567const x = 20;let answer;if (x &amp;gt; 10) &amp;#123;    answer = &apos;greater than 10&apos;;&amp;#125; else &amp;#123;    answer = &apos;less than 10&apos;;&amp;#125;  简写为： 1const answer = x">
@@ -191,6 +191,19 @@
 
 <p>简写为：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sayHello = <span class="function"><span class="params">name</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'dabao'</span>, name);</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'jiaru'</span>), <span class="number">2000</span>);</span><br><span class="line">list.forEach(<span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">console</span>.log(item));</span><br></pre></td></tr></table></figure>
+
+<h2 id="10、隐式返回值"><a href="#10、隐式返回值" class="headerlink" title="10、隐式返回值"></a>10、隐式返回值</h2><p>返回值是我们通常用来返回函数最终结果的关键字。只有一个语句的箭头函数，可以隐式返回结果（函数必须省略括号（{ }），以便省略返回关键字）。</p>
+<p>要返回多行语句（例如对象文本），需要使用（）而不是{ }来包裹函数体。这样可以确保代码以单个语句的形式进行求值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">calcCircumference</span>(<span class="params">diameter</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.PI * diameter</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>简写为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">calcCircumference = <span class="function"><span class="params">diameter</span> =&gt;</span> (</span><br><span class="line">  <span class="built_in">Math</span>.PI * diameter;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h2 id="11、默认参数值"><a href="#11、默认参数值" class="headerlink" title="11、默认参数值"></a>11、默认参数值</h2><p>可以使用 if 语句来定义函数参数的默认值。ES6 中规定了可以在函数声明中定义默认值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">volume</span>(<span class="params">l, w, h</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (w === <span class="literal">undefined</span>)</span><br><span class="line">    w = <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">if</span> (h === <span class="literal">undefined</span>)</span><br><span class="line">    h = <span class="number">4</span>;</span><br><span class="line">  <span class="keyword">return</span> l * w * h;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>简写为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">volume = <span class="function">(<span class="params">l, w = <span class="number">3</span>, h = <span class="number">4</span> </span>) =&gt;</span> (l * w * h);</span><br><span class="line">volume(<span class="number">2</span>) <span class="comment">//output: 24</span></span><br></pre></td></tr></table></figure>
 
 
   </div>
