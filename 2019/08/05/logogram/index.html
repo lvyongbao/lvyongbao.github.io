@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
 <meta property="og:description" content="1、三目运算符下面是一个很好的例子，将一个完整的 if 语句，简写为一行代码。 1234567const x = 20;let answer;if (x &amp;gt; 10) &amp;#123;    answer = &apos;greater than 10&apos;;&amp;#125; else &amp;#123;    answer = &apos;less than 10&apos;;&amp;#125;  简写为： 1const answer = x">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-14T11:42:39.319Z">
+<meta property="og:updated_time" content="2019-08-15T12:16:30.081Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS简写技巧">
 <meta name="twitter:description" content="1、三目运算符下面是一个很好的例子，将一个完整的 if 语句，简写为一行代码。 1234567const x = 20;let answer;if (x &amp;gt; 10) &amp;#123;    answer = &apos;greater than 10&apos;;&amp;#125; else &amp;#123;    answer = &apos;less than 10&apos;;&amp;#125;  简写为： 1const answer = x">
@@ -204,6 +204,20 @@
 
 <p>简写为：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">volume = <span class="function">(<span class="params">l, w = <span class="number">3</span>, h = <span class="number">4</span> </span>) =&gt;</span> (l * w * h);</span><br><span class="line">volume(<span class="number">2</span>) <span class="comment">//output: 24</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="12、模板字符串"><a href="#12、模板字符串" class="headerlink" title="12、模板字符串"></a>12、模板字符串</h2><p>过去我们习惯了使用“+”将多个变量转换为字符串，但是有没有更简单的方法呢？</p>
+<p>ES6 提供了相应的方法，我们可以使用反引号和 $ { } 将变量合成一个字符串。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> welcome = <span class="string">'You have logged in as '</span> + first + <span class="string">' '</span> + last + <span class="string">'.'</span></span><br><span class="line"><span class="keyword">const</span> db = <span class="string">'http://'</span> + host + <span class="string">':'</span> + port + <span class="string">'/'</span> + database;</span><br></pre></td></tr></table></figure>
+
+<p>简写为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> welcome = <span class="string">`You have logged in as <span class="subst">$&#123;first&#125;</span> <span class="subst">$&#123;last&#125;</span>`</span>;</span><br><span class="line"><span class="keyword">const</span> db = <span class="string">`http://<span class="subst">$&#123;host&#125;</span>:<span class="subst">$&#123;port&#125;</span>/<span class="subst">$&#123;database&#125;</span>`</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="13、解构赋值"><a href="#13、解构赋值" class="headerlink" title="13、解构赋值"></a>13、解构赋值</h2><p>解构赋值是一种表达式，用于从数组或对象中快速提取属性值，并赋给定义的变量。</p>
+<p>在代码简写方面，解构赋值能达到很好的效果。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> observable = <span class="built_in">require</span>(<span class="string">'mobx/observable'</span>);</span><br><span class="line"><span class="keyword">const</span> action = <span class="built_in">require</span>(<span class="string">'mobx/action'</span>);</span><br><span class="line"><span class="keyword">const</span> runInAction = <span class="built_in">require</span>(<span class="string">'mobx/runInAction'</span>);</span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">this</span>.props.store;</span><br><span class="line"><span class="keyword">const</span> form = <span class="keyword">this</span>.props.form;</span><br><span class="line"><span class="keyword">const</span> loading = <span class="keyword">this</span>.props.loading;</span><br><span class="line"><span class="keyword">const</span> errors = <span class="keyword">this</span>.props.errors;</span><br><span class="line"><span class="keyword">const</span> entity = <span class="keyword">this</span>.props.entity;</span><br></pre></td></tr></table></figure>
+
+<p>简写为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; observable, action, runInAction &#125; <span class="keyword">from</span> <span class="string">'mobx'</span>;</span><br><span class="line"><span class="keyword">const</span> &#123; store, form, loading, errors, entity &#125; = <span class="keyword">this</span>.props;</span><br></pre></td></tr></table></figure>
 
 
   </div>
