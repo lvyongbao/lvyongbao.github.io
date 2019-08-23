@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
 <meta property="og:description" content="JSONP: 利用script标签不受跨域限制的特点，缺点是只能支持 get 请求 12345678910function jsonp(url, jsonpCallback, success) &amp;#123;  const script = document.createElement(&apos;script&apos;)  script.src = url  script.async = true  script.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-18T10:41:15.337Z">
+<meta property="og:updated_time" content="2019-08-23T05:33:32.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跨域">
 <meta name="twitter:description" content="JSONP: 利用script标签不受跨域限制的特点，缺点是只能支持 get 请求 12345678910function jsonp(url, jsonpCallback, success) &amp;#123;  const script = document.createElement(&apos;script&apos;)  script.src = url  script.async = true  script.">
@@ -95,7 +95,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">34</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">35</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -132,8 +132,7 @@
     <p><strong>JSONP: 利用script标签不受跨域限制的特点，缺点是只能支持 get 请求</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsonp</span>(<span class="params">url, jsonpCallback, success</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>)</span><br><span class="line">  script.src = url</span><br><span class="line">  script.async = <span class="literal">true</span></span><br><span class="line">  script.type = <span class="string">'text/javascript'</span></span><br><span class="line">  <span class="built_in">window</span>[jsonpCallback] = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    success &amp;&amp; success(data)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">document</span>.body.appendChild(script)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong>设置 CORS: Access-Control-Allow-Origin：*</strong><br><strong>postMessage</strong></p>
-<p><strong>nginx反向代理</strong></p>
+<p><strong>设置 CORS: Access-Control-Allow-Origin：</strong><br><strong>postMessage</strong><br><strong>nginx反向代理</strong></p>
 
   </div>
   <footer class="article-footer">
