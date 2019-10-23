@@ -9,21 +9,21 @@
 
 <title>
   
-    IE8问题
+    图片上传获取宽高的方法
   
 </title>
 
-<meta name="description" content="ie8下遍历字符串出现的bug">
+<meta name="description" content="想要获取图片的宽高首先要知道图片的url；一般图片上传UI组件或自己封装的组件都会获取到图片的url，知道url就好办了，上代码。 123456var Uploadimgurl = URL;//图片URL地址var img = new Image();//创建对象img.src = Uploadimgurl;//改变图片地址img.onload = function()&amp;#123;    cons">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IE8问题">
-<meta property="og:url" content="http://yoursite.com/2017/12/20/Substr/index.html">
+<meta property="og:title" content="图片上传获取宽高的方法">
+<meta property="og:url" content="http://yoursite.com/2019/08/25/Upload/index.html">
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
-<meta property="og:description" content="ie8下遍历字符串出现的bug">
+<meta property="og:description" content="想要获取图片的宽高首先要知道图片的url；一般图片上传UI组件或自己封装的组件都会获取到图片的url，知道url就好办了，上代码。 123456var Uploadimgurl = URL;//图片URL地址var img = new Image();//创建对象img.src = Uploadimgurl;//改变图片地址img.onload = function()&amp;#123;    cons">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-12T13:09:30.508Z">
+<meta property="og:updated_time" content="2019-10-22T07:43:50.381Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="IE8问题">
-<meta name="twitter:description" content="ie8下遍历字符串出现的bug">
+<meta name="twitter:title" content="图片上传获取宽高的方法">
+<meta name="twitter:description" content="想要获取图片的宽高首先要知道图片的url；一般图片上传UI组件或自己封装的组件都会获取到图片的url，知道url就好办了，上代码。 123456var Uploadimgurl = URL;//图片URL地址var img = new Image();//创建对象img.src = Uploadimgurl;//改变图片地址img.onload = function()&amp;#123;    cons">
 
 
   <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
@@ -110,17 +110,17 @@
       
         <div style="max-width: 1000px">
       
-          <article id="post-Substr" class="article article-type-post">
+          <article id="post-Upload" class="article article-type-post">
   
     <h1 class="article-header">
-      IE8问题
+      图片上传获取宽高的方法
     </h1>
   
   
 
   <div class="article-info">
     <span class="article-date">
-  2017-12-20
+  2019-08-25
 </span>
 
     
@@ -129,18 +129,16 @@
 
   </div>
   <div class="article-entry">
-    <p><strong>ie8下遍历字符串出现的bug</strong></p>
+    <p>想要获取图片的宽高首先要知道图片的url；一般图片上传UI组件或自己封装的组件都会获取到图片的url，知道url就好办了，上代码。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Uploadimgurl = URL;<span class="comment">//图片URL地址</span></span><br><span class="line"><span class="keyword">var</span> img = <span class="keyword">new</span> Image();<span class="comment">//创建对象</span></span><br><span class="line">img.src = Uploadimgurl;<span class="comment">//改变图片地址</span></span><br><span class="line">img.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(img.width + <span class="string">""</span> + img.height)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <a id="more"></a>
-<p>在主流浏览器及ie9+下，我们在遍历字符串时，浏览器会强制把该对象的类型转换为数组，但是在ie8下则不会，所以我们还是老老实实先转换为数组吧。<br>大家在不同浏览器下试试吧，解决方法就是加一句str.split(“”)，ie8下才会生效</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/jquery-1.11.3.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined">  </span></span><br><span class="line"><span class="undefined">    * &#123;padding: 0; margin: 0;&#125;  </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"q1"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"一段测试文字"</span> /&gt;</span>  </span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">  </span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> str = <span class="string">"测试文字"</span>;  </span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> str1 = <span class="string">"原文字"</span>;  </span></span><br><span class="line"><span class="javascript">    <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> str) &#123;  </span></span><br><span class="line"><span class="undefined">        str1 += str[i];  </span></span><br><span class="line"><span class="undefined">    &#125;  </span></span><br><span class="line"><span class="javascript">    $(<span class="string">"#q1"</span>).val(str1);  </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>字符串截取用substr在ie8下遇到的坑</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'hello world 6666'</span>;</span><br><span class="line">str.substr(<span class="number">-4</span>,<span class="number">4</span>);</span><br></pre></td></tr></table></figure>
+<p>要在图片加载完后就去获取宽高，不然输出的话是0。</p>
+<p>也可以用计时器循环检测来实现，只要图片宽高任意一项大于0，就可获取到图片的宽高；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 记录当前时间戳</span></span><br><span class="line"><span class="keyword">var</span> time = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime()</span><br><span class="line"><span class="comment">// 图片地址 后面加时间戳是为了避免缓存</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="string">'url'</span>+time</span><br><span class="line"><span class="comment">// 创建对象</span></span><br><span class="line"><span class="keyword">var</span> imgObj = <span class="keyword">new</span> Image()</span><br><span class="line"><span class="comment">// 改变图片的src</span></span><br><span class="line">imgObj.src = url</span><br><span class="line"><span class="comment">// 定时执行获取宽高</span></span><br><span class="line"><span class="keyword">var</span> check = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> <span class="comment">// 只要任何一方大于0</span></span><br><span class="line"> <span class="comment">// 表示已经服务器已经返回宽高</span></span><br><span class="line">    <span class="keyword">if</span> (imgObj.width &gt; <span class="number">0</span> || imgObj.height &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(imgObj.width, imgObj.height)</span><br><span class="line">        clearInterval(set);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> set = setInterval(check,<span class="number">40</span>)</span><br></pre></td></tr></table></figure>
 
-<p>正确返回应该是：6666<br>但是ie8下substr参数不支持负数，返回的是：hell，可以手动试下。<br>解决的办法就是改用substring方法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.substring(str.length<span class="number">-4</span>);</span><br></pre></td></tr></table></figure>
-
-<p>这样ie8下就会正常返回：6666</p>
+<p>这种方法比onload方法执行效率会快一些.</p>
 
   </div>
   <footer class="article-footer">
