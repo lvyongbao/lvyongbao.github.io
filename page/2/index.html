@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">37</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">38</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -107,6 +107,49 @@
         <div style="max-width: 1000px">
       
           
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/07/14/jsskill/">
+  JS中的一些骚操作
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/07/14/jsskill/"><span class="article-date">
+  2019-07-14
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h2 id="1、类型强制转换"><a href="#1、类型强制转换" class="headerlink" title="1、类型强制转换"></a>1、类型强制转换</h2><p><strong>1.1 string强制转换为数字</strong></p>
+<p>之前我们有说过用+来转化字符串为数字，今天在分享一种，可以用 *1来转化为数字(实际上是调用 .valueOf方法)</p>
+<p>然后使用 Number.isNaN来判断是否为 NaN，或者使用 a!==a 来判断是否为 NaN，因为 NaN!==NaN</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'32'</span> * <span class="number">1</span>            <span class="comment">// 32</span></span><br><span class="line"><span class="string">'ds'</span> * <span class="number">1</span>            <span class="comment">// NaN</span></span><br><span class="line"><span class="literal">null</span> * <span class="number">1</span>            <span class="comment">// 0</span></span><br><span class="line"><span class="literal">undefined</span> * <span class="number">1</span>    <span class="comment">// NaN</span></span><br><span class="line"><span class="number">1</span>  * &#123; <span class="attr">valueOf</span>: <span class="function"><span class="params">()</span>=&gt;</span><span class="string">'3'</span> &#125;        <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/07/14/jsskill/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
 
   
   
@@ -512,60 +555,6 @@
         
           <p><strong>在实际项目当中，用户登录网站输入账号密码，当用户选择记住密码的时候，下次自动填充表单的背景变成了黄色，影响了视觉体验。这个是可以修改的。下面给出方案：</strong></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 方法1</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-webkit-autofill</span>, <span class="selector-tag">textarea</span><span class="selector-pseudo">:-webkit-autofill</span>, <span class="selector-tag">select</span><span class="selector-pseudo">:-webkit-autofill</span> &#123;</span><br><span class="line">    background-color: #fff; // 设置成元素原本的颜色</span><br><span class="line">    <span class="selector-tag">background-image</span>: <span class="selector-tag">none</span>;</span><br><span class="line">    <span class="selector-tag">color</span>: <span class="selector-tag">rgb</span>(0, 0, 0);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 方法2</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-webkit-autofill</span> </span><br><span class="line">&#123;</span><br><span class="line">    -webkit-box-shadow: 0px 0 3px 100px #ccc inset; // 背景色</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
-
-  
-  
-    <div class="post-list">
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/06/27/CSS/">
-  CSS
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2019/06/27/CSS/"><span class="article-date">
-  2019-06-27
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <h2 id="1-盒模型"><a href="#1-盒模型" class="headerlink" title="1. 盒模型"></a>1. 盒模型</h2><p>页面渲染时，dom 元素所采用的 布局模型。可通过box-sizing进行设置。根据计算宽高的区域可分为：</p>
-<blockquote>
-<ul>
-<li>content-box (W3C 标准盒模型)</li>
-<li>border-box (IE 盒模型)</li>
-<li>padding-box</li>
-<li>margin-box (浏览器未实现)</li>
-</ul>
-</blockquote>
-<h2 id="2-BFC"><a href="#2-BFC" class="headerlink" title="2. BFC"></a>2. BFC</h2><p><strong>块级格式化上下文，</strong>是一个独立的渲染区域，让处于 BFC 内部的元素与外部的元素相互隔离，使内外元素的定位不会相互影响。</p>
-<blockquote>
-<ul>
-<li>IE下为 Layout，可通过 zoom:1 触发</li>
-</ul>
-</blockquote>
-          <p>
-            <a href="/2019/06/27/CSS/">
-              阅读全文
-            </a>
-          </p>
         
       </div>
     </div>
