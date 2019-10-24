@@ -13,17 +13,17 @@
   
 </title>
 
-<meta name="description" content="map() (映射)方法最后生成一个新数组，不改变原始数组的值。其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。 1array.map(callback,[ thisObject]);  callback(回调函数) 123[].map(function(currentValue, index, array) &amp;#123;    // ...&amp;#125;);  传递给 map 的回调函">
+<meta name="description" content="map() (映射)方法最后生成一个新数组，不改变原始数组的值。其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。 1array.map(callback,[ thisObject]);  callback(回调函数) 123[].map(function(currentValue, index, array) &amp;#123;    // ...&amp;#125;);">
 <meta property="og:type" content="article">
 <meta property="og:title" content="map详解与实战">
 <meta property="og:url" content="http://yoursite.com/2019/10/24/Higher/index.html">
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
-<meta property="og:description" content="map() (映射)方法最后生成一个新数组，不改变原始数组的值。其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。 1array.map(callback,[ thisObject]);  callback(回调函数) 123[].map(function(currentValue, index, array) &amp;#123;    // ...&amp;#125;);  传递给 map 的回调函">
+<meta property="og:description" content="map() (映射)方法最后生成一个新数组，不改变原始数组的值。其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。 1array.map(callback,[ thisObject]);  callback(回调函数) 123[].map(function(currentValue, index, array) &amp;#123;    // ...&amp;#125;);">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-24T06:10:13.646Z">
+<meta property="og:updated_time" content="2019-10-24T06:18:27.075Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="map详解与实战">
-<meta name="twitter:description" content="map() (映射)方法最后生成一个新数组，不改变原始数组的值。其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。 1array.map(callback,[ thisObject]);  callback(回调函数) 123[].map(function(currentValue, index, array) &amp;#123;    // ...&amp;#125;);  传递给 map 的回调函">
+<meta name="twitter:description" content="map() (映射)方法最后生成一个新数组，不改变原始数组的值。其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。 1array.map(callback,[ thisObject]);  callback(回调函数) 123[].map(function(currentValue, index, array) &amp;#123;    // ...&amp;#125;);">
 
 
   <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
@@ -134,6 +134,8 @@
 
 <p>callback(回调函数)</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[].map(<span class="function"><span class="keyword">function</span>(<span class="params">currentValue, index, array</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <p>传递给 map 的回调函数（callback）接受三个参数，分别是 currentValue——正在遍历的元素、index（可选）——元素索引、array（可选）——原数组本身，除了 callback 之外还可以接受 this 值（可选），用于执行 callback 函数时使用的this值。</p>
 <p>来个简单的例子方便理解，现在有一个数组[1, 2, 3, 4]，我们想要生成一个新数组，其每个元素皆是之前数组的两倍，那么我们有下面两种使用高阶和不使用高阶函数的方式来实现。</p>
