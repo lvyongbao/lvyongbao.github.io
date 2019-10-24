@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">38</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">39</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -107,6 +107,61 @@
         <div style="max-width: 1000px">
       
           
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/07/21/global/">
+  HTML全局属性(global attribute)有哪些
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/07/21/global/"><span class="article-date">
+  2019-07-21
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <blockquote>
+<ul>
+<li>accesskey:设置快捷键，提供快速访问元素如aaa在windows下的firefox中按alt + shift + a可激活元素</li>
+<li>class:为元素设置类标识，多个类名用空格分开，CSS和javascript可通过class属性获取元素</li>
+<li>contenteditable: 指定元素内容是否可编辑</li>
+<li>contextmenu: 自定义鼠标右键弹出菜单内容</li>
+<li>data-*: 为元素增加自定义属性</li>
+<li>dir: 设置元素文本方向</li>
+<li>draggable: 设置元素是否可拖拽</li>
+<li>dropzone: 设置元素拖放类型： copy, move, link</li>
+<li>hidden: 表示一个元素是否与文档。样式上会导致元素不显示，但是不能用这个属性实现样式效果</li>
+<li>id: 元素id，文档内唯一</li>
+<li>lang: 元素内容的的语言</li>
+<li>spellcheck: 是否启动拼写和语法检查</li>
+<li>style: 行内css样式</li>
+<li>tabindex: 设置元素可以获得焦点，通过tab可以导航</li>
+<li>title: 元素相关的建议信息</li>
+<li>translate: 元素和子孙节点内容是否需要本地化</li>
+</ul>
+</blockquote>
+
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
 
   
   
@@ -205,7 +260,7 @@
     <div class="post-list-item article">
       <h3 class="article-header">
         <a href="/2019/07/12/Promise/">
-  详解Promise
+  javascript数组常用函数与实战总结
 </a>
 
       </h3>
@@ -223,7 +278,13 @@
       </div>
       <div class="article-entry">
         
-          
+          <h1 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h1><h2 id="向数组末尾添加值"><a href="#向数组末尾添加值" class="headerlink" title="向数组末尾添加值"></a>向数组末尾添加值</h2><p><strong>push</strong><br>说明：向数组的末尾添加一个或多个元素，并返回新的长度 代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array=[<span class="number">11</span>,<span class="number">22</span>];</span><br><span class="line"><span class="keyword">let</span> arrayChange=array.push(<span class="string">"333"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arrayChange)</span><br><span class="line"><span class="comment">//返回的结果就是数组改变后的长度：3</span></span><br><span class="line"><span class="built_in">console</span>.log(arrayChange.length)<span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/07/12/Promise/">
+              阅读全文
+            </a>
+          </p>
         
       </div>
     </div>
@@ -519,42 +580,6 @@
               阅读全文
             </a>
           </p>
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
-
-  
-  
-    <div class="post-list">
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/06/28/stuff/">
-  浏览器记住密码背景色变成黄色处理
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2019/06/28/stuff/"><span class="article-date">
-  2019-06-28
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p><strong>在实际项目当中，用户登录网站输入账号密码，当用户选择记住密码的时候，下次自动填充表单的背景变成了黄色，影响了视觉体验。这个是可以修改的。下面给出方案：</strong></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 方法1</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-webkit-autofill</span>, <span class="selector-tag">textarea</span><span class="selector-pseudo">:-webkit-autofill</span>, <span class="selector-tag">select</span><span class="selector-pseudo">:-webkit-autofill</span> &#123;</span><br><span class="line">    background-color: #fff; // 设置成元素原本的颜色</span><br><span class="line">    <span class="selector-tag">background-image</span>: <span class="selector-tag">none</span>;</span><br><span class="line">    <span class="selector-tag">color</span>: <span class="selector-tag">rgb</span>(0, 0, 0);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 方法2</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-webkit-autofill</span> </span><br><span class="line">&#123;</span><br><span class="line">    -webkit-box-shadow: 0px 0 3px 100px #ccc inset; // 背景色</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
       </div>
     </div>

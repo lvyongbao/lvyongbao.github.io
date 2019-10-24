@@ -9,17 +9,21 @@
 
 <title>
   
-    归档: 2019/10
+    map详解与实战
   
 </title>
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="一个爱听歌的搬砖工">
-<meta property="og:url" content="http://yoursite.com/archives/2019/10/index.html">
+<meta name="description" content="map() (映射)方法最后生成一个新数组，不改变原始数组的值。其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。 1array.map(callback,[ thisObject]);  callback(回调函数) 123[].map(function(currentValue, index, array) &amp;#123;    // ...&amp;#125;);  传递给 map 的回调函">
+<meta property="og:type" content="article">
+<meta property="og:title" content="map详解与实战">
+<meta property="og:url" content="http://yoursite.com/2019/10/24/Higher/index.html">
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:description" content="map() (映射)方法最后生成一个新数组，不改变原始数组的值。其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。 1array.map(callback,[ thisObject]);  callback(回调函数) 123[].map(function(currentValue, index, array) &amp;#123;    // ...&amp;#125;);  传递给 map 的回调函">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-24T06:10:13.646Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一个爱听歌的搬砖工">
+<meta name="twitter:title" content="map详解与实战">
+<meta name="twitter:description" content="map() (映射)方法最后生成一个新数组，不改变原始数组的值。其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。 1array.map(callback,[ thisObject]);  callback(回调函数) 123[].map(function(currentValue, index, array) &amp;#123;    // ...&amp;#125;);  传递给 map 的回调函">
 
 
   <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
@@ -106,43 +110,26 @@
       
         <div style="max-width: 1000px">
       
-          
-
+          <article id="post-Higher" class="article article-type-post">
+  
+    <h1 class="article-header">
+      map详解与实战
+    </h1>
   
   
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/archives/2019" class="archive-year">2019</a></h1>
-        </div>
-        <div class="post-list">
-    
-  
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/10/24/Higher/">
-  map详解与实战
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2019/10/24/Higher/"><span class="article-date">
+  <div class="article-info">
+    <span class="article-date">
   2019-10-24
 </span>
-</a>
-        
 
-        
+    
 
-      </div>
-      <div class="article-entry">
-        
-          <p>map() (映射)方法最后生成一个新数组，不改变原始数组的值。其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。</p>
+    
+
+  </div>
+  <div class="article-entry">
+    <p>map() (映射)方法最后生成一个新数组，不改变原始数组的值。其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.map(callback,[ thisObject]);</span><br></pre></td></tr></table></figure>
 
 <p>callback(回调函数)</p>
@@ -172,54 +159,34 @@
 <p>那么如果要得到[1,2,3]该怎么写。[“1”,”2”,”3”].map((x)=&gt;{ return parseInt(x); }); 也可以简写为：[“1”,”2”,”3”].map(x=&gt;parseInt(x));</p>
 <p>这样写为什么就能返回想要的值呢？因为，传一个完整函数进去，有形参，有返回值。这样就不会造成因为参数传入错误而造成结果错误了，最后返回一个经纯函数处理过的新数组。</p>
 
-        
-      </div>
-    </div>
-
-  
-
-  
-  
+  </div>
+  <footer class="article-footer">
     
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/10/23/Antdbug/">
-  antd组件库中的Tabs组件在IE和火狐下的兼容性bug
-</a>
-
-      </h3>
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
       
-
-      <div class="article-info">
-        <a href="/2019/10/23/Antdbug/"><span class="article-date">
-  2019-10-23
-</span>
-</a>
+          <img src="/images/cc/by.png">
         
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
 
-        
 
-      </div>
-      <div class="article-entry">
-        
-          <p><strong>时隔一个多月没更新博客了，前段时间老婆做了个手术一直陪伴在左右，上班后项目太忙一直加班没时间跟精力在这方面，今天项目提测，忙里偷闲，更新一下。</strong></p>
-<p>首页改版完成后，自己测试了下IE兼容性问题时，新闻模块出现bug，设计师要求最多显示4个文字，所以我给了溢出隐藏属性，但是在IE和火狐下会出现这种情况：</p>
-<p><img src="/images/cc/2019102301.gif" alt="avatar"></p>
-<p>尝试解决没有实质性进展，都想自己重构写个tab页了，想着试着改下标签，抱着试试的想法，把span标签改为div标签，dispaly:inline-block删除，就正常了。。。。</p>
-<p>排查一下，应该是dispaly:inline-block这个属性导致的。</p>
+    
 
-        
-      </div>
-    </div>
-
-  
+  </footer>
+</article>
 
 
 
 
-</div></section>
+
+
 
           <div class="main-footer">
   
