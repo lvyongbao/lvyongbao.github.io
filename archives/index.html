@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">40</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">42</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -118,6 +118,45 @@
           <h1><a href="/archives/2019" class="archive-year">2019</a></h1>
         </div>
         <div class="post-list">
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/10/28/Sort/">
+  sort详解与实战
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/10/28/Sort/"><span class="article-date">
+  2019-10-28
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>sort()方法用原地算法对数组的元素进行排序，并返回数组，该排序方法会在原数组上直接进行排序，并不会生成一个排好序的新数组。排序算法现在是稳定的。默认排序顺序是根据字符串Unicode码点。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.sort([compareFunction])</span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/10/28/Sort/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
     
   
 
@@ -168,7 +207,49 @@
 
     <div class="post-list-item article">
       <h3 class="article-header">
-        <a href="/2019/10/24/Higher/">
+        <a href="/2019/10/25/Filter/">
+  filter详解与实战
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/10/25/Filter/"><span class="article-date">
+  2019-10-25
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>filter(过滤，筛选) 方法创建一个新数组,原始数组不发生改变。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.filter(callback,[ thisObject]);</span><br></pre></td></tr></table></figure>
+
+<p>其包含通过提供函数实现的测试的所有元素。接收的参数和 map 是一样的，filter的callback函数需要返回布尔值true或false. 如果为true则表示通过啦！如果为false则失败，其返回值是一个新数组，由通过测试为true的所有元素组成，如果没有任何数组元素通过测试，则返回空数组。</p>
+<p>来个例子介绍下，现在有一个数组 [1, 2, 1, 2, 3, 5, 4, 5, 3, 4, 4, 4, 4]，我们想要生成一个新数组，这个数组要求没有重复的内容，即为去重。</p>
+          <p>
+            <a href="/2019/10/25/Filter/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/10/24/Map/">
   map详解与实战
 </a>
 
@@ -176,7 +257,7 @@
       
 
       <div class="article-info">
-        <a href="/2019/10/24/Higher/"><span class="article-date">
+        <a href="/2019/10/24/Map/"><span class="article-date">
   2019-10-24
 </span>
 </a>
@@ -193,7 +274,7 @@
 <p>callback(回调函数)</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[].map(<span class="function"><span class="keyword">function</span>(<span class="params">currentValue, index, array</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
           <p>
-            <a href="/2019/10/24/Higher/">
+            <a href="/2019/10/24/Map/">
               阅读全文
             </a>
           </p>
@@ -441,86 +522,6 @@
 <p>地址：<a href="https://www.w3school.com.cn" target="_blank" rel="noopener">https://www.w3school.com.cn</a></p>
           <p>
             <a href="/2019/08/02/website/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/07/27/iconfont/">
-  计算制作iconfont图标
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2019/07/27/iconfont/"><span class="article-date">
-  2019-07-27
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>网站页面上会用到各种小图标，前端以前制作页面的时候，会将这些图片一个个切下来，通过标签设置backgroud使用，这样做会导致请求过多，造成性能瓶颈。后来有人就发明了css sprite(雪碧图)，将这些图标合并到一个图片上，然后通过backgroud-position定位使用，好处是显而易见的，请求瞬间就降低了，图片集中起来也方便维护。</p>
-<p>随着项目的庞大，图标也越来越多，然后不停的往雪碧图里塞，很多图标长的都差不多，有些仅仅是颜色或者大小不同，这导致了雪碧图越来越庞大变得不好维护，如下图：</p>
-<p><img src="/images/cc/2019072801.png" alt="avatar"></p>
-<p>有时候如果前端不注意修改了雪碧图的尺寸或者不小心挪动了其它图标的位置，就会导致某些图标显示错位。</p>
-          <p>
-            <a href="/2019/07/27/iconfont/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/07/25/advanced/">
-  Git 命令
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2019/07/25/advanced/"><span class="article-date">
-  2019-07-25
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p><strong>昨天我们说一下关于git的一些命令，今天说下它的一些高级操作。</strong></p>
-<h2 id="1-检查提交之间的差异"><a href="#1-检查提交之间的差异" class="headerlink" title="1.检查提交之间的差异"></a>1.检查提交之间的差异</h2><p>每个提交都以数字和符号的字符串形式存在唯一的ID。<br>要查看所有提交及其ID的列表，我们可以使用git log：</p>
-          <p>
-            <a href="/2019/07/25/advanced/">
               阅读全文
             </a>
           </p>
