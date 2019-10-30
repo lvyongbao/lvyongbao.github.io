@@ -520,7 +520,7 @@
       </div>
       <div class="article-entry">
         
-          <p>闭包的定义其实很简单：函数 A 返回了一个函数 B，并且函数 B 中使用了函数 A 的变量，函数 B 就被称为闭包。</p>
+          <h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><p>闭包的定义其实很简单：函数 A 返回了一个函数 B，并且函数 B 中使用了函数 A 的变量，函数 B 就被称为闭包。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="number">1</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(a)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> B</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h2><p>要理解闭包，首先必须理解Javascript特殊的变量作用域。<br>变量的作用域无非就是两种：全局变量和局部变量。<br>Javascript语言的特殊之处，就在于函数内部可以直接读取全局变量。</p>
