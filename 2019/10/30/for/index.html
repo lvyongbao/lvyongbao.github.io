@@ -9,21 +9,21 @@
 
 <title>
   
-    跨标签页通讯
+    for...in 和 for...of的区别
   
 </title>
 
-<meta name="description" content="不同标签页间的通讯，本质原理就是去运用一些可以 共享的中间介质，因此比较常用的有以下方法: 通过父页面window.open()和子页面postMessage异步下，通过 window.open(‘about: blank’) 和 tab.location.href = ‘*’ 设置同域下共享的localStorage与监听window.onstorage重复写入相同的值无法触发会受到浏览器隐身模">
+<meta name="description" content="for…of 是ES6新引入的特性，修复了ES5引入的for…in的不足 for…in 循环出的是key，for…of循环出的是value for…of不能循环普通的对象，需要通过和Object.keys()搭配使用 推荐在循环对象属性的时候，使用for…in,在遍历数组的时候的时候使用for…of">
 <meta property="og:type" content="article">
-<meta property="og:title" content="跨标签页通讯">
-<meta property="og:url" content="http://yoursite.com/2019/07/08/newsletter/index.html">
+<meta property="og:title" content="for...in 和 for...of的区别">
+<meta property="og:url" content="http://yoursite.com/2019/10/30/for/index.html">
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
-<meta property="og:description" content="不同标签页间的通讯，本质原理就是去运用一些可以 共享的中间介质，因此比较常用的有以下方法: 通过父页面window.open()和子页面postMessage异步下，通过 window.open(‘about: blank’) 和 tab.location.href = ‘*’ 设置同域下共享的localStorage与监听window.onstorage重复写入相同的值无法触发会受到浏览器隐身模">
+<meta property="og:description" content="for…of 是ES6新引入的特性，修复了ES5引入的for…in的不足 for…in 循环出的是key，for…of循环出的是value for…of不能循环普通的对象，需要通过和Object.keys()搭配使用 推荐在循环对象属性的时候，使用for…in,在遍历数组的时候的时候使用for…of">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-18T10:41:15.338Z">
+<meta property="og:updated_time" content="2019-10-30T13:16:28.623Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="跨标签页通讯">
-<meta name="twitter:description" content="不同标签页间的通讯，本质原理就是去运用一些可以 共享的中间介质，因此比较常用的有以下方法: 通过父页面window.open()和子页面postMessage异步下，通过 window.open(‘about: blank’) 和 tab.location.href = ‘*’ 设置同域下共享的localStorage与监听window.onstorage重复写入相同的值无法触发会受到浏览器隐身模">
+<meta name="twitter:title" content="for...in 和 for...of的区别">
+<meta name="twitter:description" content="for…of 是ES6新引入的特性，修复了ES5引入的for…in的不足 for…in 循环出的是key，for…of循环出的是value for…of不能循环普通的对象，需要通过和Object.keys()搭配使用 推荐在循环对象属性的时候，使用for…in,在遍历数组的时候的时候使用for…of">
 
 
   <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
@@ -110,17 +110,17 @@
       
         <div style="max-width: 1000px">
       
-          <article id="post-newsletter" class="article article-type-post">
+          <article id="post-for" class="article article-type-post">
   
     <h1 class="article-header">
-      跨标签页通讯
+      for...in 和 for...of的区别
     </h1>
   
   
 
   <div class="article-info">
     <span class="article-date">
-  2019-07-08
+  2019-10-30
 </span>
 
     
@@ -129,10 +129,14 @@
 
   </div>
   <div class="article-entry">
-    <p>不同标签页间的通讯，本质原理就是去运用一些可以 共享的中间介质，因此比较常用的有以下方法:</p>
-<p><strong>通过父页面window.open()和子页面postMessage</strong><br>异步下，通过 window.open(‘about: blank’) 和 tab.location.href = ‘*’</p>
-<p><strong>设置同域下共享的localStorage与监听window.onstorage</strong><br>重复写入相同的值无法触发<br>会受到浏览器隐身模式等的限制</p>
-<p><strong>设置共享cookie与不断轮询脏检查(setInterval)</strong><br>借助服务端或者中间层实现</p>
+    <blockquote>
+<ul>
+<li>for…of 是ES6新引入的特性，修复了ES5引入的for…in的不足</li>
+<li>for…in 循环出的是key，for…of循环出的是value</li>
+<li>for…of不能循环普通的对象，需要通过和Object.keys()搭配使用</li>
+<li>推荐在循环对象属性的时候，使用for…in,在遍历数组的时候的时候使用for…of</li>
+</ul>
+</blockquote>
 
   </div>
   <footer class="article-footer">
