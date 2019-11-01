@@ -13,17 +13,17 @@
   
 </title>
 
-<meta name="description" content="分享一下URL跳转后面拼接参数获取参数的方法： 如果URL后面只跟一个参数的话，可以用这个方法获取 1234567891011function getParamVal(type) &amp;#123;  const &amp;#123; href &amp;#125; = window.location;  let res = &apos;&apos;;  let startIndex = href.lastIndexOf(type);">
+<meta name="description" content="分享一下URL跳转后面拼接参数获取参数的方法： 之前一直用的是这个方法，不管URL后面有几个参数，一个个的去获取，感觉比较麻烦了，不实用了，所以区分了一下，如果URL后面只跟一个参数的话，可以用这个方法获取 1234567891011function getParamVal(type) &amp;#123;  const &amp;#123; href &amp;#125; = window.location;  let">
 <meta property="og:type" content="article">
 <meta property="og:title" content="获取URL后缀的参数">
 <meta property="og:url" content="http://yoursite.com/2019/11/01/Getparam/index.html">
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
-<meta property="og:description" content="分享一下URL跳转后面拼接参数获取参数的方法： 如果URL后面只跟一个参数的话，可以用这个方法获取 1234567891011function getParamVal(type) &amp;#123;  const &amp;#123; href &amp;#125; = window.location;  let res = &apos;&apos;;  let startIndex = href.lastIndexOf(type);">
+<meta property="og:description" content="分享一下URL跳转后面拼接参数获取参数的方法： 之前一直用的是这个方法，不管URL后面有几个参数，一个个的去获取，感觉比较麻烦了，不实用了，所以区分了一下，如果URL后面只跟一个参数的话，可以用这个方法获取 1234567891011function getParamVal(type) &amp;#123;  const &amp;#123; href &amp;#125; = window.location;  let">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-01T08:48:50.512Z">
+<meta property="og:updated_time" content="2019-11-01T08:52:13.808Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="获取URL后缀的参数">
-<meta name="twitter:description" content="分享一下URL跳转后面拼接参数获取参数的方法： 如果URL后面只跟一个参数的话，可以用这个方法获取 1234567891011function getParamVal(type) &amp;#123;  const &amp;#123; href &amp;#125; = window.location;  let res = &apos;&apos;;  let startIndex = href.lastIndexOf(type);">
+<meta name="twitter:description" content="分享一下URL跳转后面拼接参数获取参数的方法： 之前一直用的是这个方法，不管URL后面有几个参数，一个个的去获取，感觉比较麻烦了，不实用了，所以区分了一下，如果URL后面只跟一个参数的话，可以用这个方法获取 1234567891011function getParamVal(type) &amp;#123;  const &amp;#123; href &amp;#125; = window.location;  let">
 
 
   <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
@@ -130,8 +130,10 @@
   </div>
   <div class="article-entry">
     <p>分享一下URL跳转后面拼接参数获取参数的方法：</p>
-<p>如果URL后面只跟一个参数的话，可以用这个方法获取</p>
+<p>之前一直用的是这个方法，不管URL后面有几个参数，一个个的去获取，感觉比较麻烦了，不实用了，所以区分了一下，<br>如果URL后面只跟一个参数的话，可以用这个方法获取</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getParamVal</span>(<span class="params">type</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; href &#125; = <span class="built_in">window</span>.location;</span><br><span class="line">  <span class="keyword">let</span> res = <span class="string">''</span>;</span><br><span class="line">  <span class="keyword">let</span> startIndex = href.lastIndexOf(type);</span><br><span class="line">  <span class="keyword">if</span> (startIndex !== <span class="number">-1</span>) &#123;</span><br><span class="line">    startIndex = href.indexOf(<span class="string">'='</span>, startIndex) + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">const</span> endIndex = href.indexOf(<span class="string">'&amp;'</span>, startIndex);</span><br><span class="line">    res = endIndex !== <span class="number">-1</span> ? href.substring(startIndex, endIndex) : href.substring(startIndex);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <p>如果URL后面有多个参数的话，可以用这个方法获取,它是以对象的形式返回的</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getParamObj</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> url = <span class="built_in">document</span>.location.toString();</span><br><span class="line">  <span class="keyword">let</span> suffixObj = url.split(<span class="string">"?"</span>);</span><br><span class="line">  <span class="keyword">const</span> params = <span class="built_in">Object</span>.create(<span class="literal">null</span>)</span><br><span class="line">  <span class="keyword">if</span> (suffixObj.length &gt; <span class="number">1</span>)&#123;</span><br><span class="line">    suffixObj = suffixObj[<span class="number">1</span>].split(<span class="string">"&amp;"</span>);</span><br><span class="line">    suffixObj.forEach(<span class="function"><span class="params">item</span>=&gt;</span>&#123;</span><br><span class="line">      item = item.split(<span class="string">"="</span>);</span><br><span class="line">      params[item[<span class="number">0</span>]] = item[<span class="number">1</span>]</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> params;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
