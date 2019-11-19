@@ -9,21 +9,21 @@
 
 <title>
   
-    ES6新的特性
+    js去除字符串空格
   
 </title>
 
-<meta name="description" content="1.新增了块级作用域 (let,const) 2.提供了定义类的语法糖 (class) 3.新增了一种基本数据类型 (Symbol) 4.新增了变量的解构赋值 5.函数参数允许设置默认值，引入了 rest 参数，新增了箭头函数 6.数组新增了一些 API，如 isArray / from / of 方法 ; 数组实例新增了 entries()，keys() 和 values() 等方法 7.对象和">
+<meta name="description" content="方法一：使用replace正则匹配的方法去除所有空格: 1str = str.replace(/\s*/g,&quot;&quot;);  去除两头空格: 1str = str.replace(/^\s*|\s*$/g,&quot;&quot;);  去除左空格： 1str = str.replace( /^\s*/, &quot;&quot;);">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6新的特性">
-<meta property="og:url" content="http://yoursite.com/2019/08/23/ES6/index.html">
+<meta property="og:title" content="js去除字符串空格">
+<meta property="og:url" content="http://yoursite.com/2019/11/15/Trim/index.html">
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
-<meta property="og:description" content="1.新增了块级作用域 (let,const) 2.提供了定义类的语法糖 (class) 3.新增了一种基本数据类型 (Symbol) 4.新增了变量的解构赋值 5.函数参数允许设置默认值，引入了 rest 参数，新增了箭头函数 6.数组新增了一些 API，如 isArray / from / of 方法 ; 数组实例新增了 entries()，keys() 和 values() 等方法 7.对象和">
+<meta property="og:description" content="方法一：使用replace正则匹配的方法去除所有空格: 1str = str.replace(/\s*/g,&quot;&quot;);  去除两头空格: 1str = str.replace(/^\s*|\s*$/g,&quot;&quot;);  去除左空格： 1str = str.replace( /^\s*/, &quot;&quot;);">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-23T06:35:40.004Z">
+<meta property="og:updated_time" content="2019-11-19T05:47:37.267Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6新的特性">
-<meta name="twitter:description" content="1.新增了块级作用域 (let,const) 2.提供了定义类的语法糖 (class) 3.新增了一种基本数据类型 (Symbol) 4.新增了变量的解构赋值 5.函数参数允许设置默认值，引入了 rest 参数，新增了箭头函数 6.数组新增了一些 API，如 isArray / from / of 方法 ; 数组实例新增了 entries()，keys() 和 values() 等方法 7.对象和">
+<meta name="twitter:title" content="js去除字符串空格">
+<meta name="twitter:description" content="方法一：使用replace正则匹配的方法去除所有空格: 1str = str.replace(/\s*/g,&quot;&quot;);  去除两头空格: 1str = str.replace(/^\s*|\s*$/g,&quot;&quot;);  去除左空格： 1str = str.replace( /^\s*/, &quot;&quot;);">
 
 
   <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
@@ -95,7 +95,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">44</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">45</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -110,17 +110,17 @@
       
         <div style="max-width: 1000px">
       
-          <article id="post-ES6" class="article article-type-post">
+          <article id="post-Trim" class="article article-type-post">
   
     <h1 class="article-header">
-      ES6新的特性
+      js去除字符串空格
     </h1>
   
   
 
   <div class="article-info">
     <span class="article-date">
-  2019-08-23
+  2019-11-15
 </span>
 
     
@@ -129,17 +129,30 @@
 
   </div>
   <div class="article-entry">
-    <p><strong>1.新增了块级作用域 (let,const)</strong></p>
-<p><strong>2.提供了定义类的语法糖 (class)</strong></p>
-<p><strong>3.新增了一种基本数据类型 (Symbol)</strong></p>
-<p><strong>4.新增了变量的解构赋值</strong></p>
-<p><strong>5.函数参数允许设置默认值，引入了 rest 参数，新增了箭头函数</strong></p>
-<p><strong>6.数组新增了一些 API，如 isArray / from / of 方法 ; 数组实例新增了 entries()，keys() 和 values() 等方法</strong></p>
-<p><strong>7.对象和数组新增了扩展运算符</strong></p>
-<p><strong>8.ES6 新增了模块化 (import/export)</strong></p>
-<p><strong>9.ES6 新增了 Set 和 Map 数据结构</strong></p>
-<p><strong>10.ES6 原生提供 Proxy 构造函数，用来生成 Proxy 实例</strong></p>
-<p><strong>11.ES6 新增了生成器 (Generator) 和遍历器 (Iterator)</strong></p>
+    <p><strong>方法一：使用replace正则匹配的方法</strong><br>去除所有空格:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str = str.replace(<span class="regexp">/\s*/g</span>,<span class="string">""</span>);</span><br></pre></td></tr></table></figure>
+
+<p>去除两头空格:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str = str.replace(<span class="regexp">/^\s*|\s*$/g</span>,<span class="string">""</span>);</span><br></pre></td></tr></table></figure>
+
+<p>去除左空格：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str = str.replace( <span class="regexp">/^\s*/</span>, <span class="string">""</span>);</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p>去除右空格：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str = str.replace(<span class="regexp">/(\s*$)/g</span>, <span class="string">""</span>);</span><br></pre></td></tr></table></figure>
+
+<p>str为要去除空格的字符串，实例如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">" 23 23 "</span>;</span><br><span class="line"><span class="keyword">var</span> str2 = str.replace(<span class="regexp">/\s*/g</span>,<span class="string">""</span>);</span><br><span class="line"><span class="built_in">console</span>.log(str2); <span class="comment">// 2323</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>方法二：使用str.trim()方法</strong><br>str.trim()局限性：无法去除中间的空格，实例如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"   da  bao   "</span>;</span><br><span class="line"><span class="keyword">var</span> str2 = str.trim();</span><br><span class="line"><span class="built_in">console</span>.log(str2);   <span class="comment">//dabao  bao</span></span><br></pre></td></tr></table></figure>
+
+<p>同理，str.trimLeft()，str.trimRight()分别用于去除字符串左右空格。</p>
+<p><strong>方法三：使用jquery,$.trim(str)方法</strong><br>$.trim(str)局限性：无法去除中间的空格，实例如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"   da  bao   "</span>;</span><br><span class="line"><span class="keyword">var</span> str2 = $.trim(str)</span><br><span class="line"><span class="built_in">console</span>.log(str2);   <span class="comment">//da  bao</span></span><br></pre></td></tr></table></figure>
+
 
   </div>
   <footer class="article-footer">

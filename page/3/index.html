@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">44</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">45</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -107,6 +107,45 @@
         <div style="max-width: 1000px">
       
           
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/07/08/newsletter/">
+  跨标签页通讯
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/07/08/newsletter/"><span class="article-date">
+  2019-07-08
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>不同标签页间的通讯，本质原理就是去运用一些可以 共享的中间介质，因此比较常用的有以下方法:</p>
+<p><strong>通过父页面window.open()和子页面postMessage</strong><br>异步下，通过 window.open(‘about: blank’) 和 tab.location.href = ‘*’</p>
+<p><strong>设置同域下共享的localStorage与监听window.onstorage</strong><br>重复写入相同的值无法触发<br>会受到浏览器隐身模式等的限制</p>
+<p><strong>设置共享cookie与不断轮询脏检查(setInterval)</strong><br>借助服务端或者中间层实现</p>
+
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
 
   
   
@@ -391,7 +430,9 @@
       <div class="article-entry">
         
           <p><strong>在实际项目当中，用户登录网站输入账号密码，当用户选择记住密码的时候，下次自动填充表单的背景变成了黄色，影响了视觉体验。这个是可以修改的。下面给出方案：</strong></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 方法1</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-webkit-autofill</span>, <span class="selector-tag">textarea</span><span class="selector-pseudo">:-webkit-autofill</span>, <span class="selector-tag">select</span><span class="selector-pseudo">:-webkit-autofill</span> &#123;</span><br><span class="line">    background-color: #fff; // 设置成元素原本的颜色</span><br><span class="line">    <span class="selector-tag">background-image</span>: <span class="selector-tag">none</span>;</span><br><span class="line">    <span class="selector-tag">color</span>: <span class="selector-tag">rgb</span>(0, 0, 0);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 方法2</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-webkit-autofill</span> </span><br><span class="line">&#123;</span><br><span class="line">    -webkit-box-shadow: 0px 0 3px 100px #ccc inset; // 背景色</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 方法1</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-webkit-autofill</span>, <span class="selector-tag">textarea</span><span class="selector-pseudo">:-webkit-autofill</span>, <span class="selector-tag">select</span><span class="selector-pseudo">:-webkit-autofill</span> &#123;</span><br><span class="line">  background-color: #fff; // 设置成元素原本的颜色</span><br><span class="line">  <span class="selector-tag">background-image</span>: <span class="selector-tag">none</span>;</span><br><span class="line">  <span class="selector-tag">color</span>: <span class="selector-tag">rgb</span>(0, 0, 0);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 方法2</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-webkit-autofill</span> </span><br><span class="line">&#123;</span><br><span class="line">  -webkit-box-shadow: 0px 0 3px 100px #ccc inset; // 背景色</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
         
       </div>
     </div>
@@ -435,6 +476,7 @@
 <li>margin-box (浏览器未实现)</li>
 </ul>
 </blockquote>
+<p>box-sizing: content-box（W3C盒子模型）：元素的宽高大小表现为内容的大小。<br>box-sizing: border-box（IE盒子模型）：元素的宽高表现为内容 + 内边距 + 边框的大小。背景会延伸到边框的外沿。<br>IE5.x和IE6在怪异模式中使用非标准的盒子模型，这些浏览器的width属性不是内容的宽度，而是内容、内边距和边框的宽度的总和。</p>
 <h2 id="2-BFC"><a href="#2-BFC" class="headerlink" title="2. BFC"></a>2. BFC</h2><p><strong>块级格式化上下文，</strong>是一个独立的渲染区域，让处于 BFC 内部的元素与外部的元素相互隔离，使内外元素的定位不会相互影响。</p>
 <blockquote>
 <ul>
@@ -548,53 +590,10 @@
     </div>
   
 
-  
-  
-    <div class="post-list">
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/06/22/repeat/">
-  数组去重
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2019/06/22/repeat/"><span class="article-date">
-  2019-06-22
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p><strong>今天总结一下数组去重的一些方法。记录一下。在真实的项目中碰到的数组去重，一般都是后台去处理，很少让前端处理这种问题。虽然日常项目用到的比较少，但我们还是需要了解一下，以防面试的时候可能回被问到。如果是被提问到，数组去重的方法有哪些？你能答出其中的几种？</strong></p>
-<h2 id="一、利用ES6-Set去重"><a href="#一、利用ES6-Set去重" class="headerlink" title="一、利用ES6 Set去重"></a>一、利用ES6 Set去重</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>])) <span class="comment">//[1,2,3,4]</span></span><br><span class="line">[...new <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>])] <span class="comment">//[1,2,3,4]</span></span><br></pre></td></tr></table></figure>
-
-<p>set是ES6新出来的一种一种定义不重复数组的数据类型<br>Array.from是将类数组转化为数组<br>…是扩展运算符,将set里面的值转化为字符串</p>
-          <p>
-            <a href="/2019/06/22/repeat/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
-
 
 
   <div class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">下一页</a>
+    <a class="extend prev" rel="prev" href="/page/2/">上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">下一页</a>
   </div>
 
 

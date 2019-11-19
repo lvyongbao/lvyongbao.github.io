@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">44</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">45</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -203,15 +203,15 @@
 
     <div class="post-list-item article">
       <h3 class="article-header">
-        <a href="/2019/08/23/ES6/">
-  ES6新的特性
+        <a href="/2019/08/23/Optimization/">
+  首屏加载优化有哪些方案
 </a>
 
       </h3>
       
 
       <div class="article-info">
-        <a href="/2019/08/23/ES6/"><span class="article-date">
+        <a href="/2019/08/23/Optimization/"><span class="article-date">
   2019-08-23
 </span>
 </a>
@@ -222,17 +222,30 @@
       </div>
       <div class="article-entry">
         
-          <p><strong>1.新增了块级作用域 (let,const)</strong></p>
-<p><strong>2.提供了定义类的语法糖 (class)</strong></p>
-<p><strong>3.新增了一种基本数据类型 (Symbol)</strong></p>
-<p><strong>4.新增了变量的解构赋值</strong></p>
-<p><strong>5.函数参数允许设置默认值，引入了 rest 参数，新增了箭头函数</strong></p>
-<p><strong>6.数组新增了一些 API，如 isArray / from / of 方法 ; 数组实例新增了 entries()，keys() 和 values() 等方法</strong></p>
-<p><strong>7.对象和数组新增了扩展运算符</strong></p>
-<p><strong>8.ES6 新增了模块化 (import/export)</strong></p>
-<p><strong>9.ES6 新增了 Set 和 Map 数据结构</strong></p>
-<p><strong>10.ES6 原生提供 Proxy 构造函数，用来生成 Proxy 实例</strong></p>
-<p><strong>11.ES6 新增了生成器 (Generator) 和遍历器 (Iterator)</strong></p>
+          <blockquote>
+<ul>
+<li>Vue-Router路由懒加载（利用Webpack的代码切割）</li>
+<li>使用CDN加速，将通用的库从vendor进行抽离</li>
+<li>Nginx的gzip压缩</li>
+<li>Vue异步组件</li>
+<li>服务端渲染SSR</li>
+<li>如果使用了一些UI库，采用按需加载</li>
+<li>Webpack开启gzip压缩</li>
+<li>如果首屏为登录页，可以做成多入口</li>
+<li>Service Worker缓存文件处理</li>
+<li>去除非 HTML 页面的静态资源的 cache-control: no-cache 配置，充分利用客户端缓存</li>
+<li>减少页面加载时的请求数量。</li>
+<li>减少 Cookie 中保存的信息或去除请求中的非必要 Cookie 信息</li>
+<li>压缩图片体积（也可尝试更改图片格式，使用同等质量下体积最小的图片）</li>
+<li>合并小图片为一张大图或将图片转为 base64 编码</li>
+<li>延迟加载图片</li>
+<li>移除冗余代码</li>
+<li>封装公共组件（减少重复代码）</li>
+<li>预渲染页面框架或骨架图</li>
+<li>尽量减少 iframe 使用，它会阻塞主页面的渲染; 对所有资源压缩 JavaScript 、 CSS 、字体、图片等，甚至html;</li>
+<li>使用link标签的rel属性设置   prefetch（这段资源将会在未来某个导航或者功能要用到，但是本资源的下载顺序权重比较低，prefetch通常用于加速下一次导航）、preload（preload将会把资源得下载顺序权重提高，使得关键数据提前下载好，优化页面打开速度）</li>
+</ul>
+</blockquote>
 
         
       </div>

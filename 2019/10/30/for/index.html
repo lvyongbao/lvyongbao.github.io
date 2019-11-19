@@ -9,21 +9,21 @@
 
 <title>
   
-    for...in 和 for...of的区别
+    比较typeof与instanceof
   
 </title>
 
-<meta name="description" content="for…of 是ES6新引入的特性，修复了ES5引入的for…in的不足 for…in 循环出的是key，for…of循环出的是value for…of不能循环普通的对象，需要通过和Object.keys()搭配使用 推荐在循环对象属性的时候，使用for…in,在遍历数组的时候的时候使用for…of">
+<meta name="description" content="相同点：JavaScript 中 typeof 和 instanceof 常用来判断一个变量是否为空，或者是什么类型的。typeof的定义和用法：返回值是一个字符串，用来说明变量的数据类型。细节：(1)、typeof 一般只能返回如下几个结果：number,boolean,string,function,object,undefined。(2)、typeof 来获取一个变量是否存在，如 if(ty">
 <meta property="og:type" content="article">
-<meta property="og:title" content="for...in 和 for...of的区别">
+<meta property="og:title" content="比较typeof与instanceof">
 <meta property="og:url" content="http://yoursite.com/2019/10/30/for/index.html">
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
-<meta property="og:description" content="for…of 是ES6新引入的特性，修复了ES5引入的for…in的不足 for…in 循环出的是key，for…of循环出的是value for…of不能循环普通的对象，需要通过和Object.keys()搭配使用 推荐在循环对象属性的时候，使用for…in,在遍历数组的时候的时候使用for…of">
+<meta property="og:description" content="相同点：JavaScript 中 typeof 和 instanceof 常用来判断一个变量是否为空，或者是什么类型的。typeof的定义和用法：返回值是一个字符串，用来说明变量的数据类型。细节：(1)、typeof 一般只能返回如下几个结果：number,boolean,string,function,object,undefined。(2)、typeof 来获取一个变量是否存在，如 if(ty">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-30T13:16:28.623Z">
+<meta property="og:updated_time" content="2019-11-19T05:47:37.268Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="for...in 和 for...of的区别">
-<meta name="twitter:description" content="for…of 是ES6新引入的特性，修复了ES5引入的for…in的不足 for…in 循环出的是key，for…of循环出的是value for…of不能循环普通的对象，需要通过和Object.keys()搭配使用 推荐在循环对象属性的时候，使用for…in,在遍历数组的时候的时候使用for…of">
+<meta name="twitter:title" content="比较typeof与instanceof">
+<meta name="twitter:description" content="相同点：JavaScript 中 typeof 和 instanceof 常用来判断一个变量是否为空，或者是什么类型的。typeof的定义和用法：返回值是一个字符串，用来说明变量的数据类型。细节：(1)、typeof 一般只能返回如下几个结果：number,boolean,string,function,object,undefined。(2)、typeof 来获取一个变量是否存在，如 if(ty">
 
 
   <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
@@ -95,7 +95,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">44</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">45</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -113,7 +113,7 @@
           <article id="post-for" class="article article-type-post">
   
     <h1 class="article-header">
-      for...in 和 for...of的区别
+      比较typeof与instanceof
     </h1>
   
   
@@ -129,14 +129,18 @@
 
   </div>
   <div class="article-entry">
-    <blockquote>
-<ul>
-<li>for…of 是ES6新引入的特性，修复了ES5引入的for…in的不足</li>
-<li>for…in 循环出的是key，for…of循环出的是value</li>
-<li>for…of不能循环普通的对象，需要通过和Object.keys()搭配使用</li>
-<li>推荐在循环对象属性的时候，使用for…in,在遍历数组的时候的时候使用for…of</li>
-</ul>
-</blockquote>
+    <p>相同点：JavaScript 中 typeof 和 instanceof 常用来判断一个变量是否为空，或者是什么类型的。<br>typeof的定义和用法：返回值是一个字符串，用来说明变量的数据类型。<br>细节：<br>(1)、typeof 一般只能返回如下几个结果：number,boolean,string,function,object,undefined。<br>(2)、typeof 来获取一个变量是否存在，如 if(typeof a!=”undefined”){alert(“ok”)}，而不要去使用 if(a) 因为如果 a 不存在（未声明）则会出错。</p>
+<p>(3)、对于 Array,Null 等特殊对象使用 typeof 一律返回 object，这正是 typeof 的局限性。<br>Instanceof定义和用法：instanceof 用于判断一个变量是否属于某个对象的实例。</p>
+<a id="more"></a>
+
+<p>实例演示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a <span class="keyword">instanceof</span> b?alert(<span class="string">"true"</span>):alert(<span class="string">"false"</span>); <span class="comment">//a是b的实例？真:假</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">alert(a <span class="keyword">instanceof</span> <span class="built_in">Array</span>);  <span class="comment">// true</span></span><br><span class="line">alert(a <span class="keyword">instanceof</span> <span class="built_in">Object</span>)  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p>如上，会返回 true，同时 alert(a instanceof Object) 也会返回 true;这是因为 Array 是 object 的子类。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> test();</span><br><span class="line">alert(a <span class="keyword">instanceof</span> test)   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p>细节：</p>
+<p>(1)、如下，得到的结果为‘N’,这里的 instanceof 测试的 object 是指 js 语法中的 object，不是指 dom 模型对象。<br>if (window instanceof Object){ alert(‘Y’)} else {  alert(‘N’);}  // ‘N’</p>
 
   </div>
   <footer class="article-footer">

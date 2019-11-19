@@ -13,17 +13,17 @@
   
 </title>
 
-<meta name="description" content="在实际项目当中，用户登录网站输入账号密码，当用户选择记住密码的时候，下次自动填充表单的背景变成了黄色，影响了视觉体验。这个是可以修改的。下面给出方案： 1234567891011121314// 方法1input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill &amp;#123;    background-col">
+<meta name="description" content="在实际项目当中，用户登录网站输入账号密码，当用户选择记住密码的时候，下次自动填充表单的背景变成了黄色，影响了视觉体验。这个是可以修改的。下面给出方案： 1234567891011121314// 方法1input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill &amp;#123;  background-color">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浏览器记住密码背景色变成黄色处理">
 <meta property="og:url" content="http://yoursite.com/2019/06/28/stuff/index.html">
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
-<meta property="og:description" content="在实际项目当中，用户登录网站输入账号密码，当用户选择记住密码的时候，下次自动填充表单的背景变成了黄色，影响了视觉体验。这个是可以修改的。下面给出方案： 1234567891011121314// 方法1input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill &amp;#123;    background-col">
+<meta property="og:description" content="在实际项目当中，用户登录网站输入账号密码，当用户选择记住密码的时候，下次自动填充表单的背景变成了黄色，影响了视觉体验。这个是可以修改的。下面给出方案： 1234567891011121314// 方法1input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill &amp;#123;  background-color">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-01T10:22:59.270Z">
+<meta property="og:updated_time" content="2019-11-19T05:45:51.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器记住密码背景色变成黄色处理">
-<meta name="twitter:description" content="在实际项目当中，用户登录网站输入账号密码，当用户选择记住密码的时候，下次自动填充表单的背景变成了黄色，影响了视觉体验。这个是可以修改的。下面给出方案： 1234567891011121314// 方法1input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill &amp;#123;    background-col">
+<meta name="twitter:description" content="在实际项目当中，用户登录网站输入账号密码，当用户选择记住密码的时候，下次自动填充表单的背景变成了黄色，影响了视觉体验。这个是可以修改的。下面给出方案： 1234567891011121314// 方法1input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill &amp;#123;  background-color">
 
 
   <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
@@ -95,7 +95,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">44</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">45</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -130,7 +130,9 @@
   </div>
   <div class="article-entry">
     <p><strong>在实际项目当中，用户登录网站输入账号密码，当用户选择记住密码的时候，下次自动填充表单的背景变成了黄色，影响了视觉体验。这个是可以修改的。下面给出方案：</strong></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 方法1</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-webkit-autofill</span>, <span class="selector-tag">textarea</span><span class="selector-pseudo">:-webkit-autofill</span>, <span class="selector-tag">select</span><span class="selector-pseudo">:-webkit-autofill</span> &#123;</span><br><span class="line">    background-color: #fff; // 设置成元素原本的颜色</span><br><span class="line">    <span class="selector-tag">background-image</span>: <span class="selector-tag">none</span>;</span><br><span class="line">    <span class="selector-tag">color</span>: <span class="selector-tag">rgb</span>(0, 0, 0);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 方法2</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-webkit-autofill</span> </span><br><span class="line">&#123;</span><br><span class="line">    -webkit-box-shadow: 0px 0 3px 100px #ccc inset; // 背景色</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 方法1</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-webkit-autofill</span>, <span class="selector-tag">textarea</span><span class="selector-pseudo">:-webkit-autofill</span>, <span class="selector-tag">select</span><span class="selector-pseudo">:-webkit-autofill</span> &#123;</span><br><span class="line">  background-color: #fff; // 设置成元素原本的颜色</span><br><span class="line">  <span class="selector-tag">background-image</span>: <span class="selector-tag">none</span>;</span><br><span class="line">  <span class="selector-tag">color</span>: <span class="selector-tag">rgb</span>(0, 0, 0);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 方法2</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-webkit-autofill</span> </span><br><span class="line">&#123;</span><br><span class="line">  -webkit-box-shadow: 0px 0 3px 100px #ccc inset; // 背景色</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
   </div>
   <footer class="article-footer">
     

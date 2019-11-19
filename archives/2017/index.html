@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">44</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">45</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -257,7 +257,10 @@
       </div>
       <div class="article-entry">
         
-          <p><strong>IE6不支持min-height，解决办法使用css hack：</strong><br>    .target {<br>        min-height: 100px;<br>        height: auto !important;<br>        height: 100px;   // IE6下内容高度超过会自动扩展高度<br>    }<br><strong>ol内li的序号全为1，不递增。解决方法：为li设置样式display: list-item;</strong></p>
+          <p><strong>IE6不支持min-height，解决办法使用css hack：</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.target</span> &#123;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: auto <span class="meta">!important</span>;</span><br><span class="line">  height: 100px;   // IE6下内容高度超过会自动扩展高度</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>ol内li的序号全为1，不递增。解决方法：为li设置样式display: list-item;</strong></p>
           <p>
             <a href="/2017/12/11/compatible/">
               阅读全文
