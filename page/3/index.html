@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">45</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -107,6 +107,47 @@
         <div style="max-width: 1000px">
       
           
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/07/12/Fighting/">
+  javascript数组常用函数与实战总结
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/07/12/Fighting/"><span class="article-date">
+  2019-07-12
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h1 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h1><h2 id="向数组末尾添加值"><a href="#向数组末尾添加值" class="headerlink" title="向数组末尾添加值"></a>向数组末尾添加值</h2><p><strong>push</strong><br>说明：向数组的末尾添加一个或多个元素，并返回新的长度 代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array=[<span class="number">11</span>,<span class="number">22</span>];</span><br><span class="line"><span class="keyword">let</span> arrayChange=array.push(<span class="string">"333"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arrayChange)</span><br><span class="line"><span class="comment">//返回的结果就是数组改变后的长度：3</span></span><br><span class="line"><span class="built_in">console</span>.log(arrayChange.length)<span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/07/12/Fighting/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
 
   
   
@@ -526,59 +567,6 @@
 <h2 id="1-浏览器缓存基本认识"><a href="#1-浏览器缓存基本认识" class="headerlink" title="1. 浏览器缓存基本认识"></a>1. 浏览器缓存基本认识</h2><p>它分为强缓存和协商缓存：<br>1.浏览器在加载资源时，先根据这个资源的一些http header判断它是否命中强缓存，强缓存如果命中，浏览器直接从自己的缓存中读取资源，不会发请求到服务器。比如某个css文件，如果浏览器在加载它所在的网页时，这个css文件的缓存配置命中了强缓存，浏览器就直接从缓存中加载这个css，连请求都不会发送到网页所在服务器；</p>
           <p>
             <a href="/2019/06/24/Browsercache/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
-
-  
-  
-    <div class="post-list">
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/06/23/Server/">
-  服务端与网络
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2019/06/23/Server/"><span class="article-date">
-  2019-06-23
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <h2 id="1-http-https-协议"><a href="#1-http-https-协议" class="headerlink" title="1. http/https 协议"></a>1. http/https 协议</h2><p><strong>1.0 协议缺陷:</strong></p>
-<blockquote>
-<ul>
-<li>无法复用链接，完成即断开，重新慢启动和 TCP 3次握手</li>
-<li>head of line blocking: 线头阻塞，导致请求之间互相影响</li>
-</ul>
-</blockquote>
-<p><strong>1.1 改进:</strong></p>
-<blockquote>
-<ul>
-<li>长连接(默认 keep-alive)，复用</li>
-<li>host 字段指定对应的虚拟站点</li>
-</ul>
-</blockquote>
-          <p>
-            <a href="/2019/06/23/Server/">
               阅读全文
             </a>
           </p>
