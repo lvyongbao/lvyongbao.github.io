@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -107,6 +107,51 @@
         <div style="max-width: 1000px">
       
           
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/14/prevent/">
+  防抖节流
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/14/prevent/"><span class="article-date">
+  2019-06-14
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p><strong>今天我们来说一下防抖和节流，防抖与节流函数是一种最常用的 高频触发优化方式，能对性能有较大的帮助。</strong></p>
+<h2 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h2><p>防抖 (debounce): 在事件被触发n秒后再执行回调，如果在这n秒内又被触发，则重新计时。使用场景:<br>1.给按钮加函数防抖防止表单多次提交。<br>2.对于输入框连续输入进行AJAX验证时，用函数防抖能有效减少请求次数。</p>
+<p>我们先来看一个袖珍版的防抖理解一下防抖的实现：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// func是用户传入需要防抖的函数</span></span><br><span class="line"><span class="comment">// wait是等待时间</span></span><br><span class="line"><span class="keyword">const</span> debounce = <span class="function">(<span class="params">func, wait = <span class="number">50</span></span>) =&gt;</span> &#123;</span><br><span class="line"><span class="comment">// 缓存一个定时器id</span></span><br><span class="line">  <span class="keyword">let</span> timer = <span class="number">0</span></span><br><span class="line">  <span class="comment">// 这里返回的函数是每次用户实际调用的防抖函数</span></span><br><span class="line">  <span class="comment">// 如果已经设定过定时器了就清空上一次的定时器</span></span><br><span class="line">  <span class="comment">// 开始一个新的定时器，延迟执行用户传入的方法</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (timer) clearTimeout(timer)</span><br><span class="line">    timer = setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      func.apply(<span class="keyword">this</span>, args)</span><br><span class="line">    &#125;, wait)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 不难看出如果用户调用该函数的间隔小于wait的情况下，上一次的时间还未到就被清除了，并不会执行函数</span></span><br></pre></td></tr></table></figure>
+
+<p>这是一个简单版的防抖，但是有缺陷，这个防抖只能在最后调用。一般的防抖会有immediate选项，表示是否立即调用。这两者的区别，举个栗子来说：</p>
+          <p>
+            <a href="/2019/06/14/prevent/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
 
   
   
@@ -506,47 +551,6 @@
     </div>
   
 
-  
-  
-    <div class="post-list">
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2017/12/13/toFixed/">
-  toFixed方法详解
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2017/12/13/toFixed/"><span class="article-date">
-  2017-12-13
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>最近做的项目涉及到金额的计算，有一种方式就是进行四舍五入的规则进行小数点后面的尾数处理，以前一直以为toFixed方法就是四舍五入的，直到测试测出金额计算的bug我才如梦初醒，才深究了下toFixed这个方法。<br>toFixed方法在IE10及以上里面是正常的四舍五入，但是别的浏览器里面就不一样了，它不是正常的四舍五入，比如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1.335</span>;  </span><br><span class="line"><span class="built_in">console</span>.log(a.toFixed(<span class="number">2</span>))  </span><br><span class="line"><span class="comment">// IE         1.34  </span></span><br><span class="line"><span class="comment">//chorme   1.33</span></span><br></pre></td></tr></table></figure>
-          <p>
-            <a href="/2017/12/13/toFixed/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
-
 
 
   <div class="pagination">
@@ -558,7 +562,7 @@
 
           <div class="main-footer">
   
-    © 2019 一个爱听歌的搬砖工 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+    © 2020 一个爱听歌的搬砖工 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
   
 </div>
 <script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
