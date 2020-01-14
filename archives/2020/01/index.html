@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -123,8 +123,47 @@
 
     <div class="post-list-item article">
       <h3 class="article-header">
+        <a href="/2020/01/14/Time/">
+  JS常用时间处理方法
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2020/01/14/Time/"><span class="article-date">
+  2020-01-14
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>简便的格式化时间</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> format = <span class="function"><span class="keyword">function</span>(<span class="params">time</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(+time  + <span class="number">8</span> * <span class="number">3600</span> * <span class="number">1000</span> );</span><br><span class="line">  <span class="keyword">return</span> date.toJSON().substr(<span class="number">0</span>,<span class="number">19</span>).replace(<span class="string">'T'</span>,<span class="string">' '</span>).replace(<span class="regexp">/-/g</span>,<span class="string">'.'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> time1 = format(<span class="keyword">new</span> <span class="built_in">Date</span>());</span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2020/01/14/Time/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
         <a href="/2020/01/03/print/">
-  打印
+  打印功能的实现
 </a>
 
       </h3>
