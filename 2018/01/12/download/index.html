@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
 <meta property="og:description" content="前些天接触到一个需求，项目的后台需要将HTML表格内容导出到Excel中，心里第一念头是后台提供接口前台去调用就好。谁想项目经理要前台自行做处理。于是上网百度了些插件，感觉不怎么样。问了同事给推荐了几款。其中一款感觉不错。在这分享一下！ 插件介绍jquery-table2excel是一款可以将HTML表格的内容导出到微软Excel电子表格中的jQuery插件。该插件可以根据你的需要导出表格中的内容">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-11T12:47:47.747Z">
+<meta property="og:updated_time" content="2020-01-19T01:18:17.750Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jquery-table2excel插件">
 <meta name="twitter:description" content="前些天接触到一个需求，项目的后台需要将HTML表格内容导出到Excel中，心里第一念头是后台提供接口前台去调用就好。谁想项目经理要前台自行做处理。于是上网百度了些插件，感觉不怎么样。问了同事给推荐了几款。其中一款感觉不错。在这分享一下！ 插件介绍jquery-table2excel是一款可以将HTML表格的内容导出到微软Excel电子表格中的jQuery插件。该插件可以根据你的需要导出表格中的内容">
@@ -134,10 +134,12 @@
 <a id="more"></a>
 <p><strong>简要教程</strong><br>jquery-table2excel是一款可以将HTML表格的内容导出到微软Excel电子表格中的jQuery插件。该插件可以根据你的需要导出表格中的内容，不需要的行可以不导出。它文件体积小，使用非常方便。<br>注意导出的Excel文件的格式，默认导出为.xlsx格式的excel文件，需要excel2010以上的版本才能打开，如果是使用低版本的excel，可以手动将文件扩展名修改为.xls。</p>
 <p><strong>使用方法</strong><br>使用table2excel表格插件需要在页面中引入jquery和jquery.table2excel.js文件。</p>
-<pre><code>&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.table2excel.js&quot;&gt;&lt;/script&gt;</code></pre><p>如果表格中的某一行不需要导出到Excel中，可以为这一行添加.noExlclass类，该class类会在插件初始化时通过参数被指定为不被导出的数据。</p>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.table2excel.js"></script>
+
+<p>如果表格中的某一行不需要导出到Excel中，可以为这一行添加.noExlclass类，该class类会在插件初始化时通过参数被指定为不被导出的数据。</p>
 <p><strong>初始化插件</strong><br>在页面DOM元素加载中完毕之后，可以通过下面的方法来初始化table2excel插件。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#table2excel"</span>).table2excel(&#123;</span><br><span class="line">  <span class="comment">// 不被导出的表格行的CSS class类</span></span><br><span class="line">  exclude: <span class="string">".noExl"</span>,</span><br><span class="line">  <span class="comment">// 导出的Excel文档的名称</span></span><br><span class="line">  name: <span class="string">"Excel Document Name"</span>,</span><br><span class="line">  <span class="comment">// Excel文件的名称</span></span><br><span class="line">  filename: <span class="string">"myExcelTable"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#table2excel"</span>).table2excel(&#123;</span><br><span class="line">  <span class="comment">// 不被导出的表格行的CSS class类</span></span><br><span class="line">  exclude: <span class="string">".noExl"</span>,</span><br><span class="line">  <span class="comment">// 导出的Excel文档的名称</span></span><br><span class="line">  name: <span class="string">"Excel Document Name"</span>,</span><br><span class="line">  <span class="comment">// Excel文件的名称</span></span><br><span class="line">  filename: <span class="string">"myExcelTable"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <p><strong>配置参数</strong><br>table2excel插件的可用配置参数有：</p>
 <blockquote>
