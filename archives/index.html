@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -118,6 +118,45 @@
           <h1><a href="/archives/2020" class="archive-year">2020</a></h1>
         </div>
         <div class="post-list">
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2020/01/19/Export/">
+  导出文件实现
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2020/01/19/Export/"><span class="article-date">
+  2020-01-19
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>最近在做后台管理的时候有个导出记录的功能，我这边踩了个坑。后台接口是以流的形式把数据给我们，我这边是用Blob对象进行下载。如果不了解Blob的小伙伴可以查阅一下相关资料。我们来看一下用法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">axios</span><br><span class="line">  .post(<span class="string">'/demo'</span>, data, &#123;</span><br><span class="line">    responseType: <span class="string">'arraybuffer'</span>,</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> blob = <span class="keyword">new</span> Blob([res], &#123;</span><br><span class="line">      type:</span><br><span class="line">        <span class="string">'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8'</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">const</span> downloadElement = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</span><br><span class="line">    <span class="keyword">const</span> href = <span class="built_in">window</span>.URL.createObjectURL(blob); <span class="comment">// 创建下载的链接</span></span><br><span class="line">    downloadElement.href = href;</span><br><span class="line">    downloadElement.download = <span class="string">''</span>; <span class="comment">// 下载后文件名</span></span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(downloadElement);</span><br><span class="line">    downloadElement.click(); <span class="comment">// 点击下载</span></span><br><span class="line">    <span class="built_in">document</span>.body.removeChild(downloadElement); <span class="comment">// 下载完成移除元素</span></span><br><span class="line">    <span class="built_in">window</span>.URL.revokeObjectURL(href); <span class="comment">// 释放掉blob对象</span></span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2020/01/19/Export/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
     
   
 
@@ -482,48 +521,6 @@
 <p>例子，现在有一个数组  [0, 1, 2, 3, 4]，需要计算数组元素的和，需求比较简单，来看下代码实现。</p>
           <p>
             <a href="/2019/10/25/Reduce/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/10/24/Map/">
-  map详解与实战
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2019/10/24/Map/"><span class="article-date">
-  2019-10-24
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>map() (映射)方法最后生成一个新数组，不改变原始数组的值。其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.map(callback,[ thisObject]);</span><br></pre></td></tr></table></figure>
-
-<p>callback(回调函数)</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[].map(<span class="function"><span class="keyword">function</span>(<span class="params">currentValue, index, array</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-          <p>
-            <a href="/2019/10/24/Map/">
               阅读全文
             </a>
           </p>

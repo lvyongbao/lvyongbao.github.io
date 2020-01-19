@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -107,6 +107,44 @@
         <div style="max-width: 1000px">
       
           
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/28/stuff/">
+  浏览器记住密码背景色变成黄色处理
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/28/stuff/"><span class="article-date">
+  2019-06-28
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p><strong>在实际项目当中，用户登录网站输入账号密码，当用户选择记住密码的时候，下次自动填充表单的背景变成了黄色，影响了视觉体验。这个是可以修改的。下面给出方案：</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 方法1</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-webkit-autofill</span>, <span class="selector-tag">textarea</span><span class="selector-pseudo">:-webkit-autofill</span>, <span class="selector-tag">select</span><span class="selector-pseudo">:-webkit-autofill</span> &#123;</span><br><span class="line">  background-color: #fff; // 设置成元素原本的颜色</span><br><span class="line">  <span class="selector-tag">background-image</span>: <span class="selector-tag">none</span>;</span><br><span class="line">  <span class="selector-tag">color</span>: <span class="selector-tag">rgb</span>(0, 0, 0);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 方法2</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-webkit-autofill</span> </span><br><span class="line">&#123;</span><br><span class="line">  -webkit-box-shadow: 0px 0 3px 100px #ccc inset; // 背景色</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
 
   
   
@@ -511,48 +549,6 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql = <span class="string">"SELECT * FROM articles WHERE id ="</span>, $id</span><br></pre></td></tr></table></figure>
           <p>
             <a href="/2019/06/17/Safety/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
-
-  
-  
-    <div class="post-list">
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/06/16/Modular/">
-  模块化
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2019/06/16/Modular/"><span class="article-date">
-  2019-06-16
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p><strong>模块化开发在现代开发中已是必不可少的一部分，它大大提高了项目的可维护、可拓展和可协作性。通常，我们 在浏览器中使用 ES6 的模块化支持，在 Node 中使用 commonjs 的模块化支持。</strong></p>
-<p>在有 Babel 的情况下，我们可以直接使用 ES6 的模块化</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// file a.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="comment">// file b.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123;a, b&#125; <span class="keyword">from</span> <span class="string">'./a.js'</span></span><br><span class="line"><span class="keyword">import</span> XXX <span class="keyword">from</span> <span class="string">'./b.js'</span></span><br></pre></td></tr></table></figure>
-          <p>
-            <a href="/2019/06/16/Modular/">
               阅读全文
             </a>
           </p>
