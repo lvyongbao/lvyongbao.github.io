@@ -13,17 +13,17 @@
   
 </title>
 
-<meta name="description" content="我知道有4种方法，具体可以详细的去试试看：">
+<meta name="description" content="我知道有 4 种方法，具体可以详细的去试试看：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="阻止浏览器记住密码功能干扰表单填充">
 <meta property="og:url" content="http://yoursite.com/2017/12/13/Input/index.html">
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
-<meta property="og:description" content="我知道有4种方法，具体可以详细的去试试看：">
+<meta property="og:description" content="我知道有 4 种方法，具体可以详细的去试试看：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-12T12:18:54.881Z">
+<meta property="og:updated_time" content="2020-04-21T06:12:26.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阻止浏览器记住密码功能干扰表单填充">
-<meta name="twitter:description" content="我知道有4种方法，具体可以详细的去试试看：">
+<meta name="twitter:description" content="我知道有 4 种方法，具体可以详细的去试试看：">
 
 
   <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
@@ -129,15 +129,16 @@
 
   </div>
   <div class="article-entry">
-    <h2 id="我知道有4种方法，具体可以详细的去试试看："><a href="#我知道有4种方法，具体可以详细的去试试看：" class="headerlink" title="我知道有4种方法，具体可以详细的去试试看："></a>我知道有4种方法，具体可以详细的去试试看：</h2><a id="more"></a>
-<p><strong>1.把input type=”password” 改成 input type=”text” 并在后面加上 onfocus=”this.type=’password’”</strong><br><strong>2.在文档加载完成后将密码输入框设置为空：</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.load = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;   </span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'密码域ID'</span>).value=<span class="string">''</span>;   </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+    <h2 id="我知道有-4-种方法，具体可以详细的去试试看："><a href="#我知道有-4-种方法，具体可以详细的去试试看：" class="headerlink" title="我知道有 4 种方法，具体可以详细的去试试看："></a>我知道有 4 种方法，具体可以详细的去试试看：</h2><a id="more"></a>
+
+<p><strong>1.把 input type=”password” 改成 input type=”text” 并在后面加上 onfocus=”this.type=’password’”</strong><br><strong>2.在文档加载完成后将密码输入框设置为空：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.load = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">document</span>.getElementById(<span class="string">"密码域ID"</span>).value = <span class="string">""</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p><strong>3.在用户名和密码之间加上一个隐藏的文本框：</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"name"</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"pass"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"name"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"pass"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>4.使用html5的属性：</strong></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">pre</span> <span class="attr">name</span>=<span class="string">"code"</span> <span class="attr">class</span>=<span class="string">"html"</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">autocomplete</span>=<span class="string">"off"</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"pass"</span> <span class="attr">autocomplete</span>=<span class="string">"off"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>4.使用 html5 的属性：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">pre</span> <span class="attr">name</span>=<span class="string">"code"</span> <span class="attr">class</span>=<span class="string">"html"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">autocomplete</span>=<span class="string">"off"</span> /&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">name</span>=<span class="string">"pass"</span> <span class="attr">autocomplete</span>=<span class="string">"off"</span></span></span><br><span class="line"><span class="tag">/&gt;</span><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
   </div>

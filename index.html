@@ -134,7 +134,7 @@
       </div>
       <div class="article-entry">
         
-          <p>最近在做后台管理的时候有个导出记录的功能，我这边踩了个坑。后台接口是以流的形式把数据给我们，我这边是用Blob对象进行下载。如果不了解Blob的小伙伴可以查阅一下相关资料。我们来看一下用法：</p>
+          <p>最近在做后台管理的时候有个导出记录的功能，我这边踩了个坑。后台接口是以流的形式把数据给我们，我这边是用 Blob 对象进行下载。如果不了解 Blob 的小伙伴可以查阅一下相关资料。我们来看一下用法：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">axios</span><br><span class="line">  .post(<span class="string">'/demo'</span>, data, &#123;</span><br><span class="line">    responseType: <span class="string">'arraybuffer'</span>,</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> blob = <span class="keyword">new</span> Blob([res], &#123;</span><br><span class="line">      type:</span><br><span class="line">        <span class="string">'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8'</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">const</span> downloadElement = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</span><br><span class="line">    <span class="keyword">const</span> href = <span class="built_in">window</span>.URL.createObjectURL(blob); <span class="comment">// 创建下载的链接</span></span><br><span class="line">    downloadElement.href = href;</span><br><span class="line">    downloadElement.download = <span class="string">''</span>; <span class="comment">// 下载后文件名</span></span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(downloadElement);</span><br><span class="line">    downloadElement.click(); <span class="comment">// 点击下载</span></span><br><span class="line">    <span class="built_in">document</span>.body.removeChild(downloadElement); <span class="comment">// 下载完成移除元素</span></span><br><span class="line">    <span class="built_in">window</span>.URL.revokeObjectURL(href); <span class="comment">// 释放掉blob对象</span></span><br></pre></td></tr></table></figure>
           <p>
             <a href="/2020/01/19/Export/">
@@ -176,7 +176,7 @@
       <div class="article-entry">
         
           <p>简便的格式化时间</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> format = <span class="function"><span class="keyword">function</span>(<span class="params">time</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(+time  + <span class="number">8</span> * <span class="number">3600</span> * <span class="number">1000</span> );</span><br><span class="line">  <span class="keyword">return</span> date.toJSON().substr(<span class="number">0</span>,<span class="number">19</span>).replace(<span class="string">'T'</span>,<span class="string">' '</span>).replace(<span class="regexp">/-/g</span>,<span class="string">'.'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> time1 = format(<span class="keyword">new</span> <span class="built_in">Date</span>());</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> format = <span class="function"><span class="keyword">function</span> (<span class="params">time</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(+time + <span class="number">8</span> * <span class="number">3600</span> * <span class="number">1000</span>);</span><br><span class="line">  <span class="keyword">return</span> date.toJSON().substr(<span class="number">0</span>, <span class="number">19</span>).replace(<span class="string">"T"</span>, <span class="string">" "</span>).replace(<span class="regexp">/-/g</span>, <span class="string">"."</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> time1 = format(<span class="keyword">new</span> <span class="built_in">Date</span>());</span><br></pre></td></tr></table></figure>
           <p>
             <a href="/2020/01/14/Time/">
               阅读全文
@@ -216,7 +216,7 @@
       </div>
       <div class="article-entry">
         
-          <p>记录一下打印功能的实现方式，之前做需求的时候有个预览打印的功能，这边分享一下，下次遇到不会再走弯路。<br>我这边是再做react项目的时候碰到了打印需求，网上其实有关基于react的打印插件，功能还是很强大的，我只用到了打印功能，并不需要引入第三方库，所以就用原生方法写了个。<br>因为我的打印是在弹窗的基础上打印一个表格，所以我新开了个页面，不然点击关闭按钮时，页面就回不来了。以下是实现的代码：</p>
+          <p>记录一下打印功能的实现方式，之前做需求的时候有个预览打印的功能，这边分享一下，下次遇到不会再走弯路。<br>我这边是再做 react 项目的时候碰到了打印需求，网上其实有关基于 react 的打印插件，功能还是很强大的，我只用到了打印功能，并不需要引入第三方库，所以就用原生方法写了个。<br>因为我的打印是在弹窗的基础上打印一个表格，所以我新开了个页面，不然点击关闭按钮时，页面就回不来了。以下是实现的代码：</p>
           <p>
             <a href="/2020/01/03/Printing/">
               阅读全文
@@ -256,7 +256,7 @@
       </div>
       <div class="article-entry">
         
-          <p>在网页设计中， Sticky footers 设计是最古老和最常见的效果之一，大多数人都曾经经历过。它可以概括如下：如果页面内容不够长的时候，页脚块粘贴在视窗底部；如果内容足够长时，页脚块会被内容向下推送。这种效果不仅是无处不在，很受欢迎，而且实现起来看上去也非常容易。<br>有的盆友就说了，我可以使用position: fixed;bottom:0;<br>当然有些情况下是可以适用的，但是有些情况下并不适用，使用fixed不就反而更糟，再说了，像我们这样的喜欢新技（zhuang）术（B）的人，有使用新技（zhuang）术（B）的机会怎么能放过。<br>之前分享过一期网站footer沉底效果的解决方案，用的是JS或者采用flex布局，更利于PC端。今天分享下便于移动端的最佳套路。<br>当然市面上的一些解决方案，但多少都有些兼容性问题存在，这当然不是我们追求的，分享下实现的源码，有兴趣的私下里可以试一试。</p>
+          <p>在网页设计中， Sticky footers 设计是最古老和最常见的效果之一，大多数人都曾经经历过。它可以概括如下：如果页面内容不够长的时候，页脚块粘贴在视窗底部；如果内容足够长时，页脚块会被内容向下推送。这种效果不仅是无处不在，很受欢迎，而且实现起来看上去也非常容易。<br>有的盆友就说了，我可以使用 position: fixed;bottom:0;<br>当然有些情况下是可以适用的，但是有些情况下并不适用，使用 fixed 不就反而更糟，再说了，像我们这样的喜欢新技（zhuang）术（B）的人，有使用新技（zhuang）术（B）的机会怎么能放过。<br>之前分享过一期网站 footer 沉底效果的解决方案，用的是 JS 或者采用 flex 布局，更利于 PC 端。今天分享下便于移动端的最佳套路。<br>当然市面上的一些解决方案，但多少都有些兼容性问题存在，这当然不是我们追求的，分享下实现的源码，有兴趣的私下里可以试一试。</p>
           <p>
             <a href="/2019/12/05/StickyFooter/">
               阅读全文
@@ -426,8 +426,8 @@
       </div>
       <div class="article-entry">
         
-          <p>sort()方法用原地算法对数组的元素进行排序，并返回数组，该排序方法会在原数组上直接进行排序，并不会生成一个排好序的新数组。排序算法现在是稳定的。默认排序顺序是根据字符串Unicode码点。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.sort([compareFunction])</span><br></pre></td></tr></table></figure>
+          <p>sort()方法用原地算法对数组的元素进行排序，并返回数组，该排序方法会在原数组上直接进行排序，并不会生成一个排好序的新数组。排序算法现在是稳定的。默认排序顺序是根据字符串 Unicode 码点。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.sort([compareFunction]);</span><br></pre></td></tr></table></figure>
           <p>
             <a href="/2019/10/28/Sort/">
               阅读全文
