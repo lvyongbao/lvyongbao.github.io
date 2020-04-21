@@ -13,17 +13,17 @@
   
 </title>
 
-<meta name="description" content="前段时间因为薪资和工作的原因，有了跳槽的想法，想着出去面试一波，然而天天加班到晚上11点左右，根本没啥时间面试，请假还不给我请，很尴尬！索性我就接接外包公司的电话面试，看看自己有几斤几两，自己也收集 了一些面试资料，丰富一下自己。中间遇到过一些面试题，且面试中出现机率较高的提问，有些答的不是很好，今天开始我会陆陆续续整理出来分享一下，希望对自己跟看到这篇文章的人有所帮助，都能轻松拿offer。 什">
+<meta name="description" content="什么是Promise? Promise是JS异步编程中的重要概念，异步抽象处理对象，是目前比较流行Javascript异步编程解决方案之一  有用过promise吗？请写出下列代码的执行结果，并写出你的理解思路：123456789101112131415setTimeout(()=&amp;gt;&amp;#123;        console.log(1);&amp;#125;, 0);new Promise((re">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Promise">
 <meta property="og:url" content="http://yoursite.com/2019/06/09/Interview/index.html">
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
-<meta property="og:description" content="前段时间因为薪资和工作的原因，有了跳槽的想法，想着出去面试一波，然而天天加班到晚上11点左右，根本没啥时间面试，请假还不给我请，很尴尬！索性我就接接外包公司的电话面试，看看自己有几斤几两，自己也收集 了一些面试资料，丰富一下自己。中间遇到过一些面试题，且面试中出现机率较高的提问，有些答的不是很好，今天开始我会陆陆续续整理出来分享一下，希望对自己跟看到这篇文章的人有所帮助，都能轻松拿offer。 什">
+<meta property="og:description" content="什么是Promise? Promise是JS异步编程中的重要概念，异步抽象处理对象，是目前比较流行Javascript异步编程解决方案之一  有用过promise吗？请写出下列代码的执行结果，并写出你的理解思路：123456789101112131415setTimeout(()=&amp;gt;&amp;#123;        console.log(1);&amp;#125;, 0);new Promise((re">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-11T12:47:47.746Z">
+<meta property="og:updated_time" content="2020-04-21T05:58:08.693Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Promise">
-<meta name="twitter:description" content="前段时间因为薪资和工作的原因，有了跳槽的想法，想着出去面试一波，然而天天加班到晚上11点左右，根本没啥时间面试，请假还不给我请，很尴尬！索性我就接接外包公司的电话面试，看看自己有几斤几两，自己也收集 了一些面试资料，丰富一下自己。中间遇到过一些面试题，且面试中出现机率较高的提问，有些答的不是很好，今天开始我会陆陆续续整理出来分享一下，希望对自己跟看到这篇文章的人有所帮助，都能轻松拿offer。 什">
+<meta name="twitter:description" content="什么是Promise? Promise是JS异步编程中的重要概念，异步抽象处理对象，是目前比较流行Javascript异步编程解决方案之一  有用过promise吗？请写出下列代码的执行结果，并写出你的理解思路：123456789101112131415setTimeout(()=&amp;gt;&amp;#123;        console.log(1);&amp;#125;, 0);new Promise((re">
 
 
   <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
@@ -129,8 +129,7 @@
 
   </div>
   <div class="article-entry">
-    <p><strong>前段时间因为薪资和工作的原因，有了跳槽的想法，想着出去面试一波，然而天天加班到晚上11点左右，根本没啥时间面试，请假还不给我请，很尴尬！索性我就接接外包公司的电话面试，看看自己有几斤几两，自己也收集 了一些面试资料，丰富一下自己。中间遇到过一些面试题，且面试中出现机率较高的提问，有些答的不是很好，今天开始我会陆陆续续整理出来分享一下，希望对自己跟看到这篇文章的人有所帮助，都能轻松拿offer。</strong></p>
-<h2 id="什么是Promise"><a href="#什么是Promise" class="headerlink" title="什么是Promise?"></a>什么是Promise?</h2><blockquote>
+    <h2 id="什么是Promise"><a href="#什么是Promise" class="headerlink" title="什么是Promise?"></a>什么是Promise?</h2><blockquote>
 <p>Promise是JS异步编程中的重要概念，异步抽象处理对象，是目前比较流行Javascript异步编程解决方案之一</p>
 </blockquote>
 <h3 id="有用过promise吗？请写出下列代码的执行结果，并写出你的理解思路："><a href="#有用过promise吗？请写出下列代码的执行结果，并写出你的理解思路：" class="headerlink" title="有用过promise吗？请写出下列代码的执行结果，并写出你的理解思路："></a>有用过promise吗？请写出下列代码的执行结果，并写出你的理解思路：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="number">200</span>; i++)&#123;</span><br><span class="line">                i = <span class="number">198</span> &amp;&amp; resolve();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">4</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">5</span>);</span><br><span class="line"><span class="comment">// 结果：2、3、5、4、1;</span></span><br></pre></td></tr></table></figure>
