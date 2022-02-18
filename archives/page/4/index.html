@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -118,6 +118,45 @@
           <h1><a href="/archives/2019" class="archive-year">2019</a></h1>
         </div>
         <div class="post-list">
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/07/02/webpack/">
+  webpack入门
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/07/02/webpack/"><span class="article-date">
+  2019-07-02
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h2 id="1、webpack-介绍"><a href="#1、webpack-介绍" class="headerlink" title="1、webpack 介绍"></a>1、webpack 介绍</h2><p>当我们打开<a href="https://www.webpackjs.com/" target="_blank" rel="noopener">webpack 中文文档</a>首页时，最底下的几个大字让一切变得简单，我就觉得它很牛逼，很不简单。官网上的 webpack 概念：<strong>webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)，显然 webpack 是一个项目静态模块打包器。不过后面还有一句就是：当 webpack 处理应用程序时，它会递归地构建一个依赖关系图(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个 bundle。这个的意思就是 webpack 会自动分析你的项目结构，各个的模块依赖关系，然后打包成相应的 bundle，至于模块就理解为一个 js 文件为一个模块，css 也是一样。</strong></p>
+<h2 id="2、创建-webpack-项目"><a href="#2、创建-webpack-项目" class="headerlink" title="2、创建 webpack 项目"></a>2、创建 webpack 项目</h2><p>1.新建文件夹，名为 webpackdemo，创建 src 文件夹并且包含 app.js； 2.打开终端进入 webpackdemo 文件夹，输入 npm init,执行完了会出现 package.json 文件； 3.安装 webpack 和 webpack-cli，输入 npm i webpack webpack-cli -D 4.在 package.json 中添加</p>
+          <p>
+            <a href="/2019/07/02/webpack/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
     
   
 
@@ -499,49 +538,6 @@
         
           <p>DNS 解析<br>TCP 三次握手<br>发送请求，分析 url，设置请求报文(头，主体)<br>服务器返回请求的文件 (html)<br>浏览器渲染<br><strong>1.HTML parser –&gt; DOM Tree</strong><br>标记化算法，进行元素状态的标记<br>dom 树构建<br><strong>2.CSS parser –&gt; Style Tree</strong><br>解析 css 代码，生成样式树<br><strong>3.attachment –&gt; Render Tree</strong><br>结合 dom树 与 style树，生成渲染树<br><strong>4.layout: 布局</strong><br>GPU painting: 像素绘制页面</p>
 
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/06/17/Safety/">
-  安全
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2019/06/17/Safety/"><span class="article-date">
-  2019-06-17
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <h2 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h2><p>这是一种比较简单的攻击方式。 </p>
-<p>如果后台人员使用用户输入的数据来组装SQL查询语句的时候不做防范， 遇到一些恶意的输入， 最后生成的SQL就会有问题。<br>比如地址栏输入的是：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">articlrs/index.php?id=<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<p>发送一个get请求， 调用的查询语句是：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql = <span class="string">"SELECT * FROM articles WHERE id ="</span>, $id</span><br></pre></td></tr></table></figure>
-          <p>
-            <a href="/2019/06/17/Safety/">
-              阅读全文
-            </a>
-          </p>
         
       </div>
     </div>

@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -107,6 +107,53 @@
         <div style="max-width: 1000px">
       
           
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/10/25/Reduce/">
+  reduce详解与实战
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/10/25/Reduce/"><span class="article-date">
+  2019-10-25
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>reduce() 方法对数组中的每个元素执行一个提供的 reducer 函数(升序执行)，将其结果汇总为单个返回值。传递给 reduce 的回调函数（callback）接受四个参数，分别是累加器 accumulator、currentValue——正在操作的元素、currentIndex（可选）——元素索引，但是它的开始会有特殊说明、array（可选）——原始数组本身，除了 callback 之外还可以接受初始值 initialValue 值（可选）。</p>
+<ol>
+<li><p>如果没有提供 initialValue，那么第一次调用 callback 函数时，accumulator 使用原数组中的第一个元素，currentValue 即是数组中的第二个元素。在没有初始值的空数组上调用 reduce 将报错。</p>
+</li>
+<li><p>如果提供了 initialValue，那么将作为第一次调用 callback 函数时的第一个参数的值，即 accumulator，currentValue 使用原数组中的第一个元素。</p>
+</li>
+</ol>
+<p>例子，现在有一个数组  [0, 1, 2, 3, 4]，需要计算数组元素的和，需求比较简单，来看下代码实现。</p>
+          <p>
+            <a href="/2019/10/25/Reduce/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
 
   
   
@@ -489,47 +536,6 @@
 <h2 id="1-检查提交之间的差异"><a href="#1-检查提交之间的差异" class="headerlink" title="1.检查提交之间的差异"></a>1.检查提交之间的差异</h2><p>每个提交都以数字和符号的字符串形式存在唯一的 ID。<br>要查看所有提交及其 ID 的列表，我们可以使用 git log：</p>
           <p>
             <a href="/2019/07/25/advanced/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
-
-  
-  
-    <div class="post-list">
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/07/24/git/">
-  Git 命令
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2019/07/24/git/"><span class="article-date">
-  2019-07-24
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p><strong>记录一下git命令的一些用法</strong></p>
-<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>Git是一个命令行实用程序的集合，它会跟踪和记录文件中的更改（通常是源代码，但是可以跟踪任何你想要的文件）。<br>有了它，你可以恢复项目的旧版本，比较，分析，合并更改等操作。<br>这个过程被称为版本控制。<br>有许多版本控制系统可以完成这项工作。<br>你可能听说过其中的一些–SVN，Mercurial，Perforce，CVS，Bitkeeper等等。<br>Git是分散的，这意味着它不依赖于中央服务器来保留文件的旧版本。<br>相反，它完全在本地运行，将这些数据作为一个文件夹存储在硬盘上，我们称之为储存仓库。<br>但是，你也可以在线存储您的仓库的副本，这使得多个人可以轻松协作并使用相同的代码。这就是像GitHub和BitBucket这样的网站所使用的一样。</p>
-          <p>
-            <a href="/2019/07/24/git/">
               阅读全文
             </a>
           </p>

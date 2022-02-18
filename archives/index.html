@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -111,6 +111,59 @@
   
   
     
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <h1><a href="/archives/2022" class="archive-year">2022</a></h1>
+        </div>
+        <div class="post-list">
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2022/02/18/jsClose/">
+  JavaScript关闭当前页
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2022/02/18/jsClose/"><span class="article-date">
+  2022-02-18
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>出于安全考虑，普通页面直接执行window.close()时不会生效，控制台会出现如下警告：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scripts may not close windows that were not opened by script.</span><br></pre></td></tr></table></figure>
+
+<p>只有那些通a标签或者window.open()打开的页面才支持关闭，为什么这么规定呢？可能是直接输入地址访问的页面可能比较重要，减少被恶意JS攻击的可能性吧，所以规定只有用脚本（或代码）打开的页面才能用脚本关闭。</p>
+<p>IE和火狐还未测试，Chrome已没问题。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 关闭页面</span></span><br><span class="line">closeCurrentPage() &#123;</span><br><span class="line">  <span class="keyword">const</span> ua = <span class="built_in">window</span>.navigator.userAgent;</span><br><span class="line">  <span class="keyword">if</span> (ua.indexOf(<span class="string">'MSIE'</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (ua.indexOf(<span class="string">'MSIE 6.0'</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="built_in">window</span>.opener = <span class="literal">null</span>;</span><br><span class="line">      <span class="built_in">window</span>.close();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">window</span>.open(<span class="string">''</span>, <span class="string">'_top'</span>);</span><br><span class="line">      <span class="built_in">window</span>.top.close();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">window</span>.opener = <span class="literal">null</span>;</span><br><span class="line">    <span class="built_in">window</span>.open(<span class="string">''</span>, <span class="string">'_self'</span>, <span class="string">''</span>);</span><br><span class="line">    <span class="built_in">window</span>.close();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>还有种方法通过a标签的方式去操作</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:window.close()"</span>&gt;</span>关闭<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+      
+        </div></section>
       
       
       <section class="archives-wrap">
@@ -476,51 +529,6 @@
 <p>来个例子介绍下，现在有一个数组 [1, 2, 1, 2, 3, 5, 4, 5, 3, 4, 4, 4, 4]，我们想要生成一个新数组，这个数组要求没有重复的内容，即为去重。</p>
           <p>
             <a href="/2019/10/25/Filter/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/10/25/Reduce/">
-  reduce详解与实战
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2019/10/25/Reduce/"><span class="article-date">
-  2019-10-25
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>reduce() 方法对数组中的每个元素执行一个提供的 reducer 函数(升序执行)，将其结果汇总为单个返回值。传递给 reduce 的回调函数（callback）接受四个参数，分别是累加器 accumulator、currentValue——正在操作的元素、currentIndex（可选）——元素索引，但是它的开始会有特殊说明、array（可选）——原始数组本身，除了 callback 之外还可以接受初始值 initialValue 值（可选）。</p>
-<ol>
-<li><p>如果没有提供 initialValue，那么第一次调用 callback 函数时，accumulator 使用原数组中的第一个元素，currentValue 即是数组中的第二个元素。在没有初始值的空数组上调用 reduce 将报错。</p>
-</li>
-<li><p>如果提供了 initialValue，那么将作为第一次调用 callback 函数时的第一个参数的值，即 accumulator，currentValue 使用原数组中的第一个元素。</p>
-</li>
-</ol>
-<p>例子，现在有一个数组  [0, 1, 2, 3, 4]，需要计算数组元素的和，需求比较简单，来看下代码实现。</p>
-          <p>
-            <a href="/2019/10/25/Reduce/">
               阅读全文
             </a>
           </p>
