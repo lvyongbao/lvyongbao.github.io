@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+
+<title>
+  
+    打印功能的实现
+  
+</title>
+
+<meta name="description" content="记录一下打印功能的实现方式，之前做需求的时候有个预览打印的功能，这边分享一下，下次遇到不会再走弯路。我这边是再做 react 项目的时候碰到了打印需求，网上其实有关基于 react 的打印插件，功能还是很强大的，我只用到了打印功能，并不需要引入第三方库，所以就用原生方法写了个。因为我的打印是在弹窗的基础上打印一个表格，所以我新开了个页面，不然点击关闭按钮时，页面就回不来了。以下是实现的代码：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="打印功能的实现">
+<meta property="og:url" content="http://yoursite.com/2020/01/03/Printing/index.html">
+<meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:description" content="记录一下打印功能的实现方式，之前做需求的时候有个预览打印的功能，这边分享一下，下次遇到不会再走弯路。我这边是再做 react 项目的时候碰到了打印需求，网上其实有关基于 react 的打印插件，功能还是很强大的，我只用到了打印功能，并不需要引入第三方库，所以就用原生方法写了个。因为我的打印是在弹窗的基础上打印一个表格，所以我新开了个页面，不然点击关闭按钮时，页面就回不来了。以下是实现的代码：">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-05-20T05:37:35.637Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="打印功能的实现">
+<meta name="twitter:description" content="记录一下打印功能的实现方式，之前做需求的时候有个预览打印的功能，这边分享一下，下次遇到不会再走弯路。我这边是再做 react 项目的时候碰到了打印需求，网上其实有关基于 react 的打印插件，功能还是很强大的，我只用到了打印功能，并不需要引入第三方库，所以就用原生方法写了个。因为我的打印是在弹窗的基础上打印一个表格，所以我新开了个页面，不然点击关闭按钮时，页面就回不来了。以下是实现的代码：">
+
+
+  <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body class="monochrome">
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">一个爱听歌的搬砖工</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">一个爱听歌的搬砖工</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">吕永宝</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="/uploads/avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+  <div class="aplayer" data-id="3834011938" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false"></div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Printing" class="article article-type-post">
+  
+    <h1 class="article-header">
+      打印功能的实现
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2020-01-03
+</span>
+
+    
+
+    
+
+  </div>
+  <div class="article-entry">
+    <p>记录一下打印功能的实现方式，之前做需求的时候有个预览打印的功能，这边分享一下，下次遇到不会再走弯路。<br>我这边是再做 react 项目的时候碰到了打印需求，网上其实有关基于 react 的打印插件，功能还是很强大的，我只用到了打印功能，并不需要引入第三方库，所以就用原生方法写了个。<br>因为我的打印是在弹窗的基础上打印一个表格，所以我新开了个页面，不然点击关闭按钮时，页面就回不来了。以下是实现的代码：</p>
+<a id="more"></a>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"m-table"</span> <span class="attr">id</span>=<span class="string">"contract"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"m-print"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>打印功能的实现<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span>&gt;</span><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"m-botton"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">onClick</span>=<span class="string">"&#123;this.print&#125;"</span>&gt;</span>打印<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">className</span>=<span class="string">"e-ml20"</span> <span class="attr">onClick</span>=<span class="string">"&#123;this.handleCancel&#125;"</span>&gt;</span>关闭<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 打印</span></span><br><span class="line">print = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> newWindow = <span class="built_in">window</span>.open(<span class="string">""</span>, <span class="string">"_blank"</span>);</span><br><span class="line">  <span class="keyword">const</span> docStr = <span class="built_in">document</span>.getElementById(<span class="string">"contract"</span>).innerHTML;</span><br><span class="line">  newWindow.document.write(docStr);</span><br><span class="line">  <span class="keyword">const</span> styles = <span class="built_in">document</span>.createElement(<span class="string">"style"</span>);</span><br><span class="line">  styles.setAttribute(<span class="string">"type"</span>, <span class="string">"text/css"</span>); <span class="comment">// media="print"</span></span><br><span class="line">  styles.innerHTML = <span class="string">`</span></span><br><span class="line"><span class="string">  body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select&#123;margin:0;padding:0&#125;</span></span><br><span class="line"><span class="string">  table&#123;border-collapse:collapse;border-spacing:0&#125;</span></span><br><span class="line"><span class="string">  .m-print&#123;padding: 55px 45px 45px&#125;</span></span><br><span class="line"><span class="string">  .m-print h3 &#123;</span></span><br><span class="line"><span class="string">    font-size: 24px;</span></span><br><span class="line"><span class="string">    height: 40px;</span></span><br><span class="line"><span class="string">    line-height: 40px;</span></span><br><span class="line"><span class="string">    text-align: center;</span></span><br><span class="line"><span class="string">    margin: 0px;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">  `</span>;</span><br><span class="line">  newWindow.document.getElementsByTagName(<span class="string">"body"</span>).item(<span class="number">0</span>).appendChild(styles);</span><br><span class="line">  newWindow.print();</span><br><span class="line">  newWindow.close();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2022 一个爱听歌的搬砖工 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+
+<title>
+  
+    Git 命令
+  
+</title>
+
+<meta name="description" content="记录一下git命令的一些用法 基础Git是一个命令行实用程序的集合，它会跟踪和记录文件中的更改（通常是源代码，但是可以跟踪任何你想要的文件）。有了它，你可以恢复项目的旧版本，比较，分析，合并更改等操作。这个过程被称为版本控制。有许多版本控制系统可以完成这项工作。你可能听说过其中的一些–SVN，Mercurial，Perforce，CVS，Bitkeeper等等。Git是分散的，这意味着它不依赖于中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 命令">
+<meta property="og:url" content="http://yoursite.com/2019/07/24/git/index.html">
+<meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:description" content="记录一下git命令的一些用法 基础Git是一个命令行实用程序的集合，它会跟踪和记录文件中的更改（通常是源代码，但是可以跟踪任何你想要的文件）。有了它，你可以恢复项目的旧版本，比较，分析，合并更改等操作。这个过程被称为版本控制。有许多版本控制系统可以完成这项工作。你可能听说过其中的一些–SVN，Mercurial，Perforce，CVS，Bitkeeper等等。Git是分散的，这意味着它不依赖于中">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-05-20T05:37:35.646Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git 命令">
+<meta name="twitter:description" content="记录一下git命令的一些用法 基础Git是一个命令行实用程序的集合，它会跟踪和记录文件中的更改（通常是源代码，但是可以跟踪任何你想要的文件）。有了它，你可以恢复项目的旧版本，比较，分析，合并更改等操作。这个过程被称为版本控制。有许多版本控制系统可以完成这项工作。你可能听说过其中的一些–SVN，Mercurial，Perforce，CVS，Bitkeeper等等。Git是分散的，这意味着它不依赖于中">
+
+
+  <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body class="monochrome">
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">一个爱听歌的搬砖工</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">一个爱听歌的搬砖工</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">吕永宝</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="/uploads/avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+  <div class="aplayer" data-id="3834011938" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false"></div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-git" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Git 命令
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2019-07-24
+</span>
+
+    
+
+    
+
+  </div>
+  <div class="article-entry">
+    <p><strong>记录一下git命令的一些用法</strong></p>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>Git是一个命令行实用程序的集合，它会跟踪和记录文件中的更改（通常是源代码，但是可以跟踪任何你想要的文件）。<br>有了它，你可以恢复项目的旧版本，比较，分析，合并更改等操作。<br>这个过程被称为版本控制。<br>有许多版本控制系统可以完成这项工作。<br>你可能听说过其中的一些–SVN，Mercurial，Perforce，CVS，Bitkeeper等等。<br>Git是分散的，这意味着它不依赖于中央服务器来保留文件的旧版本。<br>相反，它完全在本地运行，将这些数据作为一个文件夹存储在硬盘上，我们称之为储存仓库。<br>但是，你也可以在线存储您的仓库的副本，这使得多个人可以轻松协作并使用相同的代码。这就是像GitHub和BitBucket这样的网站所使用的一样。</p>
+<a id="more"></a>
+
+<h2 id="1-安装Git"><a href="#1-安装Git" class="headerlink" title="1.安装Git"></a>1.安装Git</h2><p>在你的设备上安装Git很简单：<br><strong>Linux - 只需打开一个新的终端，并通过发行版的软件包管理器安装git。<br>对于Ubuntu的命令是：</strong></p>
+<blockquote>
+<ul>
+<li>sudo apt-get install git</li>
+</ul>
+</blockquote>
+<p><strong>Windows - 我们推荐</strong></p>
+<blockquote>
+<ul>
+<li>git for windows，</li>
+</ul>
+</blockquote>
+<p>因为它提供了一个GUI可视化客户端和一个BASH命令行模拟器。</p>
+<p><strong>OS X - 最简单的方法是安装</strong><br>自助软件，然后brew install git从终端<br>运行。<br>如果你是一个绝对的初学者，那么一个图形化的git客户端是必须的。<br>我强烈推荐使用GitHub Desktop和Sourcetree，但是还有许多其他好的和免费的在线。<br>即使使用GUI应用程序，了解基本的git命令仍然很重要，因此在本文剩下的部分中，这将是我们唯一说的重点。</p>
+<h2 id="2-配置Git"><a href="#2-配置Git" class="headerlink" title="2.配置Git"></a>2.配置Git</h2><p>现在我们已经在我们的计算机上安装了git，我们将需要添加一些快速配置。<br>有很多可以摆弄的选项，但是我们要设置最重要的选项：我们的用户名和电子邮件。<br>打开一个终端并运行这些命令：</p>
+<blockquote>
+<ul>
+<li>$ git config –global user.name “My Name”</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>$ git config –global user.email <a href="mailto:myEmail@example.com" target="_blank" rel="noopener">myEmail@example.com</a></li>
+</ul>
+</blockquote>
+<p>我们在Git中所做的每一个动作现在都会贴上我们的名字和地址。<br>这样用户总是知道谁做了什么，一切都更有条理。</p>
+<h2 id="3-创建一个新的存储库-git-init"><a href="#3-创建一个新的存储库-git-init" class="headerlink" title="3.创建一个新的存储库 - git init"></a>3.创建一个新的存储库 - git init</h2><p>正如我们前面提到的，git将它的文件和历史记录直接存储在项目文件夹中。要建立一个新的存储库，我们需要打开一个终端，导航到我们的项目目录并运行git init。这将打开Git这个特定的文件夹，并创建一个隐藏的.git目录，其中存储库的历史和配置。</p>
+<p>在桌面上创建一个名为git_exercise的文件夹，打开一个新的终端并输入以下内容：</p>
+<blockquote>
+<ul>
+<li>$ cd Desktop/git_exercise/</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>$ git init</li>
+</ul>
+</blockquote>
+<p>命令行应该按照以下方式输出：</p>
+<blockquote>
+<ul>
+<li>Initialized empty Git repository in /home/user/Desktop/git_exercise/.git/</li>
+</ul>
+</blockquote>
+<p>这意味着我们的已经成功创建，但内容仍然是空的。现在创建一个名为hello.txt的简单文本文件，并将其保存在git_exercise文件夹中。</p>
+<h2 id="4-检查状态-git-status"><a href="#4-检查状态-git-status" class="headerlink" title="4.检查状态 - git status"></a>4.检查状态 - git status</h2><p>Git status 是另一个必须知道的命令，它返回关于仓库当前状态的信息：一切是最新的信心，那些是最新的，哪些是改变的，等等。<br>运行git status 在我们新创建的Log应该返回以下内容：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line"></span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">Initial commit</span><br><span class="line"></span><br><span class="line">Untracked files:</span><br><span class="line">  (use <span class="string">"git add ..."</span> to include in what will be committed)</span><br><span class="line"></span><br><span class="line">    hello.tx</span><br></pre></td></tr></table></figure>
+
+<p>返回的消息指出hello.txt未被跟踪。这意味着文件是新的，Git不知道它是否应该跟踪发生在这个文件上的变化，或者忽略它。为了确认新文件，我们需要对其进行分类。</p>
+<h2 id="5-添加-git-add"><a href="#5-添加-git-add" class="headerlink" title="5.添加 - git add"></a>5.添加 - git add</h2><p>Git有一个“暂存区”的概念。你可以把它想象成一个空白的画布，它保存着你想要提交的变化。它开始是空的，但你可以用命令添加文件（甚至是单行和部分文件）git add，最后提交所有的文件（创建一个快照）git commit。<br>文件：</p>
+<blockquote>
+<ul>
+<li>$ git add hello.txt</li>
+</ul>
+</blockquote>
+<p>如果我们想在目录中添加所有内容，我们可以使用：</p>
+<blockquote>
+<ul>
+<li>$ git add -A</li>
+</ul>
+</blockquote>
+<p>再次检查状态 输入 git status应该返回以前的不同输出。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line"></span><br><span class="line">On branch master</span><br><span class="line"></span><br><span class="line">Initial commit</span><br><span class="line"></span><br><span class="line">Changes to be committed:</span><br><span class="line"></span><br><span class="line">(use<span class="string">"git rm --cached ..."</span> to unstage)</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> file: hello.txt</span><br></pre></td></tr></table></figure>
+
+<p>我们的文件已准备好提交。<br>状态消息还提示我们暂存区中的文件有什么变化 - 在这种情况下是<br>新文件，但是可以修改或删除它，这取决于自上次文件发生了什么git add。</p>
+<h2 id="6-提交-git-commit"><a href="#6-提交-git-commit" class="headerlink" title="6.提交 - git commit"></a>6.提交 - git commit</h2><p>一个提交表示在给定的时间点我们的仓库的状态。这就像一个日志记录，我们可以回顾一下，看看我们拿什么。<br>要创建一个新的提交，我们需要至少有一个更改添加到暂存区域（我们这样做<br>git add），然后运行以下命令：</p>
+<blockquote>
+<ul>
+<li>$ git commit -m “Initial commit.”</li>
+</ul>
+</blockquote>
+<p>这将创建一个新的提交，其中包含来自暂存区域的所有更改（添加hello.txt）。<br>该-m “Initial commmit”部分是用户自定义的描述，总结了在该提交中所做的更改。<br>经常提交并总是编写有意义的提交消息，被认为一个开发者的好习惯。</p>
+<h1 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h1><p>现在我们的提交是本地的 - 它只存在于.git文件夹中。虽然本地存储库本身是有用的，但在大多数情况下，我们都希望共享我们的工作并将其部署到服务器或存储库托管服务。</p>
+<h2 id="1-连接到远程存储库-git-remote-add"><a href="#1-连接到远程存储库-git-remote-add" class="headerlink" title="1.连接到远程存储库 - git remote add"></a>1.连接到远程存储库 - git remote add</h2><p>为了上传东西到一个远程的响应，我们首先必须建立一个连接。<br>为了配合本文，我们的存储库的地址将是<code>https://github.com/Tamic/novate</code>。<br>我们建议放在在GitHub，BitBucket或任何其他服务中创建自己的空存储库。<br>注册和设置可能需要等待一段时间，但所有服务都提供了很好的分步指南文档来帮助你。</p>
+<p>要将我们的本地存储库与GitHub上的存储库连接起来，我们在终端中执行以下行：<br>文件：</p>
+<p>连接到远程服务器</p>
+<blockquote>
+<ul>
+<li>$ git remote add origin <a href="https://github.com/Tamic/novate.git" target="_blank" rel="noopener">https://github.com/Tamic/novate.git</a></li>
+</ul>
+</blockquote>
+<p>项目可能同时拥有多个远程仓库。为了能够区分他们，我们给他们不同的名字。<br>传统上git中的主远程仓库被称为origin。</p>
+<h2 id="2-上传到服务器-git-push"><a href="#2-上传到服务器-git-push" class="headerlink" title="2.上传到服务器 - git push"></a>2.上传到服务器 - git push</h2><p>现在是时候把我们的本地提交转移到服务器上了。<br>这个过程被称为推送（push），并且每当我们想要更新远程仓库就完成了。<br>Git命令是这样做的，git push并且需要两个参数 - 远程回购（我们称之为我们的<br>产地）的名称和推到的分支（master是每个反馈的默认分支）。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin master</span><br><span class="line"></span><br><span class="line">Counting objects: <span class="number">3</span>, done.</span><br><span class="line">Writing objects: <span class="number">100</span>%(<span class="number">3</span>/<span class="number">3</span>), <span class="number">212</span> bytes | <span class="number">0</span> bytes/s, done.</span><br><span class="line">Total <span class="number">3</span> (delta <span class="number">0</span>), reused <span class="number">0</span> (delta <span class="number">0</span>)</span><br><span class="line">To  https:<span class="comment">//github.com/Tamic/novate.git</span></span><br><span class="line">* [<span class="keyword">new</span> branch]      master -&gt; master</span><br></pre></td></tr></table></figure>
+
+<p>根据你使用的远程服务，你将需要验证自己的密码和账号。<br>如果一切正常完成，当你在你的网络浏览器中进入前面创建的远程仓库时，<br>hello.txt 应该在那里，并且可以打开阅读。</p>
+<h2 id="3-克隆仓库-git-clone"><a href="#3-克隆仓库-git-clone" class="headerlink" title="3.克隆仓库 - git clone"></a>3.克隆仓库 - git clone</h2><p>此时，大家可以在Github上查看和浏览远程仓库库。他们可以在本地下载，并使用以下git clone命令获得项目的完整工作副本：</p>
+<blockquote>
+<ul>
+<li>$ git push origin master</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>$ git clone <a href="https://github.com/Tamic/novate.git" target="_blank" rel="noopener">https://github.com/Tamic/novate.git</a></li>
+</ul>
+</blockquote>
+<p>自动创建一个新的本地仓库，并将github版本配置为远程。</p>
+<h2 id="4-从服务器获取更改-git-pull"><a href="#4-从服务器获取更改-git-pull" class="headerlink" title="4.从服务器获取更改 - git pull"></a>4.从服务器获取更改 - git pull</h2><p>如果你的代码仓库进行了更新，则可以使用下面单个命令下载更改 - git pull：</p>
+<blockquote>
+<ul>
+<li>$ git pull origin master</li>
+<li>From <a href="https://github.com/Tamic/novate.git" target="_blank" rel="noopener">https://github.com/Tamic/novate.git</a></li>
+<li><ul>
+<li>branch            master     -&gt; FETCH_HEAD</li>
+</ul>
+</li>
+<li>Already up-to-date.</li>
+</ul>
+</blockquote>
+<p>由于我们克隆的没有 没有其他人提交新的文件或者修改，下载时候提示没有任何变化。</p>
+<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><p>在开发一个新功能时，考虑一个原始项目的副本，称为分支，也被认为开发者的一个好习惯。<br>分支有他们自己的历史记录，并将他们之间的变化隔离开来，直到你决定把它们合并在一起。<br>这是由于以下几个原因：</p>
+<blockquote>
+<ul>
+<li>一个已经工作，稳定的代码版本不会被破坏。</li>
+<li>许多功能可以由不同的人自己立马并能安全稳定的开发。</li>
+<li>开发人员可以在自己的分支上工作，而不会因为别人的工作而改变代码库的风险。</li>
+<li>当不确定什么是最好的时候，可以在不同的分支上开发相同特征的多个版本，然后进行比较。</li>
+</ul>
+</blockquote>
+<h2 id="1-创建新的分支机构-git-branch"><a href="#1-创建新的分支机构-git-branch" class="headerlink" title="1.创建新的分支机构 - git branch"></a>1.创建新的分支机构 - git branch</h2><p>每个存储库的默认分支称为 主（Master）分支。<br>要创建更多分支，请使用以下git branch <name>命令：</name></p>
+<blockquote>
+<ul>
+<li>$ git branch amazing_new_feature</li>
+</ul>
+</blockquote>
+<p>这只是创建了新的分支，在这一点上是完全一样的，我们的主干。</p>
+<h2 id="2-切换分支-git-checkout"><a href="#2-切换分支-git-checkout" class="headerlink" title="2.切换分支 - git checkout"></a>2.切换分支 - git checkout</h2><p>现在，当我们运行时git branch，我们会看到有两个选项可用：</p>
+<blockquote>
+<ul>
+<li>$ git branch</li>
+<li>amazing_new_feature</li>
+<li>*&nbsp;master</li>
+</ul>
+</blockquote>
+<p>Master是当前分支，并标有星号。但是，我们想要使用我们的新功能，所以我们需要切换到另一个分支。这是用git checkout命令完成的，需要一个参数 - 要切换到的分支名称。</p>
+<blockquote>
+<ul>
+<li>$ git checkout amazing_new_feature</li>
+</ul>
+</blockquote>
+<h2 id="3-合并分支-git-merge"><a href="#3-合并分支-git-merge" class="headerlink" title="3.合并分支 - git merge"></a>3.合并分支 - git merge</h2><p>git的“惊人的新功能”将成为另一个名为feature.txt的文本文件。<br>我们将创建它，add它，并commit。</p>
+<blockquote>
+<ul>
+<li>$ git add feature.txt</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>$ git commit -m “新功能完成”。</li>
+</ul>
+</blockquote>
+<p>新功能完成后，我们可以切回到主分支。</p>
+<blockquote>
+<ul>
+<li>$ git checkout master</li>
+</ul>
+</blockquote>
+<p>现在，如果我们在文件浏览器中打开我们的项目，我们会注意到feature.txt已经消失了。那是因为我们回到了master分支，而这里feature.txt从来没有被创建过。为了实现这个目标，我们需要将这gitmerge两个分支结合在一起，将在amazing_new_feature中完成的更改应用于项目的主版本。</p>
+<p>git合并amazing_new_feature</p>
+<p>主分支现在是最新的。awesome_new_feature分支不再需要，可以删除。</p>
+<blockquote>
+<ul>
+<li>git branch -d amazing_new_feature</li>
+</ul>
+</blockquote>
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2022 一个爱听歌的搬砖工 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

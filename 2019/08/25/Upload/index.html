@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+
+<title>
+  
+    图片上传获取宽高的方法
+  
+</title>
+
+<meta name="description" content="想要获取图片的宽高首先要知道图片的 url；一般图片上传 UI 组件或自己封装的组件都会获取到图片的 url，知道 url 就好办了，上代码。 123456var Uploadimgurl = URL; //图片URL地址var img = new Image(); //创建对象img.src = Uploadimgurl; //改变图片地址img.onload = function () &amp;#1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图片上传获取宽高的方法">
+<meta property="og:url" content="http://yoursite.com/2019/08/25/Upload/index.html">
+<meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:description" content="想要获取图片的宽高首先要知道图片的 url；一般图片上传 UI 组件或自己封装的组件都会获取到图片的 url，知道 url 就好办了，上代码。 123456var Uploadimgurl = URL; //图片URL地址var img = new Image(); //创建对象img.src = Uploadimgurl; //改变图片地址img.onload = function () &amp;#1">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-05-20T05:37:35.642Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="图片上传获取宽高的方法">
+<meta name="twitter:description" content="想要获取图片的宽高首先要知道图片的 url；一般图片上传 UI 组件或自己封装的组件都会获取到图片的 url，知道 url 就好办了，上代码。 123456var Uploadimgurl = URL; //图片URL地址var img = new Image(); //创建对象img.src = Uploadimgurl; //改变图片地址img.onload = function () &amp;#1">
+
+
+  <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body class="monochrome">
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">一个爱听歌的搬砖工</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">一个爱听歌的搬砖工</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">吕永宝</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="/uploads/avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+  <div class="aplayer" data-id="3834011938" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false"></div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Upload" class="article article-type-post">
+  
+    <h1 class="article-header">
+      图片上传获取宽高的方法
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2019-08-25
+</span>
+
+    
+
+    
+
+  </div>
+  <div class="article-entry">
+    <p>想要获取图片的宽高首先要知道图片的 url；一般图片上传 UI 组件或自己封装的组件都会获取到图片的 url，知道 url 就好办了，上代码。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Uploadimgurl = URL; <span class="comment">//图片URL地址</span></span><br><span class="line"><span class="keyword">var</span> img = <span class="keyword">new</span> Image(); <span class="comment">//创建对象</span></span><br><span class="line">img.src = Uploadimgurl; <span class="comment">//改变图片地址</span></span><br><span class="line">img.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(img.width + <span class="string">""</span> + img.height);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p>要在图片加载完后就去获取宽高，不然输出的话是 0。</p>
+<p>也可以用计时器循环检测来实现，只要图片宽高任意一项大于 0，就可获取到图片的宽高；</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 记录当前时间戳</span></span><br><span class="line"><span class="keyword">var</span> time = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</span><br><span class="line"><span class="comment">// 图片地址 后面加时间戳是为了避免缓存</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="string">"url"</span> + time;</span><br><span class="line"><span class="comment">// 创建对象</span></span><br><span class="line"><span class="keyword">var</span> imgObj = <span class="keyword">new</span> Image();</span><br><span class="line"><span class="comment">// 改变图片的src</span></span><br><span class="line">imgObj.src = url;</span><br><span class="line"><span class="comment">// 定时执行获取宽高</span></span><br><span class="line"><span class="keyword">var</span> check = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 只要任何一方大于0</span></span><br><span class="line">  <span class="comment">// 表示已经服务器已经返回宽高</span></span><br><span class="line">  <span class="keyword">if</span> (imgObj.width &gt; <span class="number">0</span> || imgObj.height &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(imgObj.width, imgObj.height);</span><br><span class="line">    clearInterval(<span class="keyword">set</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">var <span class="keyword">set</span> = setInterval(check, 40);</span><br></pre></td></tr></table></figure>
+
+<p>这种方法比 onload 方法执行效率会快一些.</p>
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2022 一个爱听歌的搬砖工 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

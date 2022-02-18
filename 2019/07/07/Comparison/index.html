@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+
+<title>
+  
+    浏览器数据本地存储方法（localStroage、sessionStroage、cookie、indexedDB）
+  
+</title>
+
+<meta name="description" content="##目前常见的存储方式为以下三种：   Cookie web存储 (locaStorage和seesionStorage) IndexedDB   共同点：都是保存在浏览器端、且同源的区别：    - Cookie localStorage sessionStorage indexedDB    容量大小 4kb左右 5M左右 5M左右 无限容量   过期时间 只在设置的过期时间之前一直有效,即使">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器数据本地存储方法（localStroage、sessionStroage、cookie、indexedDB）">
+<meta property="og:url" content="http://yoursite.com/2019/07/07/Comparison/index.html">
+<meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:description" content="##目前常见的存储方式为以下三种：   Cookie web存储 (locaStorage和seesionStorage) IndexedDB   共同点：都是保存在浏览器端、且同源的区别：    - Cookie localStorage sessionStorage indexedDB    容量大小 4kb左右 5M左右 5M左右 无限容量   过期时间 只在设置的过期时间之前一直有效,即使">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-05-20T05:37:35.629Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浏览器数据本地存储方法（localStroage、sessionStroage、cookie、indexedDB）">
+<meta name="twitter:description" content="##目前常见的存储方式为以下三种：   Cookie web存储 (locaStorage和seesionStorage) IndexedDB   共同点：都是保存在浏览器端、且同源的区别：    - Cookie localStorage sessionStorage indexedDB    容量大小 4kb左右 5M左右 5M左右 无限容量   过期时间 只在设置的过期时间之前一直有效,即使">
+
+
+  <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body class="monochrome">
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">一个爱听歌的搬砖工</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">一个爱听歌的搬砖工</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">吕永宝</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="/uploads/avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+  <div class="aplayer" data-id="3834011938" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false"></div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Comparison" class="article article-type-post">
+  
+    <h1 class="article-header">
+      浏览器数据本地存储方法（localStroage、sessionStroage、cookie、indexedDB）
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2019-07-07
+</span>
+
+    
+
+    
+
+  </div>
+  <div class="article-entry">
+    <p>##目前常见的存储方式为以下三种：</p>
+<blockquote>
+<ul>
+<li>Cookie</li>
+<li>web存储 (locaStorage和seesionStorage)</li>
+<li>IndexedDB</li>
+</ul>
+</blockquote>
+<p><strong>共同点：</strong>都是保存在浏览器端、且同源的<br><strong>区别：</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">-</th>
+<th align="center">Cookie</th>
+<th align="center">localStorage</th>
+<th align="center">sessionStorage</th>
+<th align="center">indexedDB</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">容量大小</td>
+<td align="center">4kb左右</td>
+<td align="center">5M左右</td>
+<td align="center">5M左右</td>
+<td align="center">无限容量</td>
+</tr>
+<tr>
+<td align="center">过期时间</td>
+<td align="center">只在设置的过期时间之前一直有效,<br>即使窗口或者浏览器关闭</td>
+<td align="center">始终有效</td>
+<td align="center">当前浏览器窗口关闭前有效</td>
+<td align="center">始终有效</td>
+</tr>
+<tr>
+<td align="center">存储方式</td>
+<td align="center">浏览器和服务器间来回传递</td>
+<td align="center">本地保存</td>
+<td align="center">本地保存</td>
+<td align="center">本地保存</td>
+</tr>
+<tr>
+<td align="center">存储方式</td>
+<td align="center">在同源窗口中共享</td>
+<td align="center">在同源窗口中共享</td>
+<td align="center">在同源窗口并且同一窗口中共享</td>
+<td align="center">在同源窗口中共享</td>
+</tr>
+</tbody></table>
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2022 一个爱听歌的搬砖工 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+
+<title>
+  
+    == 和 === 有什么区别
+  
+</title>
+
+<meta name="description" content="== 和 === 运算符用于比较两个值是否相等，当然，它们对相等的定义不尽相同。两个运算符允许任意类型的操作数，如果操作数相等则返回true,否则返回false。那么关于== 和===有什么区别呢？让我们一起来探究。  ‘===’恒等===严格相等运算符，首先计算其操作数的值，然后比较这两个值，比较过程没有任何类型转换：如果两个类型不相同，则它们不相等。例如： 11 === &apos;true&apos;  //">
+<meta property="og:type" content="article">
+<meta property="og:title" content="== 和 === 有什么区别">
+<meta property="og:url" content="http://yoursite.com/2019/06/12/Identical/index.html">
+<meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:description" content="== 和 === 运算符用于比较两个值是否相等，当然，它们对相等的定义不尽相同。两个运算符允许任意类型的操作数，如果操作数相等则返回true,否则返回false。那么关于== 和===有什么区别呢？让我们一起来探究。  ‘===’恒等===严格相等运算符，首先计算其操作数的值，然后比较这两个值，比较过程没有任何类型转换：如果两个类型不相同，则它们不相等。例如： 11 === &apos;true&apos;  //">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-05-20T05:37:35.634Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="== 和 === 有什么区别">
+<meta name="twitter:description" content="== 和 === 运算符用于比较两个值是否相等，当然，它们对相等的定义不尽相同。两个运算符允许任意类型的操作数，如果操作数相等则返回true,否则返回false。那么关于== 和===有什么区别呢？让我们一起来探究。  ‘===’恒等===严格相等运算符，首先计算其操作数的值，然后比较这两个值，比较过程没有任何类型转换：如果两个类型不相同，则它们不相等。例如： 11 === &apos;true&apos;  //">
+
+
+  <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body class="monochrome">
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">一个爱听歌的搬砖工</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">一个爱听歌的搬砖工</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">吕永宝</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="/uploads/avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+  <div class="aplayer" data-id="3834011938" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false"></div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Identical" class="article article-type-post">
+  
+    <h1 class="article-header">
+      == 和 === 有什么区别
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2019-06-12
+</span>
+
+    
+
+    
+
+  </div>
+  <div class="article-entry">
+    <blockquote>
+<p>== 和 === 运算符用于比较两个值是否相等，当然，它们对相等的定义不尽相同。两个运算符允许任意类型的操作数，如果操作数相等则返回true,否则返回false。那么关于== 和===有什么区别呢？让我们一起来探究。</p>
+</blockquote>
+<h2 id="‘-’恒等"><a href="#‘-’恒等" class="headerlink" title="‘===’恒等"></a>‘===’恒等</h2><p>===严格相等运算符，首先计算其操作数的值，然后比较这两个值，比较过程没有任何类型转换：<br>如果两个类型不相同，则它们不相等。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> === <span class="string">'true'</span>  <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<p>如果两个值都是null或者都是undefined，则它们相等。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">null</span> === <span class="literal">undefined</span>  <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<p>如果两个值都是布尔值true或者都是false,则它们相等。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span> === <span class="literal">true</span>   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p>如果其中一个值是NaN,或者两个值都是NaN,则它们不相等。（NaN和其他任何值都是不相等的，包括它本身。通过x!==x来判断x是否为NaN,只有在x为NaN的时候，这个表达式的值才为true。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">NaN</span> === <span class="literal">NaN</span>   <span class="comment">// false</span></span><br><span class="line"><span class="literal">NaN</span> !== <span class="literal">NaN</span>    <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p>如果两个引用值指向同一对象，数组或函数，则它们是相等的。如果指向不同的对象，则它们是不相等的，尽管两个对象具有完全一样的属性。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">obj === obj ; <span class="comment">// true</span></span><br><span class="line"><span class="keyword">var</span> obj1 = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> obj2 = &#123;<span class="attr">a</span>:<span class="number">1</span>&#125;;</span><br><span class="line">obj1 === obj2； <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<p>如果两个值类型相等，值不相等，那么它们不相等。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span> === <span class="literal">false</span>;  <span class="comment">//  false</span></span><br><span class="line"><span class="string">"1"</span> === <span class="string">"8"</span>     <span class="comment">//  false</span></span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>如果两个值相等，类型相等，那么它们相等。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"1"</span>===<span class="string">"1"</span>;  <span class="comment">//  true</span></span><br><span class="line"><span class="number">8</span> === <span class="number">8</span>;  <span class="comment">// true</span></span><br><span class="line"><span class="string">"true"</span> === <span class="string">"true"</span>;  <span class="comment">//  true</span></span><br><span class="line"><span class="literal">false</span> === <span class="literal">false</span>;</span><br><span class="line"><span class="literal">undefined</span> === <span class="literal">undefined</span>;  <span class="comment">//  true </span></span><br><span class="line"><span class="literal">null</span> === <span class="literal">null</span>;  <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h2 id="‘-’相等"><a href="#‘-’相等" class="headerlink" title="‘==’相等"></a>‘==’相等</h2><blockquote>
+<p>相等运算符“==”和恒等运算符相似，但相等运算符但比较并不严格。如果两个操作数不是同一类型，那么相等运算符会尝试进行一些类型转换，然后进行比较。例如：</p>
+</blockquote>
+<p>如果两个值类型相同，但值不同，那么它们不相等。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"1"</span> == <span class="string">"3"</span>;  <span class="comment">//  false</span></span><br><span class="line"><span class="string">"true"</span> == <span class="string">"false"</span>;  <span class="comment">//  false</span></span><br><span class="line"><span class="literal">false</span> == <span class="literal">true</span> <span class="comment">//  false</span></span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>如果一个值是null,一个值是undefined,则它们相等。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">null</span> == <span class="literal">undefined</span>  <span class="comment">//  true</span></span><br></pre></td></tr></table></figure>
+
+<p>如果其中一个是布尔值，则将其转换为数字，true 转换为 1，false 转换为 0，然后再进比较。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> == <span class="literal">true</span>;  <span class="comment">//  true</span></span><br><span class="line"><span class="literal">false</span> == <span class="number">0</span>  <span class="comment">//  true</span></span><br><span class="line"><span class="literal">true</span> == <span class="literal">false</span>  <span class="comment">//  false</span></span><br></pre></td></tr></table></figure>
+
+<p>如果其中一个是数字，一个是字符串，先将字符串转为数字，然后再使用转换后的值进行比较。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> == <span class="string">"1"</span>  <span class="comment">//  true</span></span><br><span class="line"><span class="string">"500"</span> == <span class="number">800</span>  <span class="comment">//  false</span></span><br></pre></td></tr></table></figure>
+
+<p>如果一个值是对象，另一个值是数字或字符串，则需将对象转换为原始值（通过toString()或valueOf().js中的内置类首先尝试使用valueOf(),再进行toString()，日期类除外，日期只使用toString() ），然后再进行比较。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj =&#123;<span class="attr">a</span>:<span class="string">"b"</span>&#125;;</span><br><span class="line">obj.toString();   <span class="comment">//  "[object Object]"</span></span><br><span class="line"><span class="number">1</span> == obj;    <span class="comment">//  false</span></span><br></pre></td></tr></table></figure>
+
+<p>如果两个对象的类型相同，但引用地址不同，那么它们不相等。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[] == []  <span class="comment">//  false</span></span><br><span class="line">&#123;&#125; == &#123;&#125;  <span class="comment">//  false</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>由此可见两者的区别：</strong></p>
+<p>=== 不需要进行类型转换，只有类型相同并且值相等时，才返回 true.<br>== 如果两者类型不同，首先需要进行类型转换。具体流程如下:<br>首先判断两者类型是否相同，如果相等，判断值是否相等；<br>如果类型不同，进行类型转换；<br>判断比较的是否是 null 或者是 undefined, 如果是, 返回 true；<br>判断两者类型是否为 string 和 number, 如果是, 将字符串转换成 number；<br>判断其中一方是否为 boolean, 如果是, 将 boolean 转为 number 再进行判断；<br>判断其中一方是否为 object 且另一方为 string、number 或者 symbol , 如果是, 将 object 转为原始类型再进行判断。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> dabao = &#123;</span><br><span class="line">    age: <span class="number">25</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> baojie = dabao;</span><br><span class="line">baojie.gae = <span class="number">20</span>;</span><br><span class="line"><span class="built_in">console</span>.log(dabao === baojie); <span class="comment">//true, 注意复杂数据类型，比较的是引用地址</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="下面分享一个有意思的面试题："><a href="#下面分享一个有意思的面试题：" class="headerlink" title="下面分享一个有意思的面试题："></a>下面分享一个有意思的面试题：</h2><p><strong>例如：[] == ![]  //  true</strong></p>
+<p>这个为什么是true呢？</p>
+<p>首先，我们需要知道 ! 优先级是高于 == (<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence" target="_blank" rel="noopener">更多运算符优先级可查看: 运算符优先级</a>) 所以先算右边，![] 结果为 false,[] == ![] 等同于=&gt; [] == false;</p>
+<p>然后进行类型转换，转为原始类型：[] == false 等同于=&gt;   “” == false;</p>
+<p>再进行类型转换，转为数字：”” == false  等同于=&gt;  0 == 0 此时类型相同，比较值：<br>0 == 0  //  true值相等，所以结果为true;</p>
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2022 一个爱听歌的搬砖工 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

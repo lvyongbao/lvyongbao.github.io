@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+
+<title>
+  
+    导出文件实现
+  
+</title>
+
+<meta name="description" content="最近在做后台管理的时候有个导出记录的功能，我这边踩了个坑。后台接口是以流的形式把数据给我们，我这边是用 Blob 对象进行下载。如果不了解 Blob 的小伙伴可以查阅一下相关资料。我们来看一下用法： 1234567891011121314151617axios  .post(&apos;/demo&apos;, data, &amp;#123;    responseType: &apos;arraybuffer&apos;,  &amp;#125;)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="导出文件实现">
+<meta property="og:url" content="http://yoursite.com/2020/01/19/Export/index.html">
+<meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:description" content="最近在做后台管理的时候有个导出记录的功能，我这边踩了个坑。后台接口是以流的形式把数据给我们，我这边是用 Blob 对象进行下载。如果不了解 Blob 的小伙伴可以查阅一下相关资料。我们来看一下用法： 1234567891011121314151617axios  .post(&apos;/demo&apos;, data, &amp;#123;    responseType: &apos;arraybuffer&apos;,  &amp;#125;)">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-05-20T05:37:35.632Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="导出文件实现">
+<meta name="twitter:description" content="最近在做后台管理的时候有个导出记录的功能，我这边踩了个坑。后台接口是以流的形式把数据给我们，我这边是用 Blob 对象进行下载。如果不了解 Blob 的小伙伴可以查阅一下相关资料。我们来看一下用法： 1234567891011121314151617axios  .post(&apos;/demo&apos;, data, &amp;#123;    responseType: &apos;arraybuffer&apos;,  &amp;#125;)">
+
+
+  <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body class="monochrome">
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">一个爱听歌的搬砖工</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">一个爱听歌的搬砖工</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">吕永宝</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="/uploads/avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+  <div class="aplayer" data-id="3834011938" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false"></div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Export" class="article article-type-post">
+  
+    <h1 class="article-header">
+      导出文件实现
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2020-01-19
+</span>
+
+    
+
+    
+
+  </div>
+  <div class="article-entry">
+    <p>最近在做后台管理的时候有个导出记录的功能，我这边踩了个坑。后台接口是以流的形式把数据给我们，我这边是用 Blob 对象进行下载。如果不了解 Blob 的小伙伴可以查阅一下相关资料。我们来看一下用法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">axios</span><br><span class="line">  .post(<span class="string">'/demo'</span>, data, &#123;</span><br><span class="line">    responseType: <span class="string">'arraybuffer'</span>,</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> blob = <span class="keyword">new</span> Blob([res], &#123;</span><br><span class="line">      type:</span><br><span class="line">        <span class="string">'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8'</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">const</span> downloadElement = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</span><br><span class="line">    <span class="keyword">const</span> href = <span class="built_in">window</span>.URL.createObjectURL(blob); <span class="comment">// 创建下载的链接</span></span><br><span class="line">    downloadElement.href = href;</span><br><span class="line">    downloadElement.download = <span class="string">''</span>; <span class="comment">// 下载后文件名</span></span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(downloadElement);</span><br><span class="line">    downloadElement.click(); <span class="comment">// 点击下载</span></span><br><span class="line">    <span class="built_in">document</span>.body.removeChild(downloadElement); <span class="comment">// 下载完成移除元素</span></span><br><span class="line">    <span class="built_in">window</span>.URL.revokeObjectURL(href); <span class="comment">// 释放掉blob对象</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p>我这边用 axios 去发起请求，这是传参的情况，如果没有可以不写，这样导出的功能其实就实现了。不过在测试测兼容性的过程中发现了 IE 下报错，提示拒绝访问。搜了一下，大多数都是说要判断 IE 用 window.navigator.msSaveOrOpenBlob 去处理。我也试了一下，下载是可以下载，但是文件一直在加载中，下载不下来。不知道什么原因导致的，排查了也没有什么头绪，所以换了个思路，改用 form 表单的方式去下载，以下是基于 react 封装的插件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">"react"</span>;</span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">"react-dom"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; message &#125; <span class="keyword">from</span> <span class="string">"antd"</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ExportForm</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.renderList = <span class="keyword">this</span>.initRenderList(props.query);</span><br><span class="line">    <span class="keyword">this</span>.form = &#123; <span class="attr">current</span>: <span class="literal">null</span> &#125;;</span><br><span class="line">    <span class="keyword">this</span>.iframe = &#123; <span class="attr">current</span>: <span class="literal">null</span> &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.handler = <span class="keyword">this</span>.handler.bind(<span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  UNSAFE_componentWillReceiveProps(nextP) &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; props &#125; = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">if</span> (props.query !== nextP.query) &#123;</span><br><span class="line">      <span class="keyword">this</span>.renderList = <span class="keyword">this</span>.initRenderList(nextP.query);</span><br><span class="line">      <span class="keyword">this</span>.forceUpdate();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="keyword">this</span>.iframe.current.addEventListener(<span class="string">"load"</span>, <span class="keyword">this</span>.handler);</span><br><span class="line">    <span class="keyword">this</span>.export();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentWillUnmount() &#123;</span><br><span class="line">    <span class="keyword">this</span>.iframe.current.removeEventListener(<span class="string">"load"</span>, <span class="keyword">this</span>.handler);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidUpdate() &#123;</span><br><span class="line">    <span class="keyword">this</span>.export();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  handler() &#123;</span><br><span class="line">    <span class="keyword">this</span>.props.reject();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> obj = <span class="built_in">JSON</span>.parse(</span><br><span class="line">        <span class="keyword">this</span>.iframe.current.contentWindow.document.body.innerText</span><br><span class="line">      );</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">String</span>(obj.code) !== <span class="string">"200"</span>) &#123;</span><br><span class="line">        message.warning(obj.message);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">      message.warning(</span><br><span class="line">        <span class="keyword">this</span>.iframe.current.contentWindow.document.body.innerText</span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// message.warning('导出失败，请联系管理员！');</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  initRenderList(query) &#123;</span><br><span class="line">    <span class="keyword">const</span> list = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> query) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!query[key]) <span class="keyword">continue</span>;</span><br><span class="line">      list.push(&#123; <span class="attr">name</span>: key, <span class="attr">value</span>: query[key] &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">export</span>() &#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span>.props.url || !<span class="keyword">this</span>.renderList.length) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">this</span>.form.current.submit();</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.props.resolve();</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;&gt;</span><br><span class="line">        &lt;iframe name=<span class="string">"export-target"</span> ref=&#123;<span class="keyword">this</span>.iframe&#125; /&gt;</span><br><span class="line">        &lt;form</span><br><span class="line">          method=&#123;<span class="keyword">this</span>.props.methods&#125;</span><br><span class="line">          action=&#123;<span class="keyword">this</span>.props.url&#125;</span><br><span class="line">          ref=&#123;<span class="keyword">this</span>.form&#125;</span><br><span class="line">          target=<span class="string">"export-target"</span></span><br><span class="line">        &gt;</span><br><span class="line">          &#123;<span class="keyword">this</span>.renderList.map(<span class="function">(<span class="params">item</span>) =&gt;</span> (</span><br><span class="line">            &lt;input</span><br><span class="line">              type=<span class="string">"hidden"</span></span><br><span class="line">              name=&#123;item.name&#125;</span><br><span class="line">              value=&#123;item.value&#125;</span><br><span class="line">              key=&#123;item.name&#125;</span><br><span class="line">            /&gt;</span><br><span class="line">          ))&#125;</span><br><span class="line">        &lt;<span class="regexp">/form&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ie9</span></span><br><span class="line"><span class="keyword">const</span> exportFileForm = <span class="function"><span class="keyword">function</span> (<span class="params">url, query, methods, resolve, reject</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!exportFileForm.container) &#123;</span><br><span class="line">    exportFileForm.container = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span><br><span class="line">    exportFileForm.container.id = <span class="string">"export-form"</span>;</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(exportFileForm.container);</span><br><span class="line">  &#125;</span><br><span class="line">  ReactDOM.render(</span><br><span class="line">    &lt;ExportForm</span><br><span class="line">      resolve=&#123;resolve&#125;</span><br><span class="line">      reject=&#123;reject&#125;</span><br><span class="line">      url=&#123;url&#125;</span><br><span class="line">      query=&#123;query&#125;</span><br><span class="line">      methods=&#123;methods&#125;</span><br><span class="line">    /&gt;,</span><br><span class="line">    exportFileForm.container</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @function 用于导出文件</span></span><br><span class="line"><span class="comment"> * @param url 请求路径</span></span><br><span class="line"><span class="comment"> * @param query 请求参数</span></span><br><span class="line"><span class="comment"> * @param methods 请求方法 默认post</span></span><br><span class="line"><span class="comment"> * */</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params">url, query, methods = <span class="string">"post"</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    exportFileForm(url, query, methods, resolve, reject);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果没有太多操作的话直接引入文件直接调用五个参数 url, query, methods, resolve, reject 做不同场景的处理。这样的 IE 也就兼容了，如果不用考虑 IE 的小伙伴，那用 Blob 对象直接导出就好了。</p>
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2022 一个爱听歌的搬砖工 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

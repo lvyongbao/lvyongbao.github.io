@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+
+<title>
+  
+    项目性能优化
+  
+</title>
+
+<meta name="description" content="1. 编码优化编码优化，指的就是 在代码编写时的，通过一些 最佳实践，提升代码的执行性能。通常这并不会带来非常大的收益，但这属于 程序猿的自我修养，而且这也是面试中经常被问到的一个方面，考察自我管理与细节的处理。 数据读取:通过作用域链 / 原型链 读取变量或方法时，需要更多的耗时，且越长越慢；对象嵌套越深，读取值也越慢；最佳实践:   尽量在局部作用域中进行 变量缓存； 避免嵌套过深的数据结构，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目性能优化">
+<meta property="og:url" content="http://yoursite.com/2019/06/21/property/index.html">
+<meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:description" content="1. 编码优化编码优化，指的就是 在代码编写时的，通过一些 最佳实践，提升代码的执行性能。通常这并不会带来非常大的收益，但这属于 程序猿的自我修养，而且这也是面试中经常被问到的一个方面，考察自我管理与细节的处理。 数据读取:通过作用域链 / 原型链 读取变量或方法时，需要更多的耗时，且越长越慢；对象嵌套越深，读取值也越慢；最佳实践:   尽量在局部作用域中进行 变量缓存； 避免嵌套过深的数据结构，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-05-20T05:37:35.651Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="项目性能优化">
+<meta name="twitter:description" content="1. 编码优化编码优化，指的就是 在代码编写时的，通过一些 最佳实践，提升代码的执行性能。通常这并不会带来非常大的收益，但这属于 程序猿的自我修养，而且这也是面试中经常被问到的一个方面，考察自我管理与细节的处理。 数据读取:通过作用域链 / 原型链 读取变量或方法时，需要更多的耗时，且越长越慢；对象嵌套越深，读取值也越慢；最佳实践:   尽量在局部作用域中进行 变量缓存； 避免嵌套过深的数据结构，">
+
+
+  <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body class="monochrome">
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">一个爱听歌的搬砖工</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">一个爱听歌的搬砖工</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">吕永宝</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="/uploads/avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+  <div class="aplayer" data-id="3834011938" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false"></div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-property" class="article article-type-post">
+  
+    <h1 class="article-header">
+      项目性能优化
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2019-06-21
+</span>
+
+    
+
+    
+
+  </div>
+  <div class="article-entry">
+    <h2 id="1-编码优化"><a href="#1-编码优化" class="headerlink" title="1. 编码优化"></a>1. 编码优化</h2><p>编码优化，指的就是 在代码编写时的，通过一些 最佳实践，提升代码的执行性能。通常这并不会带来非常大的收益，但这属于 程序猿的自我修养，而且这也是面试中经常被问到的一个方面，考察自我管理与细节的处理。</p>
+<p><strong>数据读取:</strong><br>通过作用域链 / 原型链 读取变量或方法时，需要更多的耗时，且越长越慢；<br>对象嵌套越深，读取值也越慢；<br>最佳实践:</p>
+<blockquote>
+<ul>
+<li>尽量在局部作用域中进行 变量缓存；</li>
+<li>避免嵌套过深的数据结构，数据扁平化 有利于数据的读取和维护；</li>
+</ul>
+</blockquote>
+<a id="more"></a>
+
+<p><strong>循环: 循环通常是编码性能的关键点；</strong><br>代码的性能问题会再循环中被指数倍放大；<br>最佳实践:</p>
+<blockquote>
+<ul>
+<li>尽可能 减少循环次数；</li>
+<li>减少遍历的数据量；</li>
+<li>完成目的后马上结束循环；</li>
+<li>避免在循环中执行大量的运算，避免重复计算，相同的执行结果应该使用缓存；</li>
+<li>js 中使用 倒序循环 会略微提升性能；</li>
+<li>尽量避免使用 for-in 循环，因为它会枚举原型对象，耗时大于普通循环；</li>
+</ul>
+</blockquote>
+<p><strong>条件流程性能: Map / Object &gt; switch &gt; if-else</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用 if-else</span></span><br><span class="line"><span class="keyword">if</span>(type === <span class="number">1</span>) &#123;</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (type === <span class="number">2</span>) &#123;</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (type === <span class="number">3</span>) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 switch</span></span><br><span class="line"><span class="keyword">switch</span> (type) &#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">		<span class="keyword">break</span>;<span class="number">4</span></span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 Map</span></span><br><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([</span><br><span class="line">	[<span class="number">1</span>, () =&gt; &#123;&#125;],</span><br><span class="line">	[<span class="number">2</span>, () =&gt; &#123;&#125;],</span><br><span class="line">	[<span class="number">3</span>, () =&gt; &#123;&#125;],</span><br><span class="line">])</span><br><span class="line">map.get(type)()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 Objext</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">	<span class="number">1</span>: <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;,</span><br><span class="line">	<span class="number">2</span>: <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;,</span><br><span class="line">	<span class="number">3</span>: <span class="function"><span class="params">()</span> =&gt;</span> &#123;&#125;,</span><br><span class="line">&#125;</span><br><span class="line">obj[type]()</span><br></pre></td></tr></table></figure>
+
+<p><strong>dom 优化:</strong><br>减少访问 dom 的次数，如需多次，将 dom 缓存于变量中；<br>减少重绘与回流:</p>
+<blockquote>
+<ul>
+<li>多次操作合并为一次；</li>
+<li>减少对计算属性的访问；</li>
+<li>例如 offsetTop， getComputedStyle 等</li>
+<li>因为浏览器需要获取最新准确的值，因此必须立即进行重排，这样会破坏了浏览器的队列整合，尽量将值进行缓存使用；</li>
+<li>大量操作时，可将 dom 脱离文档流或者隐藏，待操作完成后再重新恢复；</li>
+<li>使用DocumentFragment / cloneNode / replaceChild进行操作；</li>
+</ul>
+</blockquote>
+<p>使用事件委托，避免大量的事件绑定；</p>
+<p><strong>css 优化:</strong><br>层级扁平，避免过于多层级的选择器嵌套；<br>特定的选择器 好过一层一层查找:  .xxx-child-text{} 优于 .xxx .child .text{}<br>减少使用通配符与属性选择器；<br>减少不必要的多余属性；<br>使用动画属性 实现动画，动画时脱离文档流，开启硬件加速，优先使用 css 动画；<br>使用link替代原生@import；</p>
+<p><strong>html 优化:</strong><br>减少 dom 数量，避免不必要的节点或嵌套；<br>避免<img src>空标签，能减少服务器压力，因为 src 为空时，浏览器仍然会发起请求</p>
+<blockquote>
+<ul>
+<li>IE 向页面所在的目录发送请求；</li>
+<li>Safari、Chrome、Firefox 向页面本身发送请求；</li>
+<li>Opera 不执行任何操作。</li>
+</ul>
+</blockquote>
+<p>图片提前 指定宽高 或者 脱离文档流，能有效减少因图片加载导致的页面回流；<br>语义化标签 有利于 SEO 与浏览器的解析时间；<br>减少使用 table 进行布局，避免使用br标签与hr标签；</p>
+<h2 id="2-页面基础优化"><a href="#2-页面基础优化" class="headerlink" title="2. 页面基础优化"></a>2. 页面基础优化</h2><p>引入位置: css 文件head标签中引入， js文件body标签底部引入；</p>
+<blockquote>
+<ul>
+<li>影响首屏的，优先级很高的 js 也可以头部引入，甚至内联；</li>
+</ul>
+</blockquote>
+<p>减少请求 (http 1.0 - 1.1)，合并请求，正确设置 http 缓存；<br>减少文件体积:</p>
+<blockquote>
+<ul>
+<li>删除多余代码:</li>
+<li>tree-shaking</li>
+<li>UglifyJs</li>
+<li>code-spliting</li>
+<li>混淆 / 压缩代码，开启 gzip 压缩；</li>
+<li>多份编译文件按条件引入:</li>
+<li>针对现代浏览器直接给 ES6 文件，只针对低端浏览器引用编译后的 ES5 文件；</li>
+<li>可以利用script type=”module” / script type=”module”进行条件引入用</li>
+<li>动态 polyfill，只针对不支持的浏览器引入 polyfill；</li>
+</ul>
+</blockquote>
+<p>图片优化:</p>
+<blockquote>
+<ul>
+<li>根据业务场景，与UI探讨选择 合适质量，合适尺寸；</li>
+<li>根据需求和平台，选择 合适格式，例如非透明时可用 jpg；非苹果端，使用 webp；</li>
+<li>小图片合成 雪碧图，低于 5K 的图片可以转换成 base64 内嵌；</li>
+<li>合适场景下，使用 iconfont 或者 svg；</li>
+</ul>
+</blockquote>
+<p>使用缓存:<br>浏览器缓存: 通过设置请求的过期时间，合理运用浏览器缓存；<br>CDN缓存: 静态文件合理使用 CDN 缓存技术；</p>
+<blockquote>
+<ul>
+<li>HTML 放于自己的服务器上；</li>
+<li>打包后的图片 / js / css 等资源上传到 CDN 上，文件带上 hash 值；</li>
+<li>由于浏览器对单个域名请求的限制，可以将资源放在多个不同域的 CDN 上，可以绕开该限制；</li>
+</ul>
+</blockquote>
+<p>服务器缓存: 将不变的数据、页面缓存到 内存 或 远程存储(redis等) 上；<br>数据缓存: 通过各种存储将不常变的数据进行缓存，缩短数据的获取时间；</p>
+<h2 id="3-首屏渲染优化"><a href="#3-首屏渲染优化" class="headerlink" title="3. 首屏渲染优化"></a>3. 首屏渲染优化</h2><p>css / js 分割，使首屏依赖的文件体积最小，内联首屏关键 css / js；<br>非关键性的文件尽可能的 异步加载和懒加载，避免阻塞首页渲染；<br>使用dns-prefetch / preconnect / prefetch / preload等浏览器提供的资源提示，加快文件传输；<br>谨慎控制好 Web字体，一个大字体包足够让你功亏一篑；</p>
+<blockquote>
+<ul>
+<li>控制字体包的加载时机；</li>
+<li>如果使用的字体有限，那尽可能只将使用的文字单独打包，能有效减少体积；</li>
+</ul>
+</blockquote>
+<p>合理利用 Localstorage / server-worker 等存储方式进行 数据与资源缓存；<br>分清轻重缓急:</p>
+<blockquote>
+<ul>
+<li>重要的元素优先渲染；</li>
+<li>视窗内的元素优先渲染；</li>
+</ul>
+</blockquote>
+<p>服务端渲染(SSR):</p>
+<blockquote>
+<ul>
+<li>减少首屏需要的数据量，剔除冗余数据和请求；</li>
+<li>控制好缓存，对数据/页面进行合理的缓存；</li>
+<li>页面的请求使用流的形式进行传递；</li>
+</ul>
+</blockquote>
+<p>优化用户感知:</p>
+<blockquote>
+<ul>
+<li>利用一些动画 过渡效果，能有效减少用户对卡顿的感知；</li>
+<li>尽可能利用 骨架屏(Placeholder) / Loading 等减少用户对白屏的感知；</li>
+<li>动画帧数尽量保证在 30帧 以上，低帧数、卡顿的动画宁愿不要；</li>
+</ul>
+</blockquote>
+<p>js 执行时间避免超过 100ms，超过的话就需要做:</p>
+<blockquote>
+<ul>
+<li>寻找可 缓存 的点；</li>
+<li>任务的 分割异步 或 web worker 执行；</li>
+</ul>
+</blockquote>
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2022 一个爱听歌的搬砖工 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

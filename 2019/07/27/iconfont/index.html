@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+
+<title>
+  
+    计算制作iconfont图标
+  
+</title>
+
+<meta name="description" content="网站页面上会用到各种小图标，前端以前制作页面的时候，会将这些图片一个个切下来，通过标签设置backgroud使用，这样做会导致请求过多，造成性能瓶颈。后来有人就发明了css sprite(雪碧图)，将这些图标合并到一个图片上，然后通过backgroud-position定位使用，好处是显而易见的，请求瞬间就降低了，图片集中起来也方便维护。 随着项目的庞大，图标也越来越多，然后不停的往雪碧图里塞，很">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算制作iconfont图标">
+<meta property="og:url" content="http://yoursite.com/2019/07/27/iconfont/index.html">
+<meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:description" content="网站页面上会用到各种小图标，前端以前制作页面的时候，会将这些图片一个个切下来，通过标签设置backgroud使用，这样做会导致请求过多，造成性能瓶颈。后来有人就发明了css sprite(雪碧图)，将这些图标合并到一个图片上，然后通过backgroud-position定位使用，好处是显而易见的，请求瞬间就降低了，图片集中起来也方便维护。 随着项目的庞大，图标也越来越多，然后不停的往雪碧图里塞，很">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/cc/2019072801.png">
+<meta property="og:image" content="http://yoursite.com/images/cc/2019072802.png">
+<meta property="og:image" content="http://yoursite.com/images/cc/2019072803.png">
+<meta property="og:image" content="http://yoursite.com/images/cc/2019072804.png">
+<meta property="og:image" content="http://yoursite.com/images/cc/2019072805.png">
+<meta property="og:image" content="http://yoursite.com/images/cc/2019072806.png">
+<meta property="og:image" content="http://yoursite.com/images/cc/2019072807.png">
+<meta property="og:image" content="http://yoursite.com/images/cc/2019072808.png">
+<meta property="og:image" content="http://yoursite.com/images/cc/2019072809.png">
+<meta property="og:image" content="http://yoursite.com/images/cc/2019072810.png">
+<meta property="og:image" content="http://yoursite.com/images/cc/2019072811.png">
+<meta property="og:image" content="http://yoursite.com/images/cc/2019072812.png">
+<meta property="og:image" content="http://yoursite.com/images/cc/2019072813.gif">
+<meta property="og:image" content="http://yoursite.com/images/cc/2019072814.png">
+<meta property="og:image" content="http://yoursite.com/images/cc/2019072815.png">
+<meta property="og:updated_time" content="2021-05-20T05:37:35.647Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="计算制作iconfont图标">
+<meta name="twitter:description" content="网站页面上会用到各种小图标，前端以前制作页面的时候，会将这些图片一个个切下来，通过标签设置backgroud使用，这样做会导致请求过多，造成性能瓶颈。后来有人就发明了css sprite(雪碧图)，将这些图标合并到一个图片上，然后通过backgroud-position定位使用，好处是显而易见的，请求瞬间就降低了，图片集中起来也方便维护。 随着项目的庞大，图标也越来越多，然后不停的往雪碧图里塞，很">
+<meta name="twitter:image" content="http://yoursite.com/images/cc/2019072801.png">
+
+
+  <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body class="monochrome">
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">一个爱听歌的搬砖工</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">一个爱听歌的搬砖工</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">吕永宝</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="/uploads/avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+  <div class="aplayer" data-id="3834011938" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false"></div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-iconfont" class="article article-type-post">
+  
+    <h1 class="article-header">
+      计算制作iconfont图标
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2019-07-27
+</span>
+
+    
+
+    
+
+  </div>
+  <div class="article-entry">
+    <p>网站页面上会用到各种小图标，前端以前制作页面的时候，会将这些图片一个个切下来，通过标签设置backgroud使用，这样做会导致请求过多，造成性能瓶颈。后来有人就发明了css sprite(雪碧图)，将这些图标合并到一个图片上，然后通过backgroud-position定位使用，好处是显而易见的，请求瞬间就降低了，图片集中起来也方便维护。</p>
+<p>随着项目的庞大，图标也越来越多，然后不停的往雪碧图里塞，很多图标长的都差不多，有些仅仅是颜色或者大小不同，这导致了雪碧图越来越庞大变得不好维护，如下图：</p>
+<p><img src="/images/cc/2019072801.png" alt="avatar"></p>
+<p>有时候如果前端不注意修改了雪碧图的尺寸或者不小心挪动了其它图标的位置，就会导致某些图标显示错位。</p>
+<a id="more"></a>
+
+<p>随着时代的发展，后来就兴起了字体图标，不仅兼容低版本IE而且性能和易用性上也非常好。字体图标库有很多，国外的有icomoon、Font-Awesome，国内的有iconfont，我们公司就是使用的阿里的iconfont，不过一般情况下不用我们前端自己制作，这些由设计师帮我们完成，前端只需要下载使用即可，当然如果设计师忘记了，在急需使用的情况下可以自己制作，下面就介绍一下如何制作字体图标。<br>设计图中的图标有可能是矢量的也有可能是位图，制作字体图标只能是矢量图，因此需要将位图转换为矢量图再制作，需要用到Photoshop(PS)和Illustrator(AI)以及从iconfont官网提供的图标模版。</p>
+<p><strong>用PS打开设计图，然后Ctrl+鼠标左键选中图标，在图层面板找到该图层，在右键弹出菜单中选择“复制图层”</strong></p>
+<p><img src="/images/cc/2019072802.png" alt="avatar"></p>
+<p><strong>在打开的弹出层中将文档设置为“新建”，其它的都默认，点击确定</strong></p>
+<p><img src="/images/cc/2019072803.png" alt="avatar"></p>
+<p><strong>点击文件-存储为或者按Ctrl+Shift+S，在打开的菜单中文件格式选择EPS，点击保存</strong></p>
+<p><img src="/images/cc/2019072804.png" alt="avatar"></p>
+<p><strong>在弹出的EPS选项菜单中选择“包含矢量数据”，如果该项置灰则说明该图为位图，需要转矢量，这个后面再说，然后其它选项默认即可，点击确定</strong></p>
+<p><img src="/images/cc/2019072805.png" alt="avatar"></p>
+<p><strong>找到刚才保存的文件，用AI打开，打开图层面板，将图层展开到最里面那层，然后点击右边的圈圈选中并复制该图层</strong></p>
+<p><img src="/images/cc/2019072806.png" alt="avatar"></p>
+<p><strong>用AI打开iconfont图标模版“icon.ai”，将里面的内容全选删除，然后将刚才复制的图层粘帖到上面</strong></p>
+<p><img src="/images/cc/2019072807.png" alt="avatar"></p>
+<p><strong>为图标填充前景色，颜色随便，只要不是透明的都可以，如果不填充的话，无法生成图标</strong></p>
+<p><img src="/images/cc/2019072808.png" alt="avatar"></p>
+<p><strong>点击工具栏选择工具或者按V，按住Ctrl键点击图标拐角将图标等比例放大至模版垂直水平居中的位置，垂直位置要空一格，水平可以溢出边界，但是一定要居中，这是为了保证字体图标高度统一</strong></p>
+<p><img src="/images/cc/2019072809.png" alt="avatar"></p>
+<p><strong>点击文件-存储为或者Ctrl+Shift+S，在打开的菜单中保存类型选择“SVG”，点击保存</strong></p>
+<p><img src="/images/cc/2019072810.png" alt="avatar"></p>
+<p><strong>在随后弹出的SVG选项菜单中将文字选择SVG，其它选项默认，点击确定</strong></p>
+<p><img src="/images/cc/2019072811.png" alt="avatar"></p>
+<p>随后会生成一个扩展名为.svg的文件，然后按照iconfont官网教程上传即可使用。</p>
+<p><strong>刚才创建EPS格式文件那一步说到“包含矢量数据”这一项置灰的情况，那么回到刚才那一步，点击取消。将图片转换为索引模式，选择图像-模式-索引颜色，一直点击确定即可</strong></p>
+<p><img src="/images/cc/2019072812.png" alt="avatar"></p>
+<p><strong>转换后和原图对比多少有些变化，可以根据实际需要对图片进行处理，多数情况下无需处理</strong></p>
+<p><img src="/images/cc/2019072813.gif" alt="avatar"></p>
+<p><strong>然后使用魔棒工具选中图标的黑边区域，按Shift可以多选，选择好之后右键图标在弹出菜单中选择“建立工作路径”，确定后需要设置容差值（值越小越精确），将值设置为0.5</strong></p>
+<p><img src="/images/cc/2019072814.png" alt="avatar"></p>
+<p><strong>设置好后选择图像-模式-灰度将图层解锁，然后使用选择工具右键图标，在弹出的菜单中选择“创建矢量蒙板”</strong></p>
+<p><img src="/images/cc/2019072815.png" alt="avatar"></p>
+<p>此时该图片就是矢量图了，之后的操作和上面的一样。</p>
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2022 一个爱听歌的搬砖工 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

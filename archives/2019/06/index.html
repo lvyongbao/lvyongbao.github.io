@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+
+<title>
+  
+    归档: 2019/6
+  
+</title>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="一个爱听歌的搬砖工">
+<meta property="og:url" content="http://yoursite.com/archives/2019/06/index.html">
+<meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一个爱听歌的搬砖工">
+
+
+  <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body class="monochrome">
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">一个爱听歌的搬砖工</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">一个爱听歌的搬砖工</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">吕永宝</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="/uploads/avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+  <div class="aplayer" data-id="3834011938" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false"></div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          
+
+  
+  
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <h1><a href="/archives/2019" class="archive-year">2019</a></h1>
+        </div>
+        <div class="post-list">
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/28/stuff/">
+  浏览器记住密码背景色变成黄色处理
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/28/stuff/"><span class="article-date">
+  2019-06-28
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p><strong>在实际项目当中，用户登录网站输入账号密码，当用户选择记住密码的时候，下次自动填充表单的背景变成了黄色，影响了视觉体验。这个是可以修改的。下面给出方案：</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 方法1</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-webkit-autofill</span>, <span class="selector-tag">textarea</span><span class="selector-pseudo">:-webkit-autofill</span>, <span class="selector-tag">select</span><span class="selector-pseudo">:-webkit-autofill</span> &#123;</span><br><span class="line">  background-color: #fff; // 设置成元素原本的颜色</span><br><span class="line">  <span class="selector-tag">background-image</span>: <span class="selector-tag">none</span>;</span><br><span class="line">  <span class="selector-tag">color</span>: <span class="selector-tag">rgb</span>(0, 0, 0);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 方法2</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-webkit-autofill</span> </span><br><span class="line">&#123;</span><br><span class="line">  -webkit-box-shadow: 0px 0 3px 100px #ccc inset; // 背景色</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/27/CSS/">
+  CSS
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/27/CSS/"><span class="article-date">
+  2019-06-27
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h2 id="1-盒模型"><a href="#1-盒模型" class="headerlink" title="1. 盒模型"></a>1. 盒模型</h2><p>页面渲染时，dom 元素所采用的 布局模型。可通过box-sizing进行设置。根据计算宽高的区域可分为：</p>
+<blockquote>
+<ul>
+<li>content-box (W3C 标准盒模型)</li>
+<li>border-box (IE 盒模型)</li>
+<li>padding-box</li>
+<li>margin-box (浏览器未实现)</li>
+</ul>
+</blockquote>
+<p>box-sizing: content-box（W3C盒子模型）：元素的宽高大小表现为内容的大小。<br>box-sizing: border-box（IE盒子模型）：元素的宽高表现为内容 + 内边距 + 边框的大小。背景会延伸到边框的外沿。<br>IE5.x和IE6在怪异模式中使用非标准的盒子模型，这些浏览器的width属性不是内容的宽度，而是内容、内边距和边框的宽度的总和。</p>
+<h2 id="2-BFC"><a href="#2-BFC" class="headerlink" title="2. BFC"></a>2. BFC</h2><p><strong>块级格式化上下文，</strong>是一个独立的渲染区域，让处于 BFC 内部的元素与外部的元素相互隔离，使内外元素的定位不会相互影响。</p>
+<blockquote>
+<ul>
+<li>IE下为 Layout，可通过 zoom:1 触发</li>
+</ul>
+</blockquote>
+          <p>
+            <a href="/2019/06/27/CSS/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/24/Browsercache/">
+  浏览器缓存机制
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/24/Browsercache/"><span class="article-date">
+  2019-06-24
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p><strong>Http 缓存机制作为 web 性能优化的重要手段，对于从事 Web 开发的同学们来说，应该是知识体系库中的一个基础环节。<br>但是对于很多前端同学来说，仅仅只是知道浏览器会对请求的静态文件进行缓存，但是为什么被缓存，缓存是怎样生效的，却并不是很清楚。<br>在此，我会尝试用简单明了的文字，像大家系统的介绍HTTP缓存机制，期望对各位正确的理解前端缓存有所帮助。</strong></p>
+<h2 id="1-浏览器缓存基本认识"><a href="#1-浏览器缓存基本认识" class="headerlink" title="1. 浏览器缓存基本认识"></a>1. 浏览器缓存基本认识</h2><p>它分为强缓存和协商缓存：<br>1.浏览器在加载资源时，先根据这个资源的一些http header判断它是否命中强缓存，强缓存如果命中，浏览器直接从自己的缓存中读取资源，不会发请求到服务器。比如某个css文件，如果浏览器在加载它所在的网页时，这个css文件的缓存配置命中了强缓存，浏览器就直接从缓存中加载这个css，连请求都不会发送到网页所在服务器；</p>
+          <p>
+            <a href="/2019/06/24/Browsercache/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/23/Server/">
+  服务端与网络
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/23/Server/"><span class="article-date">
+  2019-06-23
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h2 id="1-http-https-协议"><a href="#1-http-https-协议" class="headerlink" title="1. http/https 协议"></a>1. http/https 协议</h2><p><strong>1.0 协议缺陷:</strong></p>
+<blockquote>
+<ul>
+<li>无法复用链接，完成即断开，重新慢启动和 TCP 3次握手</li>
+<li>head of line blocking: 线头阻塞，导致请求之间互相影响</li>
+</ul>
+</blockquote>
+<p><strong>1.1 改进:</strong></p>
+<blockquote>
+<ul>
+<li>长连接(默认 keep-alive)，复用</li>
+<li>host 字段指定对应的虚拟站点</li>
+</ul>
+</blockquote>
+          <p>
+            <a href="/2019/06/23/Server/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/22/repeat/">
+  数组去重
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/22/repeat/"><span class="article-date">
+  2019-06-22
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p><strong>今天总结一下数组去重的一些方法。记录一下。在真实的项目中碰到的数组去重，一般都是后台去处理，很少让前端处理这种问题。虽然日常项目用到的比较少，但我们还是需要了解一下，以防面试的时候可能回被问到。如果是被提问到，数组去重的方法有哪些？你能答出其中的几种？</strong></p>
+<h2 id="一、利用-ES6-Set-去重"><a href="#一、利用-ES6-Set-去重" class="headerlink" title="一、利用 ES6 Set 去重"></a>一、利用 ES6 Set 去重</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>])) <span class="comment">//[1,2,3,4]</span></span><br><span class="line">[...new <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>])] <span class="comment">//[1,2,3,4]</span></span><br></pre></td></tr></table></figure>
+
+<p>set 是 ES6 新出来的一种一种定义不重复数组的数据类型<br>Array.from 是将类数组转化为数组<br>…是扩展运算符,将 set 里面的值转化为字符串</p>
+          <p>
+            <a href="/2019/06/22/repeat/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/21/property/">
+  项目性能优化
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/21/property/"><span class="article-date">
+  2019-06-21
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h2 id="1-编码优化"><a href="#1-编码优化" class="headerlink" title="1. 编码优化"></a>1. 编码优化</h2><p>编码优化，指的就是 在代码编写时的，通过一些 最佳实践，提升代码的执行性能。通常这并不会带来非常大的收益，但这属于 程序猿的自我修养，而且这也是面试中经常被问到的一个方面，考察自我管理与细节的处理。</p>
+<p><strong>数据读取:</strong><br>通过作用域链 / 原型链 读取变量或方法时，需要更多的耗时，且越长越慢；<br>对象嵌套越深，读取值也越慢；<br>最佳实践:</p>
+<blockquote>
+<ul>
+<li>尽量在局部作用域中进行 变量缓存；</li>
+<li>避免嵌套过深的数据结构，数据扁平化 有利于数据的读取和维护；</li>
+</ul>
+</blockquote>
+          <p>
+            <a href="/2019/06/21/property/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/20/Cross/">
+  跨域解决方案
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/20/Cross/"><span class="article-date">
+  2019-06-20
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p><strong>通过jsonp跨域</strong><br>通常为了减轻web服务器的负载，我们把js、css，img等静态资源分离到另一台独立域名的服务器上，在html页面中再通过相应的标签从不同域名下加载静态资源，而被浏览器允许，基于此原理，我们可以通过动态创建script，再请求一个带参网址实现跨域通信。</p>
+<p>原生实现:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">script.type = <span class="string">'text/javascript'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 传参一个回调函数名给后端，方便后端返回时执行这个在前端定义的回调函数</span></span><br><span class="line">script.src = <span class="string">'http://www.daxihong.com:8080/login?user=admin&amp;callback=jsonCallback'</span>;</span><br><span class="line"><span class="built_in">document</span>.head.appendChild(script);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 回调执行函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jsonCallback</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">  alert(<span class="built_in">JSON</span>.stringify(res));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/06/20/Cross/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/19/storage/">
+  存储
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/19/storage/"><span class="article-date">
+  2019-06-19
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>我们经常需要对业务中的一些数据进行存储，通常可以分为 短暂性存储 和 持久性储存。</p>
+<p>短暂性的时候，我们只需要将数据存在内存中，只在运行时可用</p>
+<p>持久性存储，可以分为 浏览器端 与 服务器端</p>
+<h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器:"></a>浏览器:</h2><blockquote>
+<ul>
+<li>cookie: 通常用于存储用户身份，登录状态等</li>
+<li>http 中自动携带， 体积上限为 4K， 可自行设置过期时间</li>
+<li>localStorage / sessionStorage: 长久储存/窗口关闭删除， 体积限制为 4~5M</li>
+<li>indexDB</li>
+</ul>
+</blockquote>
+<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器:"></a>服务器:</h2><blockquote>
+<ul>
+<li>分布式缓存 redis</li>
+<li>数据库</li>
+</ul>
+</blockquote>
+
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/18/course/">
+  从输入 url 到展示的过程
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/18/course/"><span class="article-date">
+  2019-06-18
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>DNS 解析<br>TCP 三次握手<br>发送请求，分析 url，设置请求报文(头，主体)<br>服务器返回请求的文件 (html)<br>浏览器渲染<br><strong>1.HTML parser –&gt; DOM Tree</strong><br>标记化算法，进行元素状态的标记<br>dom 树构建<br><strong>2.CSS parser –&gt; Style Tree</strong><br>解析 css 代码，生成样式树<br><strong>3.attachment –&gt; Render Tree</strong><br>结合 dom树 与 style树，生成渲染树<br><strong>4.layout: 布局</strong><br>GPU painting: 像素绘制页面</p>
+
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/17/Safety/">
+  安全
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/17/Safety/"><span class="article-date">
+  2019-06-17
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h2 id="SQL-注入"><a href="#SQL-注入" class="headerlink" title="SQL 注入"></a>SQL 注入</h2><p>这是一种比较简单的攻击方式。 </p>
+<p>如果后台人员使用用户输入的数据来组装SQL查询语句的时候不做防范， 遇到一些恶意的输入， 最后生成的SQL就会有问题。<br>比如地址栏输入的是：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">articlrs/index.php?id=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>发送一个get请求， 调用的查询语句是：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql = <span class="string">"SELECT * FROM articles WHERE id ="</span>, $id</span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/06/17/Safety/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+
+
+  <div class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/archives/2019/06/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/06/page/2/">下一页</a>
+  </div>
+
+
+
+
+          <div class="main-footer">
+  
+    © 2022 一个爱听歌的搬砖工 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
+      
+        </div>
+      
+    </section></div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</div></body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+
+<title>
+  
+    归档: 2019
+  
+</title>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="一个爱听歌的搬砖工">
+<meta property="og:url" content="http://yoursite.com/archives/2019/page/5/index.html">
+<meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一个爱听歌的搬砖工">
+
+
+  <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body class="monochrome">
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">一个爱听歌的搬砖工</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">一个爱听歌的搬砖工</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">吕永宝</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="/uploads/avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+  <div class="aplayer" data-id="3834011938" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false"></div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          
+
+  
+  
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <h1><a href="/archives/2019" class="archive-year">2019</a></h1>
+        </div>
+        <div class="post-list">
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/13/Darkcopy/">
+  对象的拷贝
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/13/Darkcopy/"><span class="article-date">
+  2019-06-13
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h2 id="深浅拷贝"><a href="#深浅拷贝" class="headerlink" title="深浅拷贝"></a>深浅拷贝</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">  age: <span class="number">1</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> b = a;</span><br><span class="line">a.age = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(b.age); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+<p>从上述例子中我们可以发现，如果给一个变量赋值一个对象，那么两者的值会是同一个引用，其中一方改变，另一方也会相应改变。<br>通常在开发中我们不希望出现这样的问题，我们可以使用浅拷贝来解决这个问题。</p>
+<p><strong>浅拷贝</strong><br>首先可以通过 Object.assign 来解决这个问题。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">  age: <span class="number">1</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">Object</span>.assign(&#123;&#125;, a);</span><br><span class="line">a.age = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(b.age); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/06/13/Darkcopy/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/12/Identical/">
+  == 和 === 有什么区别
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/12/Identical/"><span class="article-date">
+  2019-06-12
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <blockquote>
+<p>== 和 === 运算符用于比较两个值是否相等，当然，它们对相等的定义不尽相同。两个运算符允许任意类型的操作数，如果操作数相等则返回true,否则返回false。那么关于== 和===有什么区别呢？让我们一起来探究。</p>
+</blockquote>
+<h2 id="‘-’恒等"><a href="#‘-’恒等" class="headerlink" title="‘===’恒等"></a>‘===’恒等</h2><p>===严格相等运算符，首先计算其操作数的值，然后比较这两个值，比较过程没有任何类型转换：<br>如果两个类型不相同，则它们不相等。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> === <span class="string">'true'</span>  <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<p>如果两个值都是null或者都是undefined，则它们相等。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">null</span> === <span class="literal">undefined</span>  <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<p>如果两个值都是布尔值true或者都是false,则它们相等。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span> === <span class="literal">true</span>   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/06/12/Identical/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/11/Closure/">
+  闭包
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/11/Closure/"><span class="article-date">
+  2019-06-11
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><p>闭包的定义其实很简单：函数 A 返回了一个函数 B，并且函数 B 中使用了函数 A 的变量，函数 B 就被称为闭包。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> B;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h2><p>要理解闭包，首先必须理解 Javascript 特殊的变量作用域。<br>变量的作用域无非就是两种：全局变量和局部变量。<br>Javascript 语言的特殊之处，就在于函数内部可以直接读取全局变量。</p>
+          <p>
+            <a href="/2019/06/11/Closure/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/10/prototype/">
+  原型
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/10/prototype/"><span class="article-date">
+  2019-06-10
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p><strong>今天说一下JS中原型和原型链，我理解的也不是很透彻，这边结合网上的一些文章，记录一下。</strong></p>
+<h2 id="1-原型-构造函数-实例"><a href="#1-原型-构造函数-实例" class="headerlink" title="1. 原型 / 构造函数 / 实例"></a>1. 原型 / 构造函数 / 实例</h2><p>每个函数都有 prototype 属性，除了 Function.prototype.bind()，该属性指向原型。<br>每个对象都有<strong><strong>proto</strong></strong>属性，指向了创建该对象的构造函数的原型。其实这个属性指向了 [[prototype]]，但是 [[prototype]] 是内部属性，我们并不能访问到，所以使用<em><em>proto</em></em>来访问。<br>对象可以通过<strong><strong>proto</strong></strong>来寻找不属于该对象的属性，<strong><strong>proto</strong></strong>将对象连接起来组成了原型链。<br>如果你想更进一步的了解原型，可以仔细阅读<a href="https://github.com/KieSun/Dream/issues/2" target="_blank" rel="noopener">深度解析原型中的各个难点</a>。</p>
+<blockquote>
+<ul>
+<li>原型(prototype): 一个简单的对象，用于实现对象的 属性继承。可以简单的理解成对象的爹。在 Firefox 和 Chrome 中，每个JavaScript对象中都包含一个<strong><strong>proto</strong></strong> (非标准)的属性指向它爹(该对象的原型)，可obj__proto__进行访问。</li>
+<li>构造函数: 可以通过new来 新建一个对象 的函数。</li>
+<li>实例: 通过构造函数和new创建出来的对象，便是实例。</li>
+<li>实例通过<strong><strong>proto</strong></strong>指向原型，通过constructor指向构造函数。</li>
+</ul>
+</blockquote>
+<p>可能有点懵逼，这里来举个栗子，以Object为例，我们常用的Object便是一个构造函数，因此我们可以通过它构建实例。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实例</span></span><br><span class="line"><span class="keyword">const</span> instance = <span class="keyword">new</span> <span class="built_in">Object</span>()</span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/06/10/prototype/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/09/Interview/">
+  Promise
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/09/Interview/"><span class="article-date">
+  2019-06-09
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h2 id="什么是-Promise"><a href="#什么是-Promise" class="headerlink" title="什么是 Promise?"></a>什么是 Promise?</h2><blockquote>
+<p>Promise 是 JS 异步编程中的重要概念，异步抽象处理对象，是目前比较流行 Javascript 异步编程解决方案之一</p>
+</blockquote>
+<h3 id="有用过-promise-吗？请写出下列代码的执行结果，并写出你的理解思路："><a href="#有用过-promise-吗？请写出下列代码的执行结果，并写出你的理解思路：" class="headerlink" title="有用过 promise 吗？请写出下列代码的执行结果，并写出你的理解思路："></a>有用过 promise 吗？请写出下列代码的执行结果，并写出你的理解思路：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="number">200</span>; i++) &#123;</span><br><span class="line">    i = <span class="number">198</span> &amp;&amp; resolve();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">4</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">5</span>);</span><br><span class="line"><span class="comment">// 结果：2、3、5、4、1;</span></span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/06/09/Interview/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/06/08/This/">
+  秒懂this
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/06/08/This/"><span class="article-date">
+  2019-06-08
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p><strong>项目开发中经常会遇到 this 指向的问题，可能会纠结很久，今天将 this 做个汇总，以便在日后的开发中少走弯路,而且在面试中也可能会被问及。</strong></p>
+<h1 id="注意：本文讲述只针对浏览器环境。"><a href="#注意：本文讲述只针对浏览器环境。" class="headerlink" title="注意：本文讲述只针对浏览器环境。"></a>注意：本文讲述只针对浏览器环境。</h1><h3 id="一：全局执行"><a href="#一：全局执行" class="headerlink" title="一：全局执行"></a>一：全局执行</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line"><span class="comment">//window</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看出在全局作用域中 this 指向当前的全局对象 Window。</p>
+<h3 id="二：函数中执行"><a href="#二：函数中执行" class="headerlink" title="二：函数中执行"></a>二：函数中执行</h3><p>1.非严格模式中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line">func();</span><br><span class="line"><span class="comment">// Window</span></span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/06/08/This/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+
+
+  <div class="pagination">
+    <a class="extend prev" rel="prev" href="/archives/2019/page/4/">上一页</a><a class="page-number" href="/archives/2019/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/3/">3</a><a class="page-number" href="/archives/2019/page/4/">4</a><span class="page-number current">5</span>
+  </div>
+
+
+
+
+          <div class="main-footer">
+  
+    © 2022 一个爱听歌的搬砖工 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
+      
+        </div>
+      
+    </section></div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</div></body>
+</html>

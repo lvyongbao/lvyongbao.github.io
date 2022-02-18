@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+
+<title>
+  
+    javascript数组常用函数与实战总结
+  
+</title>
+
+<meta name="description" content="函数介绍向数组末尾添加值push说明：向数组的末尾添加一个或多个元素，并返回新的长度 代码： 12345let array=[11,22];let arrayChange=array.push(&quot;333&quot;);console.log(arrayChange)//返回的结果就是数组改变后的长度：3console.log(arrayChange.length)//undefined">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript数组常用函数与实战总结">
+<meta property="og:url" content="http://yoursite.com/2019/07/12/Fighting/index.html">
+<meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:description" content="函数介绍向数组末尾添加值push说明：向数组的末尾添加一个或多个元素，并返回新的长度 代码： 12345let array=[11,22];let arrayChange=array.push(&quot;333&quot;);console.log(arrayChange)//返回的结果就是数组改变后的长度：3console.log(arrayChange.length)//undefined">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-05-20T05:37:35.632Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript数组常用函数与实战总结">
+<meta name="twitter:description" content="函数介绍向数组末尾添加值push说明：向数组的末尾添加一个或多个元素，并返回新的长度 代码： 12345let array=[11,22];let arrayChange=array.push(&quot;333&quot;);console.log(arrayChange)//返回的结果就是数组改变后的长度：3console.log(arrayChange.length)//undefined">
+
+
+  <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body class="monochrome">
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">一个爱听歌的搬砖工</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">一个爱听歌的搬砖工</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">吕永宝</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="/uploads/avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+  <div class="aplayer" data-id="3834011938" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false"></div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Fighting" class="article article-type-post">
+  
+    <h1 class="article-header">
+      javascript数组常用函数与实战总结
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2019-07-12
+</span>
+
+    
+
+    
+
+  </div>
+  <div class="article-entry">
+    <h1 id="函数介绍"><a href="#函数介绍" class="headerlink" title="函数介绍"></a>函数介绍</h1><h2 id="向数组末尾添加值"><a href="#向数组末尾添加值" class="headerlink" title="向数组末尾添加值"></a>向数组末尾添加值</h2><p><strong>push</strong><br>说明：向数组的末尾添加一个或多个元素，并返回新的长度 代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array=[<span class="number">11</span>,<span class="number">22</span>];</span><br><span class="line"><span class="keyword">let</span> arrayChange=array.push(<span class="string">"333"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arrayChange)</span><br><span class="line"><span class="comment">//返回的结果就是数组改变后的长度：3</span></span><br><span class="line"><span class="built_in">console</span>.log(arrayChange.length)<span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h2 id="向数组头部添加值"><a href="#向数组头部添加值" class="headerlink" title="向数组头部添加值"></a>向数组头部添加值</h2><p><strong>unshift</strong><br>说明：将参数添加到原数组开头，并返回数组的长度 代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array=[<span class="number">11</span>,<span class="number">22</span>];</span><br><span class="line"><span class="keyword">let</span> arrayChange=array.unshift(<span class="string">"333"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(array) <span class="comment">//[333,11,22]</span></span><br><span class="line"><span class="built_in">console</span>.log(arrayChange)</span><br><span class="line"><span class="comment">//返回的结果就是数组改变后的长度：3</span></span><br><span class="line"><span class="built_in">console</span>.log(arrayChange.length)<span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="删除数组元素"><a href="#删除数组元素" class="headerlink" title="删除数组元素"></a>删除数组元素</h2><p><strong>splice</strong><br>说明： 当splice传递两个参数的时候，参数1:开始删除的下标位置,参数2:删除数组元素的个数，返回新的数组。当splice传递三个参数的时候，参数1:开始删除的下表位置,参数2:删除数组元素的个数，参数3:向数组添加的新元素。注意数组下标0开始。代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array=[<span class="number">11</span>,<span class="number">22</span>,<span class="number">33</span>,<span class="number">44</span>];</span><br><span class="line"><span class="keyword">let</span> arrayChange=array.splice(<span class="number">1</span>,<span class="number">2</span>);<span class="comment">//movePos.splice(开始删除的下表位置,删除数组元素的个数);</span></span><br><span class="line"><span class="built_in">console</span>.log(arrayChange) ; <span class="comment">//返回新的数组：22,11</span></span><br><span class="line"><span class="built_in">console</span>.log(arrayChange.length) ;<span class="comment">//返回数组长度2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> array =[<span class="number">111</span>,<span class="number">222</span>,<span class="number">333</span>,<span class="number">444</span>];</span><br><span class="line"><span class="keyword">let</span> arrayChange=array.splice(<span class="number">2</span>,<span class="number">1</span>,<span class="string">"666"</span>)<span class="comment">//movePos.splice(开始删除的下表位置,删除数组元素的个数，向数组添加的新项目。);从下标2开始删除一位，并用666替换删除下表位置的元素</span></span><br><span class="line"><span class="built_in">console</span>.loge(arrayChange + <span class="string">"&lt;br /&gt;"</span>)</span><br><span class="line"><span class="comment">//返回新的数组 11,22,666,44</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="获取数组的最后一个元素"><a href="#获取数组的最后一个元素" class="headerlink" title="获取数组的最后一个元素"></a>获取数组的最后一个元素</h2><p><strong>常规获取元素最后一个值</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array=[<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>,<span class="string">'312哦哦'</span>];</span><br><span class="line"><span class="built_in">console</span>.log(array[array.length<span class="number">-1</span>]);</span><br></pre></td></tr></table></figure>
+
+<p><strong>pop 也可以说是删除数组的最后一个元素，与删除数组的第一个元素shift用法基本相同</strong><br>说明：注意使用pop获取数组最后一个元素的时候，同时会删除掉数组的最后一个元素；使用shift获取数组最后一个元素的时候，同时会删除掉数组的最后一个元素，二者都是返回的那个元素的值，原始数组也发生变化。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array=[<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>,<span class="string">'312哦哦'</span>];</span><br><span class="line"><span class="built_in">console</span>.log(array.pop())</span><br><span class="line"><span class="built_in">console</span>.log(array)</span><br></pre></td></tr></table></figure>
+
+<p><strong>Lodash中的函数_last</strong><br>说明:不会改变原始数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array=[<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>,<span class="string">'312哦哦'</span>];</span><br><span class="line"><span class="built_in">console</span>.log(_.last(array))</span><br></pre></td></tr></table></figure>
+
+<p><strong>颠倒数组元素(数组的反转)</strong><br>数组传统方法 reverse<br>说明:颠倒数组元素后返回新的数组<br>代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array=[<span class="number">11</span>,<span class="number">22</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arrayChange=movePos.reverse();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arrayChange) <span class="comment">//返回新的数组：22,11</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arrayChange.length) <span class="comment">//返回数组长度2</span></span><br></pre></td></tr></table></figure>
+
+<p>lodash提供的函数 _.reverse<br>代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array=[<span class="number">11</span>,<span class="number">22</span>];</span><br><span class="line"><span class="built_in">console</span>.log(_.reverse(array))</span><br></pre></td></tr></table></figure>
+
+<h2 id="分隔数组放入字符串"><a href="#分隔数组放入字符串" class="headerlink" title="分隔数组放入字符串"></a>分隔数组放入字符串</h2><p><strong>join</strong><br>说明:用于把数组中的所有元素放入一个字符串。元素是通过指定的分隔符进行分隔的。返回一个字符串 代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array=[<span class="number">11</span>,<span class="number">22</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arrayChange=array.join(<span class="string">"+"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr)  <span class="comment">//11+22</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="连接两个或多个数组"><a href="#连接两个或多个数组" class="headerlink" title="连接两个或多个数组"></a>连接两个或多个数组</h2><p><strong>contact</strong><br>说明：用于连接两个或多个数组,并返回一个新数组，新数组是将参数添加到原数组中构成</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array=[<span class="number">11</span>,<span class="number">22</span>];</span><br><span class="line"><span class="keyword">let</span> arrayChange=array.concat(<span class="number">4</span>,<span class="number">5</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arrayChange);<span class="comment">//[11, 22, 4, 5]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="数组元素的去重"><a href="#数组元素的去重" class="headerlink" title="数组元素的去重"></a>数组元素的去重</h2><p>数组元素的去重之前有专门讲过一些列的方法，这边就不过多陈述了。说一下lodash提供的函数 _uniq<br>代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array=[<span class="string">'数字'</span>,<span class="string">'花朵'</span>,<span class="string">'数字'</span>,<span class="string">'地球'</span>,<span class="string">'人类'</span>,<span class="string">'头发'</span>,<span class="string">'眼睛'</span>,<span class="string">'细胞'</span>];</span><br><span class="line"><span class="built_in">console</span>.log(_.uniq(array));</span><br></pre></td></tr></table></figure>
+
+<h2 id="数组求和"><a href="#数组求和" class="headerlink" title="数组求和"></a>数组求和</h2><p><strong>lodash中的函数 _sum</strong><br>代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sorce=_.sum([<span class="number">32</span>,<span class="number">45</span>,<span class="number">86</span>,<span class="number">43</span>]);</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取数组中指定键值对的值组成数组"><a href="#获取数组中指定键值对的值组成数组" class="headerlink" title="获取数组中指定键值对的值组成数组"></a>获取数组中指定键值对的值组成数组</h2><p><strong>lodash中的函数 _map</strong><br>说明：例如这样一个包含对象的数组[{id:1,name:’koala’},{id:2,name:’koala1’}],想拿到数组对象中id的数据组成一个数组。map的参数1:原型数组，参数2对象中的某一个键值对<br>代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array=[&#123;<span class="attr">id</span>:<span class="number">1</span>,<span class="attr">name</span>:<span class="string">'koala'</span>&#125;,&#123;<span class="attr">id</span>:<span class="number">2</span>,<span class="attr">name</span>:<span class="string">'koala1'</span>&#125;];</span><br><span class="line"><span class="keyword">let</span> result=_map(array,<span class="string">'id'</span>);</span><br><span class="line"><span class="comment">//[1,2]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="获取数组中某个值的角标"><a href="#获取数组中某个值的角标" class="headerlink" title="获取数组中某个值的角标"></a>获取数组中某个值的角标</h2><p>注意:下面两个函数都是返回遇到的第一个符合的值的下标值。indexOf<br>说明：</p>
+<blockquote>
+<ul>
+<li>用于在字符串和数组中找到目标的索引</li>
+<li>在字符串中使用的话会转换类型为 “hello1”.indexOf(1) //结果5</li>
+<li>在数组中使用不会转换类型 [1,2,3,”4”].indexOf(4) //-1</li>
+<li>[,,,,,].indexOf(undefined) //-1</li>
+<li>[null,undefined,NaN].indexOf(NaN)] //-1 NaN是找不到的其他可以哟</li>
+<li>let num = 2019; (“”+num).indexOf(0) //1</li>
+</ul>
+</blockquote>
+<p>代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'哈哈'</span>,(<span class="string">"hello1"</span>.indexOf(<span class="number">1</span>)))<span class="comment">//  哈哈 5</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'哈哈'</span>,(<span class="string">"hello1111"</span>.indexOf(<span class="number">1</span>)))<span class="comment">//  哈哈 5</span></span><br></pre></td></tr></table></figure>
+
+<p>lodash中的函数<strong>_.findIndex</strong> 说明:对于一个数组，里面每个值是对象的时候，这个函数，可以不完全判断对象一定是相同的。 代码:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> users = [</span><br><span class="line">  &#123; <span class="string">'user'</span>: <span class="string">'barney'</span>, <span class="string">'active'</span>: <span class="literal">false</span> ,<span class="string">'role'</span>:<span class="number">1</span>&#125;,</span><br><span class="line">  &#123; <span class="string">'user'</span>: <span class="string">'fred'</span>, <span class="string">'active'</span>: <span class="literal">false</span> ,<span class="string">'role'</span>:<span class="number">2</span>&#125;,</span><br><span class="line">  &#123; <span class="string">'user'</span>: <span class="string">'fred'</span>, <span class="string">'active'</span>: <span class="literal">true</span> ,<span class="string">'role'</span>:<span class="number">3</span>&#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(  _.findIndex(users, &#123; <span class="string">'user'</span>: <span class="string">'fred'</span>, <span class="string">'role'</span>: <span class="number">3</span> &#125;));<span class="comment">// 输出2</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="数组包含值判断"><a href="#数组包含值判断" class="headerlink" title="数组包含值判断"></a>数组包含值判断</h2><p><strong>indexOf</strong><br>说明:返回对应元素下标，在上面已经详细介绍过。</p>
+<p><strong>includes</strong><br>说明:返回的直接是true/false，同时对NaN找不到的问题也得到解决。效率应该会比indexOf高一些</p>
+<p>代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array111=[<span class="string">'dabao'</span>,<span class="string">'dabao1'</span>,<span class="literal">NaN</span>];</span><br><span class="line"><span class="built_in">console</span>.log(array111.includes(<span class="string">'dabao'</span>));<span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(array111.includes(<span class="literal">NaN</span>));<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="把一个字符串分割成字符串数组"><a href="#把一个字符串分割成字符串数组" class="headerlink" title="把一个字符串分割成字符串数组"></a>把一个字符串分割成字符串数组</h2><p><strong>split</strong><br>说明：split函数两个参数，参数1:字符串或正则表达式，从该参数指定的地方分割 (必须)，参数2:可选。该参数可指定返回的数组的最大长度。如果设置了该参数，返回的子串不会多于这个参数指定的数组。如果没有设置该参数，整个字符串都会被分割，不考虑它的长度</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">"How are you doing today?"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.write(str.split(<span class="string">" "</span>) + <span class="string">"&lt;br /&gt;"</span>)</span><br><span class="line"><span class="built_in">document</span>.write(str.split(<span class="string">""</span>) + <span class="string">"&lt;br /&gt;"</span>)</span><br><span class="line"><span class="built_in">document</span>.write(str.split(<span class="string">" "</span>,<span class="number">3</span>))</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">How,are,you,doing,today?</span><br><span class="line">H,o,w, ,a,r,e, ,y,o,u, ,d,o,i,n,g, ,t,o,d,a,y,?</span><br><span class="line">How,are,you</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">"2:3:4:5"</span>.split(<span class="string">":"</span>)	<span class="comment">//将返回["2", "3", "4", "5"]</span></span><br><span class="line"><span class="string">"|a|b|c"</span>.split(<span class="string">"|"</span>)	<span class="comment">//将返回["", "a", "b", "c"]</span></span><br><span class="line"></span><br><span class="line"><span class="string">"hello"</span>.split(<span class="string">""</span>)	<span class="comment">//可返回 ["h", "e", "l", "l", "o"]</span></span><br><span class="line"></span><br><span class="line"><span class="string">"hello"</span>.split(<span class="string">""</span>)	<span class="comment">//可返回 ["h", "e", "l", "l", "o"]</span></span><br><span class="line"></span><br><span class="line"><span class="string">"hello"</span>.split(<span class="string">""</span>, <span class="number">3</span>)	<span class="comment">//可返回 ["h", "e", "l"]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="一道面试题"><a href="#一道面试题" class="headerlink" title="一道面试题:"></a>一道面试题:</h2><p>给定任意非负整数，反复累加各位数字直到结果为个位数为止。例如给定非负整数912，第一次累加9+1+2 = 12, 第二次累加1+2 = 3, 3为个位数，循 环终止返回3。请编程实现。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">num</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="built_in">isNaN</span>(num)) <span class="keyword">return</span>;</span><br><span class="line">  <span class="keyword">if</span>(num&lt;<span class="number">10</span>) <span class="keyword">return</span> num</span><br><span class="line">  <span class="keyword">const</span> res=num.toString().split(<span class="string">''</span>).reduce(<span class="function">(<span class="params">sum,value</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> sum+<span class="built_in">Number</span>(value)</span><br><span class="line">  &#125;,<span class="number">0</span>)</span><br><span class="line">  <span class="keyword">return</span> add(res);</span><br><span class="line">&#125;</span><br><span class="line">add(<span class="number">345</span>);</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2022 一个爱听歌的搬砖工 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

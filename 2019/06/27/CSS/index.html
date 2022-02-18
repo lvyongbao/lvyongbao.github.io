@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+
+<title>
+  
+    CSS
+  
+</title>
+
+<meta name="description" content="1. 盒模型页面渲染时，dom 元素所采用的 布局模型。可通过box-sizing进行设置。根据计算宽高的区域可分为：   content-box (W3C 标准盒模型) border-box (IE 盒模型) padding-box margin-box (浏览器未实现)   box-sizing: content-box（W3C盒子模型）：元素的宽高大小表现为内容的大小。box-sizing:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS">
+<meta property="og:url" content="http://yoursite.com/2019/06/27/CSS/index.html">
+<meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:description" content="1. 盒模型页面渲染时，dom 元素所采用的 布局模型。可通过box-sizing进行设置。根据计算宽高的区域可分为：   content-box (W3C 标准盒模型) border-box (IE 盒模型) padding-box margin-box (浏览器未实现)   box-sizing: content-box（W3C盒子模型）：元素的宽高大小表现为内容的大小。box-sizing:">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-05-20T05:37:35.628Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS">
+<meta name="twitter:description" content="1. 盒模型页面渲染时，dom 元素所采用的 布局模型。可通过box-sizing进行设置。根据计算宽高的区域可分为：   content-box (W3C 标准盒模型) border-box (IE 盒模型) padding-box margin-box (浏览器未实现)   box-sizing: content-box（W3C盒子模型）：元素的宽高大小表现为内容的大小。box-sizing:">
+
+
+  <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body class="monochrome">
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">一个爱听歌的搬砖工</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">一个爱听歌的搬砖工</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">吕永宝</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="/uploads/avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+  <div class="aplayer" data-id="3834011938" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false"></div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-CSS" class="article article-type-post">
+  
+    <h1 class="article-header">
+      CSS
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2019-06-27
+</span>
+
+    
+
+    
+
+  </div>
+  <div class="article-entry">
+    <h2 id="1-盒模型"><a href="#1-盒模型" class="headerlink" title="1. 盒模型"></a>1. 盒模型</h2><p>页面渲染时，dom 元素所采用的 布局模型。可通过box-sizing进行设置。根据计算宽高的区域可分为：</p>
+<blockquote>
+<ul>
+<li>content-box (W3C 标准盒模型)</li>
+<li>border-box (IE 盒模型)</li>
+<li>padding-box</li>
+<li>margin-box (浏览器未实现)</li>
+</ul>
+</blockquote>
+<p>box-sizing: content-box（W3C盒子模型）：元素的宽高大小表现为内容的大小。<br>box-sizing: border-box（IE盒子模型）：元素的宽高表现为内容 + 内边距 + 边框的大小。背景会延伸到边框的外沿。<br>IE5.x和IE6在怪异模式中使用非标准的盒子模型，这些浏览器的width属性不是内容的宽度，而是内容、内边距和边框的宽度的总和。</p>
+<h2 id="2-BFC"><a href="#2-BFC" class="headerlink" title="2. BFC"></a>2. BFC</h2><p><strong>块级格式化上下文，</strong>是一个独立的渲染区域，让处于 BFC 内部的元素与外部的元素相互隔离，使内外元素的定位不会相互影响。</p>
+<blockquote>
+<ul>
+<li>IE下为 Layout，可通过 zoom:1 触发</li>
+</ul>
+</blockquote>
+<a id="more"></a>
+
+<p>触发条件:</p>
+<blockquote>
+<ul>
+<li>根元素</li>
+<li>position: absolute/fixed</li>
+<li>display: inline-block / table</li>
+<li>float 元素</li>
+<li>ovevflow !== visible</li>
+</ul>
+</blockquote>
+<p>规则:</p>
+<blockquote>
+<ul>
+<li>属于同一个 BFC 的两个相邻 Box 垂直排列</li>
+<li>属于同一个 BFC 的两个相邻 Box 的 margin 会发生重叠</li>
+<li>BFC 中子元素的 margin box 的左边， 与包含块 (BFC) border box的左边相接触 (子元素 absolute 除外)</li>
+<li>BFC 的区域不会与 float 的元素区域重叠</li>
+<li>计算 BFC 的高度时，浮动子元素也参与计算</li>
+<li>文字层不会被浮动层覆盖，环绕于周围</li>
+</ul>
+</blockquote>
+<p>应用:</p>
+<blockquote>
+<ul>
+<li>阻止margin重叠</li>
+<li>可以包含浮动元素 —— 清除内部浮动(清除浮动的原理是两个div都位于同一个 BFC 区域之中)</li>
+<li>自适应两栏布局</li>
+<li>可以阻止元素被浮动元素覆盖</li>
+</ul>
+</blockquote>
+<h2 id="3-层叠上下文"><a href="#3-层叠上下文" class="headerlink" title="3.层叠上下文"></a>3.层叠上下文</h2><p>元素提升为一个比较特殊的图层，在三维空间中 (z轴) 高出普通元素一等。<br>触发条件</p>
+<blockquote>
+<ul>
+<li>根层叠上下文(html)</li>
+<li>position</li>
+<li>css3属性<br>&nbsp;&nbsp;&nbsp;&nbsp;flex<br>&nbsp;&nbsp;&nbsp;&nbsp;transform<br>&nbsp;&nbsp;&nbsp;&nbsp;opacity<br>&nbsp;&nbsp;&nbsp;&nbsp;filter<br>&nbsp;&nbsp;&nbsp;&nbsp;will-change<br>&nbsp;&nbsp;&nbsp;&nbsp;-webkit-overflow-scrolling</li>
+</ul>
+</blockquote>
+<p>层叠等级：层叠上下文在z轴上的排序</p>
+<blockquote>
+<ul>
+<li>在同一层叠上下文中，层叠等级才有意义</li>
+<li>z-index的优先级最高</li>
+</ul>
+</blockquote>
+<p>background/border<br>z-index为负值<br>块级元素<br>浮动元素<br>行内元素<br>z-index:0/auto<br>z-index为正值</p>
+<h2 id="4-居中布局"><a href="#4-居中布局" class="headerlink" title="4. 居中布局"></a>4. 居中布局</h2><blockquote>
+<ul>
+<li>水平居中</li>
+<li>行内元素: text-align: center</li>
+<li>块级元素: margin: 0 auto</li>
+<li>absolute + transform</li>
+<li>flex + justify-content: center</li>
+</ul>
+</blockquote>
+<p>垂直居中</p>
+<blockquote>
+<ul>
+<li>line-height: height</li>
+<li>absolute + transform</li>
+<li>flex + align-items: center</li>
+<li>table</li>
+</ul>
+</blockquote>
+<p>水平垂直居中</p>
+<blockquote>
+<ul>
+<li>absolute + transform</li>
+<li>flex + justify-content + align-items</li>
+</ul>
+</blockquote>
+<h2 id="5-选择器优先级"><a href="#5-选择器优先级" class="headerlink" title="5. 选择器优先级"></a>5. 选择器优先级</h2><blockquote>
+<ul>
+<li>!important &gt; 行内样式 &gt; #id &gt; .class &gt; tag &gt; * &gt; 继承 &gt; 默认</li>
+<li>选择器 从右往左 解析</li>
+</ul>
+</blockquote>
+<h2 id="6-去除浮动影响，防止父级高度塌陷"><a href="#6-去除浮动影响，防止父级高度塌陷" class="headerlink" title="6.去除浮动影响，防止父级高度塌陷"></a>6.去除浮动影响，防止父级高度塌陷</h2><blockquote>
+<ul>
+<li>通过增加尾元素清除浮动</li>
+<li>:after / br标签 : clear: both</li>
+<li>创建父级 BFC</li>
+<li>父级设置高度</li>
+</ul>
+</blockquote>
+<h2 id="7-link-与-import-的区别"><a href="#7-link-与-import-的区别" class="headerlink" title="7.link 与 @import 的区别"></a>7.link 与 @import 的区别</h2><blockquote>
+<ul>
+<li>link功能较多，可以定义 RSS，定义 Rel 等作用，而@import只能用于加载 css</li>
+<li>当解析到link时，页面会同步加载所引的 css，而@import所引用的 css 会等到页面加载完才被加载</li>
+<li>@import需要 IE5 以上才能使用</li>
+<li>link可以使用 js 动态引入，@import不行</li>
+</ul>
+</blockquote>
+<h2 id="8-CSS预处理器-Sass-Less-Postcss"><a href="#8-CSS预处理器-Sass-Less-Postcss" class="headerlink" title="8. CSS预处理器(Sass/Less/Postcss)"></a>8. CSS预处理器(Sass/Less/Postcss)</h2><p>CSS预处理器的原理: 是将类 CSS 语言通过 Webpack 编译 转成浏览器可读的真正 CSS。在这层编译之上，便可以赋予 CSS 更多更强大的功能，常用功能:</p>
+<blockquote>
+<ul>
+<li>嵌套</li>
+<li>变量</li>
+<li>循环语句</li>
+<li>条件语句</li>
+<li>自动前缀</li>
+<li>单位转换</li>
+<li>mixin复用</li>
+</ul>
+</blockquote>
+<p>面试中一般不会重点考察该点，一般介绍下自己在实战项目中的经验即可</p>
+<h2 id="9-CSS动画"><a href="#9-CSS动画" class="headerlink" title="9.CSS动画"></a>9.CSS动画</h2><p>transition: 过渡动画</p>
+<blockquote>
+<ul>
+<li>transition-property: 属性</li>
+<li>transition-duration: 间隔</li>
+<li>transition-timing-function: 曲线</li>
+<li>transition-delay: 延迟</li>
+<li>常用钩子: transitionend</li>
+</ul>
+</blockquote>
+<p>animation / keyframes</p>
+<blockquote>
+<ul>
+<li>animation-name: 动画名称，对应@keyframes</li>
+<li>animation-duration: 间隔</li>
+<li>animation-timing-function: 曲线</li>
+<li>animation-delay: 延迟</li>
+<li>animation-iteration-count: 次数<br>&nbsp;&nbsp;&nbsp;&nbsp;infinite: 循环动画</li>
+<li>animation-direction: 方向<br>&nbsp;&nbsp;&nbsp;&nbsp;alternate: 反向播放</li>
+<li>animation-fill-mode: 静止模式<br>&nbsp;&nbsp;&nbsp;&nbsp;forwards: 停止时，保留最后一帧<br>&nbsp;&nbsp;&nbsp;&nbsp;backwards: 停止时，回到第一帧<br>&nbsp;&nbsp;&nbsp;&nbsp;both: 同时运用 forwards / backwards</li>
+<li>常用钩子: animationend</li>
+</ul>
+</blockquote>
+<p>动画属性: 尽量使用动画属性进行动画，能拥有较好的性能表现</p>
+<blockquote>
+<ul>
+<li>translate</li>
+<li><blockquote>
+<ul>
+<li>scale</li>
+</ul>
+</blockquote>
+</li>
+<li>rotate</li>
+<li>skew</li>
+<li>opacity</li>
+<li>color</li>
+</ul>
+</blockquote>
+<h2 id="10-的title和alt有什么区别"><a href="#10-的title和alt有什么区别" class="headerlink" title="10.的title和alt有什么区别"></a>10.<img>的title和alt有什么区别</h2><p>1.title是global attributes之一，用于为元素提供附加的advisory information。通常当鼠标滑动到元素上的时候显示。<br>2.alt是<img>的特有属性，是图片内容的等价描述，用于图片无法加载时显示、读屏器阅读图片。可提图片高可访问性，除了纯装饰图片外都必须设置有意义的值，搜索引擎会重点分析。</p>
+<h2 id="11-CSS选择器有哪些？"><a href="#11-CSS选择器有哪些？" class="headerlink" title="11.CSS选择器有哪些？"></a>11.CSS选择器有哪些？</h2><p>由于太多，这边列举几个<br>:link，：visited，：focus，：hover，：active链接状态： 选择特定状态的链接元素，顺序LoVe HAte，兼容性: IE4+<br>[attr]：选择所有设置了attr属性的元素，兼容性IE7+<br>[attr=value]：选择属性值刚好为value的元素<br>[:checked]：选择单选框，复选框，下拉框中选中状态下的元素，兼容性：IE9+<br>:hover：鼠标移入状态的元素，兼容性a标签IE4+， 所有元素IE7+<br>:not(selector)：选择不符合selector的元素。不参与计算优先级，兼容性：IE9+<br>::first-letter：伪元素，选择块元素第一行的第一个字母，兼容性IE5.5+<br>::first-line：伪元素，选择块元素的第一行，兼容性IE5.5+<br>:nth-child(an + b)：伪类，选择前面有an + b - 1个兄弟节点的元素，其中n &gt;= 0， 兼容性IE9+<br>:nth-last-child(an + b)：伪类，选择后面有an + b - 1个兄弟节点的元素 其中n &gt;= 0，兼容性IE9+</p>
+<h2 id="12-css-sprite是什么-有什么优缺点"><a href="#12-css-sprite是什么-有什么优缺点" class="headerlink" title="12.css sprite是什么,有什么优缺点"></a>12.css sprite是什么,有什么优缺点</h2><p>概念：将多个小图片拼接到一个图片中。通过background-position和元素尺寸调节需要显示的背景图案。<br><strong>优点：</strong><br>1.减少HTTP请求数，极大地提高页面加载速度<br>2.增加图片信息重复度，提高压缩比，减少图片大小<br>3.更换风格方便，只需在一张或几张图片上修改颜色或样式即可实现</p>
+<p><strong>缺点：</strong><br>1.图片合并麻烦<br>2.维护麻烦，修改一个图片可能需要从新布局整个图片，样式</p>
+<h2 id="13-display-none-与visibility-hidden-的区别"><a href="#13-display-none-与visibility-hidden-的区别" class="headerlink" title="13.display: none;与visibility: hidden;的区别"></a>13.display: none;与visibility: hidden;的区别</h2><p><strong>联系：</strong>它们都能让元素不可见<br><strong>区别：</strong><br>1.display:none;会让元素完全从渲染树中消失，渲染的时候不占据任何空间；visibility: hidden;不会让元素从渲染树消失，渲染师元素继续占据空间，只是内容不可见<br>2.display: none;是非继承属性，子孙节点消失由于元素从渲染树消失造成，通过修改子孙节点属性无法显示；visibility: hidden;是继承属性，子孙节点消失由于继承了hidden，通过设置visibility: visible;可以让子孙节点显式<br>3.修改常规流中元素的display通常会造成文档重排。修改visibility属性只会造成本元素的重绘。<br>4.读屏器不会读取display: none;元素内容；会读取visibility: hidden;元素内容</p>
+<h2 id="14-display-float-position的关系"><a href="#14-display-float-position的关系" class="headerlink" title="14.display,float,position的关系"></a>14.display,float,position的关系</h2><p>1.如果display为none，那么position和float都不起作用，这种情况下元素不产生框<br>2.否则，如果position值为absolute或者fixed，框就是绝对定位的，float的计算值为none，display根据下面的表格进行调整。<br>3.否则，如果float不是none，框是浮动的，display根据下表进行调整<br>4.否则，如果元素是根元素，display根据下表进行调整<br>5.其他情况下display的值为指定值 总结起来：绝对定位、浮动、根元素都需要调整display</p>
+<h2 id="15-position的static、relative、absolute、fixed它们的区别？"><a href="#15-position的static、relative、absolute、fixed它们的区别？" class="headerlink" title="15.position的static、relative、absolute、fixed它们的区别？"></a>15.position的static、relative、absolute、fixed它们的区别？</h2><p>1.absolute：绝对定位，元素会相对于值不为 static 的第一个父元素进行定位(会一直往父级节点查找)，且它是脱离正常文档流、不占位的;<br>2.fixed:同样是绝对定位，但元素会相对于浏览器窗口进行定位，而不是父节点的position (IE9以下不支持);<br>3.relative:相对定位，元素相对于自身正常位置进行定位,属于正常文档流;static: position的默认值，也就是没有定位，当元素设置该属性后（ top、bottom、left、right、z-index ）等属性将失效;<br>4.inherit:貌似没用过，查了一下文档“规定从父元素继承 position 属性的值”;</p>
+<h2 id="16-简单讲述一下块元素、内联元素、空元素有哪些，它们之间的区别？"><a href="#16-简单讲述一下块元素、内联元素、空元素有哪些，它们之间的区别？" class="headerlink" title="16.简单讲述一下块元素、内联元素、空元素有哪些，它们之间的区别？"></a>16.简单讲述一下块元素、内联元素、空元素有哪些，它们之间的区别？</h2><p>1.行内元素有：a、b、span、img、input、select、textarea、em、img、strong（强调的语气）;<br>2.块级元素有：ul、ol、li、dl、dt、dd、h1、h2、h3、h4…p、section、div、form等;<br>3.空元素： input type=”hidden”/&gt;、br&gt;、hr&gt;、link&gt;、meta&gt;;<br>块元素总是独占一行，margin对内联元素上下不起作用;</p>
+<h2 id="17-开发中为什么要初始化css样式？"><a href="#17-开发中为什么要初始化css样式？" class="headerlink" title="17.开发中为什么要初始化css样式？"></a>17.开发中为什么要初始化css样式？</h2><p>因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。</p>
+<h2 id="18-CSS优化、提高性能的方法有哪些"><a href="#18-CSS优化、提高性能的方法有哪些" class="headerlink" title="18.CSS优化、提高性能的方法有哪些"></a>18.CSS优化、提高性能的方法有哪些</h2><p>尽量将样式写在单独的css文件里面，在head元素中引用 将代码写成单独的css文件有几点好处：<br>1.内容和样式分离，易于管理和维护<br>2.减少页面体积<br>3.css文件可以被缓存、重用，维护成本降低<br>不使用@import<br>避免使用复杂的选择器，层级越少越好 建议选择器的嵌套最好不要超过三层，比如：<br>精简页面的样式文件，去掉不用的样式<br>利用CSS继承减少代码量<br>避免！important，可以选择其他选择器</p>
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2022 一个爱听歌的搬砖工 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

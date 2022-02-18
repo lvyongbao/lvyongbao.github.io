@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+
+<title>
+  
+    归档
+  
+</title>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="一个爱听歌的搬砖工">
+<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一个爱听歌的搬砖工">
+
+
+  <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body class="monochrome">
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">一个爱听歌的搬砖工</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">一个爱听歌的搬砖工</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">吕永宝</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="/uploads/avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+  <div class="aplayer" data-id="3834011938" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false"></div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          
+
+  
+  
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <h1><a href="/archives/2020" class="archive-year">2020</a></h1>
+        </div>
+        <div class="post-list">
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2020/01/19/Export/">
+  导出文件实现
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2020/01/19/Export/"><span class="article-date">
+  2020-01-19
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>最近在做后台管理的时候有个导出记录的功能，我这边踩了个坑。后台接口是以流的形式把数据给我们，我这边是用 Blob 对象进行下载。如果不了解 Blob 的小伙伴可以查阅一下相关资料。我们来看一下用法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">axios</span><br><span class="line">  .post(<span class="string">'/demo'</span>, data, &#123;</span><br><span class="line">    responseType: <span class="string">'arraybuffer'</span>,</span><br><span class="line">  &#125;)</span><br><span class="line">  .then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> blob = <span class="keyword">new</span> Blob([res], &#123;</span><br><span class="line">      type:</span><br><span class="line">        <span class="string">'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8'</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">const</span> downloadElement = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</span><br><span class="line">    <span class="keyword">const</span> href = <span class="built_in">window</span>.URL.createObjectURL(blob); <span class="comment">// 创建下载的链接</span></span><br><span class="line">    downloadElement.href = href;</span><br><span class="line">    downloadElement.download = <span class="string">''</span>; <span class="comment">// 下载后文件名</span></span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(downloadElement);</span><br><span class="line">    downloadElement.click(); <span class="comment">// 点击下载</span></span><br><span class="line">    <span class="built_in">document</span>.body.removeChild(downloadElement); <span class="comment">// 下载完成移除元素</span></span><br><span class="line">    <span class="built_in">window</span>.URL.revokeObjectURL(href); <span class="comment">// 释放掉blob对象</span></span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2020/01/19/Export/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2020/01/14/Time/">
+  JS常用时间处理方法
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2020/01/14/Time/"><span class="article-date">
+  2020-01-14
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>简便的格式化时间</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> format = <span class="function"><span class="keyword">function</span> (<span class="params">time</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(+time + <span class="number">8</span> * <span class="number">3600</span> * <span class="number">1000</span>);</span><br><span class="line">  <span class="keyword">return</span> date.toJSON().substr(<span class="number">0</span>, <span class="number">19</span>).replace(<span class="string">"T"</span>, <span class="string">" "</span>).replace(<span class="regexp">/-/g</span>, <span class="string">"."</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> time1 = format(<span class="keyword">new</span> <span class="built_in">Date</span>());</span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2020/01/14/Time/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2020/01/03/Printing/">
+  打印功能的实现
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2020/01/03/Printing/"><span class="article-date">
+  2020-01-03
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>记录一下打印功能的实现方式，之前做需求的时候有个预览打印的功能，这边分享一下，下次遇到不会再走弯路。<br>我这边是再做 react 项目的时候碰到了打印需求，网上其实有关基于 react 的打印插件，功能还是很强大的，我只用到了打印功能，并不需要引入第三方库，所以就用原生方法写了个。<br>因为我的打印是在弹窗的基础上打印一个表格，所以我新开了个页面，不然点击关闭按钮时，页面就回不来了。以下是实现的代码：</p>
+          <p>
+            <a href="/2020/01/03/Printing/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+      
+        </div></section>
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <h1><a href="/archives/2019" class="archive-year">2019</a></h1>
+        </div>
+        <div class="post-list">
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/12/05/StickyFooter/">
+  实现Sticky Footer的最佳套路
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/12/05/StickyFooter/"><span class="article-date">
+  2019-12-05
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>在网页设计中， Sticky footers 设计是最古老和最常见的效果之一，大多数人都曾经经历过。它可以概括如下：如果页面内容不够长的时候，页脚块粘贴在视窗底部；如果内容足够长时，页脚块会被内容向下推送。这种效果不仅是无处不在，很受欢迎，而且实现起来看上去也非常容易。<br>有的盆友就说了，我可以使用 position: fixed;bottom:0;<br>当然有些情况下是可以适用的，但是有些情况下并不适用，使用 fixed 不就反而更糟，再说了，像我们这样的喜欢新技（zhuang）术（B）的人，有使用新技（zhuang）术（B）的机会怎么能放过。<br>之前分享过一期网站 footer 沉底效果的解决方案，用的是 JS 或者采用 flex 布局，更利于 PC 端。今天分享下便于移动端的最佳套路。<br>当然市面上的一些解决方案，但多少都有些兼容性问题存在，这当然不是我们追求的，分享下实现的源码，有兴趣的私下里可以试一试。</p>
+          <p>
+            <a href="/2019/12/05/StickyFooter/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/11/15/Trim/">
+  js去除字符串空格
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/11/15/Trim/"><span class="article-date">
+  2019-11-15
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p><strong>方法一：使用replace正则匹配的方法</strong><br>去除所有空格:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str = str.replace(<span class="regexp">/\s*/g</span>,<span class="string">""</span>);</span><br></pre></td></tr></table></figure>
+
+<p>去除两头空格:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str = str.replace(<span class="regexp">/^\s*|\s*$/g</span>,<span class="string">""</span>);</span><br></pre></td></tr></table></figure>
+
+<p>去除左空格：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str = str.replace( <span class="regexp">/^\s*/</span>, <span class="string">""</span>);</span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/11/15/Trim/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/11/01/Getparam/">
+  获取URL后缀的参数
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/11/01/Getparam/"><span class="article-date">
+  2019-11-01
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>分享一下URL跳转后面拼接参数获取参数的方法：</p>
+<p>之前一直用的是这个方法，不管URL后面有几个参数，一个个的去获取，感觉比较麻烦了，不实用了，所以区分了一下，<br>如果URL后面只跟一个参数的话，可以用这个方法获取</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getParamVal</span>(<span class="params">type</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; href &#125; = <span class="built_in">window</span>.location;</span><br><span class="line">  <span class="keyword">let</span> res = <span class="string">''</span>;</span><br><span class="line">  <span class="keyword">let</span> startIndex = href.lastIndexOf(type);</span><br><span class="line">  <span class="keyword">if</span> (startIndex !== <span class="number">-1</span>) &#123;</span><br><span class="line">    startIndex = href.indexOf(<span class="string">'='</span>, startIndex) + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">const</span> endIndex = href.indexOf(<span class="string">'&amp;'</span>, startIndex);</span><br><span class="line">    res = endIndex !== <span class="number">-1</span> ? href.substring(startIndex, endIndex) : href.substring(startIndex);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/11/01/Getparam/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/10/30/for/">
+  比较typeof与instanceof
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/10/30/for/"><span class="article-date">
+  2019-10-30
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>相同点：JavaScript 中 typeof 和 instanceof 常用来判断一个变量是否为空，或者是什么类型的。<br>typeof的定义和用法：返回值是一个字符串，用来说明变量的数据类型。<br>细节：<br>(1)、typeof 一般只能返回如下几个结果：number,boolean,string,function,object,undefined。<br>(2)、typeof 来获取一个变量是否存在，如 if(typeof a!=”undefined”){alert(“ok”)}，而不要去使用 if(a) 因为如果 a 不存在（未声明）则会出错。</p>
+<p>(3)、对于 Array,Null 等特殊对象使用 typeof 一律返回 object，这正是 typeof 的局限性。<br>Instanceof定义和用法：instanceof 用于判断一个变量是否属于某个对象的实例。</p>
+          <p>
+            <a href="/2019/10/30/for/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/10/28/Sort/">
+  sort详解与实战
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/10/28/Sort/"><span class="article-date">
+  2019-10-28
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>sort()方法用原地算法对数组的元素进行排序，并返回数组，该排序方法会在原数组上直接进行排序，并不会生成一个排好序的新数组。排序算法现在是稳定的。默认排序顺序是根据字符串 Unicode 码点。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.sort([compareFunction]);</span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/10/28/Sort/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/10/25/Filter/">
+  filter详解与实战
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/10/25/Filter/"><span class="article-date">
+  2019-10-25
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>filter(过滤，筛选) 方法创建一个新数组,原始数组不发生改变。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.filter(callback,[ thisObject]);</span><br></pre></td></tr></table></figure>
+
+<p>其包含通过提供函数实现的测试的所有元素。接收的参数和 map 是一样的，filter的callback函数需要返回布尔值true或false. 如果为true则表示通过啦！如果为false则失败，其返回值是一个新数组，由通过测试为true的所有元素组成，如果没有任何数组元素通过测试，则返回空数组。</p>
+<p>来个例子介绍下，现在有一个数组 [1, 2, 1, 2, 3, 5, 4, 5, 3, 4, 4, 4, 4]，我们想要生成一个新数组，这个数组要求没有重复的内容，即为去重。</p>
+          <p>
+            <a href="/2019/10/25/Filter/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/10/25/Reduce/">
+  reduce详解与实战
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/10/25/Reduce/"><span class="article-date">
+  2019-10-25
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>reduce() 方法对数组中的每个元素执行一个提供的 reducer 函数(升序执行)，将其结果汇总为单个返回值。传递给 reduce 的回调函数（callback）接受四个参数，分别是累加器 accumulator、currentValue——正在操作的元素、currentIndex（可选）——元素索引，但是它的开始会有特殊说明、array（可选）——原始数组本身，除了 callback 之外还可以接受初始值 initialValue 值（可选）。</p>
+<ol>
+<li><p>如果没有提供 initialValue，那么第一次调用 callback 函数时，accumulator 使用原数组中的第一个元素，currentValue 即是数组中的第二个元素。在没有初始值的空数组上调用 reduce 将报错。</p>
+</li>
+<li><p>如果提供了 initialValue，那么将作为第一次调用 callback 函数时的第一个参数的值，即 accumulator，currentValue 使用原数组中的第一个元素。</p>
+</li>
+</ol>
+<p>例子，现在有一个数组  [0, 1, 2, 3, 4]，需要计算数组元素的和，需求比较简单，来看下代码实现。</p>
+          <p>
+            <a href="/2019/10/25/Reduce/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+
+
+  <div class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><a class="extend next" rel="next" href="/archives/page/2/">下一页</a>
+  </div>
+
+
+
+
+          <div class="main-footer">
+  
+    © 2022 一个爱听歌的搬砖工 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
+      
+        </div>
+      
+    </section></div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</div></body>
+</html>

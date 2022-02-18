@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+
+<title>
+  
+    IE6浏览器常见的bug,缺陷的解决办法
+  
+</title>
+
+<meta name="description" content="IE6不支持min-height，解决办法使用css hack： 12345.target &amp;#123;  min-height: 100px;  height: auto !important;  height: 100px;   // IE6下内容高度超过会自动扩展高度&amp;#125;  ol内li的序号全为1，不递增。解决方法：为li设置样式display: list-item;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IE6浏览器常见的bug,缺陷的解决办法">
+<meta property="og:url" content="http://yoursite.com/2017/12/11/compatible/index.html">
+<meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:description" content="IE6不支持min-height，解决办法使用css hack： 12345.target &amp;#123;  min-height: 100px;  height: auto !important;  height: 100px;   // IE6下内容高度超过会自动扩展高度&amp;#125;  ol内li的序号全为1，不递增。解决方法：为li设置样式display: list-item;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-05-20T05:37:35.643Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="IE6浏览器常见的bug,缺陷的解决办法">
+<meta name="twitter:description" content="IE6不支持min-height，解决办法使用css hack： 12345.target &amp;#123;  min-height: 100px;  height: auto !important;  height: 100px;   // IE6下内容高度超过会自动扩展高度&amp;#125;  ol内li的序号全为1，不递增。解决方法：为li设置样式display: list-item;">
+
+
+  <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body class="monochrome">
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">一个爱听歌的搬砖工</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">一个爱听歌的搬砖工</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">吕永宝</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="/uploads/avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+  <div class="aplayer" data-id="3834011938" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false"></div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-compatible" class="article article-type-post">
+  
+    <h1 class="article-header">
+      IE6浏览器常见的bug,缺陷的解决办法
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2017-12-11
+</span>
+
+    
+
+    
+
+  </div>
+  <div class="article-entry">
+    <p><strong>IE6不支持min-height，解决办法使用css hack：</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.target</span> &#123;</span><br><span class="line">  <span class="attribute">min-height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: auto <span class="meta">!important</span>;</span><br><span class="line">  height: 100px;   // IE6下内容高度超过会自动扩展高度</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>ol内li的序号全为1，不递增。解决方法：为li设置样式display: list-item;</strong></p>
+<a id="more"></a>
+<p><strong>未定位父元素overflow: auto;，包含position: relative;子元素，子元素高于父元素时会溢出。解决办法：1）子元素去掉position: relative;; 2）不能为子元素去掉定位时，父元素position: relative;</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.outer</span> &#123;</span></span><br><span class="line">  width: 215px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  overflow: auto;</span><br><span class="line"><span class="css">  <span class="selector-tag">position</span>: <span class="selector-tag">relative</span>;  <span class="comment">/* 修复bug */</span></span></span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-class">.inner</span> &#123;</span></span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 200px;</span><br><span class="line">  background-color: purple;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"outer"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>IE6只支持a标签的:hover伪类，解决方法：使用js为元素监听mouseenter，mouseleave事件，添加类实现效果：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.p</span><span class="selector-pseudo">:hover</span>,</span></span><br><span class="line"><span class="css"><span class="selector-class">.hover</span> &#123;</span></span><br><span class="line">  background: purple;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"p"</span> <span class="attr">id</span>=<span class="string">"target"</span>&gt;</span>aaaa bbbbb<span class="tag">&lt;<span class="name">span</span>&gt;</span>DDDDDDDDDDDd<span class="tag">&lt;/<span class="name">span</span>&gt;</span> aaaa lkjlkjdf j<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">addClass</span>(<span class="params">elem, cls</span>) </span>&#123;</span></span><br><span class="line">  if (elem.className) &#123;</span><br><span class="line"><span class="javascript">    elem.className += <span class="string">' '</span> + cls;</span></span><br><span class="line"><span class="javascript">  &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line">    elem.className = cls;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">removeClass</span>(<span class="params">elem, cls</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> className = <span class="string">' '</span> + elem.className + <span class="string">' '</span>;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">' +'</span> + cls + <span class="string">' +'</span>, <span class="string">'g'</span>);</span></span><br><span class="line"><span class="javascript">  elem.className = className.replace(reg, <span class="string">' '</span>).replace(<span class="regexp">/^ +| +$/</span>, <span class="string">''</span>);</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> target = <span class="built_in">document</span>.getElementById(<span class="string">'target'</span>);</span></span><br><span class="line">if (target.attachEvent) &#123;</span><br><span class="line"><span class="javascript">  target.attachEvent(<span class="string">'onmouseenter'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    addClass(target, <span class="string">'hover'</span>);</span></span><br><span class="line">  &#125;);</span><br><span class="line"><span class="javascript">  target.attachEvent(<span class="string">'onmouseleave'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    removeClass(target, <span class="string">'hover'</span>);</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>IE5-8不支持opacity，解决办法：</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.opacity</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.4</span></span><br><span class="line">  filter: <span class="built_in">alpha</span>(opacity=<span class="number">60</span>); <span class="comment">/* for IE5-7 */</span></span><br><span class="line">  <span class="attribute">-ms-filter</span>: <span class="string">"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)"</span>; <span class="comment">/* for IE 8*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>IE6在设置height小于font-size时高度值为font-size，解决办法：font-size: 0;</strong><br><strong>IE6-7不支持display: inline-block解决办法：设置inline并触发hasLayout</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">inline-block</span>;</span><br><span class="line">*<span class="selector-tag">display</span>: <span class="selector-tag">inline</span>;</span><br><span class="line">*<span class="selector-tag">zoom</span>: 1;</span><br></pre></td></tr></table></figure>
+
+<p><strong>IE6下浮动元素在浮动方向上与父元素边界接触元素的外边距会加倍。解决办法： 1）使用padding控制间距。 2）浮动元素display: inline;这样解决问题且无任何副作用：css标准规定浮动元素display:inline会自动调整为block</strong><br><strong>通过为块级元素设置宽度和左右margin为auto时，IE6不能实现水平居中，解决方法：为父元素设置text-align: center;</strong></p>
+<p><strong>IE6下，内容会撑开设置好的高度。有浮动存在时，计算一定要精确，不要让内容的宽高超出我们所设置的宽高。解决办法:</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.box</span> &#123; <span class="attribute">width</span>:<span class="number">400px</span>;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-class">.left</span> &#123; <span class="attribute">width</span>:<span class="number">200px</span>;<span class="attribute">heigth</span>:<span class="number">300px</span>;<span class="attribute">background</span>:red;<span class="attribute">float</span>:left;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-class">.right</span> &#123; <span class="attribute">width</span>:<span class="number">200px</span>;<span class="attribute">float</span>:right;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-class">.div</span> &#123; <span class="attribute">width</span>:<span class="number">180px</span>;<span class="attribute">height</span>:<span class="number">180px</span>;<span class="attribute">background</span>:blue;<span class="attribute">padding</span>:<span class="number">15px</span>;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>IE6下，子元素有相对定位的话，父级的overflow包不住子元素。解决办法：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.box</span> &#123; <span class="attribute">width</span>:<span class="number">200px</span>;<span class="attribute">height</span>:<span class="number">200px</span>;<span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#000</span>;<span class="attribute">overflow</span>:hidden;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-class">.div</span> &#123; <span class="attribute">width</span>:<span class="number">150px</span>;<span class="attribute">height</span>:<span class="number">300px</span>;<span class="attribute">background</span>:yellow;<span class="attribute">position</span>:relative;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>当浮动元素和绝对定位元素是并列关系的时候，在IE6下绝对定位元素会消失。解决办法：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.box</span> &#123; <span class="attribute">width</span>:<span class="number">200px</span>;<span class="attribute">height</span>:<span class="number">200px</span>;<span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#000</span>;<span class="attribute">position</span>:relative;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">span</span> &#123; <span class="attribute">width</span>:<span class="number">50px</span>;<span class="attribute">height</span>:<span class="number">50px</span>;<span class="attribute">background</span>:yellow;<span class="attribute">position</span>:absolute;<span class="attribute">right</span>:-<span class="number">20px</span>;<span class="attribute">top</span>:<span class="number">0</span>;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">ul</span> &#123; <span class="attribute">width</span>:<span class="number">150px</span>;<span class="attribute">height</span>:<span class="number">150px</span>;<span class="attribute">background</span>:red;<span class="attribute">padding</span>:<span class="number">0</span>;<span class="attribute">float</span>:left;<span class="attribute">display</span>:inline;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>在IE6下的文字溢出bug。即：子元素的宽度和父级的宽度相差小于3px的时候，或者两个浮动元素中间有注释或者内嵌元素的时候，IE6下文字就会溢出，解决办法：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.box</span> &#123; <span class="attribute">width</span>:<span class="number">400px</span>;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-class">.left</span> &#123; <span class="attribute">float</span>:left;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-class">.right</span> &#123; <span class="attribute">width</span>:<span class="number">400px</span>;<span class="attribute">float</span>:right;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span>哈哈哈哈哈哈哈哈<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>在IE6下，li自身没有浮动，但是li的内容有浮动，li下边就会产生一个间隙，解决办法：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-tag">ul</span> &#123;<span class="attribute">margin</span>:<span class="number">0</span>;<span class="attribute">padding</span>:<span class="number">0</span>;<span class="attribute">width</span>:<span class="number">302px</span>;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">li</span> &#123; <span class="attribute">list-style</span>:none;<span class="attribute">height</span>:<span class="number">30px</span>;<span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#000</span>; <span class="attribute">vertical-align</span>:top;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">a</span> &#123; <span class="attribute">width</span>:<span class="number">100px</span>;<span class="attribute">float</span>:left;<span class="attribute">height</span>:<span class="number">30px</span>;<span class="attribute">background</span>:red;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">span</span> &#123; <span class="attribute">width</span>:<span class="number">100px</span>;<span class="attribute">float</span>:right;<span class="attribute">height</span>:<span class="number">30px</span>;<span class="attribute">background</span>:bule;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>在所有浏览器中子元素的margin-top,margin-bottom值会传递给父级；解决办法：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-tag">body</span> &#123; <span class="attribute">margin</span>:<span class="number">0</span>;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-class">.box</span> &#123; <span class="attribute">background</span>:bule;<span class="attribute">border</span>:<span class="number">1px</span> solid <span class="number">#000</span>;<span class="attribute">zoom</span>:<span class="number">1</span>;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-class">.div</span> &#123; <span class="attribute">width</span>:<span class="number">200px</span>;<span class="attribute">height</span>:<span class="number">200px</span>;<span class="attribute">background</span>:red;<span class="attribute">margin</span>:<span class="number">100px</span>;&#125;</span></span><br><span class="line">/*</span><br><span class="line">  在IE6下解决margin传递要触发haslayout</span><br><span class="line">  在IE6下父级有边距的时候，子元素的margin值消失</span><br><span class="line">  解决办法：触发父级的haslayout</span><br><span class="line">*/</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>在IE6下有元素浮动时，如果宽度需要由内容撑开，就给里边的块状元素都加浮动，正常浏览器不用加浮动。</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.box</span> &#123;<span class="attribute">width</span>:<span class="number">400px</span>;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-class">.left</span> &#123;<span class="attribute">background</span>:red;<span class="attribute">float</span>:left;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-class">.right</span> &#123;<span class="attribute">float</span>:right;<span class="attribute">background</span>:bule;&#125;</span></span><br><span class="line"><span class="css"><span class="selector-tag">h3</span> &#123;<span class="attribute">margin</span>:<span class="number">0</span>;<span class="attribute">height</span>:<span class="number">30px</span>; <span class="attribute">float</span>:left;&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>左侧<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>右侧<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2022 一个爱听歌的搬砖工 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+
+<title>
+  
+    JS常用时间处理方法
+  
+</title>
+
+<meta name="description" content="简便的格式化时间 123456var format = function (time) &amp;#123;  var date = new Date(+time + 8 * 3600 * 1000);  return date.toJSON().substr(0, 19).replace(&quot;T&quot;, &quot; &quot;).replace(/-/g, &quot;.&quot;);&amp;#125;;var time1 = format(new">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS常用时间处理方法">
+<meta property="og:url" content="http://yoursite.com/2020/01/14/Time/index.html">
+<meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:description" content="简便的格式化时间 123456var format = function (time) &amp;#123;  var date = new Date(+time + 8 * 3600 * 1000);  return date.toJSON().substr(0, 19).replace(&quot;T&quot;, &quot; &quot;).replace(/-/g, &quot;.&quot;);&amp;#125;;var time1 = format(new">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-05-20T05:37:35.641Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS常用时间处理方法">
+<meta name="twitter:description" content="简便的格式化时间 123456var format = function (time) &amp;#123;  var date = new Date(+time + 8 * 3600 * 1000);  return date.toJSON().substr(0, 19).replace(&quot;T&quot;, &quot; &quot;).replace(/-/g, &quot;.&quot;);&amp;#125;;var time1 = format(new">
+
+
+  <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body class="monochrome">
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">一个爱听歌的搬砖工</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">一个爱听歌的搬砖工</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">吕永宝</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="/uploads/avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+  <div class="aplayer" data-id="3834011938" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false"></div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Time" class="article article-type-post">
+  
+    <h1 class="article-header">
+      JS常用时间处理方法
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2020-01-14
+</span>
+
+    
+
+    
+
+  </div>
+  <div class="article-entry">
+    <p>简便的格式化时间</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> format = <span class="function"><span class="keyword">function</span> (<span class="params">time</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(+time + <span class="number">8</span> * <span class="number">3600</span> * <span class="number">1000</span>);</span><br><span class="line">  <span class="keyword">return</span> date.toJSON().substr(<span class="number">0</span>, <span class="number">19</span>).replace(<span class="string">"T"</span>, <span class="string">" "</span>).replace(<span class="regexp">/-/g</span>, <span class="string">"."</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> time1 = format(<span class="keyword">new</span> <span class="built_in">Date</span>());</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p>Date 的 toJSON 方法返回格林威治时间的 JSON 格式字符串，转化为北京时间需要额外增加 8 个时区，然后把 T 替换为空格，即是我们需要的时间格式，后面可以通过正则将日期分隔符换成任何想要的字符。一元加操作符可以把任何数据类型转换成数字，所以获取时间对象对应毫秒数的另一个方法是+Date 或 Number(Date)</p>
+<p><strong>获取当月最后一天</strong><br>一个月可能有 28/29/30/31 天，使用写死数据的方式来解决闰年和大小月显然是不科学的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLastDayOfMonth</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> month = time.getMonth();</span><br><span class="line">  time.setMonth(month + <span class="number">1</span>);</span><br><span class="line">  time.setDate(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">return</span> time.getDate();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getLastDayOfMonth(<span class="keyword">new</span> <span class="built_in">Date</span>());</span><br><span class="line"><span class="comment">//先月份加一，再取上个月的最后一天</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>获取这个季度的第一天</strong><br>用来确定当前季度的开始时间，常用在报表中。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getFirstDayOfSeason</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> month = time.getMonth();</span><br><span class="line">  <span class="keyword">if</span> (month &lt; <span class="number">3</span>) &#123;</span><br><span class="line">    time.setMonth(<span class="number">0</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="number">2</span> &lt; month &amp;&amp; month &lt; <span class="number">6</span>) &#123;</span><br><span class="line">    time.setMonth(<span class="number">3</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="number">5</span> &lt; month &amp;&amp; month &lt; <span class="number">9</span>) &#123;</span><br><span class="line">    time.setMonth(<span class="number">6</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="number">8</span> &lt; month &amp;&amp; month &lt; <span class="number">11</span>) &#123;</span><br><span class="line">    date.setMonth(<span class="number">9</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  time.setDate(<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">return</span> time;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getFirstDayOfSeason(<span class="keyword">new</span> <span class="built_in">Date</span>());</span><br><span class="line"></span><br><span class="line"><span class="comment">//先月份加一，再取上个月的最后一天</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>获取中文星期</strong><br>完全没必要写一长串 switch 啦，直接用 charAt 来解决。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> time = <span class="string">"日一二三四五六"</span>.charAt(<span class="keyword">new</span> <span class="built_in">Date</span>().getDay());</span><br></pre></td></tr></table></figure>
+
+<p><strong>获取今天是当年第几天</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> time1 = <span class="built_in">Math</span>.ceil(</span><br><span class="line">  (<span class="keyword">new</span> <span class="built_in">Date</span>() - <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear().toString())) /</span><br><span class="line">    (<span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>)</span><br><span class="line">);</span><br><span class="line"><span class="comment">//需要注意的是new Date()不设置具体时间的话new Date(2019)得到的不是0点而是8点</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Tue Jan 01 2019 08:00:00 GMT+0800 (中国标准时间)</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>获取今天是当年的第几周</strong><br>日历、表单常用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> week = <span class="built_in">Math</span>.ceil(</span><br><span class="line">  (<span class="keyword">new</span> <span class="built_in">Date</span>() - <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">new</span> <span class="built_in">Date</span>().getFullYear().toString())) /</span><br><span class="line">    (<span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>) /</span><br><span class="line">    <span class="number">7</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">//在获取第几天的基础上除7，向上取整</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>获取今天是当年还剩多少天</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">restOfYear</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> nextyear = (time.getFullYear() + <span class="number">1</span>).toString();</span><br><span class="line">  <span class="keyword">var</span> lastday = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">new</span> <span class="built_in">Date</span>(nextyear) - <span class="number">1</span>); <span class="comment">//获取本年的最后一毫秒：</span></span><br><span class="line">  <span class="built_in">console</span>.log(lastday);</span><br><span class="line">  <span class="keyword">var</span> diff = lastday - time; <span class="comment">//毫秒数</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.floor(diff / (<span class="number">1000</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span>));</span><br><span class="line">&#125;</span><br><span class="line">restOfYear(<span class="keyword">new</span> <span class="built_in">Date</span>());</span><br><span class="line"><span class="comment">//先取下一年第一秒，再减1毫秒。</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>计算两个时间的间隔</strong><br>可以拓展为倒计时、有效期等用途</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">diffTime</span>(<span class="params">startDate, endDate, location</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> diff = <span class="keyword">new</span> <span class="built_in">Date</span>(endDate).getTime() - startDate; <span class="comment">//时间差的毫秒数</span></span><br><span class="line">  <span class="comment">//计算出相差天数</span></span><br><span class="line">  <span class="keyword">var</span> days = <span class="built_in">Math</span>.floor(diff / (<span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>));</span><br><span class="line">  <span class="comment">//计算出小时数</span></span><br><span class="line">  <span class="keyword">var</span> leave1 = diff % (<span class="number">24</span> * <span class="number">3600</span> * <span class="number">1000</span>);</span><br><span class="line">  <span class="comment">//计算天数后剩余的毫秒数</span></span><br><span class="line">  <span class="keyword">var</span> hours = <span class="built_in">Math</span>.floor(leave1 / (<span class="number">3600</span> * <span class="number">1000</span>));</span><br><span class="line">  <span class="comment">//计算相差分钟数</span></span><br><span class="line">  <span class="keyword">var</span> leave2 = leave1 % (<span class="number">3600</span> * <span class="number">1000</span>);</span><br><span class="line">  <span class="comment">//计算小时数后剩余的毫秒数</span></span><br><span class="line">  <span class="keyword">var</span> minutes = <span class="built_in">Math</span>.floor(leave2 / (<span class="number">60</span> * <span class="number">1000</span>));</span><br><span class="line">  <span class="comment">//计算相差秒数</span></span><br><span class="line">  <span class="keyword">var</span> leave3 = leave2 % (<span class="number">60</span> * <span class="number">1000</span>);</span><br><span class="line">  <span class="comment">//计算分钟数后剩余的毫秒数</span></span><br><span class="line">  <span class="keyword">var</span> seconds = <span class="built_in">Math</span>.round(leave3 / <span class="number">1000</span>);</span><br><span class="line">  <span class="keyword">if</span> (location === <span class="string">"Day"</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> (returnStr = <span class="string">"还有"</span> + days + <span class="string">"天"</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (location === <span class="string">"Hours"</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> (returnStr = <span class="string">"还有"</span> + (hours + days * <span class="number">24</span>) + <span class="string">"小时"</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (location === <span class="string">"Minutes"</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> (returnStr = <span class="string">"还有"</span> + (minutes + (hours + days * <span class="number">24</span>) * <span class="number">60</span>) + <span class="string">"分钟"</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (location === <span class="string">"Seconds"</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> (returnStr =</span><br><span class="line">      <span class="string">"还有"</span> + (seconds + (minutes + (hours + days * <span class="number">24</span>) * <span class="number">60</span>) * <span class="number">60</span>) + <span class="string">"秒"</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> (returnStr =</span><br><span class="line">      <span class="string">"还有"</span> +</span><br><span class="line">      days +</span><br><span class="line">      <span class="string">"天"</span> +</span><br><span class="line">      hours +</span><br><span class="line">      <span class="string">"小时"</span> +</span><br><span class="line">      minutes +</span><br><span class="line">      <span class="string">"分钟"</span> +</span><br><span class="line">      seconds +</span><br><span class="line">      <span class="string">"秒"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(diffTime(<span class="keyword">new</span> <span class="built_in">Date</span>(), <span class="string">"2019-8-19 16:00:00"</span>, <span class="string">"Minutes"</span>));</span><br></pre></td></tr></table></figure>
+
+<p><strong>计算指定时间间隔前后的日期</strong><br>可用于时间追溯、活动预告等用途</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetDate</span>(<span class="params">time, count</span>) </span>&#123;</span><br><span class="line">  time.setDate(time.getDate() + count); <span class="comment">//获取N天后的日期</span></span><br><span class="line">  <span class="keyword">var</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>(+time + <span class="number">8</span> * <span class="number">3600</span> * <span class="number">1000</span>);</span><br><span class="line">  <span class="keyword">return</span> date.toJSON().substr(<span class="number">0</span>, <span class="number">19</span>).replace(<span class="string">"T"</span>, <span class="string">" "</span>).replace(<span class="regexp">/-/g</span>, <span class="string">"."</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">GetDate(<span class="keyword">new</span> <span class="built_in">Date</span>(), <span class="number">100</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>计算当周开始和结束时间</strong><br>很常见的需求，可用来做签到等</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getwholetWeek</span>(<span class="params">now</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> weekday = now.getDay(); <span class="comment">// 获取当前是周几（周日：0）</span></span><br><span class="line">  weekday = weekday === <span class="number">0</span> ? <span class="number">7</span> : weekday;</span><br><span class="line">  <span class="keyword">var</span> firstDay = GetDate(now, -weekday); <span class="comment">//周日开始</span></span><br><span class="line">  <span class="keyword">var</span> lastDay = GetDate(now, <span class="number">7</span> - <span class="number">1</span>); <span class="comment">//周六结束</span></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    firstDay: firstDay,</span><br><span class="line">    lastDay: lastDay,</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(getwholetWeek(<span class="keyword">new</span> <span class="built_in">Date</span>()));</span><br><span class="line"><span class="comment">//调用前面日期间隔函数，可根据情况改成，周一开始，周日结束</span></span><br></pre></td></tr></table></figure>
+
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2022 一个爱听歌的搬砖工 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

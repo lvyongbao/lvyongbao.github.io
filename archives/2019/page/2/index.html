@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+
+<title>
+  
+    归档: 2019
+  
+</title>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="一个爱听歌的搬砖工">
+<meta property="og:url" content="http://yoursite.com/archives/2019/page/2/index.html">
+<meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一个爱听歌的搬砖工">
+
+
+  <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body class="monochrome">
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">一个爱听歌的搬砖工</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">一个爱听歌的搬砖工</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">吕永宝</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="/uploads/avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+  <div class="aplayer" data-id="3834011938" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false"></div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          
+
+  
+  
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <h1><a href="/archives/2019" class="archive-year">2019</a></h1>
+        </div>
+        <div class="post-list">
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/08/25/Upload/">
+  图片上传获取宽高的方法
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/08/25/Upload/"><span class="article-date">
+  2019-08-25
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>想要获取图片的宽高首先要知道图片的 url；一般图片上传 UI 组件或自己封装的组件都会获取到图片的 url，知道 url 就好办了，上代码。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Uploadimgurl = URL; <span class="comment">//图片URL地址</span></span><br><span class="line"><span class="keyword">var</span> img = <span class="keyword">new</span> Image(); <span class="comment">//创建对象</span></span><br><span class="line">img.src = Uploadimgurl; <span class="comment">//改变图片地址</span></span><br><span class="line">img.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(img.width + <span class="string">""</span> + img.height);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/08/25/Upload/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/08/23/Optimization/">
+  首屏加载优化有哪些方案
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/08/23/Optimization/"><span class="article-date">
+  2019-08-23
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <blockquote>
+<ul>
+<li>Vue-Router路由懒加载（利用Webpack的代码切割）</li>
+<li>使用CDN加速，将通用的库从vendor进行抽离</li>
+<li>Nginx的gzip压缩</li>
+<li>Vue异步组件</li>
+<li>服务端渲染SSR</li>
+<li>如果使用了一些UI库，采用按需加载</li>
+<li>Webpack开启gzip压缩</li>
+<li>如果首屏为登录页，可以做成多入口</li>
+<li>Service Worker缓存文件处理</li>
+<li>去除非 HTML 页面的静态资源的 cache-control: no-cache 配置，充分利用客户端缓存</li>
+<li>减少页面加载时的请求数量。</li>
+<li>减少 Cookie 中保存的信息或去除请求中的非必要 Cookie 信息</li>
+<li>压缩图片体积（也可尝试更改图片格式，使用同等质量下体积最小的图片）</li>
+<li>合并小图片为一张大图或将图片转为 base64 编码</li>
+<li>延迟加载图片</li>
+<li>移除冗余代码</li>
+<li>封装公共组件（减少重复代码）</li>
+<li>预渲染页面框架或骨架图</li>
+<li>尽量减少 iframe 使用，它会阻塞主页面的渲染; 对所有资源压缩 JavaScript 、 CSS 、字体、图片等，甚至html;</li>
+<li>使用link标签的rel属性设置   prefetch（这段资源将会在未来某个导航或者功能要用到，但是本资源的下载顺序权重比较低，prefetch通常用于加速下一次导航）、preload（preload将会把资源得下载顺序权重提高，使得关键数据提前下载好，优化页面打开速度）</li>
+</ul>
+</blockquote>
+
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/08/05/logogram/">
+  JS简写技巧
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/08/05/logogram/"><span class="article-date">
+  2019-08-05
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h2 id="1、三目运算符"><a href="#1、三目运算符" class="headerlink" title="1、三目运算符"></a>1、三目运算符</h2><p>下面是一个很好的例子，将一个完整的 if 语句，简写为一行代码。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> x = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">let</span> answer;</span><br><span class="line"><span class="keyword">if</span> (x &gt; <span class="number">10</span>) &#123;</span><br><span class="line">  answer = <span class="string">"greater than 10"</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  answer = <span class="string">"less than 10"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>简写为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> answer = x &gt; <span class="number">10</span> ? <span class="string">"greater than 10"</span> : <span class="string">"less than 10"</span>;</span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/08/05/logogram/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/08/02/website/">
+  重写取余数方法，解决js精度丢失问题
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/08/02/website/"><span class="article-date">
+  2019-08-02
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">round</span>(<span class="params">num, s</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> changeVal = num.toString().split(<span class="string">'.'</span>)[<span class="number">1</span>];</span><br><span class="line">  <span class="comment">// 如果传入的值是整数或者是有限小数直接返回</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">Number</span>.isInteger(num) || num.toString().split(<span class="string">'.'</span>)[<span class="number">1</span>].length !== <span class="number">16</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> times = <span class="built_in">Math</span>.pow(<span class="number">10</span>, s);</span><br><span class="line">  <span class="keyword">let</span> des;</span><br><span class="line">  <span class="comment">// 根据无限循环小数 做四舍五入</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">Number</span>(changeVal[<span class="number">0</span>]) &gt;= <span class="number">5</span> &amp;&amp; <span class="built_in">Number</span>(changeVal[changeVal.length - <span class="number">1</span>]) &gt;= <span class="number">5</span>) &#123;</span><br><span class="line">    des = num * times + <span class="number">0.5</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    des = num * times;</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  des = <span class="built_in">parseInt</span>(des, <span class="number">10</span>) / times;</span><br><span class="line">  <span class="keyword">return</span> des;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/07/27/iconfont/">
+  计算制作iconfont图标
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/07/27/iconfont/"><span class="article-date">
+  2019-07-27
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>网站页面上会用到各种小图标，前端以前制作页面的时候，会将这些图片一个个切下来，通过标签设置backgroud使用，这样做会导致请求过多，造成性能瓶颈。后来有人就发明了css sprite(雪碧图)，将这些图标合并到一个图片上，然后通过backgroud-position定位使用，好处是显而易见的，请求瞬间就降低了，图片集中起来也方便维护。</p>
+<p>随着项目的庞大，图标也越来越多，然后不停的往雪碧图里塞，很多图标长的都差不多，有些仅仅是颜色或者大小不同，这导致了雪碧图越来越庞大变得不好维护，如下图：</p>
+<p><img src="/images/cc/2019072801.png" alt="avatar"></p>
+<p>有时候如果前端不注意修改了雪碧图的尺寸或者不小心挪动了其它图标的位置，就会导致某些图标显示错位。</p>
+          <p>
+            <a href="/2019/07/27/iconfont/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/07/25/advanced/">
+  Git 命令
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/07/25/advanced/"><span class="article-date">
+  2019-07-25
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p><strong>昨天我们说一下关于 git 的一些命令，今天说下它的一些高级操作。</strong></p>
+<h2 id="1-检查提交之间的差异"><a href="#1-检查提交之间的差异" class="headerlink" title="1.检查提交之间的差异"></a>1.检查提交之间的差异</h2><p>每个提交都以数字和符号的字符串形式存在唯一的 ID。<br>要查看所有提交及其 ID 的列表，我们可以使用 git log：</p>
+          <p>
+            <a href="/2019/07/25/advanced/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/07/24/git/">
+  Git 命令
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/07/24/git/"><span class="article-date">
+  2019-07-24
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p><strong>记录一下git命令的一些用法</strong></p>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p>Git是一个命令行实用程序的集合，它会跟踪和记录文件中的更改（通常是源代码，但是可以跟踪任何你想要的文件）。<br>有了它，你可以恢复项目的旧版本，比较，分析，合并更改等操作。<br>这个过程被称为版本控制。<br>有许多版本控制系统可以完成这项工作。<br>你可能听说过其中的一些–SVN，Mercurial，Perforce，CVS，Bitkeeper等等。<br>Git是分散的，这意味着它不依赖于中央服务器来保留文件的旧版本。<br>相反，它完全在本地运行，将这些数据作为一个文件夹存储在硬盘上，我们称之为储存仓库。<br>但是，你也可以在线存储您的仓库的副本，这使得多个人可以轻松协作并使用相同的代码。这就是像GitHub和BitBucket这样的网站所使用的一样。</p>
+          <p>
+            <a href="/2019/07/24/git/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/07/21/global/">
+  HTML全局属性(global attribute)有哪些
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/07/21/global/"><span class="article-date">
+  2019-07-21
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <blockquote>
+<ul>
+<li>accesskey:设置快捷键，提供快速访问元素如aaa在windows下的firefox中按alt + shift + a可激活元素</li>
+<li>class:为元素设置类标识，多个类名用空格分开，CSS和javascript可通过class属性获取元素</li>
+<li>contenteditable: 指定元素内容是否可编辑</li>
+<li>contextmenu: 自定义鼠标右键弹出菜单内容</li>
+<li>data-*: 为元素增加自定义属性</li>
+<li>dir: 设置元素文本方向</li>
+<li>draggable: 设置元素是否可拖拽</li>
+<li>dropzone: 设置元素拖放类型： copy, move, link</li>
+<li>hidden: 表示一个元素是否与文档。样式上会导致元素不显示，但是不能用这个属性实现样式效果</li>
+<li>id: 元素id，文档内唯一</li>
+<li>lang: 元素内容的的语言</li>
+<li>spellcheck: 是否启动拼写和语法检查</li>
+<li>style: 行内css样式</li>
+<li>tabindex: 设置元素可以获得焦点，通过tab可以导航</li>
+<li>title: 元素相关的建议信息</li>
+<li>translate: 元素和子孙节点内容是否需要本地化</li>
+</ul>
+</blockquote>
+
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/07/14/jsskill/">
+  JS中的一些骚操作
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/07/14/jsskill/"><span class="article-date">
+  2019-07-14
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <h2 id="1、类型强制转换"><a href="#1、类型强制转换" class="headerlink" title="1、类型强制转换"></a>1、类型强制转换</h2><p><strong>1.1 string强制转换为数字</strong></p>
+<p>之前我们有说过用+来转化字符串为数字，今天在分享一种，可以用 *1来转化为数字(实际上是调用 .valueOf方法)</p>
+<p>然后使用 Number.isNaN来判断是否为 NaN，或者使用 a!==a 来判断是否为 NaN，因为 NaN!==NaN</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'32'</span> * <span class="number">1</span>            <span class="comment">// 32</span></span><br><span class="line"><span class="string">'ds'</span> * <span class="number">1</span>            <span class="comment">// NaN</span></span><br><span class="line"><span class="literal">null</span> * <span class="number">1</span>            <span class="comment">// 0</span></span><br><span class="line"><span class="literal">undefined</span> * <span class="number">1</span>    <span class="comment">// NaN</span></span><br><span class="line"><span class="number">1</span>  * &#123; <span class="attr">valueOf</span>: <span class="function"><span class="params">()</span>=&gt;</span><span class="string">'3'</span> &#125;        <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/07/14/jsskill/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/07/13/skill/">
+  javascript的一些小技巧
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/07/13/skill/"><span class="article-date">
+  2019-07-13
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>在日常的项目开发中经常出现却容易被忽略的JavaScript小技巧，今天列举几个学习一下。</p>
+<h2 id="1、截取数组"><a href="#1、截取数组" class="headerlink" title="1、截取数组"></a>1、截取数组</h2><p>如果您想从数组的末尾删除值，有比使用splice()更快的替代方法。</p>
+<p>例如，如果你知道原始数组的长度，就可以通过重新定义它的length属性来实现截取。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</span><br><span class="line">array.length = <span class="number">4</span>;</span><br><span class="line"><span class="built_in">console</span>.log(array); <span class="comment">// Result: [0, 1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+
+<p>这是一个特别简洁的解决方案。但是，slice()方法的运行时更快。如果速度是你的主要目标，考虑使用下面的方式。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> array = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>];</span><br><span class="line">array = array.slice(<span class="number">0</span>, <span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(array); <span class="comment">// Result: [0, 1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/07/13/skill/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+
+
+  <div class="pagination">
+    <a class="extend prev" rel="prev" href="/archives/2019/">上一页</a><a class="page-number" href="/archives/2019/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2019/page/3/">3</a><a class="page-number" href="/archives/2019/page/4/">4</a><a class="page-number" href="/archives/2019/page/5/">5</a><a class="extend next" rel="next" href="/archives/2019/page/3/">下一页</a>
+  </div>
+
+
+
+
+          <div class="main-footer">
+  
+    © 2022 一个爱听歌的搬砖工 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
+      
+        </div>
+      
+    </section></div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</div></body>
+</html>

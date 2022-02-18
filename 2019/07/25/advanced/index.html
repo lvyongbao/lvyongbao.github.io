@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+
+<title>
+  
+    Git 命令
+  
+</title>
+
+<meta name="description" content="昨天我们说一下关于 git 的一些命令，今天说下它的一些高级操作。 1.检查提交之间的差异每个提交都以数字和符号的字符串形式存在唯一的 ID。要查看所有提交及其 ID 的列表，我们可以使用 git log：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 命令">
+<meta property="og:url" content="http://yoursite.com/2019/07/25/advanced/index.html">
+<meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:description" content="昨天我们说一下关于 git 的一些命令，今天说下它的一些高级操作。 1.检查提交之间的差异每个提交都以数字和符号的字符串形式存在唯一的 ID。要查看所有提交及其 ID 的列表，我们可以使用 git log：">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-05-20T05:37:35.642Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git 命令">
+<meta name="twitter:description" content="昨天我们说一下关于 git 的一些命令，今天说下它的一些高级操作。 1.检查提交之间的差异每个提交都以数字和符号的字符串形式存在唯一的 ID。要查看所有提交及其 ID 的列表，我们可以使用 git log：">
+
+
+  <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body class="monochrome">
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">一个爱听歌的搬砖工</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">一个爱听歌的搬砖工</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">吕永宝</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="/uploads/avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+  <div class="aplayer" data-id="3834011938" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false"></div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-advanced" class="article article-type-post">
+  
+    <h1 class="article-header">
+      Git 命令
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2019-07-25
+</span>
+
+    
+
+    
+
+  </div>
+  <div class="article-entry">
+    <p><strong>昨天我们说一下关于 git 的一些命令，今天说下它的一些高级操作。</strong></p>
+<h2 id="1-检查提交之间的差异"><a href="#1-检查提交之间的差异" class="headerlink" title="1.检查提交之间的差异"></a>1.检查提交之间的差异</h2><p>每个提交都以数字和符号的字符串形式存在唯一的 ID。<br>要查看所有提交及其 ID 的列表，我们可以使用 git log：</p>
+<a id="more"></a>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span></span><br><span class="line">commit ba25c0ff30e1b2f0259157b42b9f8f5d174d80d7</span><br><span class="line">Author: Tutorialzine</span><br><span class="line">Date:   Mon May <span class="number">30</span> <span class="number">17</span>:<span class="number">15</span>:<span class="number">28</span> <span class="number">2016</span> +<span class="number">0300</span></span><br><span class="line"></span><br><span class="line">    New feature complete</span><br><span class="line"></span><br><span class="line">commit b10cc1238e355c02a044ef9f9860811ff605c9b4</span><br><span class="line">Author: Tutorialzine</span><br><span class="line">Date:   Mon May <span class="number">30</span> <span class="number">16</span>:<span class="number">30</span>:<span class="number">04</span> <span class="number">2016</span> +<span class="number">0300</span></span><br><span class="line"></span><br><span class="line">    Added content to hello.txt</span><br><span class="line"></span><br><span class="line">commit <span class="number">09b</span>d8cc171d7084e78e4d118a2346b7487dca059</span><br><span class="line">Author: Tutorialzine</span><br><span class="line">Date:   Sat May <span class="number">28</span> <span class="number">17</span>:<span class="number">52</span>:<span class="number">14</span> <span class="number">2016</span> +<span class="number">0300</span></span><br><span class="line"></span><br><span class="line">    Initial commit</span><br></pre></td></tr></table></figure>
+
+<p>正如你所看到的，ID 是很长的，但是和它们一起工作时，没有必要复制整个东西 - 前几个符号通常就足够了。<br>要查看提交中的新增内容，我们可以运行 git show [commit]：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ git show b10cc123</span><br><span class="line"></span><br><span class="line">commit b10cc1238e355c02a044ef9f9860811ff605c9b4</span><br><span class="line">Author: Tutorialzine</span><br><span class="line">Date:   Mon May <span class="number">30</span> <span class="number">16</span>:<span class="number">30</span>:<span class="number">04</span> <span class="number">2016</span> +<span class="number">0300</span></span><br><span class="line"></span><br><span class="line">    Added content to hello.txt</span><br><span class="line"></span><br><span class="line">diff --git a/hello.txt b/hello.txt</span><br><span class="line">index e69de29..b546a21 <span class="number">100644</span></span><br><span class="line">--- a/hello.txt</span><br><span class="line">+++ b/hello.txt</span><br><span class="line">@@ <span class="number">-0</span>,<span class="number">0</span> +<span class="number">1</span> @@</span><br><span class="line">+Nice weather today,isn<span class="number">'</span>t it?</span><br></pre></td></tr></table></figure>
+
+<p>要查看任何两个提交之间的区别，我们可以使用 git diff[commit-from] .. [commit-to]语法：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ git diff <span class="number">09b</span>d8cc..ba25c0ff</span><br><span class="line"></span><br><span class="line">diff --git a/feature.txt b/feature.txt</span><br><span class="line"><span class="keyword">new</span> file mode <span class="number">100644</span></span><br><span class="line">index <span class="number">0000000.</span>.e69de29</span><br><span class="line">diff --git a/hello.txt b/hello.txt</span><br><span class="line">index e69de29..b546a21 <span class="number">100644</span></span><br><span class="line">--- a/hello.txt</span><br><span class="line">+++ b/hello.txt</span><br><span class="line">@@ <span class="number">-0</span>,<span class="number">0</span> +<span class="number">1</span> @@</span><br><span class="line">+Nice weather today, isn<span class="number">'</span>t it?</span><br></pre></td></tr></table></figure>
+
+<p>我们已经比较了第一次提交和最后一次提交，所以我们看到了所有的改变。<br>通常使用这个 git difftool 命令可以更容易地完成这个任务，这个命令可以让一个图形化的客户端显示所有的差异。</p>
+<h2 id="2-将文件恢复到以前的版本"><a href="#2-将文件恢复到以前的版本" class="headerlink" title="2.将文件恢复到以前的版本"></a>2.将文件恢复到以前的版本</h2><p>Git 允许我们将任何选定的文件返回到某个提交中的方式。这是通过 git checkout<br>我们以前用来切换分支的熟悉的命令完成的，但是也可以用来在提交之间切换（在 Git 中一个命令用于多个看起来不相关的任务是很常见的）。<br>在下面的例子中，我们将采用 hello.txt，并将自从初始提交以来所做的一切都撤销。<br>要做到这一点，我们必须提供我们想要返回的提交的 id，以及我们文件的完整路径。</p>
+<blockquote>
+<ul>
+<li>$ git checkout 09bd8cc1 hello.txt</li>
+</ul>
+</blockquote>
+<h2 id="3-修复提交"><a href="#3-修复提交" class="headerlink" title="3.修复提交"></a>3.修复提交</h2><p>如果你注意到你在提交信息中输入了一个错字，或者你忘记了添加一个文件，并且在提交之后你看到了，你可以很容易地解决这个问题 git commit –amend。这将添加从上次提交到暂存区域的所有内容，并尝试进行新的提交。这给你一个机会来解决你的提交信息或添加更多的文件到临时区域。</p>
+<p>对于不在上次提交中的更复杂的修复（或者如果您已经推送了更改），则必须使用 git revert。 这将采取提交引入的所有更改，将其回滚，并创建一个与此相反的新提交。</p>
+<p>最新的提交可以被 HEAD 别名访问。</p>
+<blockquote>
+<ul>
+<li>$ git revert HEAD</li>
+</ul>
+</blockquote>
+<p>对于其他提交，最好使用一个 id。</p>
+<blockquote>
+<ul>
+<li>$ git revert b10cc123</li>
+</ul>
+</blockquote>
+<p>当恢复较旧的提交时，请记住合并冲突很可能会出现。<br>当一个文件被另一个更近的提交改变时，会发生这种情况，现在 Git 找不到正确的行来恢复，因为它们不在那里了。</p>
+<h2 id="4-解决合并后的冲突"><a href="#4-解决合并后的冲突" class="headerlink" title="4.解决合并后的冲突"></a>4.解决合并后的冲突</h2><p>除了前面所描述的情况之外，在合并分支或者牵扯其他人的工作时经常出现冲突。<br>有时候，冲突是由 git 自动处理的，但有时候处理这些冲突的人必须决定（通常是精选）哪些代码保留，什么被删除。</p>
+<p>我们来看一个例子，我会合并两个叫做 john_branch 和 tim_branch 的分支。<br>小张和小李都在同一个文件中写入一个显示数组中所有元素的函数。<br>小张正在使用 for 循环：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用for循环到console.log内容。</span></span><br><span class="line"><span class="keyword">for</span> (vari = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>小李喜欢 forEach：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用forEach到console.log内容。</span></span><br><span class="line">arr.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(item);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>他们都在各自的分支上提交代码。<br>现在，如果他们尝试合并两个分支，他们将看到以下错误消息：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git merge tim_branch</span><br><span class="line"></span><br><span class="line">Auto-merging print_array.js</span><br><span class="line">CONFLICT (content): Merge conflict in print_array.js</span><br><span class="line">Automatic merge failed; fix conflicts <span class="keyword">and</span> then commit the result.</span><br></pre></td></tr></table></figure>
+
+<p>Git 无法自动合并分支，所以现在由开发人员手动解决冲突。<br>如果他们打开冲突所在的文件，他们会看到 Git 在冲突的行上插入了一个标记。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line"><span class="comment">// Use a for loop to console.log contents.</span></span><br><span class="line"><span class="keyword">for</span> (vari=<span class="number">0</span>; i&lt;arr.length; i++) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">&#125;</span><br><span class="line">=======</span><br><span class="line"><span class="comment">// Use forEach to console.log contents.</span></span><br><span class="line">arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; xiaozhang<span class="string">'s commit.</span></span><br></pre></td></tr></table></figure>
+
+<p>在=====之上，我们有当前的 HEAD 提交，并且在冲突之下。<br>这样我们就可以清楚地看到差异，并决定哪个版本更好，或者一起写一个新版本。<br>在这种情况下，我们去找后者，重写整个事情，删除标记让 Git 知道我们已经完成了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//不使用循环或forEach。</span></span><br><span class="line"><span class="comment">//将Array.toString（）用于console.log内容。</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.toString());</span><br></pre></td></tr></table></figure>
+
+<p>当所有东西都被设置好后，就必须完成一个合并提交来完成这个过程。</p>
+<blockquote>
+<ul>
+<li>$ git add -A</li>
+<li>$ git commit -m “解决冲突.”</li>
+</ul>
+</blockquote>
+<p>正如你所看到的，这个过程非常烦人，在大型项目中可能会遇到很大的困难。<br>大多数开发人员倾向于在 GUI 客户端（下载<a href="https://git-scm.com/download/gui/linux）" target="_blank" rel="noopener">https://git-scm.com/download/gui/linux）</a><br>的帮助下解决冲突，这使事情变得更容易。运行图形客户端使用 git mergetool。</p>
+<h2 id="5-设置-gitignore"><a href="#5-设置-gitignore" class="headerlink" title="5.设置.gitignore"></a>5.设置.gitignore</h2><p>在大多数项目中都有我们不想提交的文件或整个文件夹。<br>我们可以 git add -A 通过创建.gitignore 文件来确保它们不会被意外地包含在我们<br>的内容中：</p>
+<ol>
+<li>手动创建一个名为.gitignore 的文本文件，并将其保存到项目目录中。</li>
+<li>在里面，列出要忽略的文件/目录的名称，每个都在一个新的行上。</li>
+<li>.gitignore 本身必须被添加，提交和推送，就像项目中的任何其他文件一样。很好的文件被忽略的例子是：</li>
+</ol>
+<blockquote>
+<ul>
+<li>日志文件</li>
+<li>任务运行者建立</li>
+<li>node.js 项目中的 node_modules 文件夹</li>
+<li>由 NetBeans 和 IntelliJ 等 IDE 创建的文件夹</li>
+<li>个人开发者笔记</li>
+</ul>
+</blockquote>
+<p>禁止上述所有内容的.gitignore 将如下所示：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*.log</span><br><span class="line">build/</span><br><span class="line">node_modules/</span><br><span class="line">.idea/</span><br><span class="line">my_notes.txt</span><br></pre></td></tr></table></figure>
+
+<p>在某些行末尾的斜线表示这是一个文件夹，我们忽略了递归中的所有内容。星号通常用作通配符。</p>
+<p>Git 相当复杂，并提供更多的功能和技巧。如果你想了解更多<br>推荐的学习资源：</p>
+<blockquote>
+<ul>
+<li>官方的 Git 文档，包括一整本书和视频课程 -在这里（<code>https://git-scm.com/doc</code>）。</li>
+<li>让 git 正确 - Atlassian 收集的教程和文章 -在这里（<code>https://www.atlassian.com/git/</code>）。</li>
+<li>一个 GUI 客户端列表 -在这里（<code>https://www.git-scm.com/downloads/guis</code>）。</li>
+<li>Git 备忘单（PDF） -这里。</li>
+<li><code>https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf</code>。</li>
+<li>生成.gitignore 文件的在线工具 -在这里。 <code>https://www.gitignore.io/</code>。</li>
+</ul>
+</blockquote>
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2022 一个爱听歌的搬砖工 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+
+<title>
+  
+    toFixed方法详解
+  
+</title>
+
+<meta name="description" content="最近做的项目涉及到金额的计算，有一种方式就是进行四舍五入的规则进行小数点后面的尾数处理，以前一直以为 toFixed 方法就是四舍五入的，直到测试测出金额计算的 bug 我才如梦初醒，才深究了下 toFixed 这个方法。toFixed 方法在 IE10 及以上里面是正常的四舍五入，但是别的浏览器里面就不一样了，它不是正常的四舍五入，比如： 1234var a = 1.335;console.lo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="toFixed方法详解">
+<meta property="og:url" content="http://yoursite.com/2017/12/13/Fixed/index.html">
+<meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:description" content="最近做的项目涉及到金额的计算，有一种方式就是进行四舍五入的规则进行小数点后面的尾数处理，以前一直以为 toFixed 方法就是四舍五入的，直到测试测出金额计算的 bug 我才如梦初醒，才深究了下 toFixed 这个方法。toFixed 方法在 IE10 及以上里面是正常的四舍五入，但是别的浏览器里面就不一样了，它不是正常的四舍五入，比如： 1234var a = 1.335;console.lo">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-05-20T05:37:35.633Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="toFixed方法详解">
+<meta name="twitter:description" content="最近做的项目涉及到金额的计算，有一种方式就是进行四舍五入的规则进行小数点后面的尾数处理，以前一直以为 toFixed 方法就是四舍五入的，直到测试测出金额计算的 bug 我才如梦初醒，才深究了下 toFixed 这个方法。toFixed 方法在 IE10 及以上里面是正常的四舍五入，但是别的浏览器里面就不一样了，它不是正常的四舍五入，比如： 1234var a = 1.335;console.lo">
+
+
+  <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body class="monochrome">
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">一个爱听歌的搬砖工</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">一个爱听歌的搬砖工</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">吕永宝</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="/uploads/avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+  <div class="aplayer" data-id="3834011938" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false"></div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-Fixed" class="article article-type-post">
+  
+    <h1 class="article-header">
+      toFixed方法详解
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2017-12-13
+</span>
+
+    
+
+    
+
+  </div>
+  <div class="article-entry">
+    <p>最近做的项目涉及到金额的计算，有一种方式就是进行四舍五入的规则进行小数点后面的尾数处理，以前一直以为 toFixed 方法就是四舍五入的，直到测试测出金额计算的 bug 我才如梦初醒，才深究了下 toFixed 这个方法。<br>toFixed 方法在 IE10 及以上里面是正常的四舍五入，但是别的浏览器里面就不一样了，它不是正常的四舍五入，比如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1.335</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a.toFixed(<span class="number">2</span>));</span><br><span class="line"><span class="comment">// IE         1.34</span></span><br><span class="line"><span class="comment">//chorme   1.33</span></span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p>其他的浏览器我没去一一测试，所以如果大家用了其他浏览器的还是需要去实际测试一下，我这里就说说 javascript 的 toFixed()方法的四舍五入原理：</p>
+<blockquote>
+<p>toFixed 它是一个四舍六入五成双的诡异的方法，”四舍六入五成双”含义：对于位数很多的近似数，当有效位数确定后，其后面多余的数字应该舍去，只保留有效数字最末一位，这种舍入规则是“四舍六入五成双”，也即“4 舍 6 入 5 凑偶”这里“四”是指 ≤4 时舍去，”六”是指 ≥6 时进上，”五”指的是根据 5 后面的数字来定，当 5 后有数时，舍 5 入 1；当 5 后无有效数字时，需要分两种情况来讲：①5 前为奇数，舍 5 入 1；②5 前为偶数，舍 5 不进。（0 是偶数）</p>
+</blockquote>
+<p>经过我的测试发现，在 chorme 下面（最新版），并没有遵守这个规则：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b = <span class="number">1.335</span>;</span><br><span class="line">b.toFixed(<span class="number">2</span>);</span><br><span class="line">(<span class="string">"1.33"</span>);</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">1.345</span>;</span><br><span class="line">b.toFixed(<span class="number">2</span>);</span><br><span class="line">(<span class="string">"1.34"</span>);</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">1.355</span>;</span><br><span class="line">b.toFixed(<span class="number">2</span>);</span><br><span class="line">(<span class="string">"1.35"</span>);</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">1.365</span>;</span><br><span class="line">b.toFixed(<span class="number">2</span>);</span><br><span class="line">(<span class="string">"1.36"</span>);</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">1.375</span>;</span><br><span class="line">b.toFixed(<span class="number">2</span>);</span><br><span class="line">(<span class="string">"1.38"</span>);</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">1.385</span>;</span><br><span class="line">b.toFixed(<span class="number">2</span>);</span><br><span class="line">(<span class="string">"1.39"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>可以发现在 chorme 下没有完全去遵循这个规律，或许它有自己的算法，但是毕竟它没有遵循通用的算法，所以 tofixed 这个方法在涉及到金钱计算的业务中还是少用。</p>
+<p>下面再再说说我自己的做法，就是根据精确位数来取小数点后的数，然后判断精确位是大于 4 还是小于等于 4。<br>我们的业务是最多精确到两位小数，最少就是取整，不留小数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">money</span>(<span class="params">money, len</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//len是需要精确的位数，如百分位就是2</span></span><br><span class="line">  <span class="keyword">var</span> result = <span class="number">0</span>;</span><br><span class="line">  <span class="comment">//先进行一个千分位的四舍五入，保证0.0999这种情况在保留一位小数的时候能是对的，这一位可以这么做没什么问题</span></span><br><span class="line">  <span class="keyword">var</span> money = <span class="built_in">parseFloat</span>(money).toFixed(<span class="number">3</span>);</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> Integer = money.split(<span class="string">"."</span>)[<span class="number">0</span>], <span class="comment">//小数点前的整数</span></span><br><span class="line">      Decimal = money.split(<span class="string">"."</span>)[<span class="number">1</span>], <span class="comment">//取小数点后面的小数</span></span><br><span class="line">      differ = Decimal[<span class="number">3</span> - len];</span><br><span class="line">    <span class="keyword">if</span> (differ &gt; <span class="number">4</span>) &#123;</span><br><span class="line">      <span class="comment">//五入的情况</span></span><br><span class="line">      <span class="keyword">if</span> (len == <span class="number">1</span>) &#123;</span><br><span class="line">        Decimal = <span class="built_in">parseInt</span>(Decimal) + <span class="number">10</span> + <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">if</span> (Decimal.length &gt; <span class="number">3</span>) &#123;</span><br><span class="line">          <span class="comment">//说明往整数位进1</span></span><br><span class="line">          Integer = <span class="built_in">parseInt</span>(Integer) + <span class="number">1</span> + <span class="string">""</span>;</span><br><span class="line">          Decimal = Decimal[<span class="number">1</span>] + Decimal[<span class="number">2</span>];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          Decimal = Decimal[<span class="number">0</span>] + Decimal[<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        result = <span class="built_in">parseFloat</span>(Integer + <span class="string">"."</span> + Decimal);</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (len == <span class="number">2</span>) &#123;</span><br><span class="line">        Decimal = <span class="built_in">parseInt</span>(Decimal) + <span class="number">100</span> + <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">if</span> (Decimal.length &gt; <span class="number">3</span>) &#123;</span><br><span class="line">          <span class="comment">//说明往整数位进1</span></span><br><span class="line">          Integer = <span class="built_in">parseInt</span>(Integer) + <span class="number">1</span> + <span class="string">""</span>;</span><br><span class="line">          Decimal = Decimal[<span class="number">1</span>];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          Decimal = Decimal[<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        result = <span class="built_in">parseFloat</span>(Integer + <span class="string">"."</span> + Decimal);</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (len == <span class="number">3</span>) &#123;</span><br><span class="line">        Integer = <span class="built_in">parseInt</span>(Integer) + <span class="number">1</span> + <span class="string">""</span>;</span><br><span class="line">        Decimal = <span class="number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      result = <span class="built_in">parseFloat</span>(Integer + <span class="string">"."</span> + Decimal);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">//四舍的情况</span></span><br><span class="line">      <span class="keyword">if</span> (len == <span class="number">1</span>) &#123;</span><br><span class="line">        Decimal = Decimal[<span class="number">0</span>] + Decimal[<span class="number">1</span>];</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (len == <span class="number">2</span>) &#123;</span><br><span class="line">        Decimal = Decimal[<span class="number">0</span>];</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (len == <span class="number">3</span>) &#123;</span><br><span class="line">        Decimal = <span class="number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      result = <span class="built_in">parseFloat</span>(Integer + <span class="string">"."</span> + Decimal);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">parseFloat</span>(money).toFixed(<span class="number">2</span>); <span class="comment">//如果过程中有出错就tofixed代替为解决</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2022 一个爱听歌的搬砖工 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>

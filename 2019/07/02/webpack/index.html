@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aplayer/1.10.1/APlayer.min.js"></script>
+
+
+<title>
+  
+    webpack入门
+  
+</title>
+
+<meta name="description" content="1、webpack 介绍当我们打开webpack 中文文档首页时，最底下的几个大字让一切变得简单，我就觉得它很牛逼，很不简单。官网上的 webpack 概念：webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)，显然 webpack 是一个项目静态模块打包器。不过后面还有一句就是：当 webpack 处理应用程序时，它会递归地构建一个依赖关系图">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack入门">
+<meta property="og:url" content="http://yoursite.com/2019/07/02/webpack/index.html">
+<meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:description" content="1、webpack 介绍当我们打开webpack 中文文档首页时，最底下的几个大字让一切变得简单，我就觉得它很牛逼，很不简单。官网上的 webpack 概念：webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)，显然 webpack 是一个项目静态模块打包器。不过后面还有一句就是：当 webpack 处理应用程序时，它会递归地构建一个依赖关系图">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2021-05-20T05:37:35.654Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack入门">
+<meta name="twitter:description" content="1、webpack 介绍当我们打开webpack 中文文档首页时，最底下的几个大字让一切变得简单，我就觉得它很牛逼，很不简单。官网上的 webpack 概念：webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)，显然 webpack 是一个项目静态模块打包器。不过后面还有一句就是：当 webpack 处理应用程序时，它会递归地构建一个依赖关系图">
+
+
+  <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
+
+
+
+  <link rel="icon" href="/favicon.png">
+
+
+<link rel="stylesheet" href="/perfect-scrollbar/css/perfect-scrollbar.min.css">
+<link rel="stylesheet" href="/styles/main.css">
+
+
+
+
+
+
+</head>
+<body class="monochrome">
+  <div class="mobile-header">
+  <button class="sidebar-toggle" type="button">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+  <a class="title" href="/">一个爱听歌的搬砖工</a>
+</div>
+
+  <div class="main-container">
+    <div class="sidebar">
+  <div class="header">
+    <h1 class="title"><a href="/">一个爱听歌的搬砖工</a></h1>
+    
+    <div class="info">
+      <div class="content">
+        
+        
+          <div class="author">吕永宝</div>
+        
+      </div>
+      
+        <div class="avatar">
+          
+            <img src="/uploads/avatar.jpg">
+          
+        </div>
+      
+    </div>
+  </div>
+  <div class="body">
+    
+      
+        <ul class="nav">
+          
+            
+              <li class="category-list-container">
+                <a href="javascript:;">分类</a>
+                
+              </li>
+            
+          
+            
+              <li class="tag-list-container">
+                <a href="javascript:;">标签</a>
+                
+              </li>
+            
+          
+            
+              <li class="archive-list-container">
+                <a href="javascript:;">归档</a>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+              </li>
+            
+          
+        </ul>
+      
+    
+  </div>
+  <div class="aplayer" data-id="3834011938" data-server="tencent" data-type="playlist" data-mode="circulation" data-autoplay="false"></div>
+</div>
+
+    <div class="main-content">
+      
+        <div style="max-width: 1000px">
+      
+          <article id="post-webpack" class="article article-type-post">
+  
+    <h1 class="article-header">
+      webpack入门
+    </h1>
+  
+  
+
+  <div class="article-info">
+    <span class="article-date">
+  2019-07-02
+</span>
+
+    
+
+    
+
+  </div>
+  <div class="article-entry">
+    <h2 id="1、webpack-介绍"><a href="#1、webpack-介绍" class="headerlink" title="1、webpack 介绍"></a>1、webpack 介绍</h2><p>当我们打开<a href="https://www.webpackjs.com/" target="_blank" rel="noopener">webpack 中文文档</a>首页时，最底下的几个大字让一切变得简单，我就觉得它很牛逼，很不简单。官网上的 webpack 概念：<strong>webpack 是一个现代 JavaScript 应用程序的静态模块打包器(module bundler)，显然 webpack 是一个项目静态模块打包器。不过后面还有一句就是：当 webpack 处理应用程序时，它会递归地构建一个依赖关系图(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成一个或多个 bundle。这个的意思就是 webpack 会自动分析你的项目结构，各个的模块依赖关系，然后打包成相应的 bundle，至于模块就理解为一个 js 文件为一个模块，css 也是一样。</strong></p>
+<h2 id="2、创建-webpack-项目"><a href="#2、创建-webpack-项目" class="headerlink" title="2、创建 webpack 项目"></a>2、创建 webpack 项目</h2><p>1.新建文件夹，名为 webpackdemo，创建 src 文件夹并且包含 app.js； 2.打开终端进入 webpackdemo 文件夹，输入 npm init,执行完了会出现 package.json 文件； 3.安装 webpack 和 webpack-cli，输入 npm i webpack webpack-cli -D 4.在 package.json 中添加</p>
+<a id="more"></a>
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">    "build": "webpack --mode production"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>5.在同 package.json 文件目录下新建 webpack.config.js 文件</p>
+<h2 id="3、webpack-的四个核心"><a href="#3、webpack-的四个核心" class="headerlink" title="3、webpack 的四个核心"></a>3、webpack 的四个核心</h2><p><strong>1.入口（entry）：就是你需要进行打包的模块，需要的是模块的路径。</strong></p>
+<p>简单的配置：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js文件</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//单个入口文件</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">"./src/app.js"</span>, <span class="comment">//入口文件</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//多个入口文件</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: [<span class="string">"./src/app.js"</span>, <span class="string">"./src/a.js"</span>], <span class="comment">//入口文件</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.打包出口（output）：是将入口文件打包为 bundle.js 文件，新建一个 html 文件引入 bundle.js，就可以看到相应的内容。</strong></p>
+<p>简单配置：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js文件</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//单个入口文件</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: [<span class="string">"./src/app.js"</span>, <span class="string">"./src/a.js"</span>], <span class="comment">//入口文件</span></span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">"dist"</span>), <span class="comment">//打包后生成的文件放置的路径</span></span><br><span class="line">    filename: <span class="string">"bundle.js"</span>, <span class="comment">//打包后生成的文件名称</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>这是你会看到一个__dirname，它就是追加了自身的目录路径，就是自动添加上项目目录路径。</p>
+<p>测试：我们在 app.js 文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//app.js</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"hi!webpack"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>a.js 文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//a.js</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"a"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>然后执行 npm run build<br>在根目录下创建 index.html 并在引入 bundle.js 文件，然后用浏览器打开 index.html 文件。<br>这是的项目目录为</p>
+<p>浏览器控制台打印为</p>
+<p><strong>3.loader：loader 让 webpack 能处理非 js 文件，因为 webpack 只是理解 js。</strong></p>
+<p>在 webpack 的配置中 loader 有两个目标：<br>1）test 属性：用于标识出应该被对应的 loader 进行转换的某个或某些文件，即是标识你要进行处理的非 js 文件。<br>2）use 属性：标识在处理非 js 文件使用哪个 loader。<br>简单配置:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js文件</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//单个入口文件</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: [<span class="string">"./src/app.js"</span>, <span class="string">"./src/a.js"</span>], <span class="comment">//入口文件</span></span><br><span class="line"></span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">"dist"</span>), <span class="comment">//打包后生成的文件放置的路径</span></span><br><span class="line">    filename: <span class="string">"bundle.js"</span>, <span class="comment">//打包后生成的文件名称</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: <span class="regexp">/\.txt$/</span>,</span><br><span class="line">        use: <span class="string">"raw-loader"</span>, <span class="comment">//需要安装raw-loader。</span></span><br><span class="line">      &#125;,</span><br><span class="line">    ], <span class="comment">//当webpack遇到require()/import 语句中被解析为 '.txt' 的路径时，先使用raw-loader转换下</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>4.插件（plugins）：插件的部分就是 webpack 的功能强大的部分，使用什么插件就能实现什么功能，每个插件就相当于任务。</strong></p>
+<p>简单的配置：（使用 html-webpack-plugin）生成 html</p>
+<p>1）安装 html-webpack-plugin：npm i –save-dev html-webpack-plugin<br>2）webpack.config.js 配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//webpack.config.js文件</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">"webpack"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//引入插件</span></span><br><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">"html-webpack-plugin"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//单个入口文件</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: [<span class="string">"./src/app.js"</span>, <span class="string">"./src/a.js"</span>], <span class="comment">//入口文件</span></span><br><span class="line"></span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">"dist"</span>), <span class="comment">//打包后生成的文件放置的路径</span></span><br><span class="line">    filename: <span class="string">"bundle.js"</span>, <span class="comment">//打包后生成的文件名称</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">      filename: <span class="string">"index.html"</span>, <span class="comment">//输出的html名称，默认index.html</span></span><br><span class="line">      template: <span class="string">"./index.html"</span>, <span class="comment">//配置要被编译的html文件，即是html的源文件</span></span><br><span class="line">    &#125;),</span><br><span class="line">  ],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>在 dist 文件夹下用浏览器打开，控制台为</p>
+<p><strong>5.模式（mode）：通过选择 development 或 production 之中的一个，来设置 mode 参数，你可以启用相应模式下的 webpack 内置的优化。–mode 模式 (必选，不然会有 WARNING)，是 webpack4 新增的参数选项，默认是 production</strong><br>通过项目 webpackdemo 来进行配置，很容易上手，但是还有很多要探究，比如使用多个插件问题，多个 html 问题等。由于这笔记是入门篇所以没有做出太多的深究，还需要多学习学习，不断踩坑挖坑。</p>
+
+  </div>
+  <footer class="article-footer">
+    
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
+      
+          <img src="/images/cc/by.png">
+        
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
+
+
+    
+
+  </footer>
+</article>
+
+
+
+
+
+
+
+          <div class="main-footer">
+  
+    © 2022 一个爱听歌的搬砖工 - Powered by <a href="http://hexo.io" target="_blank">Hexo</a> - Theme <a href="https://github.com/denjones/hexo-theme-chan" target="_blank">Chan</a>
+  
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.0.1/dist/Meting.min.js"></script>
+      
+        </div>
+      
+    </div>
+  </div>
+  <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="/PhotoSwipe/photoswipe.css">
+  <link rel="stylesheet" href="/PhotoSwipe/default-skin/default-skin.css">
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+      <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+
+      <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+      <div class="pswp__ui pswp__ui--hidden">
+
+        <div class="pswp__top-bar">
+
+          <!--  Controls are self-explanatory. Order can be changed. -->
+
+          <div class="pswp__counter"></div>
+
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+          <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+          <!-- element will get class pswp__preloader--active when preloader is running -->
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/PhotoSwipe/photoswipe.js"></script>
+  <script src="/PhotoSwipe/photoswipe-ui-default.js"></script>
+
+
+<script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
+<script src="/scripts/main.js"></script>
+
+</body>
+</html>
