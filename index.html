@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -107,6 +107,47 @@
         <div style="max-width: 1000px">
       
           
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2022/02/22/video/">
+  Video兼容性问题
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2022/02/22/video/"><span class="article-date">
+  2022-02-22
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>最近在做校招网站的时候有用到video标签，ios里面默认全屏播放，这边产品不想全屏，解决办法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"media/demo.mp4"</span> <span class="attr">id</span>=<span class="string">"video"</span> <span class="attr">poster</span>=<span class="string">"images/demo.jpg"</span> <span class="attr">preload</span> <span class="attr">width</span>=<span class="string">"100%"</span> <span class="attr">controls</span> <span class="attr">webkit-playsinline</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在ios15以上的版本中还有一个bug就是设置了video标签的poster时，视频播放有声音，画面不动。去掉poster就可以正常播放，我这边给的思路：<br>判断在安卓系统中正常走poster，在ios中给不使用poster属性增加dom元素，用定位直接铺在视频上。层级z-index给个-1就可以了，不需要做其他操作。注（如果安卓跟ios都用这个方法因为层级问题安卓会有层级bug所以分开判断）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"m-video"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">video</span></span></span><br><span class="line"><span class="tag">    <span class="attr">controls</span></span></span><br><span class="line"><span class="tag">    <span class="attr">controlsList</span>=<span class="string">"nodownload"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">x5-playsinline</span></span></span><br><span class="line"><span class="tag">    <span class="attr">playsinline</span>=<span class="string">"playsinline"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">x5-video-player-type</span>=<span class="string">"h5"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">x5-video-player-fullscreen</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">webkit-playsinline</span>=<span class="string">"webkit-playsinline"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">x-webkit-airplay</span></span></span><br><span class="line"><span class="tag">    <span class="attr">x5-video-orientation</span>=<span class="string">"portraint"</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span></span></span><br><span class="line"><span class="tag">      <span class="attr">src</span>=<span class="string">"demo.mp4"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">type</span>=<span class="string">"video/mp4"</span></span></span><br><span class="line"><span class="tag">    /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"m-img"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"demo.png"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
 
   
   
@@ -475,50 +516,6 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.sort([compareFunction]);</span><br></pre></td></tr></table></figure>
           <p>
             <a href="/2019/10/28/Sort/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
-
-  
-  
-    <div class="post-list">
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/10/25/Filter/">
-  filter详解与实战
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2019/10/25/Filter/"><span class="article-date">
-  2019-10-25
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>filter(过滤，筛选) 方法创建一个新数组,原始数组不发生改变。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array.filter(callback,[ thisObject]);</span><br></pre></td></tr></table></figure>
-
-<p>其包含通过提供函数实现的测试的所有元素。接收的参数和 map 是一样的，filter的callback函数需要返回布尔值true或false. 如果为true则表示通过啦！如果为false则失败，其返回值是一个新数组，由通过测试为true的所有元素组成，如果没有任何数组元素通过测试，则返回空数组。</p>
-<p>来个例子介绍下，现在有一个数组 [1, 2, 1, 2, 3, 5, 4, 5, 3, 4, 4, 4, 4]，我们想要生成一个新数组，这个数组要求没有重复的内容，即为去重。</p>
-          <p>
-            <a href="/2019/10/25/Filter/">
               阅读全文
             </a>
           </p>
