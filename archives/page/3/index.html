@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -118,6 +118,47 @@
           <h1><a href="/archives/2019" class="archive-year">2019</a></h1>
         </div>
         <div class="post-list">
+    
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/07/27/iconfont/">
+  计算制作iconfont图标
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/07/27/iconfont/"><span class="article-date">
+  2019-07-27
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>网站页面上会用到各种小图标，前端以前制作页面的时候，会将这些图片一个个切下来，通过标签设置backgroud使用，这样做会导致请求过多，造成性能瓶颈。后来有人就发明了css sprite(雪碧图)，将这些图标合并到一个图片上，然后通过backgroud-position定位使用，好处是显而易见的，请求瞬间就降低了，图片集中起来也方便维护。</p>
+<p>随着项目的庞大，图标也越来越多，然后不停的往雪碧图里塞，很多图标长的都差不多，有些仅仅是颜色或者大小不同，这导致了雪碧图越来越庞大变得不好维护，如下图：</p>
+<p><img src="/images/cc/2019072801.png" alt="avatar"></p>
+<p>有时候如果前端不注意修改了雪碧图的尺寸或者不小心挪动了其它图标的位置，就会导致某些图标显示错位。</p>
+          <p>
+            <a href="/2019/07/27/iconfont/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+
+  
+  
     
   
 
@@ -519,47 +560,6 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> &#123;&#125;; <span class="comment">// object</span></span><br><span class="line"><span class="keyword">typeof</span> [<span class="number">1</span>, <span class="number">2</span>]; <span class="comment">// object</span></span><br><span class="line"><span class="keyword">typeof</span> /\s/; <span class="comment">//object</span></span><br></pre></td></tr></table></figure>
           <p>
             <a href="/2019/07/05/mode/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-
-  
-  
-    
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/07/04/Judge/">
-  判断数组
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2019/07/04/Judge/"><span class="article-date">
-  2019-07-04
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>之前有讲过数组去重的方法，今天说一下如何判断是否为空数组和数组的一些方法。话不多说直接上代码！</p>
-<p><strong>如何判断一个变量是不是数组：</strong></p>
-<p>使用 Array.isArray 判断，如果返回 true, 说明是数组；<br>使用 instanceof Array 判断，如果返回 true, 说明是数组；<br>使用 Object.prototype.toString.call 判断，如果值是 [object Array], 说明是数组；<br>通过 constructor 来判断，如果是数组，那么 arr.constructor === Array. (不准确，因为我们可以指定 obj.constructor = Array)</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray(<span class="built_in">arguments</span>)); <span class="comment">//false; 因为 arguments 是类数组，但不是数组</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])); <span class="comment">//true</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">arguments</span> <span class="keyword">instanceof</span> <span class="built_in">Array</span>); <span class="comment">//fasle</span></span><br><span class="line">  <span class="built_in">console</span>.log([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>] <span class="keyword">instanceof</span> <span class="built_in">Array</span>); <span class="comment">//true</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">arguments</span>)); <span class="comment">//[object Arguments]</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])); <span class="comment">//[object Array]</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.constructor === <span class="built_in">Array</span>); <span class="comment">//false</span></span><br><span class="line">  <span class="built_in">arguments</span>.constructor = <span class="built_in">Array</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.constructor === <span class="built_in">Array</span>); <span class="comment">//true</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray(<span class="built_in">arguments</span>)); <span class="comment">//false</span></span><br><span class="line">&#125;</span><br><span class="line">fn(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>);</span><br></pre></td></tr></table></figure>
-          <p>
-            <a href="/2019/07/04/Judge/">
               阅读全文
             </a>
           </p>

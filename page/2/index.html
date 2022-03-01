@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -107,6 +107,47 @@
         <div style="max-width: 1000px">
       
           
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/10/28/Sort/">
+  sort详解与实战
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/10/28/Sort/"><span class="article-date">
+  2019-10-28
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>sort()方法用原地算法对数组的元素进行排序，并返回数组，该排序方法会在原数组上直接进行排序，并不会生成一个排好序的新数组。排序算法现在是稳定的。默认排序顺序是根据字符串 Unicode 码点。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.sort([compareFunction]);</span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/10/28/Sort/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
 
   
   
@@ -499,49 +540,6 @@
           <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">round</span>(<span class="params">num, s</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> changeVal = num.toString().split(<span class="string">'.'</span>)[<span class="number">1</span>];</span><br><span class="line">  <span class="comment">// 如果传入的值是整数或者是有限小数直接返回</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">Number</span>.isInteger(num) || num.toString().split(<span class="string">'.'</span>)[<span class="number">1</span>].length !== <span class="number">16</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> times = <span class="built_in">Math</span>.pow(<span class="number">10</span>, s);</span><br><span class="line">  <span class="keyword">let</span> des;</span><br><span class="line">  <span class="comment">// 根据无限循环小数 做四舍五入</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">Number</span>(changeVal[<span class="number">0</span>]) &gt;= <span class="number">5</span> &amp;&amp; <span class="built_in">Number</span>(changeVal[changeVal.length - <span class="number">1</span>]) &gt;= <span class="number">5</span>) &#123;</span><br><span class="line">    des = num * times + <span class="number">0.5</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    des = num * times;</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  des = <span class="built_in">parseInt</span>(des, <span class="number">10</span>) / times;</span><br><span class="line">  <span class="keyword">return</span> des;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
-
-  
-  
-    <div class="post-list">
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/07/27/iconfont/">
-  计算制作iconfont图标
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2019/07/27/iconfont/"><span class="article-date">
-  2019-07-27
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>网站页面上会用到各种小图标，前端以前制作页面的时候，会将这些图片一个个切下来，通过标签设置backgroud使用，这样做会导致请求过多，造成性能瓶颈。后来有人就发明了css sprite(雪碧图)，将这些图标合并到一个图片上，然后通过backgroud-position定位使用，好处是显而易见的，请求瞬间就降低了，图片集中起来也方便维护。</p>
-<p>随着项目的庞大，图标也越来越多，然后不停的往雪碧图里塞，很多图标长的都差不多，有些仅仅是颜色或者大小不同，这导致了雪碧图越来越庞大变得不好维护，如下图：</p>
-<p><img src="/images/cc/2019072801.png" alt="avatar"></p>
-<p>有时候如果前端不注意修改了雪碧图的尺寸或者不小心挪动了其它图标的位置，就会导致某些图标显示错位。</p>
-          <p>
-            <a href="/2019/07/27/iconfont/">
-              阅读全文
-            </a>
-          </p>
         
       </div>
     </div>

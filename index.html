@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -107,6 +107,47 @@
         <div style="max-width: 1000px">
       
           
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2022/03/01/lessProblem/">
+  在less中写css3动画不生效问题
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2022/03/01/lessProblem/"><span class="article-date">
+  2022-03-01
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>在react项目中，因为有用到css动画效果给一个图片无限旋转360度，代码如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> rotatecm&#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0deg</span>);&#125;</span><br><span class="line">  <span class="selector-tag">to</span> &#123;<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>);&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@-webkit-keyframes</span> rotatecm&#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0deg</span>);&#125;</span><br><span class="line">  <span class="selector-tag">to</span> &#123;<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>);&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.s-rotate</span> &#123;</span><br><span class="line">  <span class="attribute">animation</span>: rotatecm <span class="number">3s</span> linear infinite;</span><br><span class="line">  <span class="attribute">-webkit-animation</span>: rotatecm <span class="number">3s</span> linear infinite;</span><br><span class="line">  <span class="attribute">-moz-animation</span>: rotatecm <span class="number">3s</span> linear infinite;</span><br><span class="line">  <span class="attribute">-o-animation</span>: rotatecm <span class="number">3s</span> linear infinite;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>页面已经展示出s-rotate这个类的代码但是动画就是不执行，排查了半天定位到是不是less的问题，因为自己有测试在w3school里动画是可以生效的；看了下页面源码，研究了一下发现是因为我配置了css module的原因，动画名被hash了但是引用却没有引用已被hash的动画名，修改一下代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:global(.s-rotate)</span>&#123;</span><br><span class="line">  @name: ~`'rotatecm'`;</span><br><span class="line">    <span class="keyword">@keyframes</span> @name&#123;</span><br><span class="line">      <span class="selector-tag">from</span> &#123;<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0deg</span>);&#125;</span><br><span class="line">      <span class="selector-tag">to</span> &#123;<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>);&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">@-webkit-keyframes</span> @name&#123;</span><br><span class="line">      <span class="selector-tag">from</span> &#123;<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0deg</span>);&#125;</span><br><span class="line">      <span class="selector-tag">to</span> &#123;<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>);&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-tag">animation</span>: <span class="keyword">@name</span> <span class="number">3s</span> linear infinite;</span><br><span class="line">    <span class="selector-tag">-webkit-animation</span>: <span class="keyword">@name</span> <span class="number">3s</span> linear infinite;</span><br><span class="line">    <span class="selector-tag">-moz-animation</span>: <span class="keyword">@name</span> <span class="number">3s</span> linear infinite;</span><br><span class="line">    <span class="selector-tag">-o-animation</span>: <span class="keyword">@name</span> <span class="number">3s</span> linear infinite;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
 
   
   
@@ -475,47 +516,6 @@
 <p>(3)、对于 Array,Null 等特殊对象使用 typeof 一律返回 object，这正是 typeof 的局限性。<br>Instanceof定义和用法：instanceof 用于判断一个变量是否属于某个对象的实例。</p>
           <p>
             <a href="/2019/10/30/for/">
-              阅读全文
-            </a>
-          </p>
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
-
-  
-  
-    <div class="post-list">
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/10/28/Sort/">
-  sort详解与实战
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2019/10/28/Sort/"><span class="article-date">
-  2019-10-28
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>sort()方法用原地算法对数组的元素进行排序，并返回数组，该排序方法会在原数组上直接进行排序，并不会生成一个排好序的新数组。排序算法现在是稳定的。默认排序顺序是根据字符串 Unicode 码点。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.sort([compareFunction]);</span><br></pre></td></tr></table></figure>
-          <p>
-            <a href="/2019/10/28/Sort/">
               阅读全文
             </a>
           </p>

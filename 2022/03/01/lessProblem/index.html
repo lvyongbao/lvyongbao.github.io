@@ -9,17 +9,21 @@
 
 <title>
   
-    归档: 2022
+    在less中写css3动画不生效问题
   
 </title>
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="一个爱听歌的搬砖工">
-<meta property="og:url" content="http://yoursite.com/archives/2022/index.html">
+<meta name="description" content="在react项目中，因为有用到css动画效果给一个图片无限旋转360度，代码如下： 1234567891011121314@keyframes rotatecm&amp;#123;  from &amp;#123;transform: rotate(0deg);&amp;#125;  to &amp;#123;transform: rotate(360deg);&amp;#125;&amp;#125;@-webkit-keyframes rot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在less中写css3动画不生效问题">
+<meta property="og:url" content="http://yoursite.com/2022/03/01/lessProblem/index.html">
 <meta property="og:site_name" content="一个爱听歌的搬砖工">
+<meta property="og:description" content="在react项目中，因为有用到css动画效果给一个图片无限旋转360度，代码如下： 1234567891011121314@keyframes rotatecm&amp;#123;  from &amp;#123;transform: rotate(0deg);&amp;#125;  to &amp;#123;transform: rotate(360deg);&amp;#125;&amp;#125;@-webkit-keyframes rot">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2022-03-01T11:33:16.653Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一个爱听歌的搬砖工">
+<meta name="twitter:title" content="在less中写css3动画不生效问题">
+<meta name="twitter:description" content="在react项目中，因为有用到css动画效果给一个图片无限旋转360度，代码如下： 1234567891011121314@keyframes rotatecm&amp;#123;  from &amp;#123;transform: rotate(0deg);&amp;#125;  to &amp;#123;transform: rotate(360deg);&amp;#125;&amp;#125;@-webkit-keyframes rot">
 
 
   <link rel="alternative" href="/atom.xml" title="一个爱听歌的搬砖工" type="application/atom+xml">
@@ -106,136 +110,55 @@
       
         <div style="max-width: 1000px">
       
-          
-
+          <article id="post-lessProblem" class="article article-type-post">
+  
+    <h1 class="article-header">
+      在less中写css3动画不生效问题
+    </h1>
   
   
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <h1><a href="/archives/2022" class="archive-year">2022</a></h1>
-        </div>
-        <div class="post-list">
-    
-  
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2022/03/01/lessProblem/">
-  在less中写css3动画不生效问题
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2022/03/01/lessProblem/"><span class="article-date">
+  <div class="article-info">
+    <span class="article-date">
   2022-03-01
 </span>
-</a>
-        
 
-        
+    
 
-      </div>
-      <div class="article-entry">
-        
-          <p>在react项目中，因为有用到css动画效果给一个图片无限旋转360度，代码如下：</p>
+    
+
+  </div>
+  <div class="article-entry">
+    <p>在react项目中，因为有用到css动画效果给一个图片无限旋转360度，代码如下：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@keyframes</span> rotatecm&#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0deg</span>);&#125;</span><br><span class="line">  <span class="selector-tag">to</span> &#123;<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>);&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@-webkit-keyframes</span> rotatecm&#123;</span><br><span class="line">  <span class="selector-tag">from</span> &#123;<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0deg</span>);&#125;</span><br><span class="line">  <span class="selector-tag">to</span> &#123;<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>);&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.s-rotate</span> &#123;</span><br><span class="line">  <span class="attribute">animation</span>: rotatecm <span class="number">3s</span> linear infinite;</span><br><span class="line">  <span class="attribute">-webkit-animation</span>: rotatecm <span class="number">3s</span> linear infinite;</span><br><span class="line">  <span class="attribute">-moz-animation</span>: rotatecm <span class="number">3s</span> linear infinite;</span><br><span class="line">  <span class="attribute">-o-animation</span>: rotatecm <span class="number">3s</span> linear infinite;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>页面已经展示出s-rotate这个类的代码但是动画就是不执行，排查了半天定位到是不是less的问题，因为自己有测试在w3school里动画是可以生效的；看了下页面源码，研究了一下发现是因为我配置了css module的原因，动画名被hash了但是引用却没有引用已被hash的动画名，修改一下代码：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:global(.s-rotate)</span>&#123;</span><br><span class="line">  @name: ~`'rotatecm'`;</span><br><span class="line">    <span class="keyword">@keyframes</span> @name&#123;</span><br><span class="line">      <span class="selector-tag">from</span> &#123;<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0deg</span>);&#125;</span><br><span class="line">      <span class="selector-tag">to</span> &#123;<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>);&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">@-webkit-keyframes</span> @name&#123;</span><br><span class="line">      <span class="selector-tag">from</span> &#123;<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">0deg</span>);&#125;</span><br><span class="line">      <span class="selector-tag">to</span> &#123;<span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>);&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-tag">animation</span>: <span class="keyword">@name</span> <span class="number">3s</span> linear infinite;</span><br><span class="line">    <span class="selector-tag">-webkit-animation</span>: <span class="keyword">@name</span> <span class="number">3s</span> linear infinite;</span><br><span class="line">    <span class="selector-tag">-moz-animation</span>: <span class="keyword">@name</span> <span class="number">3s</span> linear infinite;</span><br><span class="line">    <span class="selector-tag">-o-animation</span>: <span class="keyword">@name</span> <span class="number">3s</span> linear infinite;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-        
-      </div>
-    </div>
-
-  
-
-  
-  
+  </div>
+  <footer class="article-footer">
     
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2022/02/22/video/">
-  Video兼容性问题
-</a>
-
-      </h3>
+  <div class="cc">
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/deed.z" target="_blank" title="署名-相同方式共享">
+      <img src="/images/cc/cc.png">
       
-
-      <div class="article-info">
-        <a href="/2022/02/22/video/"><span class="article-date">
-  2022-02-22
-</span>
-</a>
+          <img src="/images/cc/by.png">
         
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>最近在做校招网站的时候有用到video标签，ios里面默认全屏播放，这边产品不想全屏，解决办法：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"media/demo.mp4"</span> <span class="attr">id</span>=<span class="string">"video"</span> <span class="attr">poster</span>=<span class="string">"images/demo.jpg"</span> <span class="attr">preload</span> <span class="attr">width</span>=<span class="string">"100%"</span> <span class="attr">controls</span> <span class="attr">webkit-playsinline</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>在ios15以上的版本中还有一个bug就是设置了video标签的poster时，视频播放有声音，画面不动。去掉poster就可以正常播放，我这边给的思路：<br>判断在安卓系统中正常走poster，在ios中给不使用poster属性增加dom元素，用定位直接铺在视频上。层级z-index给个-1就可以了，不需要做其他操作。注（如果安卓跟ios都用这个方法因为层级问题安卓会有层级bug所以分开判断）</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"m-video"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">video</span></span></span><br><span class="line"><span class="tag">    <span class="attr">controls</span></span></span><br><span class="line"><span class="tag">    <span class="attr">controlsList</span>=<span class="string">"nodownload"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">x5-playsinline</span></span></span><br><span class="line"><span class="tag">    <span class="attr">playsinline</span>=<span class="string">"playsinline"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">x5-video-player-type</span>=<span class="string">"h5"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">x5-video-player-fullscreen</span>=<span class="string">"true"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">webkit-playsinline</span>=<span class="string">"webkit-playsinline"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">x-webkit-airplay</span></span></span><br><span class="line"><span class="tag">    <span class="attr">x5-video-orientation</span>=<span class="string">"portraint"</span></span></span><br><span class="line"><span class="tag">  &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">source</span></span></span><br><span class="line"><span class="tag">      <span class="attr">src</span>=<span class="string">"demo.mp4"</span></span></span><br><span class="line"><span class="tag">      <span class="attr">type</span>=<span class="string">"video/mp4"</span></span></span><br><span class="line"><span class="tag">    /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"m-img"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"demo.png"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          <img src="/images/cc/sa.png">
+      
+      <span>
+        本作品采用知识共享 署名-相同方式共享 4.0 国际许可协议进行许可。
+      </span>
+    </a>
+  </div>
 
 
-        
-      </div>
-    </div>
-
-  
-
-  
-  
     
-  
 
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2022/02/18/jsClose/">
-  JavaScript关闭当前页
-</a>
+  </footer>
+</article>
 
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2022/02/18/jsClose/"><span class="article-date">
-  2022-02-18
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>出于安全考虑，普通页面直接执行window.close()时不会生效，控制台会出现如下警告：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Scripts may not close windows that were not opened by script.</span><br></pre></td></tr></table></figure>
-
-<p>只有那些通a标签或者window.open()打开的页面才支持关闭，为什么这么规定呢？可能是直接输入地址访问的页面可能比较重要，减少被恶意JS攻击的可能性吧，所以规定只有用脚本（或代码）打开的页面才能用脚本关闭。</p>
-<p>IE和火狐还未测试，Chrome已没问题。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 关闭页面</span></span><br><span class="line">closeCurrentPage() &#123;</span><br><span class="line">  <span class="keyword">const</span> ua = <span class="built_in">window</span>.navigator.userAgent;</span><br><span class="line">  <span class="keyword">if</span> (ua.indexOf(<span class="string">'MSIE'</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (ua.indexOf(<span class="string">'MSIE 6.0'</span>) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="built_in">window</span>.opener = <span class="literal">null</span>;</span><br><span class="line">      <span class="built_in">window</span>.close();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">window</span>.open(<span class="string">''</span>, <span class="string">'_top'</span>);</span><br><span class="line">      <span class="built_in">window</span>.top.close();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">window</span>.opener = <span class="literal">null</span>;</span><br><span class="line">    <span class="built_in">window</span>.open(<span class="string">''</span>, <span class="string">'_self'</span>, <span class="string">''</span>);</span><br><span class="line">    <span class="built_in">window</span>.close();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>还有种方法通过a标签的方式去操作</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:window.close()"</span>&gt;</span>关闭<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-        
-      </div>
-    </div>
-
-  
 
 
 
@@ -251,7 +174,7 @@
       
         </div>
       
-    </section></div>
+    </div>
   </div>
   <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 
@@ -327,5 +250,5 @@
 <script src="/perfect-scrollbar/js/min/perfect-scrollbar.min.js"></script>
 <script src="/scripts/main.js"></script>
 
-</div></body>
+</body>
 </html>

@@ -91,7 +91,7 @@
             
               <li class="archive-list-container">
                 <a href="javascript:;">归档</a>
-                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
+                <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/">2022</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">46</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/">2017</a><span class="archive-list-count">4</span></li></ul>
               </li>
             
           
@@ -107,6 +107,49 @@
         <div style="max-width: 1000px">
       
           
+
+  
+  
+    <div class="post-list">
+  
+
+    <div class="post-list-item article">
+      <h3 class="article-header">
+        <a href="/2019/07/04/Judge/">
+  判断数组
+</a>
+
+      </h3>
+      
+
+      <div class="article-info">
+        <a href="/2019/07/04/Judge/"><span class="article-date">
+  2019-07-04
+</span>
+</a>
+        
+
+        
+
+      </div>
+      <div class="article-entry">
+        
+          <p>之前有讲过数组去重的方法，今天说一下如何判断是否为空数组和数组的一些方法。话不多说直接上代码！</p>
+<p><strong>如何判断一个变量是不是数组：</strong></p>
+<p>使用 Array.isArray 判断，如果返回 true, 说明是数组；<br>使用 instanceof Array 判断，如果返回 true, 说明是数组；<br>使用 Object.prototype.toString.call 判断，如果值是 [object Array], 说明是数组；<br>通过 constructor 来判断，如果是数组，那么 arr.constructor === Array. (不准确，因为我们可以指定 obj.constructor = Array)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray(<span class="built_in">arguments</span>)); <span class="comment">//false; 因为 arguments 是类数组，但不是数组</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])); <span class="comment">//true</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">arguments</span> <span class="keyword">instanceof</span> <span class="built_in">Array</span>); <span class="comment">//fasle</span></span><br><span class="line">  <span class="built_in">console</span>.log([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>] <span class="keyword">instanceof</span> <span class="built_in">Array</span>); <span class="comment">//true</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">arguments</span>)); <span class="comment">//[object Arguments]</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.toString.call([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])); <span class="comment">//[object Array]</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.constructor === <span class="built_in">Array</span>); <span class="comment">//false</span></span><br><span class="line">  <span class="built_in">arguments</span>.constructor = <span class="built_in">Array</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.constructor === <span class="built_in">Array</span>); <span class="comment">//true</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray(<span class="built_in">arguments</span>)); <span class="comment">//false</span></span><br><span class="line">&#125;</span><br><span class="line">fn(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>);</span><br></pre></td></tr></table></figure>
+          <p>
+            <a href="/2019/07/04/Judge/">
+              阅读全文
+            </a>
+          </p>
+        
+      </div>
+    </div>
+
+  
+    </div>
+  
 
   
   
@@ -508,58 +551,6 @@
               阅读全文
             </a>
           </p>
-        
-      </div>
-    </div>
-
-  
-    </div>
-  
-
-  
-  
-    <div class="post-list">
-  
-
-    <div class="post-list-item article">
-      <h3 class="article-header">
-        <a href="/2019/06/19/storage/">
-  存储
-</a>
-
-      </h3>
-      
-
-      <div class="article-info">
-        <a href="/2019/06/19/storage/"><span class="article-date">
-  2019-06-19
-</span>
-</a>
-        
-
-        
-
-      </div>
-      <div class="article-entry">
-        
-          <p>我们经常需要对业务中的一些数据进行存储，通常可以分为 短暂性存储 和 持久性储存。</p>
-<p>短暂性的时候，我们只需要将数据存在内存中，只在运行时可用</p>
-<p>持久性存储，可以分为 浏览器端 与 服务器端</p>
-<h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器:"></a>浏览器:</h2><blockquote>
-<ul>
-<li>cookie: 通常用于存储用户身份，登录状态等</li>
-<li>http 中自动携带， 体积上限为 4K， 可自行设置过期时间</li>
-<li>localStorage / sessionStorage: 长久储存/窗口关闭删除， 体积限制为 4~5M</li>
-<li>indexDB</li>
-</ul>
-</blockquote>
-<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器:"></a>服务器:</h2><blockquote>
-<ul>
-<li>分布式缓存 redis</li>
-<li>数据库</li>
-</ul>
-</blockquote>
-
         
       </div>
     </div>
